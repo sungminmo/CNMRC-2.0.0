@@ -157,7 +157,12 @@ void GTMMethodCheckMethodChecker(void) {
           // COV_NF_END
         }
         if (methodCheckerInfo.dli_fbase == methodInfo.dli_fbase) {
-          objc_msgSend(cls, selector);
+          // !!!: 원래 구글의 코드.
+          // objc_msgSend(cls, selector);
+          
+          // Too many arguments to function call, expected 0, have 2 버그 수정.
+          id (*typed_msgSend)(id, SEL) = (void *)objc_msgSend;
+          typed_msgSend(cls, selector);
         }
       }
     }
