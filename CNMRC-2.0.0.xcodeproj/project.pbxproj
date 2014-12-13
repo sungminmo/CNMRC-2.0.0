@@ -18,6 +18,37 @@
 		1D6B09EF1A342E2F00DF58E4 /* libcrypto_Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09EB1A342E2F00DF58E4 /* libcrypto_Mac.a */; };
 		1D6B09F01A342E2F00DF58E4 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09EC1A342E2F00DF58E4 /* libssl_iOS.a */; };
 		1D6B09F11A342E2F00DF58E4 /* libssl_Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09ED1A342E2F00DF58E4 /* libssl_Mac.a */; };
+		1DA28AE01A3C70A0007D7F4E /* GTMMethodCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD01A3C70A0007D7F4E /* GTMMethodCheck.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1DA28AE11A3C70A0007D7F4E /* GTMGeometryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD41A3C70A0007D7F4E /* GTMGeometryUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1DA28AE21A3C70A0007D7F4E /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD61A3C70A0007D7F4E /* GTMLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1DA28AE31A3C70A0007D7F4E /* GTMNSString+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD81A3C70A0007D7F4E /* GTMNSString+URLArguments.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1DA28AE41A3C70A0007D7F4E /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28ADA1A3C70A0007D7F4E /* GTMObjC2Runtime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1DA28AE51A3C70A0007D7F4E /* GTMUIFont+LineHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28ADF1A3C70A0007D7F4E /* GTMUIFont+LineHeight.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1DA28AE71A3C79D0007D7F4E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AE61A3C79D0007D7F4E /* CoreData.framework */; };
+		1DA28AE91A3C79E3007D7F4E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AE81A3C79E3007D7F4E /* CoreTelephony.framework */; };
+		1DA28AEB1A3C79F5007D7F4E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AEA1A3C79F5007D7F4E /* CoreMedia.framework */; };
+		1DA28AED1A3C7A04007D7F4E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AEC1A3C7A04007D7F4E /* MessageUI.framework */; };
+		1DA28AEF1A3C7A1D007D7F4E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AEE1A3C7A1D007D7F4E /* MapKit.framework */; };
+		1DA28AF11A3C7A28007D7F4E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AF01A3C7A28007D7F4E /* CoreLocation.framework */; };
+		1DA28AF31A3C7A33007D7F4E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AF21A3C7A33007D7F4E /* Security.framework */; };
+		1DA28AF51A3C7A43007D7F4E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AF41A3C7A43007D7F4E /* MobileCoreServices.framework */; };
+		1DA28AF71A3C7A4E007D7F4E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AF61A3C7A4E007D7F4E /* CoreFoundation.framework */; };
+		1DA28AF91A3C7A6B007D7F4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AF81A3C7A6B007D7F4E /* CoreGraphics.framework */; };
+		1DA28AFB1A3C7A81007D7F4E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AFA1A3C7A81007D7F4E /* CFNetwork.framework */; };
+		1DA28AFD1A3C7A8D007D7F4E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AFC1A3C7A8D007D7F4E /* AudioToolbox.framework */; };
+		1DA28AFF1A3C7A94007D7F4E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28AFE1A3C7A94007D7F4E /* CoreAudio.framework */; };
+		1DA28B011A3C7AA1007D7F4E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B001A3C7AA1007D7F4E /* Accelerate.framework */; };
+		1DA28B031A3C7AA9007D7F4E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B021A3C7AA9007D7F4E /* OpenGLES.framework */; };
+		1DA28B051A3C7ABD007D7F4E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B041A3C7ABD007D7F4E /* QuartzCore.framework */; };
+		1DA28B071A3C7AD1007D7F4E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B061A3C7AD1007D7F4E /* SystemConfiguration.framework */; };
+		1DA28B091A3C7ADC007D7F4E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B081A3C7ADC007D7F4E /* AVFoundation.framework */; };
+		1DA28B0B1A3C7AE8007D7F4E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B0A1A3C7AE8007D7F4E /* MediaPlayer.framework */; };
+		1DA28B0D1A3C7AF9007D7F4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B0C1A3C7AF9007D7F4E /* Foundation.framework */; };
+		1DA28B0F1A3C7B01007D7F4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B0E1A3C7B01007D7F4E /* UIKit.framework */; };
+		1DA28B111A3C7B18007D7F4E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B101A3C7B18007D7F4E /* libz.dylib */; };
+		1DA28B131A3C7B25007D7F4E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B121A3C7B25007D7F4E /* libiconv.dylib */; };
+		1DA28B151A3C7B66007D7F4E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B141A3C7B66007D7F4E /* libsqlite3.dylib */; };
+		1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA28B181A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf */; };
 		1DBA76C61A20B4C8003AB966 /* protoc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA767B1A20B4C8003AB966 /* protoc */; };
 		1DBA76C71A20B4C8003AB966 /* plugin.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA768A1A20B4C8003AB966 /* plugin.proto */; };
 		1DBA76C81A20B4C8003AB966 /* descriptor.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA768F1A20B4C8003AB966 /* descriptor.proto */; };
@@ -134,6 +165,46 @@
 		1D6B09EB1A342E2F00DF58E4 /* libcrypto_Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto_Mac.a; sourceTree = "<group>"; };
 		1D6B09EC1A342E2F00DF58E4 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_iOS.a; sourceTree = "<group>"; };
 		1D6B09ED1A342E2F00DF58E4 /* libssl_Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_Mac.a; sourceTree = "<group>"; };
+		1DA28ACF1A3C70A0007D7F4E /* GTMMethodCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMMethodCheck.h; sourceTree = "<group>"; };
+		1DA28AD01A3C70A0007D7F4E /* GTMMethodCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMMethodCheck.m; sourceTree = "<group>"; };
+		1DA28AD21A3C70A0007D7F4E /* GTMGarbageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGarbageCollection.h; sourceTree = "<group>"; };
+		1DA28AD31A3C70A0007D7F4E /* GTMGeometryUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGeometryUtils.h; sourceTree = "<group>"; };
+		1DA28AD41A3C70A0007D7F4E /* GTMGeometryUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMGeometryUtils.m; sourceTree = "<group>"; };
+		1DA28AD51A3C70A0007D7F4E /* GTMLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMLogger.h; sourceTree = "<group>"; };
+		1DA28AD61A3C70A0007D7F4E /* GTMLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMLogger.m; sourceTree = "<group>"; };
+		1DA28AD71A3C70A0007D7F4E /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
+		1DA28AD81A3C70A0007D7F4E /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+URLArguments.m"; sourceTree = "<group>"; };
+		1DA28AD91A3C70A0007D7F4E /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
+		1DA28ADA1A3C70A0007D7F4E /* GTMObjC2Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMObjC2Runtime.m; sourceTree = "<group>"; };
+		1DA28ADB1A3C70A0007D7F4E /* GTMObjectSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjectSingleton.h; sourceTree = "<group>"; };
+		1DA28ADC1A3C70A0007D7F4E /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		1DA28ADE1A3C70A0007D7F4E /* GTMUIFont+LineHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMUIFont+LineHeight.h"; sourceTree = "<group>"; };
+		1DA28ADF1A3C70A0007D7F4E /* GTMUIFont+LineHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMUIFont+LineHeight.m"; sourceTree = "<group>"; };
+		1DA28AE61A3C79D0007D7F4E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1DA28AE81A3C79E3007D7F4E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1DA28AEA1A3C79F5007D7F4E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1DA28AEC1A3C7A04007D7F4E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1DA28AEE1A3C7A1D007D7F4E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1DA28AF01A3C7A28007D7F4E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1DA28AF21A3C7A33007D7F4E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1DA28AF41A3C7A43007D7F4E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1DA28AF61A3C7A4E007D7F4E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		1DA28AF81A3C7A6B007D7F4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1DA28AFA1A3C7A81007D7F4E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1DA28AFC1A3C7A8D007D7F4E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1DA28AFE1A3C7A94007D7F4E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		1DA28B001A3C7AA1007D7F4E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		1DA28B021A3C7AA9007D7F4E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		1DA28B041A3C7ABD007D7F4E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1DA28B061A3C7AD1007D7F4E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1DA28B081A3C7ADC007D7F4E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1DA28B0A1A3C7AE8007D7F4E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1DA28B0C1A3C7AF9007D7F4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DA28B0E1A3C7B01007D7F4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1DA28B101A3C7B18007D7F4E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1DA28B121A3C7B25007D7F4E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		1DA28B141A3C7B66007D7F4E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		1DA28B181A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 417_whats_new_in_llvm.pdf; sourceTree = "<group>"; };
 		1DBA767B1A20B4C8003AB966 /* protoc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = protoc; sourceTree = "<group>"; };
 		1DBA76801A20B4C8003AB966 /* code_generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = code_generator.h; sourceTree = "<group>"; };
 		1DBA76811A20B4C8003AB966 /* command_line_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command_line_interface.h; sourceTree = "<group>"; };
@@ -205,6 +276,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA28B151A3C7B66007D7F4E /* libsqlite3.dylib in Frameworks */,
+				1DA28B131A3C7B25007D7F4E /* libiconv.dylib in Frameworks */,
+				1DA28B111A3C7B18007D7F4E /* libz.dylib in Frameworks */,
+				1DA28B0F1A3C7B01007D7F4E /* UIKit.framework in Frameworks */,
+				1DA28B0D1A3C7AF9007D7F4E /* Foundation.framework in Frameworks */,
+				1DA28B0B1A3C7AE8007D7F4E /* MediaPlayer.framework in Frameworks */,
+				1DA28B091A3C7ADC007D7F4E /* AVFoundation.framework in Frameworks */,
+				1DA28B071A3C7AD1007D7F4E /* SystemConfiguration.framework in Frameworks */,
+				1DA28B051A3C7ABD007D7F4E /* QuartzCore.framework in Frameworks */,
+				1DA28B031A3C7AA9007D7F4E /* OpenGLES.framework in Frameworks */,
+				1DA28B011A3C7AA1007D7F4E /* Accelerate.framework in Frameworks */,
+				1DA28AFF1A3C7A94007D7F4E /* CoreAudio.framework in Frameworks */,
+				1DA28AFD1A3C7A8D007D7F4E /* AudioToolbox.framework in Frameworks */,
+				1DA28AFB1A3C7A81007D7F4E /* CFNetwork.framework in Frameworks */,
+				1DA28AF91A3C7A6B007D7F4E /* CoreGraphics.framework in Frameworks */,
+				1DA28AF71A3C7A4E007D7F4E /* CoreFoundation.framework in Frameworks */,
+				1DA28AF51A3C7A43007D7F4E /* MobileCoreServices.framework in Frameworks */,
+				1DA28AF31A3C7A33007D7F4E /* Security.framework in Frameworks */,
+				1DA28AF11A3C7A28007D7F4E /* CoreLocation.framework in Frameworks */,
+				1DA28AEF1A3C7A1D007D7F4E /* MapKit.framework in Frameworks */,
+				1DA28AED1A3C7A04007D7F4E /* MessageUI.framework in Frameworks */,
+				1DA28AEB1A3C79F5007D7F4E /* CoreMedia.framework in Frameworks */,
+				1DA28AE91A3C79E3007D7F4E /* CoreTelephony.framework in Frameworks */,
+				1DA28AE71A3C79D0007D7F4E /* CoreData.framework in Frameworks */,
 				1D6B09EE1A342E2F00DF58E4 /* libcrypto_iOS.a in Frameworks */,
 				1DBA76CB1A20B4C8003AB966 /* libprotobuf.a in Frameworks */,
 				1D6B09F01A342E2F00DF58E4 /* libssl_iOS.a in Frameworks */,
@@ -228,6 +323,8 @@
 		1D4A49B41A20859C0088FA93 = {
 			isa = PBXGroup;
 			children = (
+				1DA28B171A3C826E007D7F4E /* Doc */,
+				1DA28B161A3C7C2E007D7F4E /* Frameworks */,
 				1DBA76781A20AE0D003AB966 /* Vendor */,
 				1D4A49BF1A20859C0088FA93 /* CNMRC-2.0.0 */,
 				1D4A49D91A20859C0088FA93 /* CNMRC-2.0.0Tests */,
@@ -395,9 +492,95 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		1DA28ACD1A3C70A0007D7F4E /* google-toolbox-for-mac */ = {
+			isa = PBXGroup;
+			children = (
+				1DA28ACE1A3C70A0007D7F4E /* DebugUtils */,
+				1DA28AD11A3C70A0007D7F4E /* Foundation */,
+				1DA28ADC1A3C70A0007D7F4E /* GTMDefines.h */,
+				1DA28ADD1A3C70A0007D7F4E /* iPhone */,
+			);
+			path = "google-toolbox-for-mac";
+			sourceTree = "<group>";
+		};
+		1DA28ACE1A3C70A0007D7F4E /* DebugUtils */ = {
+			isa = PBXGroup;
+			children = (
+				1DA28ACF1A3C70A0007D7F4E /* GTMMethodCheck.h */,
+				1DA28AD01A3C70A0007D7F4E /* GTMMethodCheck.m */,
+			);
+			path = DebugUtils;
+			sourceTree = "<group>";
+		};
+		1DA28AD11A3C70A0007D7F4E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				1DA28AD21A3C70A0007D7F4E /* GTMGarbageCollection.h */,
+				1DA28AD31A3C70A0007D7F4E /* GTMGeometryUtils.h */,
+				1DA28AD41A3C70A0007D7F4E /* GTMGeometryUtils.m */,
+				1DA28AD51A3C70A0007D7F4E /* GTMLogger.h */,
+				1DA28AD61A3C70A0007D7F4E /* GTMLogger.m */,
+				1DA28AD71A3C70A0007D7F4E /* GTMNSString+URLArguments.h */,
+				1DA28AD81A3C70A0007D7F4E /* GTMNSString+URLArguments.m */,
+				1DA28AD91A3C70A0007D7F4E /* GTMObjC2Runtime.h */,
+				1DA28ADA1A3C70A0007D7F4E /* GTMObjC2Runtime.m */,
+				1DA28ADB1A3C70A0007D7F4E /* GTMObjectSingleton.h */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		1DA28ADD1A3C70A0007D7F4E /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				1DA28ADE1A3C70A0007D7F4E /* GTMUIFont+LineHeight.h */,
+				1DA28ADF1A3C70A0007D7F4E /* GTMUIFont+LineHeight.m */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		1DA28B161A3C7C2E007D7F4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DA28B141A3C7B66007D7F4E /* libsqlite3.dylib */,
+				1DA28B121A3C7B25007D7F4E /* libiconv.dylib */,
+				1DA28B101A3C7B18007D7F4E /* libz.dylib */,
+				1DA28B0E1A3C7B01007D7F4E /* UIKit.framework */,
+				1DA28B0C1A3C7AF9007D7F4E /* Foundation.framework */,
+				1DA28B0A1A3C7AE8007D7F4E /* MediaPlayer.framework */,
+				1DA28B081A3C7ADC007D7F4E /* AVFoundation.framework */,
+				1DA28B061A3C7AD1007D7F4E /* SystemConfiguration.framework */,
+				1DA28B041A3C7ABD007D7F4E /* QuartzCore.framework */,
+				1DA28B021A3C7AA9007D7F4E /* OpenGLES.framework */,
+				1DA28B001A3C7AA1007D7F4E /* Accelerate.framework */,
+				1DA28AFE1A3C7A94007D7F4E /* CoreAudio.framework */,
+				1DA28AFC1A3C7A8D007D7F4E /* AudioToolbox.framework */,
+				1DA28AFA1A3C7A81007D7F4E /* CFNetwork.framework */,
+				1DA28AF81A3C7A6B007D7F4E /* CoreGraphics.framework */,
+				1DA28AF61A3C7A4E007D7F4E /* CoreFoundation.framework */,
+				1DA28AF41A3C7A43007D7F4E /* MobileCoreServices.framework */,
+				1DA28AF21A3C7A33007D7F4E /* Security.framework */,
+				1DA28AF01A3C7A28007D7F4E /* CoreLocation.framework */,
+				1DA28AEE1A3C7A1D007D7F4E /* MapKit.framework */,
+				1DA28AEC1A3C7A04007D7F4E /* MessageUI.framework */,
+				1DA28AEA1A3C79F5007D7F4E /* CoreMedia.framework */,
+				1DA28AE81A3C79E3007D7F4E /* CoreTelephony.framework */,
+				1DA28AE61A3C79D0007D7F4E /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DA28B171A3C826E007D7F4E /* Doc */ = {
+			isa = PBXGroup;
+			children = (
+				1DA28B181A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf */,
+			);
+			path = Doc;
+			sourceTree = "<group>";
+		};
 		1DBA76781A20AE0D003AB966 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1DA28ACD1A3C70A0007D7F4E /* google-toolbox-for-mac */,
 				1D6B099B1A342E2F00DF58E4 /* openssl-1.0.1j */,
 				1DBA76791A20B4C8003AB966 /* protobuf-2.6.0 */,
 			);
@@ -655,6 +838,7 @@
 				1DBA76CF1A20B4C8003AB966 /* protobuf-lite.pc in Resources */,
 				1DBA76CC1A20B4C8003AB966 /* libprotobuf.la in Resources */,
 				1DBA76C61A20B4C8003AB966 /* protoc in Resources */,
+				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
 				1DBA76CA1A20B4C8003AB966 /* libprotobuf-lite.la in Resources */,
 				1DBA76C71A20B4C8003AB966 /* plugin.proto in Resources */,
@@ -679,8 +863,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA28AE41A3C70A0007D7F4E /* GTMObjC2Runtime.m in Sources */,
+				1DA28AE21A3C70A0007D7F4E /* GTMLogger.m in Sources */,
 				1D4A49C91A20859C0088FA93 /* ViewController.m in Sources */,
 				1D4A49C61A20859C0088FA93 /* AppDelegate.m in Sources */,
+				1DA28AE51A3C70A0007D7F4E /* GTMUIFont+LineHeight.m in Sources */,
+				1DA28AE11A3C70A0007D7F4E /* GTMGeometryUtils.m in Sources */,
+				1DA28AE31A3C70A0007D7F4E /* GTMNSString+URLArguments.m in Sources */,
+				1DA28AE01A3C70A0007D7F4E /* GTMMethodCheck.m in Sources */,
 				1D4A49C31A20859C0088FA93 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
