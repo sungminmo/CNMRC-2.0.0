@@ -176,8 +176,8 @@ static SIAlertView *__si_alert_current_view;
     
     SIAlertView *appearance = [self appearance];
     appearance.viewBackgroundColor = [UIColor whiteColor];
-    appearance.titleColor = UIColorFromRGB(0x7961aa);//[UIColor blackColor];
-    appearance.messageColor = UIColorFromRGB(0x333333);//[UIColor darkGrayColor];
+    //appearance.titleColor = UIColorFromRGB(0x7961aa);//[UIColor blackColor];
+    //appearance.messageColor = UIColorFromRGB(0x333333);//[UIColor darkGrayColor];
     appearance.titleFont = [UIFont boldSystemFontOfSize:20];
     appearance.messageFont = [UIFont systemFontOfSize:16];
     appearance.buttonFont = [UIFont systemFontOfSize:[UIFont buttonFontSize]];
@@ -795,12 +795,12 @@ static SIAlertView *__si_alert_current_view;
 #endif
             // 타이틀 백그라운드. -------------------------------------------------------------------------
             UIView *titleBackground = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 300, 46.0)];
-            titleBackground.backgroundColor = UIColorFromRGB(0xe3e3e3);
+            //titleBackground.backgroundColor = UIColorFromRGB(0xe3e3e3);
             titleBackground.layer.cornerRadius = self.cornerRadius;
             [self.containerView addSubview:titleBackground];
             
             UIView *titleBackground2 = [[UIView alloc] initWithFrame:CGRectMake(0.0, 20.0, 300, 26.0)];
-            titleBackground2.backgroundColor = UIColorFromRGB(0xe3e3e3);
+            //titleBackground2.backgroundColor = UIColorFromRGB(0xe3e3e3);
             [self.containerView addSubview:titleBackground2];
             // 타이틀 백그라운드. -------------------------------------------------------------------------
             
