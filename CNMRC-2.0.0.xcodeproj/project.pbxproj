@@ -1130,7 +1130,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/protobuf-2.6.0/lib",
-					"$(PROJECT_DIR)/Vendor/openssl-1.0.1h/lib",
 					"$(PROJECT_DIR)/Vendor/openssl-1.0.1j/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1146,7 +1145,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/protobuf-2.6.0/lib",
-					"$(PROJECT_DIR)/Vendor/openssl-1.0.1h/lib",
 					"$(PROJECT_DIR)/Vendor/openssl-1.0.1j/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
