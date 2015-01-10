@@ -1,0 +1,5 @@
+OpenSSL
+C++ Protocol Buffers runtime
+POSIX threads
+
+When running on Mac/iPhone, the library also depends on CoreFoundation.

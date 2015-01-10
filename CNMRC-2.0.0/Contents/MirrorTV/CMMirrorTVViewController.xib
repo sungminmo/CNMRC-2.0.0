@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMMirrorTVViewController">
+            <connections>
+                <outlet property="backgroundView" destination="oIv-bX-A4O" id="sZV-I7-yeX"/>
+                <outlet property="channelButton" destination="LEz-hc-OqE" id="rFy-PU-gqL"/>
+                <outlet property="channelNoIndicatorLabel" destination="eRe-CL-QSa" id="Qhj-Z7-Tda"/>
+                <outlet property="channelNoLabel" destination="peZ-fF-91T" id="aS1-4U-2Ua"/>
+                <outlet property="closeButton" destination="LEz-hc-OqE" id="1n7-ZT-vq4"/>
+                <outlet property="controlPannel" destination="LEz-hc-OqE" id="QUj-A4-nuL"/>
+                <outlet property="loadingImageView" destination="2ug-Bu-GR0" id="obp-SJ-Q2S"/>
+                <outlet property="loadingView" destination="FjM-Sa-lBD" id="DYH-jW-Xg3"/>
+                <outlet property="noticeLabel" destination="wQT-lj-2tD" id="3yr-9l-kVs"/>
+                <outlet property="playerLayerView" destination="NaX-iO-7dK" id="7Xn-XX-iNL"/>
+                <outlet property="titleLabel" destination="00b-co-zWz" id="stq-Ex-fAd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="volumeMuteButton" destination="Bur-Ta-Uqi" id="v9v-YA-osJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="NaX-iO-7dK" customClass="CMPlayerLayerView">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="oIv-bX-A4O">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mirrortv_iframe_iphone5.png" id="DDW-0J-I5X">
+                            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에러 메시지" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" adjustsFontSizeToFit="NO" id="wQT-lj-2tD">
+                            <rect key="frame" x="119" y="49" width="330" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LEz-hc-OqE">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eRe-CL-QSa">
+                            <rect key="frame" x="234" y="136" width="100" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view alpha="0.69999999999999996" contentMode="scaleToFill" id="91u-BM-bik">
+                            <rect key="frame" x="0.0" y="0.0" width="568" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="00b-co-zWz">
+                            <rect key="frame" x="10" y="0.0" width="400" height="48"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H4y-Xf-sX4">
+                            <rect key="frame" x="229" y="45" width="30" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_chguideicon_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_chguideicon_press.png"/>
+                            <connections>
+                                <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="uwa-0g-I0m"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kUc-kr-RWx">
+                            <rect key="frame" x="261" y="45" width="78" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="미러TV종료" backgroundImage="m_out_normal.png">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" backgroundImage="m_out_press.png"/>
+                            <connections>
+                                <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="vCE-s4-WM7"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="60S-sn-ukQ">
+                            <rect key="frame" x="5" y="275" width="62" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_delete_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_delete_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="EzK-es-nQ6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FvL-wW-T2z">
+                            <rect key="frame" x="70" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_0_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_0_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="x2C-nR-vtG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aLB-Wb-sEs">
+                            <rect key="frame" x="112" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_1_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_1_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="7YA-bN-eeZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Oq8-Sq-Boy">
+                            <rect key="frame" x="197" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_3_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_3_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="h8Z-7p-FWO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YfZ-lN-W0z">
+                            <rect key="frame" x="240" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_4_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_4_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="rex-Wf-8Zc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1rY-Nm-kiX">
+                            <rect key="frame" x="283" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_5_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_5_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="W45-iS-pEk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cth-SC-mDB">
+                            <rect key="frame" x="326" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_6_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_6_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="Eeb-zj-MXP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X2g-GU-crV">
+                            <rect key="frame" x="154" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_2_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_2_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="q0c-B3-Z1E"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d7B-JJ-fHU">
+                            <rect key="frame" x="371" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_7_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_7_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="X3D-sg-5gY"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yAS-uE-5Ka">
+                            <rect key="frame" x="415" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_8_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_8_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="dlC-YM-pQp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NiE-OT-70T">
+                            <rect key="frame" x="458" y="275" width="39" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_9_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_9_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="QBw-co-9wH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f7H-3v-gq6">
+                            <rect key="frame" x="501" y="275" width="62" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_ok_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_ok_press.png"/>
+                            <connections>
+                                <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="e8V-TG-krf"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="m_vol_bg.png" id="9Jp-MU-Shr">
+                            <rect key="frame" x="5" y="49" width="113" height="221"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V8Z-gf-mGd">
+                            <rect key="frame" x="33" y="65" width="61" height="61"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_volupbtn_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_volupbtn_press.png"/>
+                            <connections>
+                                <action selector="volumeAction:" destination="-1" eventType="touchUpInside" id="8bN-Pb-qlj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bur-Ta-Uqi">
+                            <rect key="frame" x="28" y="134" width="66" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_volmuteonbtn_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_volmuteonbtn_press.png"/>
+                            <connections>
+                                <action selector="volumeMuteAction:" destination="-1" eventType="touchUpInside" id="myb-b3-Rl9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jfj-A7-kjJ">
+                            <rect key="frame" x="31" y="199" width="61" height="61"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_voldownbtn_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_voldownbtn_press.png"/>
+                            <connections>
+                                <action selector="volumeAction:" destination="-1" eventType="touchUpInside" id="nSe-ZI-cnl"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="m_vol_bg.png" id="rfS-QH-n0Y">
+                            <rect key="frame" x="450" y="50" width="113" height="221"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Z0b-AR-Sx8">
+                            <rect key="frame" x="476" y="65" width="61" height="61"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_chupicon_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_chupicon_press.png"/>
+                            <connections>
+                                <action selector="channelAction:" destination="-1" eventType="touchUpInside" id="bbF-f0-ljC"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="peZ-fF-91T">
+                            <rect key="frame" x="476" y="136" width="66" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xtx-eh-VBo">
+                            <rect key="frame" x="479" y="199" width="61" height="61"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="m_chdownicon_normal.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="m_chdownicon_press.png"/>
+                            <connections>
+                                <action selector="channelAction:" destination="-1" eventType="touchUpInside" id="697-9A-EB7"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UeA-or-4RQ">
+                            <rect key="frame" x="229" y="39" width="30" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goChannelAction:" destination="-1" eventType="touchUpInside" id="WOh-Z6-ub4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rfu-lr-enn">
+                            <rect key="frame" x="261" y="39" width="78" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="hp6-At-Zxc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" id="FjM-Sa-lBD">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mirror_loading_iphone5.png" id="392-G0-Fwu">
+                            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_icon.png" id="2ug-Bu-GR0">
+                            <rect key="frame" x="268" y="144" width="32" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="loading_icon.png" width="64" height="64"/>
+        <image name="m_0_normal.png" width="39" height="39"/>
+        <image name="m_0_press.png" width="39" height="39"/>
+        <image name="m_1_normal.png" width="39" height="39"/>
+        <image name="m_1_press.png" width="39" height="39"/>
+        <image name="m_2_normal.png" width="39" height="39"/>
+        <image name="m_2_press.png" width="39" height="39"/>
+        <image name="m_3_normal.png" width="39" height="39"/>
+        <image name="m_3_press.png" width="39" height="39"/>
+        <image name="m_4_normal.png" width="39" height="39"/>
+        <image name="m_4_press.png" width="39" height="39"/>
+        <image name="m_5_normal.png" width="39" height="39"/>
+        <image name="m_5_press.png" width="39" height="39"/>
+        <image name="m_6_normal.png" width="39" height="39"/>
+        <image name="m_6_press.png" width="39" height="39"/>
+        <image name="m_7_normal.png" width="39" height="39"/>
+        <image name="m_7_press.png" width="39" height="39"/>
+        <image name="m_8_normal.png" width="39" height="39"/>
+        <image name="m_8_press.png" width="39" height="39"/>
+        <image name="m_9_normal.png" width="39" height="39"/>
+        <image name="m_9_press.png" width="39" height="39"/>
+        <image name="m_chdownicon_normal.png" width="61" height="61"/>
+        <image name="m_chdownicon_press.png" width="61" height="61"/>
+        <image name="m_chguideicon_normal.png" width="33" height="33"/>
+        <image name="m_chguideicon_press.png" width="33" height="33"/>
+        <image name="m_chupicon_normal.png" width="61" height="61"/>
+        <image name="m_chupicon_press.png" width="61" height="61"/>
+        <image name="m_delete_normal.png" width="62" height="39"/>
+        <image name="m_delete_press.png" width="62" height="39"/>
+        <image name="m_ok_normal.png" width="62" height="39"/>
+        <image name="m_ok_press.png" width="62" height="39"/>
+        <image name="m_out_normal.png" width="78" height="33"/>
+        <image name="m_out_press.png" width="78" height="33"/>
+        <image name="m_vol_bg.png" width="113" height="221"/>
+        <image name="m_voldownbtn_normal.png" width="61" height="61"/>
+        <image name="m_voldownbtn_press.png" width="61" height="61"/>
+        <image name="m_volmuteonbtn_normal.png" width="61" height="50"/>
+        <image name="m_volmuteonbtn_press.png" width="61" height="50"/>
+        <image name="m_volupbtn_normal.png" width="61" height="61"/>
+        <image name="m_volupbtn_press.png" width="61" height="61"/>
+        <image name="mirror_loading_iphone5.png" width="1136" height="640"/>
+        <image name="mirrortv_iframe_iphone5.png" width="1136" height="640"/>
+    </resources>
+</document>

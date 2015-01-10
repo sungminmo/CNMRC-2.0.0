@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>리모콘 설정</string>
+		<key>subTitles</key>
+		<array>
+			<dict>
+				<key>subTitle</key>
+				<string>진동 효과</string>
+			</dict>
+			<dict>
+				<key>subTitle</key>
+				<string>소리 효과</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>알림 설정</string>
+		<key>subTitles</key>
+		<array>
+			<dict>
+				<key>subTitle</key>
+				<string>VOD업데이트 알림</string>
+			</dict>
+			<dict>
+				<key>subTitle</key>
+				<string>시청예약 알림</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>성인인증</string>
+		<key>subTitles</key>
+		<array>
+			<dict>
+				<key>subTitle</key>
+				<string>성인인증</string>
+			</dict>
+			<dict>
+				<key>subTitle</key>
+				<string>자동성인인증</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string></string>
+		<key>subTitles</key>
+		<array>
+			<dict>
+				<key>subTitle</key>
+				<string>지역/상품설정</string>
+			</dict>
+			<dict>
+				<key>subTitle</key>
+				<string>모든 설정 초기화</string>
+			</dict>
+			<dict>
+				<key>subTitle</key>
+				<string>셋탑박스 연결</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

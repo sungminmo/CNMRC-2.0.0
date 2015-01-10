@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="SearchHistory" representedClassName="SearchHistory" syncable="YES">
+        <attribute name="keyword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="searchDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Setting" representedClassName="Setting" syncable="YES">
+        <attribute name="areaCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="areaName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAutoAuthAdult" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isSound" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isUpdateVODAlarm" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isVibration" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isWatchReservationAlarm" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="productCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="terminalID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="terminalKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="touchSensitivity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WishList" representedClassName="WishList" syncable="YES">
+        <attribute name="assetID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SearchHistory" positionX="-16013" positionY="-4611" width="128" height="73"/>
+        <element name="Setting" positionX="-15705" positionY="-4599" width="128" height="240"/>
+        <element name="WishList" positionX="-15975" positionY="-4509" width="128" height="73"/>
+    </elements>
+</model>
