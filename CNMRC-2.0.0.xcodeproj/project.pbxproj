@@ -14,6 +14,9 @@
 		1D4A49CE1A20859C0088FA93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A49CD1A20859C0088FA93 /* Images.xcassets */; };
 		1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A49CF1A20859C0088FA93 /* LaunchScreen.xib */; };
 		1D4A49DD1A20859C0088FA93 /* CNMRC_2_0_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A49DC1A20859C0088FA93 /* CNMRC_2_0_0Tests.m */; };
+		1D5FA7451A46B2A500D51182 /* LPCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7401A46B2A500D51182 /* LPCoreDataManager.m */; };
+		1D5FA7461A46B2A500D51182 /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7421A46B2A500D51182 /* NSArray+Accessors.m */; };
+		1D5FA7471A46B2A500D51182 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7441A46B2A500D51182 /* NSManagedObject+ActiveRecord.m */; };
 		1D6B09EE1A342E2F00DF58E4 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09EA1A342E2F00DF58E4 /* libcrypto_iOS.a */; };
 		1D6B09EF1A342E2F00DF58E4 /* libcrypto_Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09EB1A342E2F00DF58E4 /* libcrypto_Mac.a */; };
 		1D6B09F01A342E2F00DF58E4 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09EC1A342E2F00DF58E4 /* libssl_iOS.a */; };
@@ -101,6 +104,13 @@
 		1D4A49D61A20859C0088FA93 /* CNMRC-2.0.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CNMRC-2.0.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4A49DB1A20859C0088FA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D4A49DC1A20859C0088FA93 /* CNMRC_2_0_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNMRC_2_0_0Tests.m; sourceTree = "<group>"; };
+		1D5FA73E1A46B2A500D51182 /* LPActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPActiveRecord.h; sourceTree = "<group>"; };
+		1D5FA73F1A46B2A500D51182 /* LPCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPCoreDataManager.h; sourceTree = "<group>"; };
+		1D5FA7401A46B2A500D51182 /* LPCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPCoreDataManager.m; sourceTree = "<group>"; };
+		1D5FA7411A46B2A500D51182 /* NSArray+Accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Accessors.h"; sourceTree = "<group>"; };
+		1D5FA7421A46B2A500D51182 /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Accessors.m"; sourceTree = "<group>"; };
+		1D5FA7431A46B2A500D51182 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
+		1D5FA7441A46B2A500D51182 /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
 		1D6B099E1A342E2F00DF58E4 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		1D6B099F1A342E2F00DF58E4 /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
 		1D6B09A01A342E2F00DF58E4 /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
@@ -424,6 +434,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1D5FA73D1A46B2A500D51182 /* LPActiveRecord */ = {
+			isa = PBXGroup;
+			children = (
+				1D5FA73E1A46B2A500D51182 /* LPActiveRecord.h */,
+				1D5FA73F1A46B2A500D51182 /* LPCoreDataManager.h */,
+				1D5FA7401A46B2A500D51182 /* LPCoreDataManager.m */,
+				1D5FA7411A46B2A500D51182 /* NSArray+Accessors.h */,
+				1D5FA7421A46B2A500D51182 /* NSArray+Accessors.m */,
+				1D5FA7431A46B2A500D51182 /* NSManagedObject+ActiveRecord.h */,
+				1D5FA7441A46B2A500D51182 /* NSManagedObject+ActiveRecord.m */,
+			);
+			path = LPActiveRecord;
+			sourceTree = "<group>";
+		};
 		1D6B099B1A342E2F00DF58E4 /* openssl-1.0.1j */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,6 +716,7 @@
 		1DBA76781A20AE0D003AB966 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1D5FA73D1A46B2A500D51182 /* LPActiveRecord */,
 				1DA28B3D1A3C85D2007D7F4E /* SIAlertView */,
 				1DA28B391A3C85C5007D7F4E /* Reachability */,
 				1DA28B221A3C85AD007D7F4E /* HTProgressHUD */,
@@ -920,6 +945,11 @@
 				TargetAttributes = {
 					1D4A49BC1A20859C0088FA93 = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					1D4A49D51A20859C0088FA93 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -989,11 +1019,13 @@
 				1DA28AE41A3C70A0007D7F4E /* GTMObjC2Runtime.m in Sources */,
 				1DA28B1D1A3C84A5007D7F4E /* AsyncSocket.m in Sources */,
 				1DA28B331A3C85AD007D7F4E /* HTProgressHUDAnimation.m in Sources */,
+				1D5FA7461A46B2A500D51182 /* NSArray+Accessors.m in Sources */,
 				1DA28B371A3C85AD007D7F4E /* HTProgressHUDPieIndicatorView.m in Sources */,
 				1DA28AE21A3C70A0007D7F4E /* GTMLogger.m in Sources */,
 				1DA28B341A3C85AD007D7F4E /* HTProgressHUDFadeAnimation.m in Sources */,
 				1D4A49C91A20859C0088FA93 /* ViewController.m in Sources */,
 				1DA28B351A3C85AD007D7F4E /* HTProgressHUDFadeZoomAnimation.m in Sources */,
+				1D5FA7451A46B2A500D51182 /* LPCoreDataManager.m in Sources */,
 				1DA28B3C1A3C85C5007D7F4E /* Reachability.m in Sources */,
 				1DA28B381A3C85AD007D7F4E /* HTProgressHUDRingIndicatorView.m in Sources */,
 				1D4A49C61A20859C0088FA93 /* AppDelegate.m in Sources */,
@@ -1003,6 +1035,7 @@
 				1DA28AE31A3C70A0007D7F4E /* GTMNSString+URLArguments.m in Sources */,
 				1DA28B491A3C85D2007D7F4E /* SIAlertView.m in Sources */,
 				1DA28AE01A3C70A0007D7F4E /* GTMMethodCheck.m in Sources */,
+				1D5FA7471A46B2A500D51182 /* NSManagedObject+ActiveRecord.m in Sources */,
 				1D4A49C31A20859C0088FA93 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
