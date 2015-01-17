@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="3" customClass="CMCircleMenu">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CMCircleMenu">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clipsSubviews="YES" contentMode="scaleToFill" id="39">
-                    <rect key="frame" x="13" y="420" width="295" height="148"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQ7-89-fCd">
+                    <rect key="frame" x="153" y="452" width="295" height="148"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" image="rcmenu_bg@2x.png" id="10">
+                        <imageView contentMode="scaleToFill" fixedFrame="YES" image="RCMenuBG" translatesAutoresizingMaskIntoConstraints="NO" id="wxB-cf-gQF">
                             <rect key="frame" x="0.0" y="0.0" width="295" height="148"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9">
+                        <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1g-QZ-HJ6">
                             <rect key="frame" x="116" y="96" width="63" height="52"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" backgroundImage="rcmenu_btn_press.png">
+                            <state key="normal" backgroundImage="RCMenu_S">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -30,14 +28,13 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeCircleMenuAction:" destination="3" eventType="touchUpInside" id="48"/>
+                                <action selector="closeCircleMenuAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ppx-Hu-VB5"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWJ-wf-wLH">
                             <rect key="frame" x="23" y="96" width="63" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="rcmenu_icon_chvol.png">
+                            <state key="normal" image="RCMenu_Volume">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -45,14 +42,13 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeCircleMenuAction:" destination="3" eventType="touchUpInside" id="49"/>
+                                <action selector="closeCircleMenuAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="b2n-FL-KBT"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbG-Es-WMo">
                             <rect key="frame" x="51" y="46" width="63" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="rcmenu_icon_4way.png">
+                            <state key="normal" image="RCMenu_4Way">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -60,14 +56,13 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeCircleMenuAction:" destination="3" eventType="touchUpInside" id="50"/>
+                                <action selector="closeCircleMenuAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="LYI-La-EYV"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnB-Mm-gaO">
                             <rect key="frame" x="116" y="19" width="63" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="rcmenu_icon_mirror.png">
+                            <state key="normal" image="RCMenu_MirrorTV">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -75,29 +70,13 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeCircleMenuAction:" destination="3" eventType="touchUpInside" id="51"/>
+                                <action selector="closeCircleMenuAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZUN-ys-cEn"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5">
-                            <rect key="frame" x="174" y="46" width="63" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="rcmenu_icon_qwerty.png">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted" backgroundImage="remenu_icon_press.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="closeCircleMenuAction:" destination="3" eventType="touchUpInside" id="52"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhu-et-Qc6">
                             <rect key="frame" x="205" y="96" width="63" height="45"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="rcmenu_icon_setting.png">
+                            <state key="normal" image="RCMenu_Setting">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -105,33 +84,54 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="closeCircleMenuAction:" destination="3" eventType="touchUpInside" id="53"/>
+                                <action selector="closeCircleMenuAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oq8-Hj-yb3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laq-y9-9m4">
+                            <rect key="frame" x="187" y="46" width="63" height="45"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" image="RCMenu_Qwerty">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" backgroundImage="remenu_icon_press.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="closeCircleMenuAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="U6x-iw-IXO"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="295" id="aBc-EH-oiM"/>
+                        <constraint firstAttribute="height" constant="148" id="lO6-mX-wZO"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="BQ7-89-fCd" secondAttribute="bottom" id="uva-ya-tw1"/>
+                <constraint firstAttribute="centerX" secondItem="BQ7-89-fCd" secondAttribute="centerX" id="woc-WH-Acp"/>
+            </constraints>
             <connections>
-                <outlet property="keyPadButton" destination="5" id="57"/>
-                <outlet property="mirrorButton" destination="6" id="56"/>
-                <outlet property="settingsButton" destination="4" id="58"/>
-                <outlet property="touchPadButton" destination="7" id="55"/>
-                <outlet property="volumeButton" destination="8" id="54"/>
+                <outlet property="keyPadButton" destination="Laq-y9-9m4" id="JaD-c0-WhC"/>
+                <outlet property="mirrorButton" destination="OnB-Mm-gaO" id="frd-CO-eYC"/>
+                <outlet property="settingsButton" destination="jhu-et-Qc6" id="yM5-Nn-SZd"/>
+                <outlet property="touchPadButton" destination="mbG-Es-WMo" id="Nv0-6b-DWg"/>
+                <outlet property="volumeButton" destination="EWJ-wf-wLH" id="HfP-ZU-3fV"/>
             </connections>
         </view>
     </objects>
     <resources>
-        <image name="rcmenu_bg@2x.png" width="49" height="47"/>
-        <image name="rcmenu_btn_normal.png" width="63" height="51"/>
-        <image name="rcmenu_btn_press.png" width="63" height="51"/>
-        <image name="rcmenu_icon_4way.png" width="63" height="45"/>
-        <image name="rcmenu_icon_chvol.png" width="63" height="45"/>
-        <image name="rcmenu_icon_mirror.png" width="63" height="45"/>
-        <image name="rcmenu_icon_qwerty.png" width="63" height="45"/>
-        <image name="rcmenu_icon_setting.png" width="63" height="45"/>
-        <image name="remenu_icon_press.png" width="63" height="45"/>
+        <image name="RCMenuBG" width="590" height="335"/>
+        <image name="RCMenu_4Way" width="62" height="44"/>
+        <image name="RCMenu_MirrorTV" width="62" height="44"/>
+        <image name="RCMenu_Qwerty" width="62" height="44"/>
+        <image name="RCMenu_S" width="62" height="51"/>
+        <image name="RCMenu_Setting" width="62" height="44"/>
+        <image name="RCMenu_Volume" width="62" height="44"/>
+        <image name="rcmenu_btn_normal.png" width="49" height="47"/>
+        <image name="remenu_icon_press.png" width="590" height="335"/>
     </resources>
 </document>

@@ -32,6 +32,7 @@
 #import "CMGenerator.h"
 #import "UIColor+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
+
 #import "UIColor+FlatUI.h"
 #import "UIToolbar+FlatUI.h"
 #import "CMBaseViewController.h"

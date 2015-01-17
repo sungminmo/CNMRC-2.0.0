@@ -17,13 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
     UIViewController *viewController = [[CMRCViewController alloc] initWithNibName:@"CMRCViewController" bundle:nil];
     self.container = [[CMContainerViewController alloc] initWithRootViewController:viewController];
     self.container.delegate = self;
     self.container.navigationBarHidden = YES;
     self.container.toolbarHidden = NO;
+    [self.container.toolbar configureFlatToolbarWithColor:[UIColor colorFromHexCode:@"#252525"]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.container;
     [self.window makeKeyAndVisible];

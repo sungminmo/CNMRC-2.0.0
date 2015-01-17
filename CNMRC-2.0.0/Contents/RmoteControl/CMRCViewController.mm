@@ -49,15 +49,15 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     // 페어링 확인.(최초)
     //[RemoteManager checkPairing];
     
-//    if (isiOS7)
-//    {
-//        self.navigation.center = CGPointMake(self.navigation.center.x, self.navigation.center.y + 20);
-//        
-//        // 상태바 백그라운드.
-//        UIView *statusBarBackground = [[UIView alloc] initWithFrame:[[UIApplication sharedApplication] statusBarFrame]];
-//        statusBarBackground.backgroundColor = [UIColor clearColor];// UIColorFromRGB(0x252525);
-//        [self.view addSubview:statusBarBackground];
-//    }
+    if (isiOS7)
+    {
+        ç.center = CGPointMake(self.navigation.center.x, self.navigation.center.y + 20);
+        
+        // 상태바 백그라운드.
+        UIView *statusBarBackground = [[UIView alloc] initWithFrame:[[UIApplication sharedApplication] statusBarFrame]];
+        statusBarBackground.backgroundColor = [UIColor whiteColor];// UIColorFromRGB(0x252525);
+        [self.view addSubview:statusBarBackground];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated

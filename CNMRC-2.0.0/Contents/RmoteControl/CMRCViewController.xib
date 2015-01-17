@@ -26,6 +26,9 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted" image="PowerOnOff_H"/>
+                            <connections>
+                                <action selector="onOffAction:" destination="-1" eventType="touchUpInside" id="zWn-dl-m8g"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxW-II-cJA">
                             <rect key="frame" x="56" y="24" width="48" height="48"/>
@@ -33,6 +36,9 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted" image="Menu_H"/>
+                            <connections>
+                                <action selector="homeAction:" destination="-1" eventType="touchUpInside" id="SB5-f2-Ts1"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-6f-0gG">
                             <rect key="frame" x="552" y="24" width="48" height="48"/>
@@ -40,6 +46,9 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted" image="Search_H"/>
+                            <connections>
+                                <action selector="searchAction:" destination="-1" eventType="touchUpInside" id="l9f-TT-Hve"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRi-vM-ann">
                             <rect key="frame" x="496" y="24" width="48" height="48"/>
@@ -47,6 +56,9 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted" image="Channel_H"/>
+                            <connections>
+                                <action selector="channelAction:" destination="-1" eventType="touchUpInside" id="nwY-yO-cTA"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUd-pC-P0B">
                             <rect key="frame" x="440" y="24" width="48" height="48"/>
@@ -54,6 +66,9 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted" image="VOD_H"/>
+                            <connections>
+                                <action selector="vodAction:" destination="-1" eventType="touchUpInside" id="77H-VQ-u1e"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

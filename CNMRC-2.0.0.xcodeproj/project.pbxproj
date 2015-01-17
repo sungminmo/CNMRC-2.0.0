@@ -35,6 +35,7 @@
 		1D6B09EE1A342E2F00DF58E4 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09EA1A342E2F00DF58E4 /* libcrypto_iOS.a */; };
 		1D6B09F01A342E2F00DF58E4 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09EC1A342E2F00DF58E4 /* libssl_iOS.a */; };
 		1D6B09F11A342E2F00DF58E4 /* libssl_Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6B09ED1A342E2F00DF58E4 /* libssl_Mac.a */; };
+		1D6F512E1A6A930E0045FB89 /* CMCircleMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F512D1A6A930E0045FB89 /* CMCircleMenu.xib */; };
 		1DA28AE01A3C70A0007D7F4E /* GTMMethodCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD01A3C70A0007D7F4E /* GTMMethodCheck.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DA28AE11A3C70A0007D7F4E /* GTMGeometryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD41A3C70A0007D7F4E /* GTMGeometryUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DA28AE21A3C70A0007D7F4E /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD61A3C70A0007D7F4E /* GTMLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -127,7 +128,6 @@
 		1DB9B99B1A614FCD00E89E27 /* CMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B97A1A614FCD00E89E27 /* CMBaseViewController.m */; };
 		1DB9B99C1A614FCD00E89E27 /* CMChannelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B97C1A614FCD00E89E27 /* CMChannelTableViewCell.m */; };
 		1DB9B99D1A614FCD00E89E27 /* CMCircleMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B97E1A614FCD00E89E27 /* CMCircleMenu.m */; };
-		1DB9B99E1A614FCD00E89E27 /* CMCircleMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B97F1A614FCD00E89E27 /* CMCircleMenu.xib */; };
 		1DB9B99F1A614FCD00E89E27 /* CMControlPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9811A614FCD00E89E27 /* CMControlPad.m */; };
 		1DB9B9A01A614FCD00E89E27 /* CMControlPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B9821A614FCD00E89E27 /* CMControlPad.xib */; };
 		1DB9B9A11A614FCD00E89E27 /* CMControlPadSD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B9831A614FCD00E89E27 /* CMControlPadSD.xib */; };
@@ -341,6 +341,7 @@
 		1D6B09EB1A342E2F00DF58E4 /* libcrypto_Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto_Mac.a; sourceTree = "<group>"; };
 		1D6B09EC1A342E2F00DF58E4 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_iOS.a; sourceTree = "<group>"; };
 		1D6B09ED1A342E2F00DF58E4 /* libssl_Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_Mac.a; sourceTree = "<group>"; };
+		1D6F512D1A6A930E0045FB89 /* CMCircleMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMCircleMenu.xib; sourceTree = "<group>"; };
 		1DA28ACF1A3C70A0007D7F4E /* GTMMethodCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMMethodCheck.h; sourceTree = "<group>"; };
 		1DA28AD01A3C70A0007D7F4E /* GTMMethodCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMMethodCheck.m; sourceTree = "<group>"; };
 		1DA28AD21A3C70A0007D7F4E /* GTMGarbageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGarbageCollection.h; sourceTree = "<group>"; };
@@ -498,7 +499,6 @@
 		1DB9B97C1A614FCD00E89E27 /* CMChannelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMChannelTableViewCell.m; sourceTree = "<group>"; };
 		1DB9B97D1A614FCD00E89E27 /* CMCircleMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCircleMenu.h; sourceTree = "<group>"; };
 		1DB9B97E1A614FCD00E89E27 /* CMCircleMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCircleMenu.m; sourceTree = "<group>"; };
-		1DB9B97F1A614FCD00E89E27 /* CMCircleMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMCircleMenu.xib; sourceTree = "<group>"; };
 		1DB9B9801A614FCD00E89E27 /* CMControlPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMControlPad.h; sourceTree = "<group>"; };
 		1DB9B9811A614FCD00E89E27 /* CMControlPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMControlPad.m; sourceTree = "<group>"; };
 		1DB9B9821A614FCD00E89E27 /* CMControlPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMControlPad.xib; sourceTree = "<group>"; };
@@ -1379,7 +1379,7 @@
 				1DB9B97C1A614FCD00E89E27 /* CMChannelTableViewCell.m */,
 				1DB9B97D1A614FCD00E89E27 /* CMCircleMenu.h */,
 				1DB9B97E1A614FCD00E89E27 /* CMCircleMenu.m */,
-				1DB9B97F1A614FCD00E89E27 /* CMCircleMenu.xib */,
+				1D6F512D1A6A930E0045FB89 /* CMCircleMenu.xib */,
 				1DB9B9801A614FCD00E89E27 /* CMControlPad.h */,
 				1DB9B9811A614FCD00E89E27 /* CMControlPad.m */,
 				1DB9B9821A614FCD00E89E27 /* CMControlPad.xib */,
@@ -1760,6 +1760,7 @@
 				1DB9B9751A614F6500E89E27 /* CMPairingViewController.xib in Resources */,
 				1DB9B9571A61446D00E89E27 /* Dependencies.txt in Resources */,
 				1DB9BA291A615A9200E89E27 /* CMSettingsCell.xib in Resources */,
+				1D6F512E1A6A930E0045FB89 /* CMCircleMenu.xib in Resources */,
 				1DB9B9A41A614FCD00E89E27 /* CMCVPadSD.xib in Resources */,
 				1DB9BA071A61574800E89E27 /* remote.proto in Resources */,
 				1DA28B471A3C85D2007D7F4E /* button-default-d@2x.png in Resources */,
@@ -1786,7 +1787,6 @@
 				1DB9BA2C1A615A9200E89E27 /* Settings.plist in Resources */,
 				1DB9B9771A614F6500E89E27 /* CMSetIPViewController.xib in Resources */,
 				1D14AA8A1A6169E300FECF55 /* CMMirrorTVViewController_4.xib in Resources */,
-				1DB9B99E1A614FCD00E89E27 /* CMCircleMenu.xib in Resources */,
 				1D14AA8C1A6169E300FECF55 /* CMMirrorTVViewController.xib in Resources */,
 				1DB9B9A31A614FCD00E89E27 /* CMCVPad.xib in Resources */,
 				1DBA76C81A20B4C8003AB966 /* descriptor.proto in Resources */,

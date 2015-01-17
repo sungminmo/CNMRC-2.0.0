@@ -132,12 +132,12 @@
     else
     {
         self.backgroundView = [[CMOverlayView alloc] initWithFrame:self.view.bounds];
-        self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.backgroundView.backgroundColor = [UIColor blackColor];
         self.backgroundView.alpha = 0.5f;
         [self.view addSubview:self.backgroundView];
-        
+
         CMCircleMenu *cm = [[[NSBundle mainBundle] loadNibNamed:@"CMCircleMenu" owner:self options:nil] objectAtIndex:0];
+        cm.frame = self.view.frame;
         cm.delegate = self;
         [self.view addSubview:cm];
         self.circleMenu = cm;

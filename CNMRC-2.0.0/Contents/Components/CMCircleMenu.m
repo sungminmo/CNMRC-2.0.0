@@ -9,9 +9,6 @@
 #import "CMCircleMenu.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define CM_CIRCLE_MENU_FRAME CGRectMake (0.0, 0.0, 320.0, 480.0)
-#define CM_CIRCLE_MENU_FIVE_FRAME CGRectMake (0.0, 0.0, 320.0, 568.0)
-
 @implementation CMCircleMenu
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -21,8 +18,6 @@
     {
         UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizeTapGesture:)];
         [self addGestureRecognizer:recognizer];
-        
-        self.frame = DeviceSpecificSetting(CM_CIRCLE_MENU_FRAME, CM_CIRCLE_MENU_FIVE_FRAME);
     }
     return self;
 }
@@ -34,8 +29,6 @@
     {
         UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizeTapGesture:)];
         [self addGestureRecognizer:recognizer];
-        
-        self.frame = DeviceSpecificSetting(CM_CIRCLE_MENU_FRAME, CM_CIRCLE_MENU_FIVE_FRAME);
     }
     return self;
 }
