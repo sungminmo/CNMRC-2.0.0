@@ -23,6 +23,9 @@ typedef NS_ENUM(NSInteger, CMMRemoteControlType) {
 
 @interface CMRCViewController : UIViewController <CMNumberKeyDelegate, CMCVPadDelegate, CMTouchPadDelegate, UIGestureRecognizerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *bg;
+@property (weak, nonatomic) IBOutlet UIView *roundBox;
+
 @property (weak, nonatomic) IBOutlet UIView *navigation;
 @property (weak, nonatomic) IBOutlet UIButton *onOffButton;
 @property (weak, nonatomic) IBOutlet UIButton *homeButton;

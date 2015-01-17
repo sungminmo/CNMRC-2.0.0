@@ -10,7 +10,6 @@
 		1D14AA671A6168EC00FECF55 /* CMQwertyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA621A6168EC00FECF55 /* CMQwertyViewController.mm */; };
 		1D14AA681A6168EC00FECF55 /* CMQwertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA631A6168EC00FECF55 /* CMQwertyViewController.xib */; };
 		1D14AA691A6168EC00FECF55 /* CMRCViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */; };
-		1D14AA6A1A6168EC00FECF55 /* CMRCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA661A6168EC00FECF55 /* CMRCViewController.xib */; };
 		1D14AA701A61692500FECF55 /* LPToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA6D1A61692500FECF55 /* LPToast.m */; };
 		1D14AA711A61692500FECF55 /* RToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA6F1A61692500FECF55 /* RToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1D14AA7B1A6169D700FECF55 /* CMChannelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA731A6169D700FECF55 /* CMChannelListViewController.m */; };
@@ -24,6 +23,7 @@
 		1D14AA8B1A6169E300FECF55 /* CMMirrorTVViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA851A6169E300FECF55 /* CMMirrorTVViewController.mm */; };
 		1D14AA8C1A6169E300FECF55 /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA861A6169E300FECF55 /* CMMirrorTVViewController.xib */; };
 		1D14AA8D1A6169E300FECF55 /* CMPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */; };
+		1D1C462F1A6A3A1B00ADD92A /* LPAppStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C462E1A6A3A1B00ADD92A /* LPAppStats.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1D4A49C31A20859C0088FA93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A49C21A20859C0088FA93 /* main.m */; };
 		1D4A49C61A20859C0088FA93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A49C51A20859C0088FA93 /* AppDelegate.m */; };
 		1D4A49CE1A20859C0088FA93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A49CD1A20859C0088FA93 /* Images.xcassets */; };
@@ -81,6 +81,7 @@
 		1DA28B471A3C85D2007D7F4E /* button-default-d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA28B411A3C85D2007D7F4E /* button-default-d@2x.png */; };
 		1DA28B481A3C85D2007D7F4E /* SIAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DA28B421A3C85D2007D7F4E /* SIAlertView.bundle */; };
 		1DA28B491A3C85D2007D7F4E /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B441A3C85D2007D7F4E /* SIAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */; };
 		1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */; };
 		1DB9B91E1A613DB000E89E27 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8FB1A613DB000E89E27 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DB9B91F1A613DB000E89E27 /* NSData+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8FD1A613DB000E89E27 /* NSData+Helper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -221,7 +222,6 @@
 		1D14AA631A6168EC00FECF55 /* CMQwertyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMQwertyViewController.xib; sourceTree = "<group>"; };
 		1D14AA641A6168EC00FECF55 /* CMRCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRCViewController.h; sourceTree = "<group>"; };
 		1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMRCViewController.mm; sourceTree = "<group>"; };
-		1D14AA661A6168EC00FECF55 /* CMRCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMRCViewController.xib; sourceTree = "<group>"; };
 		1D14AA6C1A61692500FECF55 /* LPToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPToast.h; sourceTree = "<group>"; };
 		1D14AA6D1A61692500FECF55 /* LPToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPToast.m; sourceTree = "<group>"; };
 		1D14AA6E1A61692500FECF55 /* RToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RToast.h; sourceTree = "<group>"; };
@@ -243,6 +243,8 @@
 		1D14AA861A6169E300FECF55 /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 		1D14AA871A6169E300FECF55 /* CMPlayerLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPlayerLayerView.h; sourceTree = "<group>"; };
 		1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPlayerLayerView.m; sourceTree = "<group>"; };
+		1D1C462D1A6A3A1B00ADD92A /* LPAppStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPAppStats.h; sourceTree = "<group>"; };
+		1D1C462E1A6A3A1B00ADD92A /* LPAppStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPAppStats.m; sourceTree = "<group>"; };
 		1D4A49BD1A20859C0088FA93 /* CNMRC-2.0.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CNMRC-2.0.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4A49C11A20859C0088FA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D4A49C21A20859C0088FA93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 		1DA28B421A3C85D2007D7F4E /* SIAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIAlertView.bundle; sourceTree = "<group>"; };
 		1DA28B431A3C85D2007D7F4E /* SIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
 		1DA28B441A3C85D2007D7F4E /* SIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
+		1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMRCViewController.xib; sourceTree = "<group>"; };
 		1DB9B8EB1A6129CB00E89E27 /* CMContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMContainerViewController.h; sourceTree = "<group>"; };
 		1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMContainerViewController.m; sourceTree = "<group>"; };
 		1DB9B8FA1A613DB000E89E27 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -726,7 +729,7 @@
 				1D14AA631A6168EC00FECF55 /* CMQwertyViewController.xib */,
 				1D14AA641A6168EC00FECF55 /* CMRCViewController.h */,
 				1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */,
-				1D14AA661A6168EC00FECF55 /* CMRCViewController.xib */,
+				1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */,
 			);
 			path = RmoteControl;
 			sourceTree = "<group>";
@@ -740,6 +743,15 @@
 				1D14AA6F1A61692500FECF55 /* RToast.m */,
 			);
 			path = LPToast;
+			sourceTree = "<group>";
+		};
+		1D1C462C1A6A3A1B00ADD92A /* LPAppStats */ = {
+			isa = PBXGroup;
+			children = (
+				1D1C462D1A6A3A1B00ADD92A /* LPAppStats.h */,
+				1D1C462E1A6A3A1B00ADD92A /* LPAppStats.m */,
+			);
+			path = LPAppStats;
 			sourceTree = "<group>";
 		};
 		1D4A49B41A20859C0088FA93 = {
@@ -1465,6 +1477,7 @@
 		1DBA76781A20AE0D003AB966 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1D1C462C1A6A3A1B00ADD92A /* LPAppStats */,
 				1D14AA6B1A61692500FECF55 /* LPToast */,
 				1DB9B9D81A61505800E89E27 /* TBXML */,
 				1DB9B93C1A61437500E89E27 /* LPDebug */,
@@ -1736,6 +1749,7 @@
 				1DB9BA2B1A615A9200E89E27 /* CMSettingsViewController.xib in Resources */,
 				1DB9BA251A615A9200E89E27 /* CMSetAreaViewController.xib in Resources */,
 				1DB9B9731A614F6500E89E27 /* CMBoxListViewController.xib in Resources */,
+				1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */,
 				1DA28B481A3C85D2007D7F4E /* SIAlertView.bundle in Resources */,
 				1DB9BA441A61655900E89E27 /* CMSearchViewController.xib in Resources */,
 				1DB9BA551A6165D200E89E27 /* CMVODDetailViewController.xib in Resources */,
@@ -1746,7 +1760,6 @@
 				1DB9B9751A614F6500E89E27 /* CMPairingViewController.xib in Resources */,
 				1DB9B9571A61446D00E89E27 /* Dependencies.txt in Resources */,
 				1DB9BA291A615A9200E89E27 /* CMSettingsCell.xib in Resources */,
-				1D14AA6A1A6168EC00FECF55 /* CMRCViewController.xib in Resources */,
 				1DB9B9A41A614FCD00E89E27 /* CMCVPadSD.xib in Resources */,
 				1DB9BA071A61574800E89E27 /* remote.proto in Resources */,
 				1DA28B471A3C85D2007D7F4E /* button-default-d@2x.png in Resources */,
@@ -1879,6 +1892,7 @@
 				1DB9BA431A61655900E89E27 /* CMSearchViewController.m in Sources */,
 				1DB9BA581A6165D200E89E27 /* CMVODViewController.m in Sources */,
 				1DB9BA241A615A9200E89E27 /* CMSetAreaViewController.m in Sources */,
+				1D1C462F1A6A3A1B00ADD92A /* LPAppStats.m in Sources */,
 				1DB9B9DD1A61506900E89E27 /* TBXML.m in Sources */,
 				1DA28B211A3C859C007D7F4E /* AsyncImageView.m in Sources */,
 				1DA28AE51A3C70A0007D7F4E /* GTMUIFont+LineHeight.m in Sources */,
@@ -1982,7 +1996,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2017,7 +2031,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

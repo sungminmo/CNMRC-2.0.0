@@ -7,7 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMCircleMenu.h"
 
-@interface CMContainerViewController : UINavigationController
+@class CMOverlayView;
+
+// 메뉴 타입.
+typedef NS_ENUM(NSInteger, CMCircleMenuType) {
+    CMCircleMenuTypeChannelVolume = 0,
+    CMCircleMenuTypeFourDirection,
+    CMCircleMenuTypeMirrotTV,
+    CMCircleMenuTypeQwerty,
+    CMCircleMenuTypeSettings
+};
+
+@interface CMContainerViewController : UINavigationController <CMCircleMenuDelegate, CMHTTPClientDelegate>
+
+@property (strong, nonatomic) CMCircleMenu *circleMenu;
+@property (strong, nonatomic) CMOverlayView *backgroundView;
+@property (assign, nonatomic) CMCircleMenuType currentCircleMenu;
+@property (strong, nonatomic) NSArray *blockChannelInfo;
+
+- (void)toolbarAction:(id)sender;
 
 @end

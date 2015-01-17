@@ -45,18 +45,19 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     // 화면 설정.
     [self setupLayout];
     
+    // TODO:
     // 페어링 확인.(최초)
-    [RemoteManager checkPairing];
+    //[RemoteManager checkPairing];
     
-    if (isiOS7)
-    {
-        self.navigation.center = CGPointMake(self.navigation.center.x, self.navigation.center.y + 20);
-        
-        // 상태바 백그라운드.
-        UIView *statusBarBackground = [[UIView alloc] initWithFrame:[[UIApplication sharedApplication] statusBarFrame]];
-        statusBarBackground.backgroundColor = [UIColor whiteColor];// UIColorFromRGB(0x252525);
-        [self.view addSubview:statusBarBackground];
-    }
+//    if (isiOS7)
+//    {
+//        self.navigation.center = CGPointMake(self.navigation.center.x, self.navigation.center.y + 20);
+//        
+//        // 상태바 백그라운드.
+//        UIView *statusBarBackground = [[UIView alloc] initWithFrame:[[UIApplication sharedApplication] statusBarFrame]];
+//        statusBarBackground.backgroundColor = [UIColor clearColor];// UIColorFromRGB(0x252525);
+//        [self.view addSubview:statusBarBackground];
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -125,17 +126,14 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     self.view.backgroundColor = UIColorFromRGB(0x252525);
     
     // 라운드 백그라운드.
-    UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0.0, 75.0, 320.0, DeviceSpecificSetting(361.0, 449.0))];
-    bg.backgroundColor = [UIColor whiteColor];
-    bg.layer.cornerRadius = 9.9;
-    bg.layer.masksToBounds = YES;
-    [self.view addSubview:bg];
+    self.bg.backgroundColor = [UIColor whiteColor];
+    self.bg.layer.cornerRadius = 9.9;
+    self.bg.layer.masksToBounds = YES;
     
-    UIView *roundBox = [[UIView alloc] initWithFrame:CGRectMake(5.0, 5.0, 310.0, DeviceSpecificSetting(351.0, 439.0))];
-    roundBox.backgroundColor = UIColorFromRGB(0xf4f4f4);
-    roundBox.layer.cornerRadius = 9.9;
-    roundBox.layer.masksToBounds = YES;
-    [bg addSubview:roundBox];
+    // 라운드 박스.
+    self.roundBox.backgroundColor = UIColorFromRGB(0xf4f4f4);
+    self.roundBox.layer.cornerRadius = 9.9;
+    self.roundBox.layer.masksToBounds = YES;
     
     // 패드 백그라운드 패턴 이미지.
     CGRect padBackgroundFrame = DeviceSpecificSetting(CM_PAD_FRAME, CM_PAD_FIVE_FRAME);
