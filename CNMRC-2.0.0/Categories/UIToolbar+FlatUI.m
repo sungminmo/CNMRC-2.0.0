@@ -39,6 +39,8 @@ static char storedIsOpened;
 
 - (void)setupLayout
 {
+    Debug(@">>>>>>>>>%@", NSStringFromCGRect(self.frame));
+    
     self.isClosed = @"NO";
     
     // 이전 버튼.
@@ -54,6 +56,7 @@ static char storedIsOpened;
     UIButton *greenButton = [UIButton buttonWithType:UIButtonTypeCustom];
     greenButton.tag = CMMenuTypeGreen;
     greenButton.frame = CGRectMake(52.0, 6.0, 66.0, 32.0);
+    greenButton.center = CGPointMake(self.frame.size.width/4, self.frame.size.height/2);
     [greenButton setImage:[UIImage imageNamed:@"Green_D"] forState:UIControlStateNormal];
     [greenButton setImage:[UIImage imageNamed:@"bottom_icon_green@2x.png"] forState:UIControlStateHighlighted];
     [greenButton setBackgroundImage:[UIImage imageNamed:@"icon_green_yellow_press@2x.png"] forState:UIControlStateHighlighted];
@@ -61,17 +64,17 @@ static char storedIsOpened;
     [self addSubview:greenButton];
     
     // 그런 버튼 터치 확장용.
-    UIButton *greenButtonMask = [UIButton buttonWithType:UIButtonTypeCustom];
-    greenButtonMask.tag = CMMenuTypeGreen;
-    greenButtonMask.frame = CGRectMake(52.0, 6.0, 62.0, 40.0);
-    [greenButtonMask setBackgroundImage:[UIImage imageNamed:@"icon_green_yellow_press@2x.png"] forState:UIControlStateHighlighted];
-    [greenButtonMask addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:greenButtonMask];
+//    UIButton *greenButtonMask = [UIButton buttonWithType:UIButtonTypeCustom];
+//    greenButtonMask.tag = CMMenuTypeGreen;
+//    greenButtonMask.frame = CGRectMake(52.0, 6.0, 62.0, 40.0);
+//    [greenButtonMask setBackgroundImage:[UIImage imageNamed:@"icon_green_yellow_press@2x.png"] forState:UIControlStateHighlighted];
+//    [greenButtonMask addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [self addSubview:greenButtonMask];
     
     // 메뉴 버튼.
     UIButton *circleMenuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     circleMenuButton.tag = CMMenuTypeCircle;
-    circleMenuButton.frame = CGRectMake(129.0, -8.0, 63.0, 52.0);
+    circleMenuButton.frame = CGRectMake(self.frame.size.width/2 - 31.5, -8.0, 63.0, 52.0);
     [circleMenuButton setBackgroundImage:[UIImage imageNamed:@"RCMenu_D"] forState:UIControlStateNormal];
     [circleMenuButton setBackgroundImage:[UIImage imageNamed:@"rcmenu_btn_press@2x.png"] forState:UIControlStateHighlighted];
     [circleMenuButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -81,6 +84,7 @@ static char storedIsOpened;
     UIButton *yellowButton = [UIButton buttonWithType:UIButtonTypeCustom];
     yellowButton.tag = CMMenuTypeYellow;
     yellowButton.frame = CGRectMake(206.0, 6.0, 66.0, 32.0);
+    yellowButton.center = CGPointMake(self.frame.size.width * 0.75, self.frame.size.height/2);
     [yellowButton setImage:[UIImage imageNamed:@"Yellow_D"] forState:UIControlStateNormal];
     [yellowButton setImage:[UIImage imageNamed:@"bottom_icon_yellow@2x.png"] forState:UIControlStateHighlighted];
     [yellowButton setBackgroundImage:[UIImage imageNamed:@"icon_green_yellow_press@2x.png"] forState:UIControlStateHighlighted];
@@ -88,17 +92,17 @@ static char storedIsOpened;
     [self addSubview:yellowButton];
     
     // 옐로우 버튼 터치 확장용.
-    UIButton *yellowButtonMask = [UIButton buttonWithType:UIButtonTypeCustom];
-    yellowButtonMask.tag = CMMenuTypeYellow;
-    yellowButtonMask.frame = CGRectMake(206.0, 6.0, 62.0, 40.0);
-    [yellowButtonMask setBackgroundImage:[UIImage imageNamed:@"icon_green_yellow_press@2x.png"] forState:UIControlStateHighlighted];
-    [yellowButtonMask addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:yellowButtonMask];
+//    UIButton *yellowButtonMask = [UIButton buttonWithType:UIButtonTypeCustom];
+//    yellowButtonMask.tag = CMMenuTypeYellow;
+//    yellowButtonMask.frame = CGRectMake(206.0, 6.0, 62.0, 40.0);
+//    [yellowButtonMask setBackgroundImage:[UIImage imageNamed:@"icon_green_yellow_press@2x.png"] forState:UIControlStateHighlighted];
+//    [yellowButtonMask addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [self addSubview:yellowButtonMask];
     
     // 나가기 버튼.
     UIButton *outButton = [UIButton buttonWithType:UIButtonTypeCustom];
     outButton.tag = CMMenuTypeOut;
-    outButton.frame = CGRectMake(280.0, 6.0, 32.0, 32.0);
+    outButton.frame = CGRectMake(self.frame.size.width - 38.0, 6.0, 32.0, 32.0);
     [outButton setImage:[UIImage imageNamed:@"Exit_D"] forState:UIControlStateNormal];
     [outButton setBackgroundImage:[UIImage imageNamed:@"icon_pre_press@2x.png"] forState:UIControlStateHighlighted];
     [outButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
