@@ -51,7 +51,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     
     if (isiOS7)
     {
-        ç.center = CGPointMake(self.navigation.center.x, self.navigation.center.y + 20);
+        self.navigation.center = CGPointMake(self.navigation.center.x, self.navigation.center.y + 20);
         
         // 상태바 백그라운드.
         UIView *statusBarBackground = [[UIView alloc] initWithFrame:[[UIApplication sharedApplication] statusBarFrame]];
