@@ -38,9 +38,7 @@ static char storedIsOpened;
 }
 
 - (void)setupLayout
-{
-    Debug(@">>>>>>>>>%@", NSStringFromCGRect(self.frame));
-    
+{    
     self.isClosed = @"NO";
     
     // 이전 버튼.

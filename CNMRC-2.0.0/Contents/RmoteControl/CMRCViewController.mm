@@ -210,23 +210,23 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     self.cvPad = cv;
     
     // 숫자키패드.
-    CMNumberKey *nk = [[[NSBundle mainBundle] loadNibNamed:@"CMNumberKey" owner:self options:nil] objectAtIndex:0];
-    nk.delegate = self;
-    CGFloat nkY = DeviceSpecificSetting(322.0, 410.0);
-    if (isiOS7)
-    {
-        nkY = DeviceSpecificSetting(342.0, 430.0);
-    }
-    
-    // 가로바.
-    UIImage *bar = [UIImage imageNamed:@"rc_bar.png"];
-    UIImageView *barImagegView = [[UIImageView alloc] initWithImage:bar];
-    barImagegView.frame = CGRectMake(0.0, nkY - 6.5, 320.0, 10.0);
-    [self.view addSubview:barImagegView];
-    
-    nk.frame = CGRectMake(0.0, nkY, self.view.frame.size.width, 89.0);
-    [self.view addSubview:nk];
-    self.numberKey = nk;
+//    CMNumberKey *nk = [[[NSBundle mainBundle] loadNibNamed:@"CMNumberKey" owner:self options:nil] objectAtIndex:0];
+//    nk.delegate = self;
+//    CGFloat nkY = DeviceSpecificSetting(322.0, 410.0);
+//    if (isiOS7)
+//    {
+//        nkY = DeviceSpecificSetting(342.0, 430.0);
+//    }
+//    
+//    // 가로바.
+//    UIImage *bar = [UIImage imageNamed:@"rc_bar.png"];
+//    UIImageView *barImagegView = [[UIImageView alloc] initWithImage:bar];
+//    barImagegView.frame = CGRectMake(0.0, nkY - 6.5, 320.0, 10.0);
+//    [self.view addSubview:barImagegView];
+//    
+//    nk.frame = CGRectMake(0.0, nkY, self.view.frame.size.width, 89.0);
+//    [self.view addSubview:nk];
+//    self.numberKey = nk;
 }
 
 #pragma mark - UIGestureRecognizerDelegate
