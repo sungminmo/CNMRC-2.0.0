@@ -57,7 +57,8 @@
 - (void)setupNavigation
 {
     // 네비게이션바 백그라운드.
-    self.naviBar = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 55.0)];
+    CGFloat widht = [[UIScreen mainScreen] bounds].size.width;
+    self.naviBar = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, widht, 55.0)];
     self.naviBar.backgroundColor = UIColorFromRGB(0x252525);
     
     if (self.menuType != CMMenuTypeVOD || self.menuType != CMMenuTypeChannel)
@@ -78,14 +79,15 @@
     // 백버튼.
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     backButton.frame = CGRectMake(0.0, 4.0, 49.0, 47.0);
-    [backButton setImage:[UIImage imageNamed:@"back_icon_normal.png"] forState:UIControlStateNormal];
-    [backButton setImage:[UIImage imageNamed:@"back_icon_press.png"] forState:UIControlStateHighlighted];
+    [backButton setImage:[UIImage imageNamed:@"Back_D"] forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"Back_H"] forState:UIControlStateHighlighted];
     [backButton addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.naviBar addSubview:backButton];
     
     // 타이틀.
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(90.0, 0.0, 140.0, 55.0)];
-    self.titleLabel.textAlignment = UITextAlignmentCenter;
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 140.0, 55.0)];
+    self.titleLabel.center = CGPointMake(self.naviBar.frame.size.width/2, self.naviBar.frame.size.height/2);
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:24];
@@ -94,8 +96,9 @@
     // 설정/상품설정/성인인증 -> 완료 버튼.
     if (self.menuType == CMMenuTypeSettings || self.menuType == CMMenuTypeSetProduct || self.menuType == CMMenuTypeAuthAdult)
     {
+        CGFloat doneButtonX = self.naviBar.frame.size.width - 49.0 - 10;
         UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        doneButton.frame = CGRectMake(265.0, 13.0, 49.0, 29.0);
+        doneButton.frame = CGRectMake(doneButtonX, 13.0, 49.0, 29.0);
         [doneButton setTitle:@"완료" forState:UIControlStateNormal];
         [doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [doneButton setBackgroundImage:[UIImage imageNamed:@"complete_normal.png"] forState:UIControlStateNormal];

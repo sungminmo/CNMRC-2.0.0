@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Jack Flintermann. All rights reserved.
 //
 
-//#import <UIKit/UIKit.h>
-//
-//@interface UINavigationBar (FlatUI)
-//
-//- (void)configureFlatNavigationBarWithColor:(UIColor *)color; UI_APPEARANCE_SELECTOR
-//
-//@end
+#import <UIKit/UIKit.h>
+
+@interface UINavigationBar (FlatUI)
+
+- (void)configureFlatNavigationBarWithColor:(UIColor *)color UI_APPEARANCE_SELECTOR;
+
+@end
