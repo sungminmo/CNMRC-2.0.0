@@ -193,6 +193,7 @@
 		1DB9BA571A6165D200E89E27 /* CMVODListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9BA501A6165D200E89E27 /* CMVODListViewController.xib */; };
 		1DB9BA581A6165D200E89E27 /* CMVODViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9BA521A6165D200E89E27 /* CMVODViewController.m */; };
 		1DB9BA591A6165D200E89E27 /* CMVODViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9BA531A6165D200E89E27 /* CMVODViewController.xib */; };
+		1DB9BF521A7FD01C00FD58D1 /* DQAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9BF511A7FD01C00FD58D1 /* DQAlertView.m */; };
 		1DBA76C61A20B4C8003AB966 /* protoc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA767B1A20B4C8003AB966 /* protoc */; };
 		1DBA76C71A20B4C8003AB966 /* plugin.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA768A1A20B4C8003AB966 /* plugin.proto */; };
 		1DBA76C81A20B4C8003AB966 /* descriptor.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA768F1A20B4C8003AB966 /* descriptor.proto */; };
@@ -607,6 +608,8 @@
 		1DB9BA511A6165D200E89E27 /* CMVODViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMVODViewController.h; sourceTree = "<group>"; };
 		1DB9BA521A6165D200E89E27 /* CMVODViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMVODViewController.m; sourceTree = "<group>"; };
 		1DB9BA531A6165D200E89E27 /* CMVODViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMVODViewController.xib; sourceTree = "<group>"; };
+		1DB9BF501A7FD01C00FD58D1 /* DQAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAlertView.h; sourceTree = "<group>"; };
+		1DB9BF511A7FD01C00FD58D1 /* DQAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAlertView.m; sourceTree = "<group>"; };
 		1DBA767B1A20B4C8003AB966 /* protoc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = protoc; sourceTree = "<group>"; };
 		1DBA76801A20B4C8003AB966 /* code_generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = code_generator.h; sourceTree = "<group>"; };
 		1DBA76811A20B4C8003AB966 /* command_line_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command_line_interface.h; sourceTree = "<group>"; };
@@ -1474,9 +1477,19 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		1DB9BF4F1A7FD01C00FD58D1 /* DQAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				1DB9BF501A7FD01C00FD58D1 /* DQAlertView.h */,
+				1DB9BF511A7FD01C00FD58D1 /* DQAlertView.m */,
+			);
+			path = DQAlertView;
+			sourceTree = "<group>";
+		};
 		1DBA76781A20AE0D003AB966 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1DB9BF4F1A7FD01C00FD58D1 /* DQAlertView */,
 				1D1C462C1A6A3A1B00ADD92A /* LPAppStats */,
 				1D14AA6B1A61692500FECF55 /* LPToast */,
 				1DB9B9D81A61505800E89E27 /* TBXML */,
@@ -1849,6 +1862,7 @@
 				1DB9B9231A613DB000E89E27 /* NSObject+RemoteControlKey.m in Sources */,
 				1DB9B99F1A614FCD00E89E27 /* CMControlPad.m in Sources */,
 				1DB9B9C31A61501300E89E27 /* CM01.m in Sources */,
+				1DB9BF521A7FD01C00FD58D1 /* DQAlertView.m in Sources */,
 				1D14AA691A6168EC00FECF55 /* CMRCViewController.mm in Sources */,
 				1DB9B9E81A61521500E89E27 /* SearchHistory.m in Sources */,
 				1DB9B92F1A613DB000E89E27 /* UIToolbar+FlatUI.m in Sources */,
