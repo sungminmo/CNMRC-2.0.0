@@ -101,8 +101,8 @@
         doneButton.frame = CGRectMake(doneButtonX, 13.0, 49.0, 29.0);
         [doneButton setTitle:@"완료" forState:UIControlStateNormal];
         [doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [doneButton setBackgroundImage:[UIImage imageNamed:@"complete_normal.png"] forState:UIControlStateNormal];
-        [doneButton setBackgroundImage:[UIImage imageNamed:@"complete_press.png"] forState:UIControlStateHighlighted];
+        [doneButton setBackgroundImage:[UIImage imageNamed:@"Complete_D"] forState:UIControlStateNormal];
+        [doneButton setBackgroundImage:[UIImage imageNamed:@"Complete_H"] forState:UIControlStateHighlighted];
         [doneButton addTarget:self action:@selector(doneAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.naviBar addSubview:doneButton];
     }
