@@ -12,7 +12,7 @@
 #import "CMHTTPClient.h"
 #import "CMGenerator.h"
 #import "Setting.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 #import "LPAppStats.h"
 #import "CMRCViewController.h"
 
@@ -96,17 +96,15 @@
     if (AppInfo.isWatchReservationAlarm && application.applicationState == UIApplicationStateActive)
     {
         // Foreground에서 알림 수신
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"시청예약알림" andMessage:notification.alertBody];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  // 로컬노티피케이션 취소.
-                                  [[UIApplication sharedApplication] cancelLocalNotification:notification];
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"시청예약알림"
+                                                            message:notification.alertBody
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            // 로컬노티피케이션 취소.
+            [[UIApplication sharedApplication] cancelLocalNotification:notification];
+        };
         
         [alertView show];
     }

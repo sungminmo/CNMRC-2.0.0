@@ -7,7 +7,7 @@
 //
 
 #import "CMSetIPViewController.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 
 @interface CMSetIPViewController ()
 
@@ -65,17 +65,16 @@
     }
     else
     {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"올바른 IP 주소를 입력하십시오!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  self.ipTextField.text = nil;
-                                  [self.ipTextField becomeFirstResponder];
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                            message:@"올바른 IP 주소를 입력하십시오!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            self.ipTextField.text = nil;
+            [self.ipTextField becomeFirstResponder];
+        };
+        
         [alertView show];
     }
 }

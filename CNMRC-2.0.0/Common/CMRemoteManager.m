@@ -12,7 +12,7 @@
 #import "RToast.h"
 #import "NSSet+Additions.h"
 #import "CMPairingViewController.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 #import "CMBoxListViewController.h"
 #import "WishList.h"
 #import "CMTRGenerator.h"
@@ -134,20 +134,18 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     NSString *title = NSLocalizedString(@"WiFi를 이용할 수 없습니다.", @"");
     NSString *msg = NSLocalizedString(@"설정 메뉴에서 WiFi를 켜십시오.", @"");
     
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:title andMessage:msg];
-    [alertView addButtonWithTitle:@"확인"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              Debug(@"OK Clicked");
-                              // 상태 변경.
-                              if (_appState == kAppStateIdle)
-                              {
-                                  [self onStateIdle];
-                              }
-                          }];
-    alertView.cornerRadius = 10;
-    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                              cancelButtonTitle:nil
+                                               otherButtonTitle:@"확인"];
+    alertView.otherButtonAction = ^{
+        Debug(@"OK Clicked");
+        // 상태 변경.
+        if (_appState == kAppStateIdle)
+        {
+            [self onStateIdle];
+        }
+    };
     
     [alertView show];
 }
@@ -320,25 +318,17 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 // 페어링 여부 확인.
 - (void)checkPairing
 {
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"씨앤앰 TV 연결" andMessage:@"씨앤앰 셋탑박스를 \n연결하시겠습니까?"];
-    [alertView addButtonWithTitle:@"취소"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              //Debug(@"Cancel Clicked");
-                              
-                          }];
-    [alertView addButtonWithTitle:@"확인"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              //Debug(@"OK Clicked");
-                              // 박스 찾기.
-                              CMBoxListViewController *viewController = [[CMBoxListViewController alloc] initWithNibName:@"CMBoxListViewController" bundle:nil];
-                              viewController.delegate = self;
-                              [CMAppDelegate.container pushViewController:viewController animated:YES];
-                          }];
-    alertView.cornerRadius = 10;
-    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"씨앤앰 TV 연결"
+                                                        message:@"씨앤앰 셋탑박스를 \n연결하시겠습니까?"
+                                              cancelButtonTitle:@"취소"
+                                               otherButtonTitle:@"확인"];
+    alertView.otherButtonAction = ^{
+        Debug(@"OK Clicked");
+        // 박스 찾기.
+        CMBoxListViewController *viewController = [[CMBoxListViewController alloc] initWithNibName:@"CMBoxListViewController" bundle:nil];
+        viewController.delegate = self;
+        [CMAppDelegate.container pushViewController:viewController animated:YES];
+    };
     
     [alertView show];
 }
@@ -378,20 +368,18 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     [self changeState:kAppStateIdle];
     if ([self recentlyUsedBox] == nil)
     {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"시앤앰 셋탑박스가 선택되지 않았습니다.\n 셋탑박스를 찾습니다."];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  // 상태 변경.
-                                  if (_appState == kAppStateIdle)
-                                  {
-                                      [self onStateIdle];
-                                  }
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                            message:@"시앤앰 셋탑박스가 선택되지 않았습니다.\n 셋탑박스를 찾습니다."
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            // 상태 변경.
+            if (_appState == kAppStateIdle)
+            {
+                [self onStateIdle];
+            }
+        };
         
         [alertView show];
     }

@@ -12,7 +12,7 @@
 #import "CMChannelViewController.h"
 #import "CMSearchViewController.h"
 #import "CMBoxListViewController.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 #import "CMTapTracker.h"
 
 using namespace anymote::messages;

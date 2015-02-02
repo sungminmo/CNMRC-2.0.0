@@ -8,7 +8,7 @@
 
 #import "CMEPGViewController.h"
 #import "CMEPGTableViewCell.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 #import "CMAlarmManager.h"
 
 @interface CMEPGViewController ()
@@ -305,47 +305,32 @@
         {
             // TV에서 시청하기 얼럿.
             Debug(@"TV에서 시청하기!");
-            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"TV에서 시청 하시겠습니까?" andMessage:programTitle];
-            [alertView addButtonWithTitle:@"취소"
-                                     type:SIAlertViewButtonTypeDefault
-                                  handler:^(SIAlertView *alertView) {
-                                      Debug(@"Cancel Clicked");
-                                  }];
-            [alertView addButtonWithTitle:@"확인"
-                                     type:SIAlertViewButtonTypeDefault
-                                  handler:^(SIAlertView *alertView) {
-                                      Debug(@"OK Clicked");
-                                      // TV에서 시청하기.
-                                      
-                                  }];
-            alertView.cornerRadius = 10;
-            alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-            alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+            DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"TV에서 시청 하시겠습니까?"
+                                                                message:programTitle
+                                                      cancelButtonTitle:@"취소"
+                                                       otherButtonTitle:@"확인"];
+            alertView.otherButtonAction = ^{
+                Debug(@"OK Clicked");
+                // TV에서 시청하기.
+            };
             
             [alertView show];
         }
         else
         {
             // 시청예약 알람 등록.
-            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"시청예약을 하시겠습니까?" andMessage:programTitle];
-            [alertView addButtonWithTitle:@"취소"
-                                     type:SIAlertViewButtonTypeDefault
-                                  handler:^(SIAlertView *alertView) {
-                                      Debug(@"Cancel Clicked");
-                                  }];
-            [alertView addButtonWithTitle:@"확인"
-                                     type:SIAlertViewButtonTypeDefault
-                                  handler:^(SIAlertView *alertView) {
-                                      Debug(@"OK Clicked");
-                                      // 알람 등록.
-                                      [CMAlarmManager fireLocalNotificationWitTitle:programTitle andDate:[self dateFromStringBroadcastingTime:currentTime]];
-                                      
-                                      //  테스트.
-                                      //[CMAlarmManager fireLocalNotificationWitTitle:programTitle andDate:[NSDate dateWithTimeIntervalSinceNow:5*60 + 5]];
-                                  }];
-            alertView.cornerRadius = 10;
-            alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-            alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+            DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"시청예약을 하시겠습니까?"
+                                                                message:programTitle
+                                                      cancelButtonTitle:@"취소"
+                                                       otherButtonTitle:@"확인"];
+            alertView.otherButtonAction = ^{
+                Debug(@"OK Clicked");
+                // 알람 등록.
+                [CMAlarmManager fireLocalNotificationWitTitle:programTitle andDate:[self dateFromStringBroadcastingTime:currentTime]];
+                
+                //  테스트.
+                //[CMAlarmManager fireLocalNotificationWitTitle:programTitle andDate:[NSDate dateWithTimeIntervalSinceNow:5*60 + 5]];
+            };
             
             [alertView show];
         }
@@ -373,16 +358,13 @@
         
         if ([self.lists count] == 0)
         {
-            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알람" andMessage:@"데이터가 없습니다!"];
-            [alertView addButtonWithTitle:@"확인"
-                                     type:SIAlertViewButtonTypeDefault
-                                  handler:^(SIAlertView *alertView) {
-                                      Debug(@"OK Clicked");
-                                      
-                                  }];
-            alertView.cornerRadius = 10;
-            alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-            alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+            DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                                message:@"데이터가 없습니다!"
+                                                      cancelButtonTitle:nil
+                                                       otherButtonTitle:@"확인"];
+            alertView.otherButtonAction = ^{
+                Debug(@"OK Clicked");
+            };
             
             [alertView show];
             return;

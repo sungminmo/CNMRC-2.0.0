@@ -11,7 +11,7 @@
 #import "NSString+Helper.h"
 #import "NSDate+Helper.h"
 #import "UILabel+Size.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 #import "WishList.h"
 
 // 소켓 관련.
@@ -206,20 +206,17 @@
     else
     {
         // 연결이 안되어 있는 경우: 10개까지 로컬에 저장한다, 그리고 STB가 연결되면 일괄 전송한다.
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"셋탑박스가 연결이 되어 있지 않습니다.\n폰에 저장한 후 셋탑박스가 연결되면 일괄 저장 됩니다!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  
-                                  WishList *wishList = [WishList create];
-                                  wishList.assetID = [self.data valueForKey:@"VOD_ID"];
-                                  wishList.date = [NSDate date];
-                                  [wishList save];
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                            message:@"셋탑박스가 연결이 되어 있지 않습니다.\n폰에 저장한 후 셋탑박스가 연결되면 일괄 저장 됩니다!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            WishList *wishList = [WishList create];
+            wishList.assetID = [self.data valueForKey:@"VOD_ID"];
+            wishList.date = [NSDate date];
+            [wishList save];
+        };
         
         [alertView show];
     }
@@ -258,16 +255,13 @@
     else
     {
         // 연결이 안되어 있는 경우.
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"셋탑박스가 연결되어 있지 않습니다!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                            message:@"셋탑박스가 연결되어 있지 않습니다!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+        };
         
         [alertView show];
     }

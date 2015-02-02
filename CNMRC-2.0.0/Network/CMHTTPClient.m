@@ -13,7 +13,7 @@
 #import "UIDevice+IdentifierAddition.h"
 #import "Setting.h"
 #import "HTProgressHUD.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 
 @interface CMHTTPClient ()
 {
@@ -144,16 +144,13 @@
 
 - (void)serverErrorAlert
 {
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"서버에 문제가 있습니다. 관리자에게 문의 바랍니다!"];
-    [alertView addButtonWithTitle:@"확인"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              Debug(@"OK Clicked");
-                              
-                          }];
-    alertView.cornerRadius = 10;
-    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"서버에 문제가 있습니다. 관리자에게 문의 바랍니다!"
+                                              cancelButtonTitle:nil
+                                               otherButtonTitle:@"확인"];
+    alertView.otherButtonAction = ^{
+        Debug(@"OK Clicked");
+    };
     
     [alertView show];
 }

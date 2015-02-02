@@ -10,7 +10,6 @@
 #import "HTProgressHUD.h"
 #import "CMSearchViewController.h"
 #import "CMTableViewCell.h"
-#import "SIAlertView.h"
 
 @interface CMBaseViewController ()
 {

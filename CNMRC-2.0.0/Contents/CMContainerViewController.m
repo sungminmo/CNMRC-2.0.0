@@ -13,7 +13,6 @@
 #import "CMQwertyViewController.h"
 #import "CMSettingsViewController.h"
 #import "LPAppStats.h"
-#import "SIAlertView.h"
 #import "DQAlertView.h"
 
 // 소켓 관련.
@@ -330,16 +329,13 @@
         isConnected = NO;
         
         // 연결이 안되어 있는 경우.
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"셋탑박스가 연결되어 있지 않습니다!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                            message:@"셋탑박스가 연결되어 있지 않습니다!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+        };
         
         [alertView show];
     }
@@ -420,17 +416,14 @@
 
 // 확인 버튼만 있는 얼럿.
 - (void)showAlertWithMessage:(NSString *)msg
-{
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:msg];
-    [alertView addButtonWithTitle:@"확인"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              //Debug(@"Cancel Clicked");
-                              
-                          }];
-    alertView.cornerRadius = 10;
-    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+{    
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                        message:msg
+                                              cancelButtonTitle:nil
+                                               otherButtonTitle:@"확인"];
+    alertView.otherButtonAction = ^{
+        Debug(@"OK Clicked");
+    };
     
     [alertView show];
 }

@@ -13,7 +13,7 @@
 #import "CMVODListTableViewCell.h"
 #import "CMVODDetailViewController.h"
 #import "CMChannelTableViewCell.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 #import "CMAuthAdultViewController.h"
 
 @interface CMSearchViewController ()
@@ -264,26 +264,18 @@
 // 성인인증 확인.
 - (void)checkAdult
 {
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"성인인증이 필요한 컨텐츠 입니다.\n 성인인증을 하시겠습니까?"];
-    [alertView addButtonWithTitle:@"취소"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              Debug(@"Cancel Clicked");
-                          }];
-    [alertView addButtonWithTitle:@"확인"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              Debug(@"OK Clicked");
-                              // 성인인증.
-                              CMAuthAdultViewController *viewControlelr = [[CMAuthAdultViewController alloc] initWithNibName:@"CMAuthAdultViewController" bundle:nil];
-                              viewControlelr.menuType = CMMenuTypeAuthAdult;
-                              viewControlelr.authAdultViewType = CMAuthAdultViewTypeVOD;
-                              [self.navigationController pushViewController:viewControlelr animated:YES];
-                              
-                          }];
-    alertView.cornerRadius = 10;
-    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"성인인증이 필요한 컨텐츠 입니다.\n 성인인증을 하시겠습니까?"
+                                              cancelButtonTitle:@"취소"
+                                               otherButtonTitle:@"확인"];
+    alertView.otherButtonAction = ^{
+        Debug(@"OK Clicked");
+        // 성인인증.
+        CMAuthAdultViewController *viewControlelr = [[CMAuthAdultViewController alloc] initWithNibName:@"CMAuthAdultViewController" bundle:nil];
+        viewControlelr.menuType = CMMenuTypeAuthAdult;
+        viewControlelr.authAdultViewType = CMAuthAdultViewTypeVOD;
+        [self.navigationController pushViewController:viewControlelr animated:YES];
+    };
     
     [alertView show];
 }
@@ -334,22 +326,15 @@
 // 최근 검색어 삭제.
 - (IBAction)deleteSearchHistoryAction:(id)sender
 {
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"최근 검색어 삭제" andMessage:@"최근 검색어를 모두 삭제하시겠습니까?"];
-    [alertView addButtonWithTitle:@"취소"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              Debug(@"Cancel Clicked");
-                          }];
-    [alertView addButtonWithTitle:@"확인"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              Debug(@"OK Clicked");
-                              // 최근 검색어 삭제.
-                              [self deleteSearchHistory];
-                          }];
-    alertView.cornerRadius = 10;
-    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"최근 검색어 삭제"
+                                                       message:@"최근 검색어를 모두 삭제하시겠습니까?"
+                                             cancelButtonTitle:@"취소"
+                                              otherButtonTitle:@"확인"];
+    alertView.otherButtonAction = ^{
+        Debug(@"OK Clicked");
+        // 최근 검색어 삭제.
+        [self deleteSearchHistory];
+    };
     
     [alertView show];
 }

@@ -8,7 +8,7 @@
 
 #import "CMSettingsViewController.h"
 #import "CMSettingsCell.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 #import "CMSetAreaViewController.h"
 #import "CMAuthAdultViewController.h"
 #import "CMRCViewController.h"
@@ -138,24 +138,17 @@
 }
 
 - (IBAction)initButtonAction:(id)sender {
-	SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"모든 설정을 초기화하시겠습니까?"];
-	[alertView addButtonWithTitle:@"취소"
-	                         type:SIAlertViewButtonTypeDefault
-	                      handler: ^(SIAlertView *alertView) {
-                              Debug(@"Cancel Clicked");
-                          }];
-	[alertView addButtonWithTitle:@"확인"
-	                         type:SIAlertViewButtonTypeDefault
-	                      handler: ^(SIAlertView *alertView) {
-                              Debug(@"OK Clicked");
-                              // 모든 설정 초기화.
-                              [self resetSetting];
-                          }];
-	alertView.cornerRadius = 10;
-	alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-	alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"모든 설정을 초기화하시겠습니까?"
+                                              cancelButtonTitle:@"취소"
+                                               otherButtonTitle:@"확인"];
+    alertView.otherButtonAction = ^{
+        Debug(@"OK Clicked");
+        // 모든 설정 초기화.
+        [self resetSetting];
+    };
     
-	[alertView show];
+    [alertView show];
 }
 
 - (IBAction)settingButtonAction:(id)sender {

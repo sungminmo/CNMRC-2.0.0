@@ -9,7 +9,7 @@
 #import "CMSetAreaViewController.h"
 #import "CMSetProductViewController.h"
 #import "CMTableViewCell.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 
 @interface CMSetAreaViewController ()
 - (void)requestArea;
@@ -129,12 +129,15 @@
         [self.listTable reloadData];
         
         // 알람.
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알람"
-                                                        message:@"지역설정 후 상품설정을 꼭 확인해 주세요!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"확인"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                            message:@"지역설정 후 상품설정을 꼭 확인해 주세요!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+        };
+        
+        [alertView show];
     }
     else
     {

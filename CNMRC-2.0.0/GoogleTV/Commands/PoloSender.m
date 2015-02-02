@@ -17,7 +17,7 @@
 #import "PoloSender.h"
 #import "PoloObjC.h"
 #import "GTMDefines.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 
 
 @implementation PoloSender
@@ -116,15 +116,15 @@
 
 - (BOOL)continuePairingWithSecret:(NSString *)secret {
   BOOL isOK = [poloConnection_ continuePairingWithSecret:secret error:NULL];
-  if (!isOK) {      
-      SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"코드 오류" andMessage:@"입력된 페어링 코드가 들렸습니다!"];
-      [alertView addButtonWithTitle:@"확인"
-                               type:SIAlertViewButtonTypeDefault
-                            handler:^(SIAlertView *alertView) {
-                            }];
-      alertView.cornerRadius = 10;
-      alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-      alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+  if (!isOK) {
+      DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"코드 오류"
+                                                          message:@"입력된 페어링 코드가 들렸습니다!"
+                                                cancelButtonTitle:nil
+                                                 otherButtonTitle:@"확인"];
+      alertView.otherButtonAction = ^{
+          Debug(@"OK Clicked");
+      };
+      
       [alertView show];
       [alertView release];
   }

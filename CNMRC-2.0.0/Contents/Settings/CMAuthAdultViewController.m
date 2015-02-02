@@ -7,7 +7,7 @@
 //
 
 #import "CMAuthAdultViewController.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 #import "Setting.h"
 
 #define CENTER_PADDING_Y 55.0
@@ -118,48 +118,45 @@
 {
     if ([self.nameTextField.text isEmpty])
     {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"이름을 입력해 주십시오!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  [self.nameTextField becomeFirstResponder];
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                            message:@"이름을 입력해 주십시오!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            [self.nameTextField becomeFirstResponder];
+        };
+        
         [alertView show];
     
         return NO;
     }
     else if ([self.ssnTextField.text isEmpty])
     {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"주민등록번호를 입력해 주십시오!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  [self.ssnTextField becomeFirstResponder];
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                            message:@"주민등록번호를 입력해 주십시오!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            [self.ssnTextField becomeFirstResponder];
+        };
+        
         [alertView show];
     
         return NO;
     }
     else if (![self checkSSN:self.ssnTextField.text])
     {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"올바른 주민등록번호를 입력해 주십시오!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  [self.ssnTextField becomeFirstResponder];
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                            message:@"올바른 주민등록번호를 입력해 주십시오!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            [self.ssnTextField becomeFirstResponder];
+        };
+        
         [alertView show];
         
         return NO;
@@ -280,16 +277,15 @@
         // 자동성인인증하기 설정.
         [self switchAction:nil];
         
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"성인인증 성공!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  [self.navigationController popViewControllerAnimated:YES];
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                            message:@"성인인증 성공!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            [self.navigationController popViewControllerAnimated:YES];
+        };
+        
         [alertView show];
     }
     else

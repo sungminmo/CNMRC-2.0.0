@@ -7,7 +7,7 @@
 //
 
 #import "CMPairingViewController.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 
 @interface CMPairingViewController ()
 
@@ -48,17 +48,16 @@
 {
     
     if  ([self.codeTextField.text isEmpty])
-    {
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:@"코드를 입력하십시오!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                                  [self.codeTextField becomeFirstResponder];
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    {        
+        DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+                                                            message:@"코드를 입력하십시오!"
+                                                  cancelButtonTitle:nil
+                                                   otherButtonTitle:@"확인"];
+        alertView.otherButtonAction = ^{
+            Debug(@"OK Clicked");
+            [self.codeTextField becomeFirstResponder];
+        };
+        
         [alertView show];
     }
     else

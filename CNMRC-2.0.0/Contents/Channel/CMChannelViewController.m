@@ -10,7 +10,7 @@
 #import "CMChannelTableViewCell.h"
 #import "CMEPGViewController.h"
 #import "CMChannelListViewController.h"
-#import "SIAlertView.h"
+#import "DQAlertView.h"
 
 @interface CMChannelViewController ()
 
@@ -239,16 +239,13 @@
         
         if ([self.lists count] == 0)
         {
-            SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알람" andMessage:@"데이터가 없습니다!"];
-            [alertView addButtonWithTitle:@"확인"
-                                     type:SIAlertViewButtonTypeDefault
-                                  handler:^(SIAlertView *alertView) {
-                                      Debug(@"OK Clicked");
-                                      
-                                  }];
-            alertView.cornerRadius = 10;
-            alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-            alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+            DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                                message:@"데이터가 없습니다!"
+                                                      cancelButtonTitle:nil
+                                                       otherButtonTitle:@"확인"];
+            alertView.otherButtonAction = ^{
+                Debug(@"OK Clicked");
+            };
             
             [alertView show];
             return;
