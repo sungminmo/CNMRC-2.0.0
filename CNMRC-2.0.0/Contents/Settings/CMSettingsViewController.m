@@ -292,7 +292,7 @@
 		footerView.backgroundColor = [UIColor clearColor];
 		UILabel *footerLabel = [[UILabel alloc] initWithFrame:footerView.frame];
 		footerLabel.backgroundColor = [UIColor clearColor];
-		footerLabel.textAlignment = UITextAlignmentCenter;
+		footerLabel.textAlignment = NSTextAlignmentCenter;
 		footerLabel.textColor = UIColorFromRGB(0x7961aa);
 		footerLabel.numberOfLines = 2;
 		footerLabel.font = [UIFont boldSystemFontOfSize:14];

@@ -237,16 +237,12 @@
             break;
     }
     
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알림" andMessage:msg];
-    [alertView addButtonWithTitle:@"확인"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              Debug(@"OK Clicked");
-                          }];
-    alertView.cornerRadius = 10;
-    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
-    [alertView show];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알람"
+                                                    message:msg
+                                                   delegate:nil
+                                          cancelButtonTitle:@"확인"
+                                          otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 // VOD 시청 등급 아이콘.

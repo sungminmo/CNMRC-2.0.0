@@ -129,18 +129,12 @@
         [self.listTable reloadData];
         
         // 알람.
-        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"알람" andMessage:@"지역설정 후 상품설정을 꼭 확인해 주세요!"];
-        [alertView addButtonWithTitle:@"확인"
-                                 type:SIAlertViewButtonTypeDefault
-                              handler:^(SIAlertView *alertView) {
-                                  Debug(@"OK Clicked");
-                    
-                              }];
-        alertView.cornerRadius = 10;
-        alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
-        
-        [alertView show];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알람"
+                                                        message:@"지역설정 후 상품설정을 꼭 확인해 주세요!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
     }
     else
     {

@@ -14,6 +14,7 @@
 #import "CMSettingsViewController.h"
 #import "LPAppStats.h"
 #import "SIAlertView.h"
+#import "DQAlertView.h"
 
 // 소켓 관련.
 #import "CMTRGenerator.h"
@@ -349,35 +350,27 @@
 // 미러TV 선택 팝업.
 - (void)checkMirrorTV
 {
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"미러 TV" andMessage:@"미러TV로 이동하시겠습니까?\n스트리밍시간이 몇 초 소요됩니다."];
-    [alertView addButtonWithTitle:@"취소"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              //Debug(@"Cancel Clicked");
-                              
-                          }];
-    [alertView addButtonWithTitle:@"확인"
-                             type:SIAlertViewButtonTypeDefault
-                          handler:^(SIAlertView *alertView) {
-                              //Debug(@"OK Clicked");
-                              
-                              // 1. STB 연결 상태를 확인한다.
-                              if ([self isSTBConnected])
-                              {
-                                  // 2. 채널 상태 확인.
-                                  [self requestChannelStatus];
-                              }
-                              
-                              // 테스트 용 -----------------------------------.
-                              //                              CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:DeviceSpecificSetting(@"CMMirrorTVViewController_4", @"CMMirrorTVViewController") bundle:nil];
-                              //                              viewController.blockChannelInfo = self.blockChannelInfo;
-                              //                              self.modalPresentationStyle = UIModalPresentationCurrentContext;
-                              //                              [self presentViewController:viewController animated:YES completion:nil];
-                              // 테스트 용 -----------------------------------.
-                          }];
-    alertView.cornerRadius = 10;
-    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    DQAlertView * alertView = [[DQAlertView alloc] initWithTitle:@"미러 TV" message:@"미러TV로 이동하시겠습니까?\n스트리밍시간이 몇 초 소요됩니다." delegate:self cancelButtonTitle:@"취소" otherButtonTitles:@"확인"];
+    
+    alertView.cancelButtonAction = ^{
+        Debug(@"Cancel Clicked");
+    };
+    alertView.otherButtonAction = ^{
+        Debug(@"OK Clicked");
+        // 1. STB 연결 상태를 확인한다.
+        if ([self isSTBConnected])
+        {
+            // 2. 채널 상태 확인.
+            [self requestChannelStatus];
+        }
+        
+        // 테스트 용 -----------------------------------.
+        //                              CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:DeviceSpecificSetting(@"CMMirrorTVViewController_4", @"CMMirrorTVViewController") bundle:nil];
+        //                              viewController.blockChannelInfo = self.blockChannelInfo;
+        //                              self.modalPresentationStyle = UIModalPresentationCurrentContext;
+        //                              [self presentViewController:viewController animated:YES completion:nil];
+        // 테스트 용 -----------------------------------.
+    };
     
     [alertView show];
 }

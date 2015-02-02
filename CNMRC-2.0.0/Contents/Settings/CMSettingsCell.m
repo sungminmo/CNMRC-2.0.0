@@ -33,14 +33,7 @@
         case CMSettingsCellTypeSwitch:
         {
             self.settingsSwitch.hidden = NO;
-            
-            // iOS7일 경우 오르쪽으로 이동 시킨다.
-            // iOS7에서 그룹 스타일의 테이블 UI가 변경되었기땨문...
-            if (isiOS7)
-            {
-                self.settingsSwitch.center = CGPointMake(self.settingsSwitch.center.x + 45.0, self.settingsSwitch.center.y);
-            }
-            [self insertSubview:self.settingsSwitch aboveSubview:self.contentView];
+            //[self insertSubview:self.settingsSwitch aboveSubview:self.contentView];
         }
             break;
             
