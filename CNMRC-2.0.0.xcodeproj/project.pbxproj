@@ -77,11 +77,6 @@
 		1DA28B371A3C85AD007D7F4E /* HTProgressHUDPieIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B2F1A3C85AD007D7F4E /* HTProgressHUDPieIndicatorView.m */; };
 		1DA28B381A3C85AD007D7F4E /* HTProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B311A3C85AD007D7F4E /* HTProgressHUDRingIndicatorView.m */; };
 		1DA28B3C1A3C85C5007D7F4E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B3B1A3C85C5007D7F4E /* Reachability.m */; };
-		1DA28B451A3C85D2007D7F4E /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B3E1A3C85D2007D7F4E /* LICENSE.md */; };
-		1DA28B461A3C85D2007D7F4E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B3F1A3C85D2007D7F4E /* README.md */; };
-		1DA28B471A3C85D2007D7F4E /* button-default-d@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA28B411A3C85D2007D7F4E /* button-default-d@2x.png */; };
-		1DA28B481A3C85D2007D7F4E /* SIAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DA28B421A3C85D2007D7F4E /* SIAlertView.bundle */; };
-		1DA28B491A3C85D2007D7F4E /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B441A3C85D2007D7F4E /* SIAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */; };
 		1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */; };
 		1DB9B91E1A613DB000E89E27 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8FB1A613DB000E89E27 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -404,12 +399,6 @@
 		1DA28B311A3C85AD007D7F4E /* HTProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
 		1DA28B3A1A3C85C5007D7F4E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1DA28B3B1A3C85C5007D7F4E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		1DA28B3E1A3C85D2007D7F4E /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
-		1DA28B3F1A3C85D2007D7F4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1DA28B411A3C85D2007D7F4E /* button-default-d@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-default-d@2x.png"; sourceTree = "<group>"; };
-		1DA28B421A3C85D2007D7F4E /* SIAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIAlertView.bundle; sourceTree = "<group>"; };
-		1DA28B431A3C85D2007D7F4E /* SIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
-		1DA28B441A3C85D2007D7F4E /* SIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
 		1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMRCViewController.xib; sourceTree = "<group>"; };
 		1DB9B8EB1A6129CB00E89E27 /* CMContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMContainerViewController.h; sourceTree = "<group>"; };
 		1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMContainerViewController.m; sourceTree = "<group>"; };
@@ -1081,27 +1070,6 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
-		1DA28B3D1A3C85D2007D7F4E /* SIAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				1DA28B3E1A3C85D2007D7F4E /* LICENSE.md */,
-				1DA28B3F1A3C85D2007D7F4E /* README.md */,
-				1DA28B401A3C85D2007D7F4E /* SIAlertView */,
-			);
-			path = SIAlertView;
-			sourceTree = "<group>";
-		};
-		1DA28B401A3C85D2007D7F4E /* SIAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				1DA28B411A3C85D2007D7F4E /* button-default-d@2x.png */,
-				1DA28B421A3C85D2007D7F4E /* SIAlertView.bundle */,
-				1DA28B431A3C85D2007D7F4E /* SIAlertView.h */,
-				1DA28B441A3C85D2007D7F4E /* SIAlertView.m */,
-			);
-			path = SIAlertView;
-			sourceTree = "<group>";
-		};
 		1DB9B8E41A61296800E89E27 /* Contents */ = {
 			isa = PBXGroup;
 			children = (
@@ -1495,7 +1463,6 @@
 				1DB9B9D81A61505800E89E27 /* TBXML */,
 				1DB9B93C1A61437500E89E27 /* LPDebug */,
 				1D5FA73D1A46B2A500D51182 /* LPActiveRecord */,
-				1DA28B3D1A3C85D2007D7F4E /* SIAlertView */,
 				1DA28B391A3C85C5007D7F4E /* Reachability */,
 				1DA28B221A3C85AD007D7F4E /* HTProgressHUD */,
 				1DA28B1E1A3C859C007D7F4E /* AsyncImageView */,
@@ -1763,7 +1730,6 @@
 				1DB9BA251A615A9200E89E27 /* CMSetAreaViewController.xib in Resources */,
 				1DB9B9731A614F6500E89E27 /* CMBoxListViewController.xib in Resources */,
 				1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */,
-				1DA28B481A3C85D2007D7F4E /* SIAlertView.bundle in Resources */,
 				1DB9BA441A61655900E89E27 /* CMSearchViewController.xib in Resources */,
 				1DB9BA551A6165D200E89E27 /* CMVODDetailViewController.xib in Resources */,
 				1DB9B9AD1A614FCD00E89E27 /* CMTouchPad.xib in Resources */,
@@ -1776,7 +1742,6 @@
 				1D6F512E1A6A930E0045FB89 /* CMCircleMenu.xib in Resources */,
 				1DB9B9A41A614FCD00E89E27 /* CMCVPadSD.xib in Resources */,
 				1DB9BA071A61574800E89E27 /* remote.proto in Resources */,
-				1DA28B471A3C85D2007D7F4E /* button-default-d@2x.png in Resources */,
 				1DB9B9A01A614FCD00E89E27 /* CMControlPad.xib in Resources */,
 				1DB9BA051A61574800E89E27 /* polo.proto in Resources */,
 				1DB9BA231A615A9200E89E27 /* CMAuthAdultViewController.xib in Resources */,
@@ -1823,7 +1788,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DB9B92E1A613DB000E89E27 /* UINavigationBar+FlatUI.m in Sources */,
-				1DA28B451A3C85D2007D7F4E /* LICENSE.md in Sources */,
 				1DB9B9261A613DB000E89E27 /* NSString+MD5Addition.m in Sources */,
 				1D14AA7F1A6169D700FECF55 /* CMEPGViewController.m in Sources */,
 				1DA28B321A3C85AD007D7F4E /* HTProgressHUD.m in Sources */,
@@ -1833,7 +1797,6 @@
 				1DB9B9C61A61501300E89E27 /* CM04.m in Sources */,
 				1DB9B95B1A61446D00E89E27 /* PoloObjC.m in Sources */,
 				1DA28B361A3C85AD007D7F4E /* HTProgressHUDIndicatorView.m in Sources */,
-				1DA28B461A3C85D2007D7F4E /* README.md in Sources */,
 				1DA28AE41A3C70A0007D7F4E /* GTMObjC2Runtime.m in Sources */,
 				1DB9BA281A615A9200E89E27 /* CMSettingsCell.m in Sources */,
 				1DB9BA541A6165D200E89E27 /* CMVODDetailViewController.m in Sources */,
@@ -1925,7 +1888,6 @@
 				1DB9B9AA1A614FCD00E89E27 /* CMSlideMenuViewController.m in Sources */,
 				1DB9B9DE1A61506900E89E27 /* TBXML+Compression.m in Sources */,
 				1DB9BA351A6163AD00E89E27 /* remote.pb.cc in Sources */,
-				1DA28B491A3C85D2007D7F4E /* SIAlertView.m in Sources */,
 				1DA28AE01A3C70A0007D7F4E /* GTMMethodCheck.m in Sources */,
 				1D5FA7471A46B2A500D51182 /* NSManagedObject+ActiveRecord.m in Sources */,
 				1DB9BA111A6157A800E89E27 /* NSSet+Additions.m in Sources */,
