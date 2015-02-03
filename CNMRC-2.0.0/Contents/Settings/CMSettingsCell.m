@@ -33,7 +33,8 @@
         case CMSettingsCellTypeSwitch:
         {
             self.settingsSwitch.hidden = NO;
-            //[self insertSubview:self.settingsSwitch aboveSubview:self.contentView];
+            self.settingsSwitch.frame = CGRectMake(100, 10, 200, 200);
+            [self insertSubview:self.settingsSwitch aboveSubview:self.contentView];
         }
             break;
             
