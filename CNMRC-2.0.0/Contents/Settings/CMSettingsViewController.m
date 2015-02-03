@@ -142,6 +142,7 @@
                                                         message:@"모든 설정을 초기화하시겠습니까?"
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitle:@"확인"];
+    alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
         Debug(@"OK Clicked");
         // 모든 설정 초기화.

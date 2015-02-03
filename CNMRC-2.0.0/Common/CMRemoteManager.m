@@ -138,6 +138,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                         message:msg
                                               cancelButtonTitle:nil
                                                otherButtonTitle:@"확인"];
+    alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
         Debug(@"OK Clicked");
         // 상태 변경.
@@ -322,6 +323,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                         message:@"씨앤앰 셋탑박스를 \n연결하시겠습니까?"
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitle:@"확인"];
+    alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
         Debug(@"OK Clicked");
         // 박스 찾기.
@@ -372,6 +374,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                             message:@"시앤앰 셋탑박스가 선택되지 않았습니다.\n 셋탑박스를 찾습니다."
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             // 상태 변경.

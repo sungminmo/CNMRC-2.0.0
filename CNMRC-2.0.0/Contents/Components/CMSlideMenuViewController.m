@@ -467,6 +467,7 @@
                                                         message:@"성인인증이 필요한 컨텐츠 입니다.\n 성인인증을 하시겠습니까?"
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitle:@"확인"];
+    alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
         Debug(@"OK Clicked");
         // 성인인증.

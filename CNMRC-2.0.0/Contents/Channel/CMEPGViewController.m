@@ -309,6 +309,7 @@
                                                                 message:programTitle
                                                       cancelButtonTitle:@"취소"
                                                        otherButtonTitle:@"확인"];
+            alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
                 Debug(@"OK Clicked");
                 // TV에서 시청하기.
@@ -323,6 +324,7 @@
                                                                 message:programTitle
                                                       cancelButtonTitle:@"취소"
                                                        otherButtonTitle:@"확인"];
+            alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
                 Debug(@"OK Clicked");
                 // 알람 등록.
@@ -362,6 +364,7 @@
                                                                 message:@"데이터가 없습니다!"
                                                       cancelButtonTitle:nil
                                                        otherButtonTitle:@"확인"];
+            alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
                 Debug(@"OK Clicked");
             };

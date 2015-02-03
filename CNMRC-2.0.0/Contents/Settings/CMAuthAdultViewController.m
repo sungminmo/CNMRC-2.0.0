@@ -122,6 +122,7 @@
                                                             message:@"이름을 입력해 주십시오!"
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             [self.nameTextField becomeFirstResponder];
@@ -137,6 +138,7 @@
                                                             message:@"주민등록번호를 입력해 주십시오!"
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             [self.ssnTextField becomeFirstResponder];
@@ -152,6 +154,7 @@
                                                             message:@"올바른 주민등록번호를 입력해 주십시오!"
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             [self.ssnTextField becomeFirstResponder];
@@ -281,6 +284,7 @@
                                                             message:@"성인인증 성공!"
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             [self.navigationController popViewControllerAnimated:YES];

@@ -167,6 +167,7 @@
                                                                 message:@"데이터가 없습니다!"
                                                       cancelButtonTitle:nil
                                                        otherButtonTitle:@"확인"];
+            alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
                 Debug(@"OK Clicked");
             };

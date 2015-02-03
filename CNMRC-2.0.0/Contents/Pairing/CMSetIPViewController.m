@@ -69,6 +69,7 @@
                                                             message:@"올바른 IP 주소를 입력하십시오!"
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             self.ipTextField.text = nil;

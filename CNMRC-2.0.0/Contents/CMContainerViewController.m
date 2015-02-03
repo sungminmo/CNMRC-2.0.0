@@ -331,12 +331,8 @@
         // 연결이 안되어 있는 경우.
         DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
                                                             message:@"셋탑박스가 연결되어 있지 않습니다!"
-                                                  cancelButtonTitle:nil
-                                                   otherButtonTitle:@"확인"];
-        alertView.otherButtonAction = ^{
-            Debug(@"OK Clicked");
-        };
-        
+                                                  cancelButtonTitle:@"확인"
+                                                   otherButtonTitle:nil];
         [alertView show];
     }
     
@@ -346,7 +342,12 @@
 // 미러TV 선택 팝업.
 - (void)checkMirrorTV
 {
-    DQAlertView * alertView = [[DQAlertView alloc] initWithTitle:@"미러 TV" message:@"미러TV로 이동하시겠습니까?\n스트리밍시간이 몇 초 소요됩니다." delegate:self cancelButtonTitle:@"취소" otherButtonTitles:@"확인"];
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"미러 TV"
+                                                         message:@"미러TV로 이동하시겠습니까?\n스트리밍시간이 몇 초 소요됩니다."
+                                               cancelButtonTitle:@"취소"
+                                                otherButtonTitle:@"확인"];
+    alertView.shouldDismissOnActionButtonClicked = YES;
+    [alertView show];
     
     alertView.cancelButtonAction = ^{
         Debug(@"Cancel Clicked");
@@ -367,8 +368,6 @@
         //                              [self presentViewController:viewController animated:YES completion:nil];
         // 테스트 용 -----------------------------------.
     };
-    
-    [alertView show];
 }
 
 // 블럭 채널 정보.
@@ -421,6 +420,7 @@
                                                         message:msg
                                               cancelButtonTitle:nil
                                                otherButtonTitle:@"확인"];
+    alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
         Debug(@"OK Clicked");
     };

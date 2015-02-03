@@ -121,6 +121,7 @@
                                                           message:@"입력된 페어링 코드가 들렸습니다!"
                                                 cancelButtonTitle:nil
                                                  otherButtonTitle:@"확인"];
+      alertView.shouldDismissOnActionButtonClicked = YES;
       alertView.otherButtonAction = ^{
           Debug(@"OK Clicked");
       };

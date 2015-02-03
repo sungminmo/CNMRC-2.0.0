@@ -210,6 +210,7 @@
                                                             message:@"셋탑박스가 연결이 되어 있지 않습니다.\n폰에 저장한 후 셋탑박스가 연결되면 일괄 저장 됩니다!"
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             WishList *wishList = [WishList create];
@@ -257,12 +258,8 @@
         // 연결이 안되어 있는 경우.
         DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
                                                             message:@"셋탑박스가 연결되어 있지 않습니다!"
-                                                  cancelButtonTitle:nil
-                                                   otherButtonTitle:@"확인"];
-        alertView.otherButtonAction = ^{
-            Debug(@"OK Clicked");
-        };
-        
+                                                  cancelButtonTitle:@"확인"
+                                                   otherButtonTitle:nil];        
         [alertView show];
     }
 }

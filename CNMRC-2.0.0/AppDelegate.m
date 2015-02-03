@@ -100,6 +100,7 @@
                                                             message:notification.alertBody
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             // 로컬노티피케이션 취소.

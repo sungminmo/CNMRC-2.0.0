@@ -53,6 +53,7 @@
                                                             message:@"코드를 입력하십시오!"
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
+        alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
             [self.codeTextField becomeFirstResponder];

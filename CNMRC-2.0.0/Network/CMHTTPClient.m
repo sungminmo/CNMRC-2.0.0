@@ -148,6 +148,7 @@
                                                         message:@"서버에 문제가 있습니다. 관리자에게 문의 바랍니다!"
                                               cancelButtonTitle:nil
                                                otherButtonTitle:@"확인"];
+    alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
         Debug(@"OK Clicked");
     };
