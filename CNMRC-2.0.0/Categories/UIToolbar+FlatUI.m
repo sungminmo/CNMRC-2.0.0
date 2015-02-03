@@ -107,7 +107,7 @@ static char storedIsOpened;
     [self addSubview:outButton];
     
     // 툴바의 버튼을 숨길때 사용할 로고.
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"c&mremotecontrol.png"]];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CNMRC"]];
     logo.tag = LOGO_TAG;
     logo.frame = CGRectMake(10.0, 17.0, 103.0, 10.0);
     logo.hidden = YES;

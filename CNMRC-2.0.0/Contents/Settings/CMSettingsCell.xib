@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" promptedForUpgradeToXcode5="NO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <switch hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6">
+                    <switch hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                         <rect key="frame" x="225" y="6" width="51" height="31"/>
                         <color key="onTintColor" red="0.47450980390000003" green="0.3803921569" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                     </switch>
@@ -39,12 +39,6 @@
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="6" firstAttribute="top" secondItem="GDW-f6-jHY" secondAttribute="top" constant="6" id="98J-kg-Ahc"/>
-                    <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="46" id="I5o-IE-bFP"/>
-                    <constraint firstAttribute="bottom" secondItem="6" secondAttribute="bottom" constant="6.5" id="gpd-oj-mjb"/>
-                    <constraint firstItem="6" firstAttribute="leading" secondItem="GDW-f6-jHY" secondAttribute="leading" constant="225" id="xqU-0g-EMF"/>
-                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
@@ -60,9 +54,4 @@
         <image name="Initialize_D" width="160" height="58"/>
         <image name="Initialize_H" width="160" height="58"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
