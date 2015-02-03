@@ -24,6 +24,9 @@
 		1D14AA8C1A6169E300FECF55 /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA861A6169E300FECF55 /* CMMirrorTVViewController.xib */; };
 		1D14AA8D1A6169E300FECF55 /* CMPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */; };
 		1D1C462F1A6A3A1B00ADD92A /* LPAppStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C462E1A6A3A1B00ADD92A /* LPAppStats.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1D20C3D81A8183B3004C84A9 /* LPPhoneVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D20C3D71A8183B3004C84A9 /* LPPhoneVersion.m */; };
+		1D20C3DE1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D20C3DB1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.m */; };
+		1D20C3DF1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D20C3DD1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m */; };
 		1D4A49C31A20859C0088FA93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A49C21A20859C0088FA93 /* main.m */; };
 		1D4A49C61A20859C0088FA93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A49C51A20859C0088FA93 /* AppDelegate.m */; };
 		1D4A49CE1A20859C0088FA93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A49CD1A20859C0088FA93 /* Images.xcassets */; };
@@ -241,6 +244,12 @@
 		1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPlayerLayerView.m; sourceTree = "<group>"; };
 		1D1C462D1A6A3A1B00ADD92A /* LPAppStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPAppStats.h; sourceTree = "<group>"; };
 		1D1C462E1A6A3A1B00ADD92A /* LPAppStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPAppStats.m; sourceTree = "<group>"; };
+		1D20C3D61A8183B3004C84A9 /* LPPhoneVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPPhoneVersion.h; sourceTree = "<group>"; };
+		1D20C3D71A8183B3004C84A9 /* LPPhoneVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPPhoneVersion.m; sourceTree = "<group>"; };
+		1D20C3DA1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPDFUIKitMainThreadGuard.h; sourceTree = "<group>"; };
+		1D20C3DB1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPDFUIKitMainThreadGuard.m; sourceTree = "<group>"; };
+		1D20C3DC1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DebuggingViewInjector.h"; sourceTree = "<group>"; };
+		1D20C3DD1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DebuggingViewInjector.m"; sourceTree = "<group>"; };
 		1D4A49BD1A20859C0088FA93 /* CNMRC-2.0.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CNMRC-2.0.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4A49C11A20859C0088FA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D4A49C21A20859C0088FA93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -744,6 +753,26 @@
 				1D1C462E1A6A3A1B00ADD92A /* LPAppStats.m */,
 			);
 			path = LPAppStats;
+			sourceTree = "<group>";
+		};
+		1D20C3D51A8183B3004C84A9 /* LPPhoneVersion */ = {
+			isa = PBXGroup;
+			children = (
+				1D20C3D61A8183B3004C84A9 /* LPPhoneVersion.h */,
+				1D20C3D71A8183B3004C84A9 /* LPPhoneVersion.m */,
+			);
+			path = LPPhoneVersion;
+			sourceTree = "<group>";
+		};
+		1D20C3D91A8183B7004C84A9 /* Debugging */ = {
+			isa = PBXGroup;
+			children = (
+				1D20C3DA1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.h */,
+				1D20C3DB1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.m */,
+				1D20C3DC1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.h */,
+				1D20C3DD1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m */,
+			);
+			path = Debugging;
 			sourceTree = "<group>";
 		};
 		1D4A49B41A20859C0088FA93 = {
@@ -1457,6 +1486,8 @@
 		1DBA76781A20AE0D003AB966 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1D20C3D91A8183B7004C84A9 /* Debugging */,
+				1D20C3D51A8183B3004C84A9 /* LPPhoneVersion */,
 				1DB9BF4F1A7FD01C00FD58D1 /* DQAlertView */,
 				1D1C462C1A6A3A1B00ADD92A /* LPAppStats */,
 				1D14AA6B1A61692500FECF55 /* LPToast */,
@@ -1817,6 +1848,7 @@
 				1DB9B9221A613DB000E89E27 /* NSNetService+Additions.m in Sources */,
 				1DB9B9C71A61501300E89E27 /* CM05.m in Sources */,
 				1DB9B9AC1A614FCD00E89E27 /* CMTouchPad.m in Sources */,
+				1D20C3DF1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m in Sources */,
 				1DA28B341A3C85AD007D7F4E /* HTProgressHUDFadeAnimation.m in Sources */,
 				1DB9B91F1A613DB000E89E27 /* NSData+Helper.m in Sources */,
 				1DB9BA221A615A9200E89E27 /* CMAuthAdultViewController.m in Sources */,
@@ -1828,6 +1860,7 @@
 				1DB9BF521A7FD01C00FD58D1 /* DQAlertView.m in Sources */,
 				1D14AA691A6168EC00FECF55 /* CMRCViewController.mm in Sources */,
 				1DB9B9E81A61521500E89E27 /* SearchHistory.m in Sources */,
+				1D20C3DE1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.m in Sources */,
 				1DB9B92F1A613DB000E89E27 /* UIToolbar+FlatUI.m in Sources */,
 				1DB9B9591A61446D00E89E27 /* PoloCertificatesStorage.c in Sources */,
 				1DB9B9581A61446D00E89E27 /* PoloBase.cc in Sources */,
@@ -1856,6 +1889,7 @@
 				1DB9B92B1A613DB000E89E27 /* UIDevice+IdentifierAddition.m in Sources */,
 				1DB9B95C1A61446D00E89E27 /* PoloPairingImpl.cpp in Sources */,
 				1DB9B92A1A613DB000E89E27 /* UIDevice+Hardware.m in Sources */,
+				1D20C3D81A8183B3004C84A9 /* LPPhoneVersion.m in Sources */,
 				1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */,
 				1DB9B9D71A61502D00E89E27 /* CMSocketManager.m in Sources */,
 				1DB9BA331A6163AD00E89E27 /* keycodes.pb.cc in Sources */,
