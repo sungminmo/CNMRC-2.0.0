@@ -7,7 +7,7 @@
 //
 
 #import "CMMirrorTVViewController.h"
-#import "DQAlertView.h"
+//#import "DQAlertView.h"
 #import "CMRCViewController.h"
 #include "keycodes.pb.h"
 
@@ -518,30 +518,30 @@ using namespace anymote::messages;
 // 에러로 인한 미러TV 종료 공지!
 - (void)alertMirrorTVError
 {
-    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"에러"
-                                                        message:MIRRORTV_ERROR
-                                              cancelButtonTitle:nil
-                                               otherButtonTitle:@"확인"];
-    alertView.otherButtonAction = ^{
-        Debug(@"OK Clicked");
-        [self closeAction:nil];
-    };
-    
-    [alertView show];
+//    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"에러"
+//                                                        message:MIRRORTV_ERROR
+//                                              cancelButtonTitle:nil
+//                                               otherButtonTitle:@"확인"];
+//    alertView.otherButtonAction = ^{
+//        Debug(@"OK Clicked");
+//        [self closeAction:nil];
+//    };
+//    
+//    [alertView show];
 }
 
 // 확인 버튼만 있는 얼럿.
 - (void)showAlertWithMessage:(NSString *)msg
 {
-    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
-                                                        message:msg
-                                              cancelButtonTitle:nil
-                                               otherButtonTitle:@"확인"];
-    alertView.otherButtonAction = ^{
-        Debug(@"OK Clicked");
-    };
-    
-    [alertView show];
+//    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
+//                                                        message:msg
+//                                              cancelButtonTitle:nil
+//                                               otherButtonTitle:@"확인"];
+//    alertView.otherButtonAction = ^{
+//        Debug(@"OK Clicked");
+//    };
+//    
+//    [alertView show];
 }
 
 #pragma mark - 데이터 수신
@@ -734,31 +734,31 @@ using namespace anymote::messages;
 // 미러TV 종료.
 - (IBAction)closeAction:(id)sender
 {
-    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"미러TV"
-                                                        message:@"미러TV를 종료하시겠습니까?"
-                                              cancelButtonTitle:@"취소"
-                                               otherButtonTitle:@"확인"];
-    alertView.otherButtonAction = ^{
-        Debug(@"OK Clicked");
-        // 타이머 정지.
-        [self.heartbeatTimer invalidate];
-        
-        // 플레이어 종료.
-        [self requestStop];
-        
-        // 미러TV 나가기.
-        [[UIApplication sharedApplication] setStatusBarHidden:NO];
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
-        // 채널을 선택한 경우.
-        if ([sender tag] == CHANNEL_BUTTON_TAG)
-        {
-            CMRCViewController *rcViewController = (CMRCViewController *)[CMAppDelegate.container.viewControllers first];
-            [rcViewController channelAction:sender];
-        }
-    };
-    
-    [alertView show];
+//    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"미러TV"
+//                                                        message:@"미러TV를 종료하시겠습니까?"
+//                                              cancelButtonTitle:@"취소"
+//                                               otherButtonTitle:@"확인"];
+//    alertView.otherButtonAction = ^{
+//        Debug(@"OK Clicked");
+//        // 타이머 정지.
+//        [self.heartbeatTimer invalidate];
+//        
+//        // 플레이어 종료.
+//        [self requestStop];
+//        
+//        // 미러TV 나가기.
+//        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//        
+//        // 채널을 선택한 경우.
+//        if ([sender tag] == CHANNEL_BUTTON_TAG)
+//        {
+//            CMRCViewController *rcViewController = (CMRCViewController *)[CMAppDelegate.container.viewControllers first];
+//            [rcViewController channelAction:sender];
+//        }
+//    };
+//    
+//    [alertView show];
 }
 
 // 볼륨 조절.

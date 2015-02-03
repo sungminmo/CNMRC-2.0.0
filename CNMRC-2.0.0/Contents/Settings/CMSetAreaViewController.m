@@ -131,10 +131,11 @@
         // 알람.
         DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
                                                             message:@"지역설정 후 상품설정을 꼭 확인해 주세요!"
-                                                  cancelButtonTitle:nil
-                                                   otherButtonTitle:@"확인"];
+                                                  cancelButtonTitle:@"확인"
+                                                   otherButtonTitle:nil];
         alertView.otherButtonAction = ^{
             Debug(@"OK Clicked");
+            
         };
         
         [alertView show];
