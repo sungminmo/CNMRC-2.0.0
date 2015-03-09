@@ -130,7 +130,7 @@
                 break;
                 
             case iPhone47inch:
-                searchButtonX = 365;
+                searchButtonX = 281;
                 break;
                 
             default:
@@ -152,7 +152,7 @@
                 break;
                 
             case iPhone47inch:
-                slideButtonX = 365;
+                slideButtonX = 331;
                 
             default:
                 slideButtonX = 271.0;
