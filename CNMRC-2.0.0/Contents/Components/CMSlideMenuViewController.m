@@ -11,6 +11,8 @@
 #import "DQAlertView.h"
 #import "CMAuthAdultViewController.h"
 
+#define BOTTOM_PADDING 20
+
 @interface CMSlideMenuViewController ()
 {
     BOOL _isMenuOpened;
@@ -81,7 +83,7 @@
     if (self.viewControllerType == CMViewControllerTypeList)
     {
         // 목록 테이블.
-        self.listTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 55.0 + paddingY, 320.0, 449.0) style:UITableViewStylePlain];
+        self.listTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 55.0 + paddingY, self.contentView.bounds.size.width, self.contentView.bounds.size.height + BOTTOM_PADDING) style:UITableViewStylePlain];
         self.listTable.dataSource = self;
         self.listTable.delegate= self;
         self.listTable.backgroundColor = [UIColor clearColor];
@@ -123,17 +125,15 @@
     {
         UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
         searchButton.frame = CGRectMake(224.0, 4.0, 49.0, 47.0);
-        [searchButton setImage:[UIImage imageNamed:@"top_icon_search.png"] forState:UIControlStateNormal];
-        [searchButton setBackgroundImage:[UIImage imageNamed:@"top_icon_normal.png"] forState:UIControlStateNormal];
-        [searchButton setBackgroundImage:[UIImage imageNamed:@"top_icon_press.png"] forState:UIControlStateHighlighted];
+        [searchButton setImage:[UIImage imageNamed:@"Search_D"] forState:UIControlStateNormal];
+        [searchButton setImage:[UIImage imageNamed:@"Search_H"] forState:UIControlStateHighlighted];
         [searchButton addTarget:self action:@selector(searchAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.naviBar addSubview:searchButton];
         
         UIButton *slideButton = [UIButton buttonWithType:UIButtonTypeCustom];
         slideButton.frame = CGRectMake(271.0, 4.0, 49.0, 47.0);
-        [slideButton setImage:[UIImage imageNamed:@"top_icon_list.png"] forState:UIControlStateNormal];
-        [slideButton setBackgroundImage:[UIImage imageNamed:@"top_icon_normal.png"] forState:UIControlStateNormal];
-        [slideButton setBackgroundImage:[UIImage imageNamed:@"top_icon_press.png"] forState:UIControlStateHighlighted];
+        [slideButton setImage:[UIImage imageNamed:@"List_D"] forState:UIControlStateNormal];
+        [slideButton setImage:[UIImage imageNamed:@"List_H"] forState:UIControlStateHighlighted];
         [slideButton addTarget:self action:@selector(slideAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.naviBar addSubview:slideButton];
     }
