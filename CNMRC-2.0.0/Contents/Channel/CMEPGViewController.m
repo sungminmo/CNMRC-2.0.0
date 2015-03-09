@@ -11,6 +11,9 @@
 #import "DQAlertView.h"
 #import "CMAlarmManager.h"
 
+#define DATE_LABEL_WIDTH 150.0
+#define NEXT_BUTTON_WIDTH 24.0
+
 @interface CMEPGViewController ()
 {
     NSString *_pageAnimationType;
@@ -108,36 +111,71 @@
     }
     
     // EPG 일별 네비게이션.
-    UIView *subNavigation = [[UIView alloc] initWithFrame:CGRectMake(0.0, 55.0 + paddingY, 320.0, 34.0)];
+    CGFloat subNavigationWidth = 0;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            subNavigationWidth = 414;
+            break;
+            
+        case iPhone47inch:
+            subNavigationWidth = 375;
+            break;
+            
+        default:
+            subNavigationWidth = 320;
+            break;
+    }
+    
+    UIView *subNavigation = [[UIView alloc] initWithFrame:CGRectMake(0.0, 55.0 + paddingY, subNavigationWidth, 34.0)];
     subNavigation.backgroundColor = UIColorFromRGB(0xd7cfe1);
     [self.contentView addSubview:subNavigation];
     
     // 날짜라벨.
-    self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 34.0)];
+    self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, DATE_LABEL_WIDTH, 34.0)];
+    self.dateLabel.center = CGPointMake(subNavigationWidth/2, self.dateLabel.frame.size.height/2);
     self.dateLabel.backgroundColor = [UIColor clearColor];
     self.dateLabel.textColor = UIColorFromRGB(0x7a61aa);
-    self.dateLabel.textAlignment = UITextAlignmentCenter;
+    self.dateLabel.textAlignment = NSTextAlignmentCenter;
     self.dateLabel.font = [UIFont boldSystemFontOfSize:17];
     [subNavigation addSubview:self.dateLabel];
     self.dateLabel.text = @"08월 06일 화요일";
     
     // 이전 버튼.
     self.previousButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.previousButton.frame = CGRectMake(40.0, 5.0, 44.0, 24.0);
+    self.previousButton.frame = CGRectMake(self.dateLabel.frame.origin.x - NEXT_BUTTON_WIDTH, 5.0, NEXT_BUTTON_WIDTH, NEXT_BUTTON_WIDTH);
     [self.previousButton addTarget:self action:@selector(previousAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.previousButton setImage:[UIImage imageNamed:@"datepre_normal.png"] forState:UIControlStateNormal];
-    [self.previousButton setImage:[UIImage imageNamed:@"datepre_press.png"] forState:UIControlStateHighlighted];
+    [self.previousButton setImage:[UIImage imageNamed:@"DatePrevious_D"] forState:UIControlStateNormal];
+    [self.previousButton setImage:[UIImage imageNamed:@"DatePrevious_H"] forState:UIControlStateHighlighted];
     [subNavigation addSubview:self.previousButton];
     
     // 다음 버튼.
     self.nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.nextButton.frame = CGRectMake(236.0, 5.0, 44.0, 24.0);
+    self.nextButton.frame = CGRectMake(self.dateLabel.frame.origin.x + DATE_LABEL_WIDTH, 5.0, NEXT_BUTTON_WIDTH, NEXT_BUTTON_WIDTH);
     [self.nextButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.nextButton setImage:[UIImage imageNamed:@"datenext_normal.png"] forState:UIControlStateNormal];
-    [self.nextButton setImage:[UIImage imageNamed:@"datenext_press.png"] forState:UIControlStateHighlighted];
+    [self.nextButton setImage:[UIImage imageNamed:@"DateNext_D"] forState:UIControlStateNormal];
+    [self.nextButton setImage:[UIImage imageNamed:@"DateNext_H"] forState:UIControlStateHighlighted];
     [subNavigation addSubview:self.nextButton];
     
-    self.listTable.frame = CGRectMake(0.0, 89.0 + paddingY, 320.0, 415.0);
+    CGRect listTableFrame = CGRectMake(0, 0, 0, 0);
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            listTableFrame = CGRectMake(0, 89.0 + paddingY, 414, 671);
+            break;
+            
+        case iPhone47inch:
+            listTableFrame = CGRectMake(0, 89.0 + paddingY, 375, 602);
+            break;
+            
+        case iPhone4inch:
+            listTableFrame = CGRectMake(0, 89.0 + paddingY, 320, 503);
+            break;
+            
+        default:
+            listTableFrame = CGRectMake(0, 89.0 + paddingY, 320, 415);
+            break;
+    }
+    
+    self.listTable.frame = listTableFrame;
 }
 
 // 데이터 갱신.
