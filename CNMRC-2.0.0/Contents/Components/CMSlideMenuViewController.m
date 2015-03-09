@@ -61,7 +61,22 @@
     }
     
     // 메뉴 테이블.
-    self.menuTable = [[UITableView alloc] initWithFrame:CGRectMake(180.0, 0.0 + paddingY, 140.0, 548.0) style:UITableViewStylePlain];
+    CGFloat menuTableX = 0;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            menuTableX = 274.0;
+            break;
+            
+        case iPhone47inch:
+            menuTableX = 235.0;
+            break;
+            
+        default:
+            menuTableX = 180.0;
+            break;
+    }
+    
+    self.menuTable = [[UITableView alloc] initWithFrame:CGRectMake(menuTableX, 0.0 + paddingY, 140.0, 548.0) style:UITableViewStylePlain];
     self.menuTable.dataSource = self;
     self.menuTable.delegate= self;
     self.menuTable.backgroundColor = [UIColor clearColor];
@@ -69,7 +84,26 @@
     [self.view addSubview:self.menuTable];
 
     // 컨텐츠뷰.
-    self.contentView = [[UIView alloc] initWithFrame:self.view.bounds];
+    CGRect contentViewFrame = CGRectMake(0, 0, 0, 0);
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            contentViewFrame = CGRectMake(0, 0, 414, 701);
+            break;
+            
+        case iPhone47inch:
+            contentViewFrame = CGRectMake(0, 0, 375, 632);
+            break;
+            
+        case iPhone4inch:
+            contentViewFrame = CGRectMake(0, 0, 320, 533);
+            break;
+            
+        default:
+            contentViewFrame = CGRectMake(0, 0, 320, 445);
+            break;
+    }
+    
+    self.contentView = [[UIView alloc] initWithFrame:contentViewFrame];
     self.contentView.backgroundColor = UIColorFromRGB(0xe5e5e5);
     [self.view addSubview:self.contentView];
     
@@ -83,7 +117,7 @@
     if (self.viewControllerType == CMViewControllerTypeList)
     {
         // 목록 테이블.
-        self.listTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 55.0 + paddingY, self.contentView.bounds.size.width, self.contentView.bounds.size.height + BOTTOM_PADDING) style:UITableViewStylePlain];
+        self.listTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 55.0 + paddingY, self.contentView.bounds.size.width, self.contentView.bounds.size.height - (55.0 + paddingY)) style:UITableViewStylePlain];
         self.listTable.dataSource = self;
         self.listTable.delegate= self;
         self.listTable.backgroundColor = [UIColor clearColor];

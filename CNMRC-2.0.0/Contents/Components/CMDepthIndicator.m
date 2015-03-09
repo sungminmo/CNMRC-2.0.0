@@ -28,6 +28,21 @@
 // 인디케이터는 4단계로 표시한다.
 - (void)setupLayout
 {
+    CGFloat boxPadding = 0;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            boxPadding = 94;
+            break;
+            
+        case iPhone47inch:
+            boxPadding = 55;
+            break;
+            
+        default:
+            boxPadding = 0;
+            break;
+    }
+    
     for (int i = 0; i < MAX_DEPTH; i++)
     {
         UIColor *color = nil;
@@ -61,7 +76,7 @@
                 break;
         }
         
-        UIView *box = [[UIView alloc] initWithFrame:CGRectMake((BOX_PADDING + BOX_WIDTH) * i, 0.0, BOX_WIDTH, BOX_WIDTH)];
+        UIView *box = [[UIView alloc] initWithFrame:CGRectMake(boxPadding + (BOX_PADDING + BOX_WIDTH) * i, 0.0, BOX_WIDTH, BOX_WIDTH)];
         box.tag = MAX_DEPTH - i;
         box.backgroundColor = color;
         box.hidden = YES;
