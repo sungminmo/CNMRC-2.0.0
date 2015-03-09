@@ -43,4 +43,6 @@
 #import "NSString+Helper.h"
 #import "NSString+HTML.h"
 #import "NSDate+Helper.h"
+#import "LPPhoneVersion.h"
+
 #endif

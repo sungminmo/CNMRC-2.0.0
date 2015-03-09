@@ -123,15 +123,44 @@
     // VOD/채널 -> 검색/슬라이딩 메뉴 버튼.
     if (self.menuType == CMMenuTypeVOD || self.menuType == CMMenuTypeChannel)
     {
+        CGFloat searchButtonX = 0;
+        switch ([LPPhoneVersion deviceSize]) {
+            case iPhone55inch:
+                searchButtonX = 310;
+                break;
+                
+            case iPhone47inch:
+                searchButtonX = 365;
+                break;
+                
+            default:
+                searchButtonX = 224.0;
+                break;
+        }
+        
         UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        searchButton.frame = CGRectMake(224.0, 4.0, 49.0, 47.0);
+        searchButton.frame = CGRectMake(searchButtonX, 4.0, 49.0, 47.0);
         [searchButton setImage:[UIImage imageNamed:@"Search_D"] forState:UIControlStateNormal];
         [searchButton setImage:[UIImage imageNamed:@"Search_H"] forState:UIControlStateHighlighted];
         [searchButton addTarget:self action:@selector(searchAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.naviBar addSubview:searchButton];
         
+        CGFloat slideButtonX = 0;
+        switch ([LPPhoneVersion deviceSize]) {
+            case iPhone55inch:
+                slideButtonX = 365;
+                break;
+                
+            case iPhone47inch:
+                slideButtonX = 365;
+                
+            default:
+                slideButtonX = 271.0;
+                break;
+        }
+        
         UIButton *slideButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        slideButton.frame = CGRectMake(271.0, 4.0, 49.0, 47.0);
+        slideButton.frame = CGRectMake(slideButtonX, 4.0, 49.0, 47.0);
         [slideButton setImage:[UIImage imageNamed:@"List_D"] forState:UIControlStateNormal];
         [slideButton setImage:[UIImage imageNamed:@"List_H"] forState:UIControlStateHighlighted];
         [slideButton addTarget:self action:@selector(slideAction:) forControlEvents:UIControlEventTouchUpInside];
