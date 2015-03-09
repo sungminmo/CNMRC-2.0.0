@@ -129,7 +129,7 @@
             NSInteger grade = [[[self.lists objectAtIndex:indexPath.row] valueForKey:@"VOD_Grade"] integerValue];
             if (grade == 19 && !AppInfo.isAdult)
             {
-                cell.screenshotImageView.image = [UIImage imageNamed:@"vodlist19.jpg"];
+                cell.screenshotImageView.image = [UIImage imageNamed:@"VODList_19"];
             }
             else
             {
