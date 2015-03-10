@@ -17,6 +17,7 @@
 #define TITLE_START_X 71.0
 #define TITLE_WIDTH 160.0
 #define TITLE_HEIGHT 21.0
+#define PADDING 10
 
 @implementation CMVODListTableViewCell
 
@@ -64,7 +65,22 @@
             self.hdIcon.hidden = YES;
             
             // 등급 아이콘과 제목의 위치를 조절한다.
-            self.wathchingLevelIcon.frame = CGRectMake(HD_ICON_START_X, HD_ICON_START_Y, WATCHING_LEVEL_ICON_WIDTH, WATCHING_LEVEL_ICON_HEIGHT);
+            CGFloat titleLabelWidth = 0;
+            switch ([LPPhoneVersion deviceSize]) {
+                case iPhone55inch:
+                    titleLabelWidth = 230.0;
+                    break;
+                    
+                case iPhone47inch:
+                    titleLabelWidth = 200.0;
+                    break;
+                    
+                default:
+                    titleLabelWidth = 160.0;
+                    break;
+            }
+            
+            self.wathchingLevelIcon.frame = CGRectMake(TITLE_START_X + titleLabelWidth, HD_ICON_START_Y, WATCHING_LEVEL_ICON_WIDTH, WATCHING_LEVEL_ICON_HEIGHT);
             
             [self layoutSubviews];
         }
@@ -80,23 +96,23 @@
         switch (_vodGrade)
         {
             case 0:
-                self.wathchingLevelIcon.image = [UIImage imageNamed:@"ageall.png"];
+                self.wathchingLevelIcon.image = [UIImage imageNamed:@"Age_All"];
                 break;
                 
             case 12:
-                self.wathchingLevelIcon.image = [UIImage imageNamed:@"age12.png"];
+                self.wathchingLevelIcon.image = [UIImage imageNamed:@"Age_12"];
                 break;
                 
             case 15:
-                self.wathchingLevelIcon.image = [UIImage imageNamed:@"age15.png"];
+                self.wathchingLevelIcon.image = [UIImage imageNamed:@"Age_15"];
                 break;
                 
             case 19:
-                self.wathchingLevelIcon.image = [UIImage imageNamed:@"age19.png"];
+                self.wathchingLevelIcon.image = [UIImage imageNamed:@"Age_19"];
                 break;
                 
             default:
-                self.wathchingLevelIcon.image = [UIImage imageNamed:@"ageall.png"];
+                self.wathchingLevelIcon.image = [UIImage imageNamed:@"Age_All"];
                 break;
         }
     }
@@ -109,24 +125,39 @@
     
     // 이미지.
     self.screenshotImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0, 1.5, 53.0, 68.5)];
-    self.screenshotImageView.image = [UIImage imageNamed:@"emptyimglist@2x.jpg"];
+    self.screenshotImageView.image = [UIImage imageNamed:@"Empty_Image_List"];
     [self addSubview:self.screenshotImageView];
     
     // 제목.
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_START_X, HD_ICON_START_Y - 1, TITLE_WIDTH, TITLE_HEIGHT)];
+    CGFloat titleLabelWidth = 0;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            titleLabelWidth = 230.0;
+            break;
+            
+        case iPhone47inch:
+            titleLabelWidth = 200.0;
+            break;
+            
+        default:
+            titleLabelWidth = 160.0;
+            break;
+    }
+    
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_START_X, HD_ICON_START_Y - 1, titleLabelWidth, TITLE_HEIGHT)];
     self.titleLabel.backgroundColor = [UIColor clearColor];
     self.titleLabel.text = @"미스터고";
     self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
     [self addSubview:self.titleLabel];
     
     // HD 아이콘.
-    self.hdIcon = [[UIImageView alloc] initWithFrame:CGRectMake(HD_ICON_START_X, HD_ICON_START_Y, HD_ICON_WIDTH, 20.0)];
-    self.hdIcon.image = [UIImage imageNamed:@"hdicon.png"];
+    self.hdIcon = [[UIImageView alloc] initWithFrame:CGRectMake(TITLE_START_X + titleLabelWidth, HD_ICON_START_Y, HD_ICON_WIDTH, 20.0)];
+    self.hdIcon.image = [UIImage imageNamed:@"HD"];
     [self addSubview:self.hdIcon];
     
     // 시청등급 아이콘.
-    self.wathchingLevelIcon = [[UIImageView alloc] initWithFrame:CGRectMake(WATCHING_LEVEL_ICON_START_X, HD_ICON_START_Y, WATCHING_LEVEL_ICON_WIDTH, WATCHING_LEVEL_ICON_HEIGHT)];
-    self.wathchingLevelIcon.image = [UIImage imageNamed:@"ageall.png"];
+    self.wathchingLevelIcon = [[UIImageView alloc] initWithFrame:CGRectMake(self.hdIcon.frame.origin.x + HD_ICON_WIDTH + PADDING, HD_ICON_START_Y, WATCHING_LEVEL_ICON_WIDTH, WATCHING_LEVEL_ICON_HEIGHT)];
+    self.wathchingLevelIcon.image = [UIImage imageNamed:@"Age_All"];
     [self addSubview:self.wathchingLevelIcon];
     
     // 감독.
@@ -138,7 +169,22 @@
     [self addSubview:self.directorLabel];
     
     // 출연.
-    self.castingLabel = [[UILabel alloc] initWithFrame:CGRectMake(71.0, 50.0, 229.0, 21.0)];
+    CGFloat castingLabelWidth = 0;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            castingLabelWidth = 300.0;
+            break;
+            
+        case iPhone47inch:
+            castingLabelWidth = 250.0;
+            break;
+            
+        default:
+            castingLabelWidth = 229.0;
+            break;
+    }
+    
+    self.castingLabel = [[UILabel alloc] initWithFrame:CGRectMake(71.0, 50.0, castingLabelWidth, 21.0)];
     self.castingLabel.backgroundColor = [UIColor clearColor];
     self.castingLabel.text = @"출연: 성동일, 서교";
     self.castingLabel.font = [UIFont boldSystemFontOfSize:15];
