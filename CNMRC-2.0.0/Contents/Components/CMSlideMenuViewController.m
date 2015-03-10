@@ -117,7 +117,7 @@
     if (self.viewControllerType == CMViewControllerTypeList)
     {
         // 목록 테이블.
-        self.listTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 55.0 + paddingY, self.contentView.bounds.size.width, self.contentView.bounds.size.height - (55.0 + paddingY)) style:UITableViewStylePlain];
+        self.listTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 55.0 + paddingY, self.contentView.bounds.size.width, self.contentView.bounds.size.height - (55.0 + 2*paddingY)) style:UITableViewStylePlain];
         self.listTable.dataSource = self;
         self.listTable.delegate= self;
         self.listTable.backgroundColor = [UIColor clearColor];
