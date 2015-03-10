@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMSearchViewController">
@@ -35,7 +35,7 @@
                         <outlet property="delegate" destination="-1" id="12"/>
                     </connections>
                 </searchBar>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="search_menu_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="19">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="SearchMenu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                     <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6">
@@ -67,10 +67,10 @@
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" backgroundImage="search_menu_pres.png">
+                    <state key="selected" backgroundImage="SearchMenu_H">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="search_menu_pres.png">
+                    <state key="highlighted" backgroundImage="SearchMenu_H">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -84,10 +84,10 @@
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" backgroundImage="search_menu_pres.png">
+                    <state key="selected" backgroundImage="SearchMenu_H">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="search_menu_pres.png">
+                    <state key="highlighted" backgroundImage="SearchMenu_H">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -97,12 +97,12 @@
                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                     <rect key="frame" x="214" y="55" width="106" height="44"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" image="naverlogo.png">
+                    <state key="normal" image="NaverLogo">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" backgroundImage="search_menu_pres.png"/>
-                    <state key="highlighted" backgroundImage="search_menu_pres.png">
+                    <state key="selected" backgroundImage="SearchMenu_H"/>
+                    <state key="highlighted" backgroundImage="SearchMenu_H">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -121,10 +121,10 @@
         </view>
     </objects>
     <resources>
-        <image name="naverlogo.png" width="84" height="19"/>
+        <image name="NaverLogo" width="84" height="20"/>
+        <image name="SearchMenu_BG" width="640" height="88"/>
+        <image name="SearchMenu_H" width="214" height="88"/>
         <image name="search_delete_normal.png" width="312" height="35"/>
         <image name="search_delete_press.png" width="312" height="35"/>
-        <image name="search_menu_bg.png" width="640" height="88"/>
-        <image name="search_menu_pres.png" width="214" height="88"/>
     </resources>
 </document>
