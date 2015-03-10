@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMQwertyViewController">
@@ -44,49 +44,35 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="qwerty_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="15">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11">
+                    <rect key="frame" x="205" y="5" width="110" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="cwV-rg-U0K"/>
+                        <constraint firstAttribute="width" constant="110" id="hDC-i5-1uY"/>
+                    </constraints>
+                    <state key="normal" title="TV글자지우기"/>
+                    <connections>
+                        <action selector="deleteTVCharacter:" destination="-1" eventType="touchUpInside" id="16"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10">
                     <rect key="frame" x="5" y="5" width="50" height="30"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="취소" backgroundImage="qwerty_cancel_normal.png">
-                        <color key="titleColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="qwerty_cancel_press.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="취소">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="13"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                    <rect key="frame" x="206" y="5" width="110" height="30"/>
-                    <color key="backgroundColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="TV글자지우기" backgroundImage="qwerty_textdelete_normal.png">
-                        <color key="titleColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="qwerty_textdelete_press.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="deleteTVCharacter:" destination="-1" eventType="touchUpInside" id="16"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.93747877040000005" green="0.93747877040000005" blue="0.93747877040000005" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="11" secondAttribute="centerY" id="UzO-Gw-mxe"/>
+                <constraint firstAttribute="trailing" secondItem="11" secondAttribute="trailing" constant="5" id="X9P-Su-rWL"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <resources>
-        <image name="qwerty_bg.png" width="320" height="39"/>
-        <image name="qwerty_cancel_normal.png" width="50" height="30"/>
-        <image name="qwerty_cancel_press.png" width="50" height="30"/>
-        <image name="qwerty_textdelete_normal.png" width="110" height="30"/>
-        <image name="qwerty_textdelete_press.png" width="110" height="30"/>
-    </resources>
 </document>
