@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" promptedForUpgradeToXcode5="NO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMSetAreaViewController">
@@ -17,10 +17,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="55" width="600" height="545"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="600" id="8"/>
+                        <constraint firstAttribute="height" constant="545" id="D9z-tc-zmL"/>
+                        <constraint firstAttribute="width" constant="600" id="UMf-oR-AX3"/>
                     </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="5"/>
@@ -30,9 +31,11 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="9"/>
-                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="10"/>
-                <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="11"/>
+                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="2zV-Mp-3Np"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Tzm-mG-dZ6"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" constant="55" id="Ya5-1b-bKN"/>
+                <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="dM7-M5-hhn"/>
+                <constraint firstAttribute="centerX" secondItem="4" secondAttribute="centerX" id="wz9-Bx-NJy"/>
             </constraints>
             <point key="canvasLocation" x="413" y="294"/>
         </view>
