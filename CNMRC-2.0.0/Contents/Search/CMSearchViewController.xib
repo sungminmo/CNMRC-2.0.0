@@ -23,8 +23,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="검색어를 입력해 주세요." showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                <searchBar contentMode="redraw" placeholder="검색어를 입력해 주세요." showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                    <rect key="frame" x="0.0" y="25" width="600" height="44"/>
                     <color key="tintColor" red="0.49803921569999998" green="0.3803921569" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                     <textInputTraits key="textInputTraits"/>
                     <scopeButtonTitles>
@@ -35,21 +35,30 @@
                         <outlet property="delegate" destination="-1" id="12"/>
                     </connections>
                 </searchBar>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="SearchMenu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                    <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SearchMenu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="19">
+                    <rect key="frame" x="0.0" y="69" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="4xZ-HZ-z07"/>
+                        <constraint firstAttribute="width" constant="600" id="qnh-ua-JLJ"/>
+                    </constraints>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6">
-                    <rect key="frame" x="0.0" y="98" width="600" height="502"/>
+                    <rect key="frame" x="0.0" y="113" width="600" height="487"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="10"/>
                         <outlet property="delegate" destination="-1" id="11"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                    <rect key="frame" x="0.0" y="459" width="320" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
+                    <rect key="frame" x="0.0" y="458" width="600" height="44"/>
+                    <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="600" id="2Vw-YG-0a4"/>
+                        <constraint firstAttribute="height" constant="44" id="Ozb-j8-a2p"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="최근 검색어 삭제" backgroundImage="search_delete_normal.png">
+                    <state key="normal" title="최근 검색어 삭제">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -60,25 +69,12 @@
                         <action selector="deleteSearchHistoryAction:" destination="-1" eventType="touchUpInside" id="17"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18">
-                    <rect key="frame" x="0.0" y="55" width="106" height="44"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <state key="normal" title="VOD">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" backgroundImage="SearchMenu_H">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="SearchMenu_H">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="searchTypeAction:" destination="-1" eventType="touchUpInside" id="25"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20">
-                    <rect key="frame" x="107" y="55" width="106" height="44"/>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20">
+                    <rect key="frame" x="200" y="69" width="200" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="4UX-FZ-k4K"/>
+                        <constraint firstAttribute="height" constant="44" id="gBd-cw-xPd"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <state key="normal" title="프로그램">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,8 +90,12 @@
                         <action selector="searchTypeAction:" destination="-1" eventType="touchUpInside" id="26"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                    <rect key="frame" x="214" y="55" width="106" height="44"/>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                    <rect key="frame" x="400" y="69" width="200" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="ds2-1I-tl6"/>
+                        <constraint firstAttribute="height" constant="44" id="lkw-DB-xwI"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" image="NaverLogo">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,14 +109,65 @@
                         <action selector="searchTypeAction:" destination="-1" eventType="touchUpInside" id="27"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="컨텐츠명 또는 연관단어를 입력해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29">
-                    <rect key="frame" x="20" y="263" width="280" height="75"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="컨텐츠명 또는 연관단어를 입력해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29">
+                    <rect key="frame" x="160" y="262" width="280" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="1Ny-OW-PMA"/>
+                        <constraint firstAttribute="height" constant="75" id="aJW-0l-OYd"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18">
+                    <rect key="frame" x="0.0" y="69" width="200" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="xN8-7h-yQ3"/>
+                        <constraint firstAttribute="width" constant="200" id="yh9-Pa-NlK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="VOD">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="SearchMenu_H">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="SearchMenu_H">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="searchTypeAction:" destination="-1" eventType="touchUpInside" id="25"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" id="4n5-q2-URY"/>
+                <constraint firstItem="20" firstAttribute="leading" secondItem="18" secondAttribute="trailing" id="7E8-6J-XW1"/>
+                <constraint firstItem="21" firstAttribute="leading" secondItem="20" secondAttribute="trailing" id="7Y7-FS-Obj"/>
+                <constraint firstItem="20" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="7p9-up-SNP"/>
+                <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" id="90O-ol-OhD"/>
+                <constraint firstItem="21" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="95s-Hs-4fR"/>
+                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="Aui-nK-Mqv"/>
+                <constraint firstItem="20" firstAttribute="width" secondItem="18" secondAttribute="width" id="CYY-Y6-aav"/>
+                <constraint firstItem="20" firstAttribute="leading" secondItem="18" secondAttribute="trailing" id="EGq-8N-PyZ"/>
+                <constraint firstAttribute="centerX" secondItem="29" secondAttribute="centerX" id="GBo-N4-vz0"/>
+                <constraint firstAttribute="trailing" secondItem="13" secondAttribute="trailing" id="MGA-19-EcF"/>
+                <constraint firstItem="20" firstAttribute="width" secondItem="21" secondAttribute="width" id="Od4-mq-G1f"/>
+                <constraint firstItem="18" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Q7t-Z8-eOo"/>
+                <constraint firstItem="18" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="S7F-M7-PPI"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="ZuX-Dy-uG7"/>
+                <constraint firstAttribute="centerX" secondItem="13" secondAttribute="centerX" id="e0b-g6-Vor"/>
+                <constraint firstItem="13" firstAttribute="top" secondItem="1" secondAttribute="top" constant="458" id="gcA-bj-AvR"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" constant="25" id="iOg-9o-9hw"/>
+                <constraint firstAttribute="centerX" secondItem="19" secondAttribute="centerX" id="j21-Mc-3Im"/>
+                <constraint firstItem="19" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="kHh-6q-TBw"/>
+                <constraint firstItem="13" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="m1f-u5-LQC"/>
+                <constraint firstAttribute="centerY" secondItem="29" secondAttribute="centerY" id="nrA-he-Bxk"/>
+                <constraint firstItem="21" firstAttribute="leading" secondItem="20" secondAttribute="trailing" id="qg4-ln-xEc"/>
+                <constraint firstItem="19" firstAttribute="top" secondItem="4" secondAttribute="bottom" id="zIx-UO-yUS"/>
+            </constraints>
             <point key="canvasLocation" x="439" y="375"/>
         </view>
     </objects>
@@ -124,7 +175,6 @@
         <image name="NaverLogo" width="84" height="20"/>
         <image name="SearchMenu_BG" width="640" height="88"/>
         <image name="SearchMenu_H" width="214" height="88"/>
-        <image name="search_delete_normal.png" width="312" height="35"/>
         <image name="search_delete_press.png" width="312" height="35"/>
     </resources>
 </document>
