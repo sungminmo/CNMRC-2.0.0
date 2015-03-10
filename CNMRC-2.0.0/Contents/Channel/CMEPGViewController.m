@@ -159,19 +159,19 @@
     CGRect listTableFrame = CGRectMake(0, 0, 0, 0);
     switch ([LPPhoneVersion deviceSize]) {
         case iPhone55inch:
-            listTableFrame = CGRectMake(0, 89.0 + paddingY, 414, 671);
+            listTableFrame = CGRectMake(0, 89.0 + paddingY, 414, 671 - (89.0 + paddingY));
             break;
             
         case iPhone47inch:
-            listTableFrame = CGRectMake(0, 89.0 + paddingY, 375, 602);
+            listTableFrame = CGRectMake(0, 89.0 + paddingY, 375, 602 - (89.0 + paddingY));
             break;
             
         case iPhone4inch:
-            listTableFrame = CGRectMake(0, 89.0 + paddingY, 320, 503);
+            listTableFrame = CGRectMake(0, 89.0 + paddingY, 320, 503 - (89.0 + paddingY));
             break;
             
         default:
-            listTableFrame = CGRectMake(0, 89.0 + paddingY, 320, 415);
+            listTableFrame = CGRectMake(0, 89.0 + paddingY, 320, 415 - (89.0 + paddingY));
             break;
     }
     

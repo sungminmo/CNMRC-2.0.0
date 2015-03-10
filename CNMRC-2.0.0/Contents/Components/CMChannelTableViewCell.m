@@ -60,8 +60,23 @@
     self.channelIcon.image = [UIImage imageNamed:@"sbs.jpg"];
     [self addSubview:self.channelIcon];
     
+    CGFloat titleLabelWidth = 0;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            titleLabelWidth = 220;
+            break;
+            
+        case iPhone47inch:
+            titleLabelWidth = 200;
+            break;
+            
+        default:
+            titleLabelWidth = 170;
+            break;
+    }
+    
     // 제목.
-    self.programLabel = [[UILabel alloc] initWithFrame:CGRectMake(125.0, 4.0, 170.0, 18.0)];
+    self.programLabel = [[UILabel alloc] initWithFrame:CGRectMake(125.0, 4.0, titleLabelWidth, 18.0)];
     self.programLabel.backgroundColor = [UIColor clearColor];
     self.programLabel.textColor = [UIColor darkGrayColor];
     self.programLabel.text = @"13:20 스마일";
@@ -69,7 +84,7 @@
     [self addSubview:self.programLabel];
     
     // 부제목.
-    self.nextProgramLabel = [[UILabel alloc] initWithFrame:CGRectMake(125.0, 24.0, 170.0, 18.0)];
+    self.nextProgramLabel = [[UILabel alloc] initWithFrame:CGRectMake(125.0, 24.0, titleLabelWidth, 18.0)];
     self.nextProgramLabel.backgroundColor = [UIColor clearColor];
     self.nextProgramLabel.textColor = [UIColor lightGrayColor];
     self.nextProgramLabel.text = @"13:40(자막)우리동네이모저모";
