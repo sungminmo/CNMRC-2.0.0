@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMSettingsViewController">
@@ -17,10 +17,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="4">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="75" width="600" height="600"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="600" id="11"/>
+                        <constraint firstAttribute="width" constant="600" id="GK4-3G-bme"/>
+                        <constraint firstAttribute="height" constant="600" id="oJY-vl-wHI"/>
                     </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6"/>
@@ -30,11 +31,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="8"/>
-                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="9"/>
-                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="10"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="12K-xj-WVn"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" constant="75" id="VpQ-Bo-HXx"/>
+                <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" constant="-75" id="ZPq-dI-W5g"/>
+                <constraint firstAttribute="centerX" secondItem="4" secondAttribute="centerX" id="h3Q-1L-Dyl"/>
+                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="niP-AI-zYN"/>
+                <constraint firstAttribute="centerY" secondItem="4" secondAttribute="centerY" constant="-75" id="tKR-WW-te2"/>
             </constraints>
-            <nil key="simulatedTopBarMetrics"/>
             <point key="canvasLocation" x="343" y="303"/>
         </view>
     </objects>
