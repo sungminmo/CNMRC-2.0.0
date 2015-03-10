@@ -10,6 +10,10 @@
 
 @implementation CMSettingsCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -33,8 +37,6 @@
         case CMSettingsCellTypeSwitch:
         {
             self.settingsSwitch.hidden = NO;
-            self.settingsSwitch.frame = CGRectMake(100, 10, 200, 200);
-            [self insertSubview:self.settingsSwitch aboveSubview:self.contentView];
         }
             break;
             
@@ -42,7 +44,6 @@
         {
             self.settingsSlider.minimumTrackTintColor = UIColorFromRGB(0x7961aa);
             self.settingsSlider.hidden = NO;
-            [self insertSubview:self.settingsSlider aboveSubview:self.contentView];
         }
             break;
             
@@ -53,8 +54,6 @@
             {
                 [self.settingsButton setTitle:self.buttonTitle forState:UIControlStateNormal];
             }
-
-            [self insertSubview:self.settingsButton aboveSubview:self.contentView];
         }
             break;
             
@@ -62,7 +61,6 @@
         {
             self.settingsLabel.hidden = NO;
             self.settingsLabel.textColor = UIColorFromRGB(0x7961aa);
-            [self insertSubview:self.settingsLabel aboveSubview:self.contentView];
         }
             break;
             

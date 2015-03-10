@@ -35,13 +35,6 @@
     
 	// 백그라운드 컬러.
 	self.view.backgroundColor = UIColorFromRGB(0xe5e5e5);
-    
-    Debug(@">>>>>>>>>>%@", NSStringFromCGRect(self.settingsTable.frame));
-    
-//    // 설정 테이블 Y좌표 수정.
-//    self.settingsTable.frame = CGRectMake(self.settingsTable.frame.origin.x, self.settingsTable.frame.origin.y - 55, self.settingsTable.frame.size.width, self.settingsTable.frame.size.height);
-//    
-    Debug(@">>>>>>>>>>%@", NSStringFromCGRect(self.settingsTable.frame));
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -264,6 +257,7 @@
     
 	// Configure the cell...
 	NSString *subTitle = [[[[self.settings objectAtIndex:indexPath.section] objectForKey:@"subTitles"] objectAtIndex:indexPath.row] objectForKey:@"subTitle"];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
 	cell.textLabel.textColor = [UIColor grayColor];
 	cell.textLabel.text = subTitle;
     
