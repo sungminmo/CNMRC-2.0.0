@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMBoxListViewController">
@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="4">
-                    <rect key="frame" x="0.0" y="55" width="600" height="513"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                    <rect key="frame" x="0.0" y="55" width="600" height="545"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="5"/>
@@ -26,6 +26,10 @@
                 </tableView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oF-CV-wTH">
                     <rect key="frame" x="176" y="273" width="248" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="LE3-Zu-W2w"/>
+                        <constraint firstAttribute="width" constant="248" id="PjS-FI-mxs"/>
+                    </constraints>
                     <string key="text">연결이 지연 될 경우, TV 상에서
 [메뉴--&gt;마이앱--&gt;기본설치앱--&gt;설정]의
 이더넷 IP 주소를 모바일에 입력해 주세요.</string>
@@ -36,8 +40,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="0oF-CV-wTH" secondAttribute="centerX" id="l8C-aa-Ntv"/>
-                <constraint firstAttribute="centerY" secondItem="0oF-CV-wTH" secondAttribute="centerY" id="twK-Pa-eNf"/>
+                <constraint firstAttribute="centerX" secondItem="0oF-CV-wTH" secondAttribute="centerX" id="3Aj-RK-i6R"/>
+                <constraint firstAttribute="centerY" secondItem="0oF-CV-wTH" secondAttribute="centerY" id="7fV-CL-9Cc"/>
+                <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" id="A2d-N3-Yzv"/>
+                <constraint firstAttribute="bottom" secondItem="4" secondAttribute="bottom" id="LYL-lr-cC5"/>
+                <constraint firstItem="4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="VhL-Gc-XkI"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="1" secondAttribute="top" constant="55" id="lpf-MI-9Zl"/>
+                <constraint firstAttribute="centerX" secondItem="4" secondAttribute="centerX" id="vv9-D8-iKs"/>
             </constraints>
             <point key="canvasLocation" x="407" y="375"/>
         </view>
