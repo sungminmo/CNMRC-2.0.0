@@ -448,7 +448,8 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
         _currentErrorCount += 1;
         
         // !!!: 에러가 두 번 들어오기 때문에 한 번을 걸려 낸다.
-        if ((_currentErrorCount % 2) == 0)
+        //if ((_currentErrorCount % 2) == 0)
+        if (_currentErrorCount == 1)
         {
             // 박스 찾기 얼럿.
             [self checkPairing];
