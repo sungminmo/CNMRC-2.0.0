@@ -183,8 +183,10 @@
                 <constraint firstItem="9IX-Zl-92k" firstAttribute="top" secondItem="76" secondAttribute="bottom" constant="199" id="Vfs-wB-VeN"/>
                 <constraint firstAttribute="trailing" secondItem="9IX-Zl-92k" secondAttribute="trailing" id="Z23-Uc-XmX"/>
                 <constraint firstItem="95" firstAttribute="leading" secondItem="75" secondAttribute="leading" id="b01-L6-nwT"/>
+                <constraint firstItem="95" firstAttribute="top" secondItem="9IX-Zl-92k" secondAttribute="bottom" id="bqC-Jx-uIY"/>
                 <constraint firstAttribute="centerX" secondItem="95" secondAttribute="centerX" id="doX-Bf-rCS"/>
                 <constraint firstItem="9IX-Zl-92k" firstAttribute="leading" secondItem="75" secondAttribute="leading" id="gon-7e-cye"/>
+                <constraint firstAttribute="bottom" secondItem="95" secondAttribute="bottom" id="uWp-eU-OFK"/>
                 <constraint firstItem="95" firstAttribute="top" secondItem="77" secondAttribute="bottom" constant="234" id="v62-ns-bnV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
