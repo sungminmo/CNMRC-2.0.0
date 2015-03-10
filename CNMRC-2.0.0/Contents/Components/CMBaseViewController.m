@@ -252,23 +252,23 @@
     switch (vodGrade)
     {
         case 0:
-            vodIcon = [UIImage imageNamed:@"ageall.png"];
+            vodIcon = [UIImage imageNamed:@"Age_All"];
             break;
             
         case 12:
-            vodIcon = [UIImage imageNamed:@"age12.png"];
+            vodIcon = [UIImage imageNamed:@"Age_12"];
             break;
             
         case 15:
-            vodIcon = [UIImage imageNamed:@"age15.png"];
+            vodIcon = [UIImage imageNamed:@"Age_15"];
             break;
             
         case 19:
-            vodIcon = [UIImage imageNamed:@"age19.png"];
+            vodIcon = [UIImage imageNamed:@"Age_19"];
             break;
             
         default:
-            vodIcon = [UIImage imageNamed:@"ageall.png"];
+            vodIcon = [UIImage imageNamed:@"Age_All"];
             break;
     }
     

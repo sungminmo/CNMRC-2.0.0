@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMVODDetailViewController">
@@ -27,33 +27,55 @@
             <point key="canvasLocation" x="309" y="375"/>
         </view>
         <view contentMode="scaleToFill" id="75">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="449"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="76">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="hdicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="78">
-                            <rect key="frame" x="256" y="9" width="33" height="20"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="age12.png" translatesAutoresizingMaskIntoConstraints="NO" id="79">
-                            <rect key="frame" x="295" y="9" width="20" height="20"/>
-                        </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="미스터고" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77">
-                            <rect key="frame" x="8" y="9" width="241" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="미스터고" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77">
+                            <rect key="frame" x="8" y="8" width="182" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="8kP-x5-KKc"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="182" id="jM1-AE-7x0"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="HD" translatesAutoresizingMaskIntoConstraints="NO" id="78">
+                            <rect key="frame" x="531" y="9" width="33" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="33" id="6EM-Bg-YTW"/>
+                                <constraint firstAttribute="height" constant="20" id="y0G-th-Sgp"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Age_12" translatesAutoresizingMaskIntoConstraints="NO" id="79">
+                            <rect key="frame" x="572" y="9" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Lpe-3n-ksA"/>
+                                <constraint firstAttribute="width" constant="20" id="baN-L0-XeX"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.84313725490000002" green="0.81176470590000005" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.84313725490196079" green="0.81176470588235294" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="77" secondAttribute="centerY" id="03a-dS-Qms"/>
+                        <constraint firstItem="79" firstAttribute="leading" secondItem="78" secondAttribute="trailing" constant="8" id="6G5-1b-Jns"/>
+                        <constraint firstAttribute="height" constant="37" id="ArO-Ps-tim"/>
+                        <constraint firstAttribute="centerY" secondItem="78" secondAttribute="centerY" id="GKR-Ao-7bX"/>
+                        <constraint firstAttribute="trailing" secondItem="79" secondAttribute="trailing" constant="8" id="L5J-ga-KjL"/>
+                        <constraint firstItem="77" firstAttribute="leading" secondItem="76" secondAttribute="leading" constant="8" id="RKJ-Fm-XH3"/>
+                        <constraint firstAttribute="width" constant="600" id="bNZ-rr-Kxb"/>
+                        <constraint firstAttribute="centerY" secondItem="79" secondAttribute="centerY" id="yf5-mh-8TS"/>
+                    </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="emptyimgdetail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="80">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="Empty_Image_Detail" translatesAutoresizingMaskIntoConstraints="NO" id="80">
                     <rect key="frame" x="5" y="42" width="140" height="189"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="감독 : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81">
                     <rect key="frame" x="150" y="40" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="김용화" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82">
@@ -65,7 +87,7 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="출연 : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83">
                     <rect key="frame" x="150" y="69" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="성동일, 서교" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84">
@@ -77,7 +99,7 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="관람등급 :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85">
                     <rect key="frame" x="150" y="98" width="65" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="12세이상" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86">
@@ -89,7 +111,7 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="가격 :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87">
                     <rect key="frame" x="150" y="127" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="4,000원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88">
@@ -101,65 +123,79 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89">
                     <rect key="frame" x="150" y="198" width="165" height="33"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" image="vodzzim_normal.png">
+                    <state key="normal" image="VOD_Save_D">
                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" image="vodzzim_press.png">
+                    <state key="highlighted" image="VOD_Save_H">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="wishListAction:" destination="-1" eventType="touchUpInside" id="90"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IX-Zl-92k">
+                    <rect key="frame" x="0.0" y="236" width="600" height="27"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="줄거리" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94">
+                            <rect key="frame" x="8" y="3" width="90" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.84313725490196079" green="0.81176470588235294" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="600" id="cze-QR-tzq"/>
+                        <constraint firstAttribute="height" constant="27" id="zUe-Uc-cpH"/>
+                    </constraints>
+                </view>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91">
-                    <rect key="frame" x="150" y="198" width="165" height="33"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" image="tvbtn_normal.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" image="tvbtn_press.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <rect key="frame" x="150" y="198" width="161" height="33"/>
+                    <state key="highlighted" backgroundImage="VOD_Save_H"/>
                     <connections>
                         <action selector="mirroringAction:" destination="-1" eventType="touchUpInside" id="92"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="synopsis_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="93">
-                    <rect key="frame" x="0.0" y="236" width="320" height="27"/>
-                </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="줄거리" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94">
-                    <rect key="frame" x="5" y="239" width="90" height="21"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95">
-                    <rect key="frame" x="0.0" y="263" width="320" height="187"/>
-                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95">
+                    <rect key="frame" x="0.0" y="263" width="600" height="337"/>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="600" id="a9F-2P-r8j"/>
+                        <constraint firstAttribute="height" constant="337" id="lfH-Qc-9oQ"/>
+                    </constraints>
                     <string key="text">야구하는 고릴라 ‘링링’과 15세 소녀 
 세상에 없던 가장 특별한 이야기가 시작된다!
 할아버지가 돌아가신 후 홀로 전통의 룡파 서커스를 이끄는 15세 소녀 ‘웨이웨이’. 
 그녀의 유일한 친구이자 가족은 태어날 때부터 함께 해 온 45세 고릴라 ‘링링’ 뿐이다. </string>
-                    <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="95" secondAttribute="trailing" id="7cX-6J-wDu"/>
+                <constraint firstItem="76" firstAttribute="top" secondItem="75" secondAttribute="top" id="8RF-la-ZV9"/>
+                <constraint firstItem="76" firstAttribute="leading" secondItem="75" secondAttribute="leading" id="Cbn-Er-6SI"/>
+                <constraint firstAttribute="trailing" secondItem="76" secondAttribute="trailing" id="Jg9-4G-AVc"/>
+                <constraint firstAttribute="centerX" secondItem="76" secondAttribute="centerX" id="MBY-BL-peB"/>
+                <constraint firstItem="9IX-Zl-92k" firstAttribute="top" secondItem="76" secondAttribute="bottom" constant="199" id="Vfs-wB-VeN"/>
+                <constraint firstAttribute="trailing" secondItem="9IX-Zl-92k" secondAttribute="trailing" id="Z23-Uc-XmX"/>
+                <constraint firstItem="95" firstAttribute="leading" secondItem="75" secondAttribute="leading" id="b01-L6-nwT"/>
+                <constraint firstAttribute="centerX" secondItem="95" secondAttribute="centerX" id="doX-Bf-rCS"/>
+                <constraint firstItem="9IX-Zl-92k" firstAttribute="leading" secondItem="75" secondAttribute="leading" id="gon-7e-cye"/>
+                <constraint firstItem="95" firstAttribute="top" secondItem="77" secondAttribute="bottom" constant="234" id="v62-ns-bnV"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="359" y="363"/>
         </view>
     </objects>
     <resources>
-        <image name="age12.png" width="20" height="20"/>
-        <image name="emptyimgdetail.jpg" width="140" height="199"/>
-        <image name="hdicon.png" width="33" height="20"/>
-        <image name="synopsis_bg.png" width="320" height="27"/>
-        <image name="tvbtn_normal.png" width="165" height="33"/>
-        <image name="tvbtn_press.png" width="165" height="33"/>
-        <image name="vodzzim_normal.png" width="165" height="33"/>
-        <image name="vodzzim_press.png" width="165" height="33"/>
+        <image name="Age_12" width="20" height="20"/>
+        <image name="Empty_Image_Detail" width="136" height="194"/>
+        <image name="HD" width="32" height="20"/>
+        <image name="VOD_Save_D" width="161" height="33"/>
+        <image name="VOD_Save_H" width="161" height="33"/>
     </resources>
 </document>

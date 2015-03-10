@@ -100,7 +100,22 @@
         paddingY = 20.0;
     }
     
-    self.detailView.frame = CGRectMake(0.0, 55.0 + paddingY, 320.0, 449.0);
+    CGFloat detailViewWidth = 0;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            detailViewWidth = 414;
+            break;
+            
+        case iPhone47inch:
+            detailViewWidth = 375;
+            break;
+            
+        default:
+            detailViewWidth = 320;
+            break;
+    }
+    
+    self.detailView.frame = CGRectMake(0.0, 55.0 + paddingY, detailViewWidth, self.view.frame.size.height + paddingY);
     [self.contentView addSubview:self.detailView];
     
     // 슬라이드메뉴 스와이프 제스처 추가.
@@ -118,7 +133,7 @@
     [self.detailView addGestureRecognizer:right];
     
     // 줄거리 텍스트뷰 프레임 설정.
-    self.synopsisTextView.frame = DeviceSpecificSetting(SYNOPSIS_TEXTVIEW_FRAME, SYNOPSIS_TEXTVIEW_FIVE_FRAME);
+    //self.synopsisTextView.frame = DeviceSpecificSetting(SYNOPSIS_TEXTVIEW_FRAME, SYNOPSIS_TEXTVIEW_FIVE_FRAME);
 }
 
 // 목록의 좌/우 스와이프 제스처.
@@ -149,13 +164,13 @@
         self.hdIcon.hidden = YES;
         
         // 등급 아이콘 위치를 조절한다.
-        self.wathchingLevelIcon.frame = CGRectMake(size.width + 5, HD_ICON_START_Y, WATCHING_LEVEL_ICON_WIDTH, WATCHING_LEVEL_ICON_HEIGHT);
+//        self.wathchingLevelIcon.frame = CGRectMake(size.width + 5, HD_ICON_START_Y, WATCHING_LEVEL_ICON_WIDTH, WATCHING_LEVEL_ICON_HEIGHT);
     }
     else
     {
         // HD와 등급 아이콘 위치를 조절한다.
-        self.hdIcon.frame = CGRectMake(size.width + 5, HD_ICON_START_Y, HD_ICON_WIDTH, WATCHING_LEVEL_ICON_WIDTH);
-        self.wathchingLevelIcon.frame = CGRectMake(self.hdIcon.frame.origin.x + HD_ICON_WIDTH + 5, HD_ICON_START_Y, WATCHING_LEVEL_ICON_WIDTH, WATCHING_LEVEL_ICON_HEIGHT);
+//        self.hdIcon.frame = CGRectMake(size.width + 5, HD_ICON_START_Y, HD_ICON_WIDTH, WATCHING_LEVEL_ICON_WIDTH);
+//        self.wathchingLevelIcon.frame = CGRectMake(self.hdIcon.frame.origin.x + HD_ICON_WIDTH + 5, HD_ICON_START_Y, WATCHING_LEVEL_ICON_WIDTH, WATCHING_LEVEL_ICON_HEIGHT);
     }
     
     // VOD 등급.
