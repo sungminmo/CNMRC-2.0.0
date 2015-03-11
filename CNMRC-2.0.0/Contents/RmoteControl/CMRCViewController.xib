@@ -3,11 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMRCViewController">
             <connections>
                 <outlet property="bg" destination="JzT-wE-mwJ" id="u3m-Xg-nkR"/>
+                <outlet property="numberKeyBackground" destination="lmX-Po-2yb" id="aOG-fg-Dht"/>
                 <outlet property="padBackground" destination="CnZ-5X-sLg" id="5E4-aM-IlJ"/>
                 <outlet property="roundBox" destination="Adw-bB-C8D" id="mdu-Hs-KdG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xmb-te-PZ3"/>
@@ -103,29 +106,41 @@
                             <rect key="frame" x="5" y="5" width="590" height="471"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-5X-sLg">
-                                    <rect key="frame" x="10" y="10" width="570" height="362"/>
+                                    <rect key="frame" x="10" y="10" width="570" height="329"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="362" id="7YD-Qi-MVu"/>
+                                        <constraint firstAttribute="height" constant="329" id="7YD-Qi-MVu"/>
                                         <constraint firstAttribute="width" constant="570" id="pIe-4b-WGU"/>
                                     </constraints>
                                 </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RC_Bar" translatesAutoresizingMaskIntoConstraints="NO" id="tIV-Ak-FV6">
-                                    <rect key="frame" x="10" y="371" width="570" height="14"/>
+                                    <rect key="frame" x="10" y="342" width="570" height="14"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="570" id="mEo-V3-UxW"/>
                                         <constraint firstAttribute="height" constant="14" id="tyx-Mp-zHB"/>
                                     </constraints>
                                 </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmX-Po-2yb">
+                                    <rect key="frame" x="101" y="355" width="390" height="108"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="lmX-Po-2yb" secondAttribute="height" multiplier="65:18" id="C6F-Zo-mhh"/>
+                                        <constraint firstAttribute="height" constant="108" id="KzO-JW-ykK"/>
+                                        <constraint firstAttribute="width" constant="390" id="o7L-Is-KnV"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="lmX-Po-2yb" firstAttribute="bottom" secondItem="Adw-bB-C8D" secondAttribute="bottomMargin" id="4Y9-D1-ERr"/>
                                 <constraint firstItem="CnZ-5X-sLg" firstAttribute="top" secondItem="Adw-bB-C8D" secondAttribute="top" constant="10" id="Obq-4A-xYj"/>
                                 <constraint firstItem="CnZ-5X-sLg" firstAttribute="leading" secondItem="Adw-bB-C8D" secondAttribute="leading" constant="10" id="RSh-9D-4Ix"/>
+                                <constraint firstAttribute="centerX" secondItem="lmX-Po-2yb" secondAttribute="centerX" constant="-1" id="a7R-ja-FI2"/>
+                                <constraint firstItem="lmX-Po-2yb" firstAttribute="top" secondItem="tIV-Ak-FV6" secondAttribute="bottom" constant="-1" id="mEG-sg-j4b"/>
                                 <constraint firstAttribute="trailing" secondItem="CnZ-5X-sLg" secondAttribute="trailing" constant="10" id="rIq-Pw-u81"/>
                                 <constraint firstAttribute="trailing" secondItem="tIV-Ak-FV6" secondAttribute="trailing" constant="10" id="xig-l6-6rm"/>
-                                <constraint firstItem="tIV-Ak-FV6" firstAttribute="top" secondItem="CnZ-5X-sLg" secondAttribute="bottom" constant="-1" id="y8C-pT-NQs"/>
+                                <constraint firstItem="tIV-Ak-FV6" firstAttribute="top" secondItem="CnZ-5X-sLg" secondAttribute="bottom" constant="3" id="y8C-pT-NQs"/>
                                 <constraint firstItem="tIV-Ak-FV6" firstAttribute="leading" secondItem="Adw-bB-C8D" secondAttribute="leading" constant="10" id="zPm-WJ-dXn"/>
                             </constraints>
                         </view>
