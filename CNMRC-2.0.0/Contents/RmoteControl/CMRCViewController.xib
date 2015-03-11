@@ -110,12 +110,16 @@
                                         <constraint firstAttribute="height" constant="14" id="tyx-Mp-zHB"/>
                                     </constraints>
                                 </imageView>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLD-C5-1gd" customClass="CMNumberKey">
-                                    <rect key="frame" x="101" y="356" width="390" height="108"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLD-C5-1gd" customClass="CMNumberKey">
+                                    <rect key="frame" x="10" y="356" width="570" height="108"/>
                                     <subviews>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFg-Sy-bhl">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFg-Sy-bhl">
                                             <rect key="frame" x="3" y="7" width="48" height="44"/>
                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="Koc-kO-72j"/>
+                                                <constraint firstAttribute="height" constant="44" id="SqI-fu-t9r"/>
+                                            </constraints>
                                             <state key="normal" backgroundImage="No_1">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -237,6 +241,12 @@
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="SFg-Sy-bhl" firstAttribute="leading" secondItem="zLD-C5-1gd" secondAttribute="leading" constant="3" id="KeP-g1-7LN"/>
+                                        <constraint firstItem="SFg-Sy-bhl" firstAttribute="top" secondItem="zLD-C5-1gd" secondAttribute="top" constant="7" id="Lh9-uk-XMe"/>
+                                        <constraint firstAttribute="height" constant="108" id="Qie-wK-ABj"/>
+                                        <constraint firstAttribute="width" constant="570" id="qcu-DZ-dCp"/>
+                                    </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-5X-sLg" customClass="CMTouchPad">
                                     <rect key="frame" x="10" y="10" width="570" height="329"/>
@@ -340,9 +350,14 @@
                             </subviews>
                             <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="zLD-C5-1gd" firstAttribute="leading" secondItem="Adw-bB-C8D" secondAttribute="leading" constant="10" id="4qk-3n-zcE"/>
+                                <constraint firstItem="zLD-C5-1gd" firstAttribute="top" secondItem="tIV-Ak-FV6" secondAttribute="bottom" id="Oa3-4H-sAq"/>
                                 <constraint firstItem="CnZ-5X-sLg" firstAttribute="top" secondItem="Adw-bB-C8D" secondAttribute="top" constant="10" id="Obq-4A-xYj"/>
                                 <constraint firstItem="CnZ-5X-sLg" firstAttribute="leading" secondItem="Adw-bB-C8D" secondAttribute="leading" constant="10" id="RSh-9D-4Ix"/>
+                                <constraint firstAttribute="centerX" secondItem="zLD-C5-1gd" secondAttribute="centerX" id="Vc4-tk-dcQ"/>
+                                <constraint firstAttribute="trailing" secondItem="zLD-C5-1gd" secondAttribute="trailing" constant="10" id="iee-Rz-FhI"/>
                                 <constraint firstAttribute="trailing" secondItem="CnZ-5X-sLg" secondAttribute="trailing" constant="10" id="rIq-Pw-u81"/>
+                                <constraint firstAttribute="bottom" secondItem="zLD-C5-1gd" secondAttribute="bottom" constant="7" id="sPb-hw-xWK"/>
                                 <constraint firstAttribute="trailing" secondItem="tIV-Ak-FV6" secondAttribute="trailing" constant="10" id="xig-l6-6rm"/>
                                 <constraint firstItem="tIV-Ak-FV6" firstAttribute="top" secondItem="CnZ-5X-sLg" secondAttribute="bottom" constant="3" id="y8C-pT-NQs"/>
                                 <constraint firstItem="tIV-Ak-FV6" firstAttribute="leading" secondItem="Adw-bB-C8D" secondAttribute="leading" constant="10" id="zPm-WJ-dXn"/>
