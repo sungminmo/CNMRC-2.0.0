@@ -146,7 +146,8 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     [self.view addSubview:padBackground];
     
     // 사방향키.
-    CMTouchPad *tp = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMTouchPadSD", @"CMTouchPad") owner:self options:nil] objectAtIndex:0];
+    //CMTouchPad *tp = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMTouchPadSD", @"CMTouchPad") owner:self options:nil] objectAtIndex:0];
+    CMTouchPad *tp = [[[NSBundle mainBundle] loadNibNamed:@"CMTouchPad" owner:self options:nil] objectAtIndex:0];
     tp.delegate = self;
     tp.frame = padBackground.bounds;
     [padBackground addSubview:tp];
@@ -512,7 +513,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 // 페어링 여부.
 - (void)checkParing
 {
-    [RemoteManager checkPairing];
+    //[RemoteManager checkPairing];
 }
 
 #pragma mark - CMNumberKeyDelegate

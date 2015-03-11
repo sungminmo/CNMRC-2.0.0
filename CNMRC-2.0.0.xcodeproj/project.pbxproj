@@ -2053,6 +2053,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jong Pil Park (U5N72GZ2GL)";
 				GCC_PREFIX_HEADER = "CNMRC-2.0.0/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
