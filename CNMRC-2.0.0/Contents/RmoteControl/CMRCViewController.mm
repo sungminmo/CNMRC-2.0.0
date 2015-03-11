@@ -136,10 +136,11 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     self.roundBox.layer.masksToBounds = YES;
     
     // 사방향키.
-    CMTouchPad *tp = [[[NSBundle mainBundle] loadNibNamed:@"CMTouchPad" owner:self options:nil] objectAtIndex:0];
-    tp.delegate = self;
-    [self.padBackground addSubview:tp];
-    self.touchPad = tp;
+//    CMTouchPad *tp = [[[NSBundle mainBundle] loadNibNamed:@"CMTouchPad" owner:self options:nil] objectAtIndex:0];
+//    tp.delegate = self;
+//    [self.padBackground addSubview:tp];
+//    self.touchPad = tp;
+    self.touchPad.delegate = self;
     
     CommandHandler *commandHandler = [RemoteManager commandHandler];
     if (!_tapTracker) {

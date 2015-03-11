@@ -124,6 +124,62 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-5X-sLg" customClass="CMTouchPad">
                                     <rect key="frame" x="10" y="10" width="570" height="329"/>
                                     <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjf-bM-dcG">
+                                            <rect key="frame" x="252" y="8" width="67" height="67"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="67" id="HTR-In-zCB"/>
+                                                <constraint firstAttribute="height" constant="67" id="nVG-xS-sOg"/>
+                                            </constraints>
+                                            <state key="normal" image="ArrowUp_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="ArrowUp_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="qEZ-bD-lkM"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qss-X6-aNJ">
+                                            <rect key="frame" x="392" y="131" width="67" height="67"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="67" id="LHY-AU-2Yl"/>
+                                                <constraint firstAttribute="height" constant="67" id="zFS-Ue-7mq"/>
+                                            </constraints>
+                                            <state key="normal" image="ArrowRight_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="ArrowRight_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="4oM-aC-9pT"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpu-Tk-naq">
+                                            <rect key="frame" x="112" y="131" width="67" height="67"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="67" id="9hE-OS-hoV"/>
+                                                <constraint firstAttribute="height" constant="67" id="MMI-ad-UT3"/>
+                                            </constraints>
+                                            <state key="normal" image="ArrowLeft_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="ArrowLeft_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="Cdn-fm-2Fw"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-ex-wjb">
+                                            <rect key="frame" x="252" y="254" width="67" height="67"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="67" id="07Q-JH-2O3"/>
+                                                <constraint firstAttribute="height" constant="67" id="J5u-Px-k4y"/>
+                                            </constraints>
+                                            <state key="normal" image="ArrowDown_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="ArrowDown_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="O6p-aE-gK9"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCL-In-8Yu">
                                             <rect key="frame" x="252" y="131" width="67" height="67"/>
                                             <constraints>
@@ -138,54 +194,23 @@
                                                 <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="IvE-08-Hxq"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qss-X6-aNJ">
-                                            <rect key="frame" x="392" y="131" width="67" height="67"/>
-                                            <state key="normal" image="ArrowRight_D">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="highlighted" image="ArrowRight_H"/>
-                                            <connections>
-                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="4oM-aC-9pT"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpu-Tk-naq">
-                                            <rect key="frame" x="112" y="131" width="67" height="67"/>
-                                            <state key="normal" image="ArrowLeft_D">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="highlighted" image="ArrowLeft_H"/>
-                                            <connections>
-                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="Cdn-fm-2Fw"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-ex-wjb">
-                                            <rect key="frame" x="252" y="254" width="67" height="67"/>
-                                            <state key="normal" image="ArrowDown_D">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="highlighted" image="ArrowDown_H"/>
-                                            <connections>
-                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="O6p-aE-gK9"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjf-bM-dcG">
-                                            <rect key="frame" x="252" y="8" width="67" height="67"/>
-                                            <state key="normal" image="ArrowUp_D">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="highlighted" image="ArrowUp_H"/>
-                                            <connections>
-                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="qEZ-bD-lkM"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
+                                        <constraint firstItem="cmC-ex-wjb" firstAttribute="top" secondItem="dCL-In-8Yu" secondAttribute="bottom" constant="56" id="1Bh-KZ-I53"/>
                                         <constraint firstAttribute="height" constant="329" id="7YD-Qi-MVu"/>
+                                        <constraint firstAttribute="centerX" secondItem="cmC-ex-wjb" secondAttribute="centerX" id="AFu-Eb-nBl"/>
+                                        <constraint firstAttribute="centerY" secondItem="Qss-X6-aNJ" secondAttribute="centerY" id="ASZ-n3-e0F"/>
                                         <constraint firstAttribute="centerX" secondItem="dCL-In-8Yu" secondAttribute="centerX" id="Mtg-aU-bVc"/>
+                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Qss-X6-aNJ" secondAttribute="trailing" constant="111" id="Oa0-e0-2mr"/>
+                                        <constraint firstItem="dCL-In-8Yu" firstAttribute="top" secondItem="rjf-bM-dcG" secondAttribute="bottom" constant="56" id="a30-G1-rRk"/>
+                                        <constraint firstAttribute="centerY" secondItem="Fpu-Tk-naq" secondAttribute="centerY" id="gMj-ry-2y0"/>
+                                        <constraint firstAttribute="centerX" secondItem="rjf-bM-dcG" secondAttribute="centerX" id="h2K-LK-yEx"/>
                                         <constraint firstAttribute="centerY" secondItem="dCL-In-8Yu" secondAttribute="centerY" id="nVl-cJ-b3o"/>
+                                        <constraint firstItem="Qss-X6-aNJ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dCL-In-8Yu" secondAttribute="trailing" priority="750" constant="73" id="pB8-0g-6G0"/>
                                         <constraint firstAttribute="width" constant="570" id="pIe-4b-WGU"/>
+                                        <constraint firstItem="dCL-In-8Yu" firstAttribute="leading" secondItem="Fpu-Tk-naq" secondAttribute="trailing" constant="73" id="vMQ-iu-ata"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="bottomButton" destination="cmC-ex-wjb" id="5Vq-0c-eW0"/>

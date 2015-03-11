@@ -140,7 +140,6 @@
 		1DB9B9AA1A614FCD00E89E27 /* CMSlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9921A614FCD00E89E27 /* CMSlideMenuViewController.m */; };
 		1DB9B9AB1A614FCD00E89E27 /* CMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9941A614FCD00E89E27 /* CMTableViewCell.m */; };
 		1DB9B9AC1A614FCD00E89E27 /* CMTouchPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9961A614FCD00E89E27 /* CMTouchPad.m */; };
-		1DB9B9AD1A614FCD00E89E27 /* CMTouchPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B9971A614FCD00E89E27 /* CMTouchPad.xib */; };
 		1DB9B9AF1A614FCD00E89E27 /* CMVODListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B99A1A614FCD00E89E27 /* CMVODListTableViewCell.m */; };
 		1DB9B9C31A61501300E89E27 /* CM01.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9B21A61501300E89E27 /* CM01.m */; };
 		1DB9B9C41A61501300E89E27 /* CM02.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9B41A61501300E89E27 /* CM02.m */; };
@@ -520,7 +519,6 @@
 		1DB9B9941A614FCD00E89E27 /* CMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTableViewCell.m; sourceTree = "<group>"; };
 		1DB9B9951A614FCD00E89E27 /* CMTouchPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTouchPad.h; sourceTree = "<group>"; };
 		1DB9B9961A614FCD00E89E27 /* CMTouchPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTouchPad.m; sourceTree = "<group>"; };
-		1DB9B9971A614FCD00E89E27 /* CMTouchPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMTouchPad.xib; sourceTree = "<group>"; };
 		1DB9B9991A614FCD00E89E27 /* CMVODListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMVODListTableViewCell.h; sourceTree = "<group>"; };
 		1DB9B99A1A614FCD00E89E27 /* CMVODListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMVODListTableViewCell.m; sourceTree = "<group>"; };
 		1DB9B9B11A61501300E89E27 /* CM01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CM01.h; sourceTree = "<group>"; };
@@ -1401,7 +1399,6 @@
 				1DB9B9941A614FCD00E89E27 /* CMTableViewCell.m */,
 				1DB9B9951A614FCD00E89E27 /* CMTouchPad.h */,
 				1DB9B9961A614FCD00E89E27 /* CMTouchPad.m */,
-				1DB9B9971A614FCD00E89E27 /* CMTouchPad.xib */,
 				1DB9B9991A614FCD00E89E27 /* CMVODListTableViewCell.h */,
 				1DB9B99A1A614FCD00E89E27 /* CMVODListTableViewCell.m */,
 			);
@@ -1761,7 +1758,6 @@
 				1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */,
 				1DB9BA441A61655900E89E27 /* CMSearchViewController.xib in Resources */,
 				1DB9BA551A6165D200E89E27 /* CMVODDetailViewController.xib in Resources */,
-				1DB9B9AD1A614FCD00E89E27 /* CMTouchPad.xib in Resources */,
 				1DB9B9A11A614FCD00E89E27 /* CMControlPadSD.xib in Resources */,
 				1DB9BA591A6165D200E89E27 /* CMVODViewController.xib in Resources */,
 				1DBA76CF1A20B4C8003AB966 /* protobuf-lite.pc in Resources */,
