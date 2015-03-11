@@ -11,8 +11,8 @@
             <connections>
                 <outlet property="bg" destination="JzT-wE-mwJ" id="u3m-Xg-nkR"/>
                 <outlet property="numberKeyBackground" destination="lmX-Po-2yb" id="aOG-fg-Dht"/>
-                <outlet property="padBackground" destination="CnZ-5X-sLg" id="5E4-aM-IlJ"/>
                 <outlet property="roundBox" destination="Adw-bB-C8D" id="mdu-Hs-KdG"/>
+                <outlet property="touchPad" destination="CnZ-5X-sLg" id="mQX-8A-9Ey"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xmb-te-PZ3"/>
             </connections>
         </placeholder>
@@ -105,15 +105,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-bB-C8D">
                             <rect key="frame" x="5" y="5" width="590" height="471"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-5X-sLg">
-                                    <rect key="frame" x="10" y="10" width="570" height="329"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="329" id="7YD-Qi-MVu"/>
-                                        <constraint firstAttribute="width" constant="570" id="pIe-4b-WGU"/>
-                                    </constraints>
-                                </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RC_Bar" translatesAutoresizingMaskIntoConstraints="NO" id="tIV-Ak-FV6">
                                     <rect key="frame" x="10" y="342" width="570" height="14"/>
                                     <constraints>
@@ -129,6 +120,80 @@
                                         <constraint firstAttribute="height" constant="108" id="KzO-JW-ykK"/>
                                         <constraint firstAttribute="width" constant="390" id="o7L-Is-KnV"/>
                                     </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-5X-sLg" customClass="CMTouchPad">
+                                    <rect key="frame" x="10" y="10" width="570" height="329"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCL-In-8Yu">
+                                            <rect key="frame" x="252" y="131" width="67" height="67"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="67" id="4M1-D7-MsE"/>
+                                                <constraint firstAttribute="width" constant="67" id="Mhx-6Y-aI4"/>
+                                            </constraints>
+                                            <state key="normal" image="OK_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="OK_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="IvE-08-Hxq"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qss-X6-aNJ">
+                                            <rect key="frame" x="392" y="131" width="67" height="67"/>
+                                            <state key="normal" image="ArrowRight_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="ArrowRight_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="4oM-aC-9pT"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpu-Tk-naq">
+                                            <rect key="frame" x="112" y="131" width="67" height="67"/>
+                                            <state key="normal" image="ArrowLeft_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="ArrowLeft_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="Cdn-fm-2Fw"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-ex-wjb">
+                                            <rect key="frame" x="252" y="254" width="67" height="67"/>
+                                            <state key="normal" image="ArrowDown_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="ArrowDown_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="O6p-aE-gK9"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjf-bM-dcG">
+                                            <rect key="frame" x="252" y="8" width="67" height="67"/>
+                                            <state key="normal" image="ArrowUp_D">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" image="ArrowUp_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="CnZ-5X-sLg" eventType="touchUpInside" id="qEZ-bD-lkM"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="329" id="7YD-Qi-MVu"/>
+                                        <constraint firstAttribute="centerX" secondItem="dCL-In-8Yu" secondAttribute="centerX" id="Mtg-aU-bVc"/>
+                                        <constraint firstAttribute="centerY" secondItem="dCL-In-8Yu" secondAttribute="centerY" id="nVl-cJ-b3o"/>
+                                        <constraint firstAttribute="width" constant="570" id="pIe-4b-WGU"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="bottomButton" destination="cmC-ex-wjb" id="5Vq-0c-eW0"/>
+                                        <outlet property="leftButton" destination="Fpu-Tk-naq" id="jYE-wv-kIV"/>
+                                        <outlet property="okButton" destination="dCL-In-8Yu" id="3Ka-YZ-5o4"/>
+                                        <outlet property="rightButton" destination="Qss-X6-aNJ" id="5Tj-6B-oqu"/>
+                                        <outlet property="topButton" destination="rjf-bM-dcG" id="XYr-nZ-HjY"/>
+                                    </connections>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,10 +234,20 @@
         </view>
     </objects>
     <resources>
+        <image name="ArrowDown_D" width="67" height="67"/>
+        <image name="ArrowDown_H" width="67" height="67"/>
+        <image name="ArrowLeft_D" width="67" height="67"/>
+        <image name="ArrowLeft_H" width="67" height="67"/>
+        <image name="ArrowRight_D" width="67" height="67"/>
+        <image name="ArrowRight_H" width="67" height="67"/>
+        <image name="ArrowUp_D" width="67" height="67"/>
+        <image name="ArrowUp_H" width="67" height="67"/>
         <image name="Channel_D" width="48" height="48"/>
         <image name="Channel_H" width="48" height="48"/>
         <image name="Menu_D" width="48" height="48"/>
         <image name="Menu_H" width="48" height="48"/>
+        <image name="OK_D" width="67" height="67"/>
+        <image name="OK_H" width="67" height="67"/>
         <image name="PowerOnOff_D" width="48" height="48"/>
         <image name="PowerOnOff_H" width="48" height="48"/>
         <image name="RC_Bar" width="311" height="10"/>

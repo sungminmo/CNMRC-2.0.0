@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="108"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                     <rect key="frame" x="3" y="7" width="48" height="44"/>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" backgroundImage="No_1">
@@ -91,16 +91,6 @@
                         <action selector="keyAction:" destination="1" eventType="touchUpInside" id="28"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16">
-                    <rect key="frame" x="171" y="58" width="48" height="44"/>
-                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" backgroundImage="No_9">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="keyAction:" destination="1" eventType="touchUpInside" id="29"/>
-                    </connections>
-                </button>
                 <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                     <rect key="frame" x="283" y="58" width="104" height="44"/>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,7 +113,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18">
-                    <rect key="frame" x="3" y="58" width="104" height="42"/>
+                    <rect key="frame" x="3" y="58" width="104" height="44"/>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" backgroundImage="Delete_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,6 +121,16 @@
                     <state key="highlighted" backgroundImage="Delete_H"/>
                     <connections>
                         <action selector="keyAction:" destination="1" eventType="touchUpInside" id="27"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16">
+                    <rect key="frame" x="171" y="58" width="48" height="44"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" backgroundImage="No_9">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="1" eventType="touchUpInside" id="29"/>
                     </connections>
                 </button>
             </subviews>

@@ -199,10 +199,28 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 //    self.cvPad = cv;
     
     // 숫자키패드.
+    CGRect nkFrame = CGRectZero;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            nkFrame = CGRectMake(0, 0, 390, 108);
+            break;
+            
+        case iPhone47inch:
+            nkFrame = CGRectMake(0, 0, 351, 108);
+            break;
+            
+        default:
+            nkFrame = CGRectMake(0, 0, 351, 108);
+            break;
+    }
     CMNumberKey *nk = [[[NSBundle mainBundle] loadNibNamed:@"CMNumberKey" owner:self options:nil] objectAtIndex:0];
     nk.delegate = self;
+    self.numberKeyBackground.frame = nkFrame;
+    nk.frame = nkFrame;
     [self.numberKeyBackground addSubview:nk];
     self.numberKey = nk;
+    
+    NSLog(@"1>>>>>>>>>>>%@", NSStringFromCGRect(self.numberKeyBackground.frame));
 }
 
 #pragma mark - UIGestureRecognizerDelegate
