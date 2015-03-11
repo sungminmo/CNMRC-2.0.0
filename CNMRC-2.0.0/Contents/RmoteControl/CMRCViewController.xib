@@ -3,14 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMRCViewController">
             <connections>
                 <outlet property="bg" destination="JzT-wE-mwJ" id="u3m-Xg-nkR"/>
-                <outlet property="numberKeyBackground" destination="lmX-Po-2yb" id="aOG-fg-Dht"/>
+                <outlet property="numberKey" destination="zLD-C5-1gd" id="CBy-hh-7Hh"/>
                 <outlet property="roundBox" destination="Adw-bB-C8D" id="mdu-Hs-KdG"/>
                 <outlet property="touchPad" destination="CnZ-5X-sLg" id="mQX-8A-9Ey"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xmb-te-PZ3"/>
@@ -112,14 +110,133 @@
                                         <constraint firstAttribute="height" constant="14" id="tyx-Mp-zHB"/>
                                     </constraints>
                                 </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmX-Po-2yb">
-                                    <rect key="frame" x="101" y="355" width="390" height="108"/>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLD-C5-1gd" customClass="CMNumberKey">
+                                    <rect key="frame" x="101" y="356" width="390" height="108"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFg-Sy-bhl">
+                                            <rect key="frame" x="3" y="7" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_1">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="nw3-wn-Zmc"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnH-aM-0Ur">
+                                            <rect key="frame" x="59" y="7" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_2">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="d4m-wK-NPw"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4u-qu-Ln2">
+                                            <rect key="frame" x="115" y="7" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_3">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="6sq-uR-nT1"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ag6-k6-WKQ">
+                                            <rect key="frame" x="171" y="7" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_4">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="ihL-e8-eHR"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtQ-8R-rnX">
+                                            <rect key="frame" x="227" y="7" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_5">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="GPH-5g-dk6"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVh-PX-NC0">
+                                            <rect key="frame" x="283" y="7" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_6">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="h7V-sM-sHd"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMJ-SO-EZp">
+                                            <rect key="frame" x="339" y="7" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_7">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="QqB-Cz-KJC"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPb-nY-ANj">
+                                            <rect key="frame" x="115" y="58" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_8">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="beI-Jc-d0b"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMm-b9-qhJ">
+                                            <rect key="frame" x="283" y="58" width="104" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="Confirm_D">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="Confirm_H"/>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="819-Mi-Xjd"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKY-G5-aOn">
+                                            <rect key="frame" x="227" y="58" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_0">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="f6P-mL-TgF"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvu-bp-EgM">
+                                            <rect key="frame" x="3" y="58" width="104" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="Delete_D">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="Delete_H"/>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="zh0-ua-4hi"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIc-fy-np3">
+                                            <rect key="frame" x="171" y="58" width="48" height="44"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" backgroundImage="No_9">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="keyAction:" destination="zLD-C5-1gd" eventType="touchUpInside" id="gec-2n-Np2"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="lmX-Po-2yb" secondAttribute="height" multiplier="65:18" id="C6F-Zo-mhh"/>
-                                        <constraint firstAttribute="height" constant="108" id="KzO-JW-ykK"/>
-                                        <constraint firstAttribute="width" constant="390" id="o7L-Is-KnV"/>
-                                    </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-5X-sLg" customClass="CMTouchPad">
                                     <rect key="frame" x="10" y="10" width="570" height="329"/>
@@ -195,7 +312,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="cmC-ex-wjb" firstAttribute="top" secondItem="dCL-In-8Yu" secondAttribute="bottom" constant="56" id="1Bh-KZ-I53"/>
@@ -223,11 +340,8 @@
                             </subviews>
                             <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="lmX-Po-2yb" firstAttribute="bottom" secondItem="Adw-bB-C8D" secondAttribute="bottomMargin" id="4Y9-D1-ERr"/>
                                 <constraint firstItem="CnZ-5X-sLg" firstAttribute="top" secondItem="Adw-bB-C8D" secondAttribute="top" constant="10" id="Obq-4A-xYj"/>
                                 <constraint firstItem="CnZ-5X-sLg" firstAttribute="leading" secondItem="Adw-bB-C8D" secondAttribute="leading" constant="10" id="RSh-9D-4Ix"/>
-                                <constraint firstAttribute="centerX" secondItem="lmX-Po-2yb" secondAttribute="centerX" constant="-1" id="a7R-ja-FI2"/>
-                                <constraint firstItem="lmX-Po-2yb" firstAttribute="top" secondItem="tIV-Ak-FV6" secondAttribute="bottom" constant="-1" id="mEG-sg-j4b"/>
                                 <constraint firstAttribute="trailing" secondItem="CnZ-5X-sLg" secondAttribute="trailing" constant="10" id="rIq-Pw-u81"/>
                                 <constraint firstAttribute="trailing" secondItem="tIV-Ak-FV6" secondAttribute="trailing" constant="10" id="xig-l6-6rm"/>
                                 <constraint firstItem="tIV-Ak-FV6" firstAttribute="top" secondItem="CnZ-5X-sLg" secondAttribute="bottom" constant="3" id="y8C-pT-NQs"/>
@@ -269,8 +383,22 @@
         <image name="ArrowUp_H" width="67" height="67"/>
         <image name="Channel_D" width="48" height="48"/>
         <image name="Channel_H" width="48" height="48"/>
+        <image name="Confirm_D" width="166" height="72"/>
+        <image name="Confirm_H" width="166" height="72"/>
+        <image name="Delete_D" width="166" height="72"/>
+        <image name="Delete_H" width="166" height="72"/>
         <image name="Menu_D" width="48" height="48"/>
         <image name="Menu_H" width="48" height="48"/>
+        <image name="No_0" width="81" height="72"/>
+        <image name="No_1" width="81" height="72"/>
+        <image name="No_2" width="81" height="72"/>
+        <image name="No_3" width="81" height="72"/>
+        <image name="No_4" width="81" height="72"/>
+        <image name="No_5" width="81" height="72"/>
+        <image name="No_6" width="81" height="72"/>
+        <image name="No_7" width="81" height="72"/>
+        <image name="No_8" width="81" height="72"/>
+        <image name="No_9" width="81" height="72"/>
         <image name="OK_D" width="67" height="67"/>
         <image name="OK_H" width="67" height="67"/>
         <image name="PowerOnOff_D" width="48" height="48"/>
