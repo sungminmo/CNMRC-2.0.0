@@ -135,22 +135,10 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     self.roundBox.layer.cornerRadius = 9.9;
     self.roundBox.layer.masksToBounds = YES;
     
-    // 패드 백그라운드 패턴 이미지.
-    CGRect padBackgroundFrame = DeviceSpecificSetting(CM_PAD_FRAME, CM_PAD_FIVE_FRAME);
-    if (isiOS7)
-    {
-        padBackgroundFrame = DeviceSpecificSetting(CM_PAD_SEVEN_FRAME, CM_PAD_SEVEN_FIVE_FRAME);
-    }
-    UIView *padBackground = [[UIView alloc] initWithFrame:padBackgroundFrame];
-    //[padBackground setBackgroundColor: [[UIColor alloc] initWithPatternImage:[UIImage imageNamed: @"touchpattern.png"]]];
-    [self.view addSubview:padBackground];
-    
     // 사방향키.
-    //CMTouchPad *tp = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMTouchPadSD", @"CMTouchPad") owner:self options:nil] objectAtIndex:0];
     CMTouchPad *tp = [[[NSBundle mainBundle] loadNibNamed:@"CMTouchPad" owner:self options:nil] objectAtIndex:0];
     tp.delegate = self;
-    tp.frame = padBackground.bounds;
-    [padBackground addSubview:tp];
+    [self.padBackground addSubview:tp];
     self.touchPad = tp;
     
     CommandHandler *commandHandler = [RemoteManager commandHandler];
@@ -197,18 +185,18 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     [self.touchPad addGestureRecognizer:pinch];
     
     // 트릭플레이 패드.
-    CMControlPad *ctr = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMControlPadSD", @"CMControlPad") owner:self options:nil] objectAtIndex:0];
-    //ctr.delegate = self;
-    ctr.frame = padBackground.bounds;
-    [padBackground addSubview:ctr];
-    self.controlPad = ctr;
-    
-    // 채널/볼륨 패드.
-    CMCVPad *cv = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMCVPadSD", @"CMCVPad") owner:self options:nil] objectAtIndex:0];
-    cv.delegate = self;
-    cv.frame = padBackground.bounds;
-    [padBackground addSubview:cv];
-    self.cvPad = cv;
+//    CMControlPad *ctr = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMControlPadSD", @"CMControlPad") owner:self options:nil] objectAtIndex:0];
+//    //ctr.delegate = self;
+//    ctr.frame = padBackground.bounds;
+//    [padBackground addSubview:ctr];
+//    self.controlPad = ctr;
+//    
+//    // 채널/볼륨 패드.
+//    CMCVPad *cv = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMCVPadSD", @"CMCVPad") owner:self options:nil] objectAtIndex:0];
+//    cv.delegate = self;
+//    cv.frame = padBackground.bounds;
+//    [padBackground addSubview:cv];
+//    self.cvPad = cv;
     
     // 숫자키패드.
 //    CMNumberKey *nk = [[[NSBundle mainBundle] loadNibNamed:@"CMNumberKey" owner:self options:nil] objectAtIndex:0];

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMRCViewController">
             <connections>
                 <outlet property="bg" destination="JzT-wE-mwJ" id="u3m-Xg-nkR"/>
-                <outlet property="numberKey" destination="Oka-V4-99X" id="6n6-ZV-jfs"/>
+                <outlet property="padBackground" destination="CnZ-5X-sLg" id="5E4-aM-IlJ"/>
                 <outlet property="roundBox" destination="Adw-bB-C8D" id="mdu-Hs-KdG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xmb-te-PZ3"/>
             </connections>
@@ -102,156 +102,31 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-bB-C8D">
                             <rect key="frame" x="5" y="5" width="590" height="471"/>
                             <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-5X-sLg">
-                                    <rect key="frame" x="10" y="10" width="275" height="362"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-5X-sLg">
+                                    <rect key="frame" x="10" y="10" width="570" height="362"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="362" id="7YD-Qi-MVu"/>
+                                        <constraint firstAttribute="width" constant="570" id="pIe-4b-WGU"/>
+                                    </constraints>
                                 </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RC_Bar" translatesAutoresizingMaskIntoConstraints="NO" id="tIV-Ak-FV6">
+                                    <rect key="frame" x="10" y="371" width="570" height="14"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="570" id="mEo-V3-UxW"/>
+                                        <constraint firstAttribute="height" constant="14" id="tyx-Mp-zHB"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oka-V4-99X" customClass="CMNumberKey">
-                            <rect key="frame" x="140" y="384" width="320" height="89"/>
-                            <subviews>
-                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sr8-tc-IIC">
-                                    <rect key="frame" x="13" y="7" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="1">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="SyC-xa-Pcc"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MP1-np-adu">
-                                    <rect key="frame" x="55" y="7" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="2">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="JND-oz-Y5Q"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yo5-JR-B4A">
-                                    <rect key="frame" x="97" y="7" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="3">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="FQq-GZ-bXO"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpZ-mw-acB">
-                                    <rect key="frame" x="139" y="7" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="4">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="ugP-MT-cor"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGO-rZ-0Ck">
-                                    <rect key="frame" x="181" y="7" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="5">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="QSK-bj-4Ls"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi5-VX-0BU">
-                                    <rect key="frame" x="223" y="7" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="6">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="WEf-kg-6Be"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrt-bs-bn7">
-                                    <rect key="frame" x="265" y="7" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="7">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="cIg-hh-jOa"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeF-vK-OKv">
-                                    <rect key="frame" x="97" y="46" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="8">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="Gg8-bW-MwW"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOD-CK-TIo">
-                                    <rect key="frame" x="139" y="46" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="9">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="NaF-ey-Xrp"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-3P-4Dq">
-                                    <rect key="frame" x="13" y="46" width="82" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <state key="normal" title="지우기">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted" image="nback_press.png"/>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="OiT-rK-J6I"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-h3-HHE">
-                                    <rect key="frame" x="223" y="46" width="82" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <state key="normal" title="확인">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted" image="nok_press.png"/>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="snY-oG-u44"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-b4-Qud">
-                                    <rect key="frame" x="181" y="46" width="40" height="36"/>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                    <state key="normal" title="0">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="keyAction:" destination="Oka-V4-99X" eventType="touchUpInside" id="gBs-gC-h3F"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="320" id="3uz-71-hoN"/>
-                                <constraint firstAttribute="height" constant="89" id="poe-1X-t8n"/>
+                                <constraint firstItem="CnZ-5X-sLg" firstAttribute="top" secondItem="Adw-bB-C8D" secondAttribute="top" constant="10" id="Obq-4A-xYj"/>
+                                <constraint firstItem="CnZ-5X-sLg" firstAttribute="leading" secondItem="Adw-bB-C8D" secondAttribute="leading" constant="10" id="RSh-9D-4Ix"/>
+                                <constraint firstAttribute="trailing" secondItem="CnZ-5X-sLg" secondAttribute="trailing" constant="10" id="rIq-Pw-u81"/>
+                                <constraint firstAttribute="trailing" secondItem="tIV-Ak-FV6" secondAttribute="trailing" constant="10" id="xig-l6-6rm"/>
+                                <constraint firstItem="tIV-Ak-FV6" firstAttribute="top" secondItem="CnZ-5X-sLg" secondAttribute="bottom" constant="-1" id="y8C-pT-NQs"/>
+                                <constraint firstItem="tIV-Ak-FV6" firstAttribute="leading" secondItem="Adw-bB-C8D" secondAttribute="leading" constant="10" id="zPm-WJ-dXn"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -261,8 +136,6 @@
                         <constraint firstItem="Adw-bB-C8D" firstAttribute="top" secondItem="JzT-wE-mwJ" secondAttribute="top" constant="5" id="8GM-PS-vE7"/>
                         <constraint firstItem="Adw-bB-C8D" firstAttribute="leading" secondItem="JzT-wE-mwJ" secondAttribute="leading" constant="5" id="9yf-n4-Cf6"/>
                         <constraint firstAttribute="bottom" secondItem="Adw-bB-C8D" secondAttribute="bottom" constant="5" id="dHC-SG-VZw"/>
-                        <constraint firstAttribute="bottom" secondItem="Oka-V4-99X" secondAttribute="bottom" constant="8" id="gBb-tq-x1B"/>
-                        <constraint firstAttribute="centerX" secondItem="Oka-V4-99X" secondAttribute="centerX" id="oqP-F1-qLS"/>
                     </constraints>
                 </view>
             </subviews>
@@ -287,11 +160,10 @@
         <image name="Menu_H" width="48" height="48"/>
         <image name="PowerOnOff_D" width="48" height="48"/>
         <image name="PowerOnOff_H" width="48" height="48"/>
+        <image name="RC_Bar" width="311" height="10"/>
         <image name="Search_D" width="48" height="48"/>
         <image name="Search_H" width="48" height="48"/>
         <image name="VOD_D" width="48" height="48"/>
         <image name="VOD_H" width="48" height="48"/>
-        <image name="nback_press.png" width="65" height="80"/>
-        <image name="nok_press.png" width="65" height="80"/>
     </resources>
 </document>
