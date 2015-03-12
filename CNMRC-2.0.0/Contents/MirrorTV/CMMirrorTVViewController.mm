@@ -103,6 +103,11 @@ using namespace anymote::messages;
 {
     [super viewDidLoad];
     
+    // 뷰 로테이션(-90도).
+    CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+    rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
+    self.view.transform = rotationTransform;
+    
     // 상태바 감추기.
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
     {
@@ -733,12 +738,27 @@ using namespace anymote::messages;
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitles:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
-    if ([sender tag] == CHANNEL_BUTTON_TAG) {
-        alertView.tag = CHANNEL_BUTTON_TAG;
-    }
-    else {
-        alertView.tag = 0;
-    }
+    alertView.cancelButtonAction = ^{
+        //Debug(@"Cancel Clicked");
+    };
+    alertView.otherButtonAction = ^{
+        // 타이머 정지.
+        [self.heartbeatTimer invalidate];
+        
+        // 플레이어 종료.
+        [self requestStop];
+        
+        // 미러TV 나가기.
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        // 채널을 선택한 경우.
+        if ([sender tag] == CHANNEL_BUTTON_TAG)
+        {
+//            CMRCViewController *rcViewController = (CMRCViewController *)[AppDelegate.container.viewControllers first];
+//            [rcViewController channelAction:sender];
+        }
+    };
     [alertView show];
 }
 
