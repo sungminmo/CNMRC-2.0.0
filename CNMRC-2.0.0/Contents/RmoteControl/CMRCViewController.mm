@@ -137,6 +137,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     
     // 사방향키.
     self.touchPad.delegate = self;
+    self.touchPad.hidden = YES;
     
     CommandHandler *commandHandler = [RemoteManager commandHandler];
     if (!_tapTracker) {
@@ -210,9 +211,9 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
             numberKeyXIB = @"CMNumberKey";
             break;
     }
-    self.numberKey.delegate = self;
-    
+
     CMNumberKey *nk = [[[NSBundle mainBundle] loadNibNamed:numberKeyXIB owner:self options:nil] objectAtIndex:0];
+    nk.delegate = self;
     [self.numberKeyBackground addSubview:nk];
     self.numberKey = nk;
 }
