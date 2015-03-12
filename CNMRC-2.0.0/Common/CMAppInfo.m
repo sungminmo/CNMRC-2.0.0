@@ -41,7 +41,7 @@
         // 설정 정보를 로드한다.
         [self loadSettings];
         
-        [AsyncImageLoader sharedLoader].cache = NO;
+        [AsyncImageLoader sharedLoader].cache = nil;
     }
     return self;
 }

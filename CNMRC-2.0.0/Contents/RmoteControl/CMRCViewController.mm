@@ -196,7 +196,25 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 //    self.cvPad = cv;
     
     // 숫자키패드.
+    NSString *numberKeyXIB = nil;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            numberKeyXIB = @"CMNumberKey_6P";
+            break;
+            
+        case iPhone47inch:
+            numberKeyXIB = @"CMNumberKey_6";
+            break;
+            
+        default:
+            numberKeyXIB = @"CMNumberKey";
+            break;
+    }
     self.numberKey.delegate = self;
+    
+    CMNumberKey *nk = [[[NSBundle mainBundle] loadNibNamed:numberKeyXIB owner:self options:nil] objectAtIndex:0];
+    [self.numberKeyBackground addSubview:nk];
+    self.numberKey = nk;
 }
 
 #pragma mark - UIGestureRecognizerDelegate

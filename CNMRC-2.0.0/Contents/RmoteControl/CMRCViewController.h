@@ -34,7 +34,8 @@ typedef NS_ENUM(NSInteger, CMMRemoteControlType) {
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
 @property (assign, nonatomic) CMMRemoteControlType rcType;
-@property (weak, nonatomic) IBOutlet CMNumberKey *numberKey;
+@property (weak, nonatomic) IBOutlet UIView *numberKeyBackground;
+@property (strong, nonatomic) CMNumberKey *numberKey;
 @property (strong, nonatomic) CMCVPad *cvPad;
 @property (weak, nonatomic) IBOutlet  CMTouchPad *touchPad;
 @property (strong, nonatomic) CMControlPad *controlPad;

@@ -80,6 +80,8 @@
 		1DA28B371A3C85AD007D7F4E /* HTProgressHUDPieIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B2F1A3C85AD007D7F4E /* HTProgressHUDPieIndicatorView.m */; };
 		1DA28B381A3C85AD007D7F4E /* HTProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B311A3C85AD007D7F4E /* HTProgressHUDRingIndicatorView.m */; };
 		1DA28B3C1A3C85C5007D7F4E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B3B1A3C85C5007D7F4E /* Reachability.m */; };
+		1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A0071AB1232D004AB586 /* CMNumberKey_6P.xib */; };
+		1DA6A00A1AB1235F004AB586 /* CMNumberKey_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A0091AB1235F004AB586 /* CMNumberKey_6.xib */; };
 		1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */; };
 		1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */; };
 		1DB9B91E1A613DB000E89E27 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8FB1A613DB000E89E27 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -406,6 +408,8 @@
 		1DA28B311A3C85AD007D7F4E /* HTProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
 		1DA28B3A1A3C85C5007D7F4E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1DA28B3B1A3C85C5007D7F4E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1DA6A0071AB1232D004AB586 /* CMNumberKey_6P.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMNumberKey_6P.xib; sourceTree = "<group>"; };
+		1DA6A0091AB1235F004AB586 /* CMNumberKey_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMNumberKey_6.xib; sourceTree = "<group>"; };
 		1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMRCViewController.xib; sourceTree = "<group>"; };
 		1DB9B8EB1A6129CB00E89E27 /* CMContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMContainerViewController.h; sourceTree = "<group>"; };
 		1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMContainerViewController.m; sourceTree = "<group>"; };
@@ -1391,6 +1395,8 @@
 				1DB9B98C1A614FCD00E89E27 /* CMNumberKey.h */,
 				1DB9B98D1A614FCD00E89E27 /* CMNumberKey.m */,
 				1DB9B98E1A614FCD00E89E27 /* CMNumberKey.xib */,
+				1DA6A0071AB1232D004AB586 /* CMNumberKey_6P.xib */,
+				1DA6A0091AB1235F004AB586 /* CMNumberKey_6.xib */,
 				1DB9B98F1A614FCD00E89E27 /* CMOverlayView.h */,
 				1DB9B9901A614FCD00E89E27 /* CMOverlayView.m */,
 				1DB9B9911A614FCD00E89E27 /* CMSlideMenuViewController.h */,
@@ -1765,6 +1771,7 @@
 				1DB9B9571A61446D00E89E27 /* Dependencies.txt in Resources */,
 				1DB9BA291A615A9200E89E27 /* CMSettingsCell.xib in Resources */,
 				1D6F512E1A6A930E0045FB89 /* CMCircleMenu.xib in Resources */,
+				1DA6A00A1AB1235F004AB586 /* CMNumberKey_6.xib in Resources */,
 				1DB9B9A41A614FCD00E89E27 /* CMCVPadSD.xib in Resources */,
 				1DB9BA071A61574800E89E27 /* remote.proto in Resources */,
 				1DB9B9A01A614FCD00E89E27 /* CMControlPad.xib in Resources */,
@@ -1778,6 +1785,7 @@
 				1DB9BA271A615A9200E89E27 /* CMSetProductViewController.xib in Resources */,
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
+				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
 				1DBA76CA1A20B4C8003AB966 /* libprotobuf-lite.la in Resources */,
 				1DB9BA031A61574800E89E27 /* keycodes.proto in Resources */,
