@@ -188,13 +188,25 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 //    ctr.frame = padBackground.bounds;
 //    [padBackground addSubview:ctr];
 //    self.controlPad = ctr;
-//    
-//    // 채널/볼륨 패드.
-//    CMCVPad *cv = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMCVPadSD", @"CMCVPad") owner:self options:nil] objectAtIndex:0];
-//    cv.delegate = self;
-//    cv.frame = padBackground.bounds;
-//    [padBackground addSubview:cv];
-//    self.cvPad = cv;
+    
+    // 채널/볼륨 패드.
+    self.cvPad.delegate = self;
+    
+    // 채널/볼륨 패드: 왼쪽 백그라운드 라운드 처리.
+    self.cvPad.leftBackground.backgroundColor = [UIColor whiteColor];
+    self.cvPad.leftBackground.layer.cornerRadius = 9.9;
+    self.cvPad.leftBackground.layer.masksToBounds = YES;
+    self.cvPad.leftBackground.layer.borderWidth = 1;
+    self.cvPad.leftBackground.layer.borderColor = [UIColor grayColor].CGColor;
+    self.cvPad.leftRoundBackground.layer.cornerRadius = 9.9;
+    
+    // 채널/볼륨 패드: 오른쪽 백그라운드 라운드 처리.
+    self.cvPad.rightBackground.backgroundColor = [UIColor whiteColor];
+    self.cvPad.rightBackground.layer.cornerRadius = 9.9;
+    self.cvPad.rightBackground.layer.masksToBounds = YES;
+    self.cvPad.rightBackground.layer.borderWidth = 1;
+    self.cvPad.rightBackground.layer.borderColor = [UIColor grayColor].CGColor;
+    self.cvPad.rightRoundBackground.layer.cornerRadius = 9.9;
     
     // 숫자키패드.
     NSString *numberKeyXIB = nil;

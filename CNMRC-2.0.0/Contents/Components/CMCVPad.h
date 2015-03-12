@@ -16,6 +16,10 @@
 
 @property (assign, nonatomic) id<CMCVPadDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UIView *leftBackground;
+@property (weak, nonatomic) IBOutlet UIView *leftRoundBackground;
+@property (weak, nonatomic) IBOutlet UIView *rightBackground;
+@property (weak, nonatomic) IBOutlet UIView *rightRoundBackground;
 @property (weak, nonatomic) IBOutlet UIButton *volumeUpButton;
 @property (weak, nonatomic) IBOutlet UIButton *volumeMuteButton;
 @property (weak, nonatomic) IBOutlet UIButton *volumeDownButton;
