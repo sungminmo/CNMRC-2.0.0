@@ -45,9 +45,10 @@
     // 0 ~ 9.
     if (button.tag < 10)
     {
-        NSString *highlightedImageName = [NSString stringWithFormat:@"n%d_press@2x.png", button.tag];
+        NSString *highlightedImageName = [NSString stringWithFormat:@"No_%ld_H", (long)button.tag];
         UIImage *highlightedImage = [UIImage imageNamed:highlightedImageName];
-        UIImageView *highlightedImageView = [[UIImageView alloc] initWithFrame:CGRectMake(button.frame.origin.x - 5, button.frame.origin.y - 81.5, 48.5, 117.5)];
+        UIImageView *highlightedImageView = [[UIImageView alloc] initWithFrame:CGRectMake(button.frame.origin.x, button.frame.origin.y - 75, 48.5, 117.5)];
+        highlightedImageView.center = CGPointMake(button.center.x, highlightedImageView.center.y);
         highlightedImageView.image = highlightedImage;
         [self addSubview:highlightedImageView];
         [self performSelector:@selector(removeHighlightedImageView:) withObject:highlightedImageView afterDelay:0.5];
