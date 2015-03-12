@@ -19,9 +19,7 @@
 		1D14AA7F1A6169D700FECF55 /* CMEPGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA791A6169D700FECF55 /* CMEPGViewController.m */; };
 		1D14AA801A6169D700FECF55 /* CMEPGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA7A1A6169D700FECF55 /* CMEPGViewController.xib */; };
 		1D14AA891A6169E300FECF55 /* CMChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA821A6169E300FECF55 /* CMChannelInfo.m */; };
-		1D14AA8A1A6169E300FECF55 /* CMMirrorTVViewController_4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA831A6169E300FECF55 /* CMMirrorTVViewController_4.xib */; };
 		1D14AA8B1A6169E300FECF55 /* CMMirrorTVViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA851A6169E300FECF55 /* CMMirrorTVViewController.mm */; };
-		1D14AA8C1A6169E300FECF55 /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA861A6169E300FECF55 /* CMMirrorTVViewController.xib */; };
 		1D14AA8D1A6169E300FECF55 /* CMPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */; };
 		1D1C462F1A6A3A1B00ADD92A /* LPAppStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C462E1A6A3A1B00ADD92A /* LPAppStats.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1D20C3D81A8183B3004C84A9 /* LPPhoneVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D20C3D71A8183B3004C84A9 /* LPPhoneVersion.m */; };
@@ -82,6 +80,7 @@
 		1DA28B3C1A3C85C5007D7F4E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B3B1A3C85C5007D7F4E /* Reachability.m */; };
 		1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A0071AB1232D004AB586 /* CMNumberKey_6P.xib */; };
 		1DA6A00A1AB1235F004AB586 /* CMNumberKey_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A0091AB1235F004AB586 /* CMNumberKey_6.xib */; };
+		1DA6A00C1AB165ED004AB586 /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A00B1AB165ED004AB586 /* CMMirrorTVViewController.xib */; };
 		1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */; };
 		1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */; };
 		1DB9B91E1A613DB000E89E27 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8FB1A613DB000E89E27 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -234,10 +233,8 @@
 		1D14AA7A1A6169D700FECF55 /* CMEPGViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMEPGViewController.xib; sourceTree = "<group>"; };
 		1D14AA811A6169E300FECF55 /* CMChannelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMChannelInfo.h; sourceTree = "<group>"; };
 		1D14AA821A6169E300FECF55 /* CMChannelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMChannelInfo.m; sourceTree = "<group>"; };
-		1D14AA831A6169E300FECF55 /* CMMirrorTVViewController_4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController_4.xib; sourceTree = "<group>"; };
 		1D14AA841A6169E300FECF55 /* CMMirrorTVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMMirrorTVViewController.h; sourceTree = "<group>"; };
 		1D14AA851A6169E300FECF55 /* CMMirrorTVViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMMirrorTVViewController.mm; sourceTree = "<group>"; };
-		1D14AA861A6169E300FECF55 /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 		1D14AA871A6169E300FECF55 /* CMPlayerLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPlayerLayerView.h; sourceTree = "<group>"; };
 		1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPlayerLayerView.m; sourceTree = "<group>"; };
 		1D1C462D1A6A3A1B00ADD92A /* LPAppStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPAppStats.h; sourceTree = "<group>"; };
@@ -408,6 +405,7 @@
 		1DA28B3B1A3C85C5007D7F4E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		1DA6A0071AB1232D004AB586 /* CMNumberKey_6P.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMNumberKey_6P.xib; sourceTree = "<group>"; };
 		1DA6A0091AB1235F004AB586 /* CMNumberKey_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMNumberKey_6.xib; sourceTree = "<group>"; };
+		1DA6A00B1AB165ED004AB586 /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 		1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMRCViewController.xib; sourceTree = "<group>"; };
 		1DB9B8EB1A6129CB00E89E27 /* CMContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMContainerViewController.h; sourceTree = "<group>"; };
 		1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMContainerViewController.m; sourceTree = "<group>"; };
@@ -1149,10 +1147,9 @@
 			children = (
 				1D14AA811A6169E300FECF55 /* CMChannelInfo.h */,
 				1D14AA821A6169E300FECF55 /* CMChannelInfo.m */,
-				1D14AA831A6169E300FECF55 /* CMMirrorTVViewController_4.xib */,
 				1D14AA841A6169E300FECF55 /* CMMirrorTVViewController.h */,
 				1D14AA851A6169E300FECF55 /* CMMirrorTVViewController.mm */,
-				1D14AA861A6169E300FECF55 /* CMMirrorTVViewController.xib */,
+				1DA6A00B1AB165ED004AB586 /* CMMirrorTVViewController.xib */,
 				1D14AA871A6169E300FECF55 /* CMPlayerLayerView.h */,
 				1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */,
 			);
@@ -1777,6 +1774,7 @@
 				1DBA76C61A20B4C8003AB966 /* protoc in Resources */,
 				1DB9BA271A615A9200E89E27 /* CMSetProductViewController.xib in Resources */,
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
+				1DA6A00C1AB165ED004AB586 /* CMMirrorTVViewController.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
@@ -1789,8 +1787,6 @@
 				1D4A49CE1A20859C0088FA93 /* Images.xcassets in Resources */,
 				1DB9BA2C1A615A9200E89E27 /* Settings.plist in Resources */,
 				1DB9B9771A614F6500E89E27 /* CMSetIPViewController.xib in Resources */,
-				1D14AA8A1A6169E300FECF55 /* CMMirrorTVViewController_4.xib in Resources */,
-				1D14AA8C1A6169E300FECF55 /* CMMirrorTVViewController.xib in Resources */,
 				1DBA76C81A20B4C8003AB966 /* descriptor.proto in Resources */,
 				1DBA76CE1A20B4C8003AB966 /* libprotoc.la in Resources */,
 				1DBA76D01A20B4C8003AB966 /* protobuf.pc in Resources */,

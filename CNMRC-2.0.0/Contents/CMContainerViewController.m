@@ -70,20 +70,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
+//- (NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskPortrait;
+//}
 
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
+//- (BOOL)shouldAutorotate
+//{
+//    return YES;
+//}
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    return UIInterfaceOrientationPortrait;
-}
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+//{
+//    return UIInterfaceOrientationPortrait;
+//}
 
 #pragma mark - 프라이빗 메서드
 
@@ -362,10 +362,10 @@
         }
         
         // 테스트 용 -----------------------------------.
-        //                              CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:DeviceSpecificSetting(@"CMMirrorTVViewController_4", @"CMMirrorTVViewController") bundle:nil];
-        //                              viewController.blockChannelInfo = self.blockChannelInfo;
-        //                              self.modalPresentationStyle = UIModalPresentationCurrentContext;
-        //                              [self presentViewController:viewController animated:YES completion:nil];
+        CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:@"CMMirrorTVViewController" bundle:nil];
+        viewController.blockChannelInfo = self.blockChannelInfo;
+        self.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self presentViewController:viewController animated:YES completion:nil];
         // 테스트 용 -----------------------------------.
     };
 }
