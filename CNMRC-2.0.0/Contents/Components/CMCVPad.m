@@ -42,7 +42,7 @@
 
 - (IBAction)buttonAction:(id)sender
 {
-    [self buttonAnimation:sender];
+    //[self buttonAnimation:sender];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(cvPad:selectedKey:)])
     {

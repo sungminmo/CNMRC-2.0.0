@@ -228,6 +228,7 @@
                                                             <state key="normal" image="Mute_D">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <state key="selected" image="Mute_H"/>
                                                             <state key="highlighted" image="Mute_H"/>
                                                             <connections>
                                                                 <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="XEk-g2-YVc"/>
