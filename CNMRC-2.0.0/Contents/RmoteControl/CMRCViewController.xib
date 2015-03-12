@@ -218,7 +218,68 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALV-Rt-6iQ">
                                                     <rect key="frame" x="5" y="5" width="270" height="319"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-dr-tsX">
+                                                            <rect key="frame" x="92" y="126" width="87" height="67"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="67" id="37X-DL-1mD"/>
+                                                                <constraint firstAttribute="width" constant="87" id="b8H-qI-RmY"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Mute_D">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="highlighted" image="Mute_H"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-95-JLm">
+                                                            <rect key="frame" x="80" y="0.0" width="111" height="76"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="111" id="3jT-Xu-GAL"/>
+                                                                <constraint firstAttribute="height" constant="76" id="IxV-c8-zZj"/>
+                                                            </constraints>
+                                                            <state key="normal" image="VolumeUp_D">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="highlighted" image="VolumeUp_H"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-Zi-GSt">
+                                                            <rect key="frame" x="80" y="243" width="111" height="76"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="76" id="YhR-g0-BZB"/>
+                                                                <constraint firstAttribute="width" constant="111" id="wR0-0N-hR4"/>
+                                                            </constraints>
+                                                            <state key="normal" image="VolumeDown_D">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="highlighted" image="VolumeDown_H"/>
+                                                        </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="qsd-ss-P8B">
+                                                            <rect key="frame" x="122" y="95" width="26" height="5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="26" id="F7d-Gn-0lG"/>
+                                                                <constraint firstAttribute="height" constant="5" id="zCc-aB-Se9"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-WO-iVD">
+                                                            <rect key="frame" x="122" y="215" width="26" height="5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="26" id="SNv-aO-AoS"/>
+                                                                <constraint firstAttribute="height" constant="5" id="VBm-aZ-Ooz"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
                                                     <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="v5A-dr-tsX" secondAttribute="centerY" id="0KQ-mi-mZy"/>
+                                                        <constraint firstAttribute="centerX" secondItem="ErJ-WO-iVD" secondAttribute="centerX" id="2bz-Pu-UtR"/>
+                                                        <constraint firstAttribute="centerX" secondItem="qsd-ss-P8B" secondAttribute="centerX" id="57p-dj-nB1"/>
+                                                        <constraint firstItem="ErJ-WO-iVD" firstAttribute="top" secondItem="v5A-dr-tsX" secondAttribute="bottom" constant="22" id="5bV-jA-YQq"/>
+                                                        <constraint firstAttribute="centerX" secondItem="ko1-95-JLm" secondAttribute="centerX" id="Cfq-ft-Wld"/>
+                                                        <constraint firstAttribute="centerX" secondItem="RAt-Zi-GSt" secondAttribute="centerX" id="I0L-Oy-89B"/>
+                                                        <constraint firstAttribute="centerX" secondItem="v5A-dr-tsX" secondAttribute="centerX" id="YJg-wo-WaV"/>
+                                                        <constraint firstItem="v5A-dr-tsX" firstAttribute="top" secondItem="qsd-ss-P8B" secondAttribute="bottom" constant="26" id="j0U-PP-jLP"/>
+                                                        <constraint firstItem="v5A-dr-tsX" firstAttribute="top" secondItem="ko1-95-JLm" secondAttribute="bottom" constant="50" id="krb-oa-OHs"/>
+                                                        <constraint firstItem="RAt-Zi-GSt" firstAttribute="top" secondItem="v5A-dr-tsX" secondAttribute="bottom" constant="50" id="x0P-xK-Eht"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -236,7 +297,64 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Icd-7v-JIQ">
                                                     <rect key="frame" x="5" y="5" width="270" height="319"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Channel" translatesAutoresizingMaskIntoConstraints="NO" id="ED9-jb-Vx6">
+                                                            <rect key="frame" x="102" y="126" width="67" height="67"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="67" id="3aN-1X-ihK"/>
+                                                                <constraint firstAttribute="width" constant="67" id="Wp7-ul-BVA"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-8j-met">
+                                                            <rect key="frame" x="80" y="0.0" width="111" height="76"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="111" id="0Ba-4c-y9o"/>
+                                                                <constraint firstAttribute="height" constant="76" id="VWy-Jx-Unb"/>
+                                                            </constraints>
+                                                            <state key="normal" image="ChannelUp_D">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="highlighted" image="ChannelUp_H"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKG-aY-3d2">
+                                                            <rect key="frame" x="80" y="243" width="111" height="76"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="76" id="4dQ-ee-XbD"/>
+                                                                <constraint firstAttribute="width" constant="111" id="wPw-fD-0yn"/>
+                                                            </constraints>
+                                                            <state key="normal" image="ChannelDown_D">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="highlighted" image="ChannelDown_H"/>
+                                                        </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-ZA-c1L">
+                                                            <rect key="frame" x="122" y="99" width="26" height="5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="5" id="Gtz-MG-57c"/>
+                                                                <constraint firstAttribute="width" constant="26" id="Tn0-OK-74k"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="pgq-FD-YpG">
+                                                            <rect key="frame" x="122" y="215" width="26" height="5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="26" id="8Ho-jH-7lV"/>
+                                                                <constraint firstAttribute="height" constant="5" id="com-Tc-4a8"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
                                                     <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ED9-jb-Vx6" firstAttribute="top" secondItem="XYI-ZA-c1L" secondAttribute="bottom" constant="22" id="Aov-j8-U8f"/>
+                                                        <constraint firstItem="pgq-FD-YpG" firstAttribute="top" secondItem="ED9-jb-Vx6" secondAttribute="bottom" constant="22" id="BzK-fW-iWu"/>
+                                                        <constraint firstAttribute="centerX" secondItem="pgq-FD-YpG" secondAttribute="centerX" id="Ih8-ai-ajY"/>
+                                                        <constraint firstAttribute="centerX" secondItem="ED9-jb-Vx6" secondAttribute="centerX" id="J5b-n0-ZtI"/>
+                                                        <constraint firstAttribute="centerX" secondItem="rKG-aY-3d2" secondAttribute="centerX" id="MVx-j5-Ijr"/>
+                                                        <constraint firstAttribute="centerX" secondItem="XYI-ZA-c1L" secondAttribute="centerX" id="VvB-4G-znq"/>
+                                                        <constraint firstAttribute="centerX" secondItem="5Hq-8j-met" secondAttribute="centerX" id="gzL-B5-t9R"/>
+                                                        <constraint firstItem="rKG-aY-3d2" firstAttribute="top" secondItem="ED9-jb-Vx6" secondAttribute="bottom" constant="50" id="kfe-FM-XBd"/>
+                                                        <constraint firstAttribute="centerY" secondItem="ED9-jb-Vx6" secondAttribute="centerY" id="mf0-We-Kc0"/>
+                                                        <constraint firstItem="ED9-jb-Vx6" firstAttribute="top" secondItem="5Hq-8j-met" secondAttribute="bottom" constant="50" id="pGi-pF-hsS"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -346,10 +464,18 @@
         <image name="ArrowRight_H" width="67" height="67"/>
         <image name="ArrowUp_D" width="67" height="67"/>
         <image name="ArrowUp_H" width="67" height="67"/>
+        <image name="Bar" width="26" height="5"/>
+        <image name="Channel" width="67" height="67"/>
+        <image name="ChannelDown_D" width="111" height="76"/>
+        <image name="ChannelDown_H" width="111" height="76"/>
+        <image name="ChannelUp_D" width="111" height="76"/>
+        <image name="ChannelUp_H" width="111" height="76"/>
         <image name="Channel_D" width="48" height="48"/>
         <image name="Channel_H" width="48" height="48"/>
         <image name="Menu_D" width="48" height="48"/>
         <image name="Menu_H" width="48" height="48"/>
+        <image name="Mute_D" width="87" height="67"/>
+        <image name="Mute_H" width="87" height="67"/>
         <image name="OK_D" width="67" height="67"/>
         <image name="OK_H" width="67" height="67"/>
         <image name="PowerOnOff_D" width="48" height="48"/>
@@ -359,5 +485,9 @@
         <image name="Search_H" width="48" height="48"/>
         <image name="VOD_D" width="48" height="48"/>
         <image name="VOD_H" width="48" height="48"/>
+        <image name="VolumeDown_D" width="111" height="76"/>
+        <image name="VolumeDown_H" width="111" height="76"/>
+        <image name="VolumeUp_D" width="111" height="76"/>
+        <image name="VolumeUp_H" width="111" height="76"/>
     </resources>
 </document>
