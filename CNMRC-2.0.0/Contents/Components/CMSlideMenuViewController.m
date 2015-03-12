@@ -186,7 +186,7 @@
                 break;
                 
             case iPhone47inch:
-                slideButtonX = 331;
+                slideButtonX = 310;
                 
             default:
                 slideButtonX = 271.0;
