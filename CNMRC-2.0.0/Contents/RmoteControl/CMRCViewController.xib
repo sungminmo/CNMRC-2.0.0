@@ -219,7 +219,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALV-Rt-6iQ">
                                                     <rect key="frame" x="5" y="5" width="270" height="319"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-dr-tsX">
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-dr-tsX">
                                                             <rect key="frame" x="92" y="126" width="87" height="67"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="67" id="37X-DL-1mD"/>
@@ -229,8 +229,11 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="highlighted" image="Mute_H"/>
+                                                            <connections>
+                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="XEk-g2-YVc"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-95-JLm">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-95-JLm">
                                                             <rect key="frame" x="80" y="0.0" width="111" height="76"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="111" id="3jT-Xu-GAL"/>
@@ -240,8 +243,11 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="highlighted" image="VolumeUp_H"/>
+                                                            <connections>
+                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="BhX-uc-vyk"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-Zi-GSt">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-Zi-GSt">
                                                             <rect key="frame" x="80" y="243" width="111" height="76"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="76" id="YhR-g0-BZB"/>
@@ -251,6 +257,9 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="highlighted" image="VolumeDown_H"/>
+                                                            <connections>
+                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchDragInside" id="shA-Y5-JEX"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="qsd-ss-P8B">
                                                             <rect key="frame" x="122" y="95" width="26" height="5"/>
@@ -305,7 +314,7 @@
                                                                 <constraint firstAttribute="width" constant="67" id="Wp7-ul-BVA"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-8j-met">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-8j-met">
                                                             <rect key="frame" x="80" y="0.0" width="111" height="76"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="111" id="0Ba-4c-y9o"/>
@@ -315,8 +324,11 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="highlighted" image="ChannelUp_H"/>
+                                                            <connections>
+                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="Psg-lC-qcA"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKG-aY-3d2">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKG-aY-3d2">
                                                             <rect key="frame" x="80" y="243" width="111" height="76"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="76" id="4dQ-ee-XbD"/>
@@ -326,6 +338,9 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <state key="highlighted" image="ChannelDown_H"/>
+                                                            <connections>
+                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchDragInside" id="3Uh-B1-kUj"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-ZA-c1L">
                                                             <rect key="frame" x="122" y="99" width="26" height="5"/>
@@ -377,6 +392,9 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="highlighted" image="OK_H"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="yaY-kX-GUF"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

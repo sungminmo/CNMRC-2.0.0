@@ -132,8 +132,6 @@
 		1DB9B9A01A614FCD00E89E27 /* CMControlPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B9821A614FCD00E89E27 /* CMControlPad.xib */; };
 		1DB9B9A11A614FCD00E89E27 /* CMControlPadSD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B9831A614FCD00E89E27 /* CMControlPadSD.xib */; };
 		1DB9B9A21A614FCD00E89E27 /* CMCVPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9851A614FCD00E89E27 /* CMCVPad.m */; };
-		1DB9B9A31A614FCD00E89E27 /* CMCVPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B9861A614FCD00E89E27 /* CMCVPad.xib */; };
-		1DB9B9A41A614FCD00E89E27 /* CMCVPadSD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9B9871A614FCD00E89E27 /* CMCVPadSD.xib */; };
 		1DB9B9A51A614FCD00E89E27 /* CMDepthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9891A614FCD00E89E27 /* CMDepthIndicator.m */; };
 		1DB9B9A61A614FCD00E89E27 /* CMEPGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B98B1A614FCD00E89E27 /* CMEPGTableViewCell.m */; };
 		1DB9B9A71A614FCD00E89E27 /* CMNumberKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B98D1A614FCD00E89E27 /* CMNumberKey.m */; };
@@ -506,8 +504,6 @@
 		1DB9B9831A614FCD00E89E27 /* CMControlPadSD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMControlPadSD.xib; sourceTree = "<group>"; };
 		1DB9B9841A614FCD00E89E27 /* CMCVPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCVPad.h; sourceTree = "<group>"; };
 		1DB9B9851A614FCD00E89E27 /* CMCVPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCVPad.m; sourceTree = "<group>"; };
-		1DB9B9861A614FCD00E89E27 /* CMCVPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMCVPad.xib; sourceTree = "<group>"; };
-		1DB9B9871A614FCD00E89E27 /* CMCVPadSD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMCVPadSD.xib; sourceTree = "<group>"; };
 		1DB9B9881A614FCD00E89E27 /* CMDepthIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMDepthIndicator.h; sourceTree = "<group>"; };
 		1DB9B9891A614FCD00E89E27 /* CMDepthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMDepthIndicator.m; sourceTree = "<group>"; };
 		1DB9B98A1A614FCD00E89E27 /* CMEPGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMEPGTableViewCell.h; sourceTree = "<group>"; };
@@ -1386,8 +1382,6 @@
 				1DB9B9831A614FCD00E89E27 /* CMControlPadSD.xib */,
 				1DB9B9841A614FCD00E89E27 /* CMCVPad.h */,
 				1DB9B9851A614FCD00E89E27 /* CMCVPad.m */,
-				1DB9B9861A614FCD00E89E27 /* CMCVPad.xib */,
-				1DB9B9871A614FCD00E89E27 /* CMCVPadSD.xib */,
 				1DB9B9881A614FCD00E89E27 /* CMDepthIndicator.h */,
 				1DB9B9891A614FCD00E89E27 /* CMDepthIndicator.m */,
 				1DB9B98A1A614FCD00E89E27 /* CMEPGTableViewCell.h */,
@@ -1772,7 +1766,6 @@
 				1DB9BA291A615A9200E89E27 /* CMSettingsCell.xib in Resources */,
 				1D6F512E1A6A930E0045FB89 /* CMCircleMenu.xib in Resources */,
 				1DA6A00A1AB1235F004AB586 /* CMNumberKey_6.xib in Resources */,
-				1DB9B9A41A614FCD00E89E27 /* CMCVPadSD.xib in Resources */,
 				1DB9BA071A61574800E89E27 /* remote.proto in Resources */,
 				1DB9B9A01A614FCD00E89E27 /* CMControlPad.xib in Resources */,
 				1DB9BA051A61574800E89E27 /* polo.proto in Resources */,
@@ -1798,7 +1791,6 @@
 				1DB9B9771A614F6500E89E27 /* CMSetIPViewController.xib in Resources */,
 				1D14AA8A1A6169E300FECF55 /* CMMirrorTVViewController_4.xib in Resources */,
 				1D14AA8C1A6169E300FECF55 /* CMMirrorTVViewController.xib in Resources */,
-				1DB9B9A31A614FCD00E89E27 /* CMCVPad.xib in Resources */,
 				1DBA76C81A20B4C8003AB966 /* descriptor.proto in Resources */,
 				1DBA76CE1A20B4C8003AB966 /* libprotoc.la in Resources */,
 				1DBA76D01A20B4C8003AB966 /* protobuf.pc in Resources */,
