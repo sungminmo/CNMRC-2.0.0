@@ -482,7 +482,7 @@
                         <constraint firstAttribute="centerX" secondItem="rxv-Zc-TDY" secondAttribute="centerX" id="zqK-fO-arB"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-X2-fts">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-X2-fts">
                     <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="M_LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="X6n-T6-BwE">
