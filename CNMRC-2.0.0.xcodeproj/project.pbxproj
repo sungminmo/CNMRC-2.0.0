@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */ = {isa = PBXBuildFile; fileRef = 1D0EE5C31AB291C00055A92A /* tap-muted.aif */; };
 		1D14AA671A6168EC00FECF55 /* CMQwertyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA621A6168EC00FECF55 /* CMQwertyViewController.mm */; };
 		1D14AA681A6168EC00FECF55 /* CMQwertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA631A6168EC00FECF55 /* CMQwertyViewController.xib */; };
 		1D14AA691A6168EC00FECF55 /* CMRCViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */; };
@@ -213,6 +214,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D0EE5C31AB291C00055A92A /* tap-muted.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tap-muted.aif"; sourceTree = "<group>"; };
 		1D14AA611A6168EC00FECF55 /* CMQwertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMQwertyViewController.h; sourceTree = "<group>"; };
 		1D14AA621A6168EC00FECF55 /* CMQwertyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMQwertyViewController.mm; sourceTree = "<group>"; };
 		1D14AA631A6168EC00FECF55 /* CMQwertyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMQwertyViewController.xib; sourceTree = "<group>"; };
@@ -793,6 +795,7 @@
 		1D4A49BF1A20859C0088FA93 /* CNMRC-2.0.0 */ = {
 			isa = PBXGroup;
 			children = (
+				1D0EE5C31AB291C00055A92A /* tap-muted.aif */,
 				1DB9B8F91A612BBE00E89E27 /* Common */,
 				1DB9B8F81A612BAB00E89E27 /* Categories */,
 				1DB9B8F71A612B9700E89E27 /* Network */,
@@ -1777,6 +1780,7 @@
 				1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
+				1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
 				1DBA76CA1A20B4C8003AB966 /* libprotobuf-lite.la in Resources */,
 				1DB9BA031A61574800E89E27 /* keycodes.proto in Resources */,
