@@ -83,8 +83,12 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvd-mr-S2Z">
                                     <rect key="frame" x="25" y="147" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="OFD-FG-inx"/>
+                                        <constraint firstAttribute="height" constant="60" id="wqg-GF-6KF"/>
+                                    </constraints>
                                     <state key="normal" image="M_VolumeDown_D"/>
-                                    <state key="highlighted" image="M_VolumeDwon_H"/>
+                                    <state key="highlighted" image="M_VolumeDown_H"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIq-O7-jyZ">
                                     <rect key="frame" x="25" y="83" width="60" height="49"/>
@@ -100,18 +104,18 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Nvd-mr-S2Z" secondAttribute="trailing" constant="25" id="1gR-rE-8fI"/>
+                                <constraint firstAttribute="trailing" secondItem="Nvd-mr-S2Z" secondAttribute="trailing" constant="25" id="8h7-7E-69Z"/>
                                 <constraint firstItem="whJ-cH-67p" firstAttribute="leading" secondItem="XMx-zB-3g4" secondAttribute="leading" constant="25" id="AOs-Rc-8K3"/>
                                 <constraint firstAttribute="trailing" secondItem="whJ-cH-67p" secondAttribute="trailing" constant="25" id="Nvs-Nb-7Ra"/>
                                 <constraint firstItem="ZIq-O7-jyZ" firstAttribute="top" secondItem="whJ-cH-67p" secondAttribute="bottom" constant="15" id="Ogl-TJ-hY1"/>
                                 <constraint firstAttribute="width" constant="110" id="U83-vz-BsE"/>
+                                <constraint firstAttribute="bottom" secondItem="Nvd-mr-S2Z" secondAttribute="bottom" constant="8" id="XD3-TC-jp2"/>
+                                <constraint firstItem="Nvd-mr-S2Z" firstAttribute="leading" secondItem="XMx-zB-3g4" secondAttribute="leading" constant="25" id="bKn-tl-Foz"/>
                                 <constraint firstAttribute="height" constant="215" id="d3D-Tf-lNT"/>
-                                <constraint firstItem="Nvd-mr-S2Z" firstAttribute="leading" secondItem="XMx-zB-3g4" secondAttribute="leading" constant="25" id="dk7-oz-kE3"/>
                                 <constraint firstItem="whJ-cH-67p" firstAttribute="top" secondItem="XMx-zB-3g4" secondAttribute="top" constant="8" id="efv-Rw-jLX"/>
-                                <constraint firstAttribute="bottom" secondItem="Nvd-mr-S2Z" secondAttribute="bottom" constant="8" id="fQN-SS-mP8"/>
                                 <constraint firstAttribute="centerX" secondItem="ZIq-O7-jyZ" secondAttribute="centerX" id="h9U-Fk-TzW"/>
+                                <constraint firstItem="Nvd-mr-S2Z" firstAttribute="top" secondItem="ZIq-O7-jyZ" secondAttribute="bottom" constant="15" id="hbG-Qg-7CR"/>
                                 <constraint firstAttribute="centerY" secondItem="ZIq-O7-jyZ" secondAttribute="centerY" id="s4D-Ab-A1c"/>
-                                <constraint firstItem="Nvd-mr-S2Z" firstAttribute="top" secondItem="ZIq-O7-jyZ" secondAttribute="bottom" constant="15" id="un8-hI-tna"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-va-N7N">
@@ -170,7 +174,7 @@
         <image name="M_MuteOn_D" width="60" height="49"/>
         <image name="M_MuteOn_H" width="60" height="49"/>
         <image name="M_VolumeDown_D" width="60" height="60"/>
-        <image name="M_VolumeDwon_H" width="1136" height="640"/>
+        <image name="M_VolumeDown_H" width="60" height="60"/>
         <image name="M_VolumeUp_D" width="60" height="60"/>
         <image name="M_VolumeUp_H" width="60" height="60"/>
     </resources>
