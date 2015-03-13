@@ -485,23 +485,31 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-X2-fts">
                     <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="M_LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="X6n-T6-BwE">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="M_LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="X6n-T6-BwE">
                             <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="736" id="Lf4-ts-YJp"/>
+                                <constraint firstAttribute="height" constant="414" id="sfl-Wu-Mje"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-AE-aBa">
+                            <rect key="frame" x="352" y="191" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="lWf-xQ-PcU"/>
+                                <constraint firstAttribute="width" constant="32" id="uxi-kk-K5q"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="centerY" secondItem="X6n-T6-BwE" secondAttribute="centerY" id="58H-TR-paN"/>
+                        <constraint firstAttribute="centerX" secondItem="j0r-AE-aBa" secondAttribute="centerX" id="H6C-ZN-Z5l"/>
                         <constraint firstAttribute="height" constant="414" id="XBI-8U-IvC"/>
+                        <constraint firstAttribute="centerX" secondItem="X6n-T6-BwE" secondAttribute="centerX" id="b7u-ob-tJl"/>
                         <constraint firstAttribute="width" constant="736" id="nHE-9W-xjm"/>
+                        <constraint firstAttribute="centerY" secondItem="j0r-AE-aBa" secondAttribute="centerY" id="vSd-Bx-bZC"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-AE-aBa">
-                    <rect key="frame" x="352" y="191" width="32" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="32" id="1c5-M9-fT4"/>
-                        <constraint firstAttribute="height" constant="32" id="Knk-5u-hbg"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -513,9 +521,7 @@
                 <constraint firstAttribute="centerX" secondItem="cIM-id-vqR" secondAttribute="centerX" id="WP4-5e-Jo6"/>
                 <constraint firstAttribute="bottom" secondItem="8wU-0t-EXg" secondAttribute="bottom" id="X3J-0Q-loJ"/>
                 <constraint firstAttribute="trailing" secondItem="8wU-0t-EXg" secondAttribute="trailing" id="aqO-Pp-Tun"/>
-                <constraint firstAttribute="centerX" secondItem="j0r-AE-aBa" secondAttribute="centerX" id="eud-ki-ula"/>
                 <constraint firstAttribute="centerY" secondItem="cIM-id-vqR" secondAttribute="centerY" id="gke-wD-3pR"/>
-                <constraint firstAttribute="centerY" secondItem="j0r-AE-aBa" secondAttribute="centerY" id="hYf-Ln-bd2"/>
                 <constraint firstAttribute="centerY" secondItem="sCv-X2-fts" secondAttribute="centerY" id="hfV-Vt-ZMd"/>
                 <constraint firstAttribute="centerY" secondItem="8wU-0t-EXg" secondAttribute="centerY" id="m5J-g4-cPk"/>
                 <constraint firstItem="cIM-id-vqR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mXw-pp-xT5"/>
