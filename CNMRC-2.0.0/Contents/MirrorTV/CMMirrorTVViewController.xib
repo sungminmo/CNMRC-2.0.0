@@ -72,11 +72,46 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ControlBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Xtq-H1-iMk">
                                     <rect key="frame" x="0.0" y="0.0" width="110" height="215"/>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-cH-67p">
+                                    <rect key="frame" x="25" y="8" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="WHt-kc-B3A"/>
+                                        <constraint firstAttribute="height" constant="60" id="v5P-Z1-mVw"/>
+                                    </constraints>
+                                    <state key="normal" image="M_VolumeUp_D"/>
+                                    <state key="highlighted" image="M_VolumeUp_H"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvd-mr-S2Z">
+                                    <rect key="frame" x="25" y="147" width="60" height="60"/>
+                                    <state key="normal" image="M_VolumeDown_D"/>
+                                    <state key="highlighted" image="M_VolumeDwon_H"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIq-O7-jyZ">
+                                    <rect key="frame" x="25" y="83" width="60" height="49"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="49" id="gaW-lM-q5o"/>
+                                        <constraint firstAttribute="width" constant="60" id="uU7-co-Nka"/>
+                                    </constraints>
+                                    <state key="normal" image="M_MuteOn_D">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" image="M_MuteOn_H"/>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Nvd-mr-S2Z" secondAttribute="trailing" constant="25" id="1gR-rE-8fI"/>
+                                <constraint firstItem="whJ-cH-67p" firstAttribute="leading" secondItem="XMx-zB-3g4" secondAttribute="leading" constant="25" id="AOs-Rc-8K3"/>
+                                <constraint firstAttribute="trailing" secondItem="whJ-cH-67p" secondAttribute="trailing" constant="25" id="Nvs-Nb-7Ra"/>
+                                <constraint firstItem="ZIq-O7-jyZ" firstAttribute="top" secondItem="whJ-cH-67p" secondAttribute="bottom" constant="15" id="Ogl-TJ-hY1"/>
                                 <constraint firstAttribute="width" constant="110" id="U83-vz-BsE"/>
                                 <constraint firstAttribute="height" constant="215" id="d3D-Tf-lNT"/>
+                                <constraint firstItem="Nvd-mr-S2Z" firstAttribute="leading" secondItem="XMx-zB-3g4" secondAttribute="leading" constant="25" id="dk7-oz-kE3"/>
+                                <constraint firstItem="whJ-cH-67p" firstAttribute="top" secondItem="XMx-zB-3g4" secondAttribute="top" constant="8" id="efv-Rw-jLX"/>
+                                <constraint firstAttribute="bottom" secondItem="Nvd-mr-S2Z" secondAttribute="bottom" constant="8" id="fQN-SS-mP8"/>
+                                <constraint firstAttribute="centerX" secondItem="ZIq-O7-jyZ" secondAttribute="centerX" id="h9U-Fk-TzW"/>
+                                <constraint firstAttribute="centerY" secondItem="ZIq-O7-jyZ" secondAttribute="centerY" id="s4D-Ab-A1c"/>
+                                <constraint firstItem="Nvd-mr-S2Z" firstAttribute="top" secondItem="ZIq-O7-jyZ" secondAttribute="bottom" constant="15" id="un8-hI-tna"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-va-N7N">
@@ -132,5 +167,11 @@
         <image name="ControlBackground" width="110" height="215"/>
         <image name="FinishMirrorTV_D" width="76" height="33"/>
         <image name="FinishMirrorTV_H" width="76" height="33"/>
+        <image name="M_MuteOn_D" width="60" height="49"/>
+        <image name="M_MuteOn_H" width="60" height="49"/>
+        <image name="M_VolumeDown_D" width="60" height="60"/>
+        <image name="M_VolumeDwon_H" width="1136" height="640"/>
+        <image name="M_VolumeUp_D" width="60" height="60"/>
+        <image name="M_VolumeUp_H" width="60" height="60"/>
     </resources>
 </document>
