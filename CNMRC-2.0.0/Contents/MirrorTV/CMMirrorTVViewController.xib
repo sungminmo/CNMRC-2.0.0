@@ -284,7 +284,7 @@
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_9_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_8_H"/>
+                                    <state key="highlighted" backgroundImage="M_No_9_H"/>
                                 </button>
                                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHy-xb-RAL">
                                     <rect key="frame" x="4" y="0.0" width="70" height="50"/>
@@ -435,6 +435,7 @@
         <image name="M_No_8_D" width="78" height="78"/>
         <image name="M_No_8_H" width="78" height="78"/>
         <image name="M_No_9_D" width="78" height="78"/>
+        <image name="M_No_9_H" width="78" height="78"/>
         <image name="M_VolumeDown_D" width="60" height="60"/>
         <image name="M_VolumeDown_H" width="60" height="60"/>
         <image name="M_VolumeUp_D" width="60" height="60"/>
