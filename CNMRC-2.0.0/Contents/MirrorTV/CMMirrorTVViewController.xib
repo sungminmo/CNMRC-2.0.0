@@ -183,8 +183,8 @@
                                         <constraint firstAttribute="height" constant="50" id="aI7-sJ-l7z"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_0_D"/>
-                                    <state key="highlighted" image="M_No_0_H"/>
+                                    <state key="normal" backgroundImage="M_No_0_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_0_H"/>
                                 </button>
                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIB-AI-XCh">
                                     <rect key="frame" x="662" y="0.0" width="70" height="50"/>
@@ -193,8 +193,8 @@
                                         <constraint firstAttribute="width" constant="70" id="ehZ-9f-s3u"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_Confirm_D"/>
-                                    <state key="highlighted" image="M_Confirm_H"/>
+                                    <state key="normal" backgroundImage="M_Confirm_D"/>
+                                    <state key="highlighted" backgroundImage="M_Confirm_H"/>
                                 </button>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehs-dM-4Cy">
                                     <rect key="frame" x="140" y="0.0" width="50" height="50"/>
@@ -203,8 +203,8 @@
                                         <constraint firstAttribute="height" constant="50" id="wLJ-HB-IS4"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_1_D"/>
-                                    <state key="highlighted" image="M_No_1_H"/>
+                                    <state key="normal" backgroundImage="M_No_1_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_1_H"/>
                                 </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81J-Ih-vKd">
                                     <rect key="frame" x="198" y="0.0" width="50" height="50"/>
@@ -213,8 +213,8 @@
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="u14-sD-c2E"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_2_D"/>
-                                    <state key="highlighted" image="M_No_2_H"/>
+                                    <state key="normal" backgroundImage="M_No_2_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_2_H"/>
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6Y-OU-Idf">
                                     <rect key="frame" x="256" y="0.0" width="50" height="50"/>
@@ -223,8 +223,8 @@
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="LJS-Z3-JHR"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_3_D"/>
-                                    <state key="highlighted" image="M_No_3_H"/>
+                                    <state key="normal" backgroundImage="M_No_3_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_3_H"/>
                                 </button>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTe-dU-eKR">
                                     <rect key="frame" x="314" y="0.0" width="50" height="50"/>
@@ -233,8 +233,8 @@
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="Zct-z8-z2e"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_4_D"/>
-                                    <state key="highlighted" image="M_No_4_H"/>
+                                    <state key="normal" backgroundImage="M_No_4_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_4_H"/>
                                 </button>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQv-8T-0jz">
                                     <rect key="frame" x="372" y="0.0" width="50" height="50"/>
@@ -243,8 +243,8 @@
                                         <constraint firstAttribute="height" constant="50" id="Z27-8Z-6p6"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_5_D"/>
-                                    <state key="highlighted" image="M_No_5_H"/>
+                                    <state key="normal" backgroundImage="M_No_5_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_5_H"/>
                                 </button>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmN-HB-B4e">
                                     <rect key="frame" x="430" y="0.0" width="50" height="50"/>
@@ -253,8 +253,8 @@
                                         <constraint firstAttribute="height" constant="50" id="e6k-7n-BWf"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_6_D"/>
-                                    <state key="highlighted" image="M_No_6_H"/>
+                                    <state key="normal" backgroundImage="M_No_6_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_6_H"/>
                                 </button>
                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-ir-EL8">
                                     <rect key="frame" x="488" y="0.0" width="50" height="50"/>
@@ -263,8 +263,8 @@
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="hzV-yC-HxG"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_7_D"/>
-                                    <state key="highlighted" image="M_No_7_H"/>
+                                    <state key="normal" backgroundImage="M_No_7_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_7_H"/>
                                 </button>
                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8F1-3v-6Qg">
                                     <rect key="frame" x="546" y="0.0" width="50" height="50"/>
@@ -273,8 +273,8 @@
                                         <constraint firstAttribute="height" constant="50" id="Va5-Sl-eiM"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_8_D"/>
-                                    <state key="highlighted" image="M_No_8_H"/>
+                                    <state key="normal" backgroundImage="M_No_8_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_8_H"/>
                                 </button>
                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6K-65-RK3">
                                     <rect key="frame" x="604" y="0.0" width="50" height="50"/>
@@ -283,8 +283,8 @@
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="zk2-UW-5t4"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_No_9_D"/>
-                                    <state key="highlighted" image="M_No_8_H"/>
+                                    <state key="normal" backgroundImage="M_No_9_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_8_H"/>
                                 </button>
                                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHy-xb-RAL">
                                     <rect key="frame" x="4" y="0.0" width="70" height="50"/>
@@ -293,8 +293,8 @@
                                         <constraint firstAttribute="height" constant="50" id="obi-wk-7dK"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" image="M_Delete_D"/>
-                                    <state key="highlighted" image="M_Delete_H"/>
+                                    <state key="normal" backgroundImage="M_Delete_D"/>
+                                    <state key="highlighted" backgroundImage="M_Delete_H"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
