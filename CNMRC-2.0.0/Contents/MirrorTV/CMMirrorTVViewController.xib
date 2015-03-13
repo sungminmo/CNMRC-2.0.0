@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMMirrorTVViewController">
             <connections>
+                <outlet property="channelNoIndicatorLabel" destination="rxv-Zc-TDY" id="lmb-iE-Ayp"/>
                 <outlet property="channelNoLabel" destination="cFm-k1-0YX" id="Qkp-KX-Dvi"/>
                 <outlet property="closeButton" destination="RBX-hq-66m" id="XUf-pw-teo"/>
                 <outlet property="controlPannel" destination="8wU-0t-EXg" id="fCr-cD-Qyk"/>
@@ -416,6 +417,16 @@
                                 <constraint firstItem="IHy-xb-RAL" firstAttribute="width" secondItem="bIB-AI-XCh" secondAttribute="width" id="zKb-cw-yKr"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxv-Zc-TDY">
+                            <rect key="frame" x="318" y="182" width="100" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="88i-aI-odS"/>
+                                <constraint firstAttribute="height" constant="50" id="vEj-gc-YKb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -423,6 +434,7 @@
                         <constraint firstAttribute="centerX" secondItem="8f2-kb-Zbc" secondAttribute="centerX" id="7JZ-Wy-FGp"/>
                         <constraint firstAttribute="centerX" secondItem="hUZ-5R-AaE" secondAttribute="centerX" id="Bx1-rv-GuT"/>
                         <constraint firstItem="8f2-kb-Zbc" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" id="Hd1-fc-pOb"/>
+                        <constraint firstAttribute="centerY" secondItem="rxv-Zc-TDY" secondAttribute="centerY" id="Moq-IS-IcW"/>
                         <constraint firstAttribute="centerY" secondItem="XMx-zB-3g4" secondAttribute="centerY" id="aMJ-OQ-XVe"/>
                         <constraint firstAttribute="trailing" secondItem="k7l-va-N7N" secondAttribute="trailing" constant="10" id="aqZ-56-YhS"/>
                         <constraint firstItem="RBX-hq-66m" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" constant="10" id="gad-nc-PWV"/>
@@ -431,6 +443,7 @@
                         <constraint firstItem="RBX-hq-66m" firstAttribute="top" secondItem="8wU-0t-EXg" secondAttribute="top" id="rU0-CX-W86"/>
                         <constraint firstAttribute="trailing" secondItem="8f2-kb-Zbc" secondAttribute="trailing" id="tNK-sL-JFA"/>
                         <constraint firstItem="hUZ-5R-AaE" firstAttribute="top" secondItem="RBX-hq-66m" secondAttribute="bottom" constant="10" id="vYE-zl-q4M"/>
+                        <constraint firstAttribute="centerX" secondItem="rxv-Zc-TDY" secondAttribute="centerX" id="zqK-fO-arB"/>
                     </constraints>
                 </view>
             </subviews>
