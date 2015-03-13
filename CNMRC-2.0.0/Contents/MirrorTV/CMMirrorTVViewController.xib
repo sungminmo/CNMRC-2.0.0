@@ -124,11 +124,53 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ControlBackground" translatesAutoresizingMaskIntoConstraints="NO" id="1On-bp-9VN">
                                     <rect key="frame" x="0.0" y="0.0" width="110" height="215"/>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JF-xY-T1T">
+                                    <rect key="frame" x="25" y="8" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="aJ4-2W-8ci"/>
+                                        <constraint firstAttribute="height" constant="60" id="wY8-DT-eiU"/>
+                                    </constraints>
+                                    <state key="normal" image="M_ChannelUp_D">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" image="M_ChannelUp_H"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-z6-cad">
+                                    <rect key="frame" x="25" y="147" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="4eX-d7-hZ5"/>
+                                        <constraint firstAttribute="width" constant="60" id="QKV-D3-0OK"/>
+                                    </constraints>
+                                    <state key="normal" image="M_ChannelDown_D">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" image="M_ChannelDown_H"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFm-k1-0YX">
+                                    <rect key="frame" x="25" y="78" width="60" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="tjg-27-SVT"/>
+                                        <constraint firstAttribute="height" constant="60" id="usC-fG-710"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="7JF-xY-T1T" firstAttribute="top" secondItem="k7l-va-N7N" secondAttribute="top" constant="8" id="1Yk-EL-Nus"/>
+                                <constraint firstAttribute="trailing" secondItem="7JF-xY-T1T" secondAttribute="trailing" constant="25" id="DNl-Ui-7Wz"/>
+                                <constraint firstAttribute="bottom" secondItem="Pq8-z6-cad" secondAttribute="bottom" constant="8" id="Hct-7u-Fsh"/>
+                                <constraint firstItem="cFm-k1-0YX" firstAttribute="top" secondItem="7JF-xY-T1T" secondAttribute="bottom" constant="10" id="NH9-FY-Uaa"/>
+                                <constraint firstItem="Pq8-z6-cad" firstAttribute="leading" secondItem="k7l-va-N7N" secondAttribute="leading" constant="25" id="PWS-Iu-aHI"/>
+                                <constraint firstItem="Pq8-z6-cad" firstAttribute="top" secondItem="cFm-k1-0YX" secondAttribute="bottom" constant="9" id="Q4v-sJ-qbJ"/>
+                                <constraint firstAttribute="centerY" secondItem="cFm-k1-0YX" secondAttribute="centerY" id="QVb-95-mYf"/>
+                                <constraint firstAttribute="trailing" secondItem="Pq8-z6-cad" secondAttribute="trailing" constant="25" id="WNJ-r5-Jam"/>
+                                <constraint firstAttribute="centerX" secondItem="cFm-k1-0YX" secondAttribute="centerX" id="XM4-2B-kRl"/>
                                 <constraint firstAttribute="width" constant="110" id="lly-Ot-xUy"/>
                                 <constraint firstAttribute="height" constant="215" id="mmQ-Pc-hMk"/>
+                                <constraint firstItem="7JF-xY-T1T" firstAttribute="leading" secondItem="k7l-va-N7N" secondAttribute="leading" constant="25" id="wfK-WR-RFd"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -171,6 +213,10 @@
         <image name="ControlBackground" width="110" height="215"/>
         <image name="FinishMirrorTV_D" width="76" height="33"/>
         <image name="FinishMirrorTV_H" width="76" height="33"/>
+        <image name="M_ChannelDown_D" width="60" height="60"/>
+        <image name="M_ChannelDown_H" width="60" height="60"/>
+        <image name="M_ChannelUp_D" width="60" height="60"/>
+        <image name="M_ChannelUp_H" width="60" height="60"/>
         <image name="M_MuteOn_D" width="60" height="49"/>
         <image name="M_MuteOn_H" width="60" height="49"/>
         <image name="M_VolumeDown_D" width="60" height="60"/>
