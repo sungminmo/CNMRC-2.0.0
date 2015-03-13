@@ -7,10 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMMirrorTVViewController">
             <connections>
+                <outlet property="channelNoLabel" destination="cFm-k1-0YX" id="Qkp-KX-Dvi"/>
+                <outlet property="closeButton" destination="RBX-hq-66m" id="XUf-pw-teo"/>
                 <outlet property="controlPannel" destination="8wU-0t-EXg" id="fCr-cD-Qyk"/>
                 <outlet property="playerLayerView" destination="cIM-id-vqR" id="fOg-cO-eXg"/>
                 <outlet property="titleLabel" destination="RBX-hq-66m" id="m9O-ac-IBO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="PLl-p4-WCV"/>
+                <outlet property="volumeMuteButton" destination="ZIq-O7-jyZ" id="hTG-oZ-aXo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -46,7 +49,7 @@
                                     </state>
                                     <state key="highlighted" image="ChannelButton_H"/>
                                     <connections>
-                                        <action selector="channelAction:" destination="-1" eventType="touchUpInside" id="L6h-7O-Sch"/>
+                                        <action selector="goChannelAction:" destination="-1" eventType="touchUpInside" id="cCe-da-bfQ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7Z-Xw-8Fl">
@@ -80,8 +83,11 @@
                                     </constraints>
                                     <state key="normal" image="M_VolumeUp_D"/>
                                     <state key="highlighted" image="M_VolumeUp_H"/>
+                                    <connections>
+                                        <action selector="volumeAction:" destination="-1" eventType="touchUpInside" id="7xl-W9-IfO"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvd-mr-S2Z">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvd-mr-S2Z">
                                     <rect key="frame" x="25" y="147" width="60" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="OFD-FG-inx"/>
@@ -89,6 +95,9 @@
                                     </constraints>
                                     <state key="normal" image="M_VolumeDown_D"/>
                                     <state key="highlighted" image="M_VolumeDown_H"/>
+                                    <connections>
+                                        <action selector="volumeAction:" destination="-1" eventType="touchUpInside" id="pdB-9A-qFt"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIq-O7-jyZ">
                                     <rect key="frame" x="25" y="83" width="60" height="49"/>
@@ -100,6 +109,9 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="highlighted" image="M_MuteOn_H"/>
+                                    <connections>
+                                        <action selector="volumeMuteAction:" destination="-1" eventType="touchUpInside" id="hxq-zm-3cQ"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -134,8 +146,11 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="highlighted" image="M_ChannelUp_H"/>
+                                    <connections>
+                                        <action selector="channelAction:" destination="-1" eventType="touchUpInside" id="R01-i8-tPM"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-z6-cad">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-z6-cad">
                                     <rect key="frame" x="25" y="147" width="60" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="4eX-d7-hZ5"/>
@@ -145,6 +160,9 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <state key="highlighted" image="M_ChannelDown_H"/>
+                                    <connections>
+                                        <action selector="channelAction:" destination="-1" eventType="touchUpInside" id="xvv-un-mho"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFm-k1-0YX">
                                     <rect key="frame" x="25" y="78" width="60" height="60"/>
@@ -185,6 +203,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_0_D"/>
                                     <state key="highlighted" backgroundImage="M_No_0_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="gr9-NK-LNn"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIB-AI-XCh">
                                     <rect key="frame" x="662" y="0.0" width="70" height="50"/>
@@ -195,6 +216,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_Confirm_D"/>
                                     <state key="highlighted" backgroundImage="M_Confirm_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="TfB-hP-yzc"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehs-dM-4Cy">
                                     <rect key="frame" x="140" y="0.0" width="50" height="50"/>
@@ -205,6 +229,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_1_D"/>
                                     <state key="highlighted" backgroundImage="M_No_1_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="fRQ-3W-H7L"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81J-Ih-vKd">
                                     <rect key="frame" x="198" y="0.0" width="50" height="50"/>
@@ -215,6 +242,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_2_D"/>
                                     <state key="highlighted" backgroundImage="M_No_2_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="Sth-tI-gzV"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6Y-OU-Idf">
                                     <rect key="frame" x="256" y="0.0" width="50" height="50"/>
@@ -225,6 +255,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_3_D"/>
                                     <state key="highlighted" backgroundImage="M_No_3_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="KHc-gm-osb"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTe-dU-eKR">
                                     <rect key="frame" x="314" y="0.0" width="50" height="50"/>
@@ -235,6 +268,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_4_D"/>
                                     <state key="highlighted" backgroundImage="M_No_4_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="pzL-v8-oxN"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQv-8T-0jz">
                                     <rect key="frame" x="372" y="0.0" width="50" height="50"/>
@@ -245,6 +281,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_5_D"/>
                                     <state key="highlighted" backgroundImage="M_No_5_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="HDr-zp-LE0"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmN-HB-B4e">
                                     <rect key="frame" x="430" y="0.0" width="50" height="50"/>
@@ -255,6 +294,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_6_D"/>
                                     <state key="highlighted" backgroundImage="M_No_6_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="zbh-Rj-qVI"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-ir-EL8">
                                     <rect key="frame" x="488" y="0.0" width="50" height="50"/>
@@ -265,6 +307,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_7_D"/>
                                     <state key="highlighted" backgroundImage="M_No_7_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="pW6-os-Eim"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8F1-3v-6Qg">
                                     <rect key="frame" x="546" y="0.0" width="50" height="50"/>
@@ -275,6 +320,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_8_D"/>
                                     <state key="highlighted" backgroundImage="M_No_8_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="ESm-tX-hk5"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6K-65-RK3">
                                     <rect key="frame" x="604" y="0.0" width="50" height="50"/>
@@ -285,6 +333,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_No_9_D"/>
                                     <state key="highlighted" backgroundImage="M_No_9_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="Gc2-MN-pH8"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHy-xb-RAL">
                                     <rect key="frame" x="4" y="0.0" width="70" height="50"/>
@@ -295,6 +346,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" backgroundImage="M_Delete_D"/>
                                     <state key="highlighted" backgroundImage="M_Delete_H"/>
+                                    <connections>
+                                        <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="MER-cV-wAG"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
