@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMMirrorTVViewController">
             <connections>
+                <outlet property="controlPannel" destination="8wU-0t-EXg" id="fCr-cD-Qyk"/>
+                <outlet property="titleLabel" destination="RBX-hq-66m" id="m9O-ac-IBO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="PLl-p4-WCV"/>
             </connections>
         </placeholder>
@@ -14,9 +16,78 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wU-0t-EXg">
+                    <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUZ-5R-AaE">
+                            <rect key="frame" x="310" y="54" width="117" height="33"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="he4-2u-tCJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                    <state key="normal" image="ChannelButton_D">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" image="ChannelButton_H"/>
+                                    <connections>
+                                        <action selector="channelAction:" destination="-1" eventType="touchUpInside" id="L6h-7O-Sch"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7Z-Xw-8Fl">
+                                    <rect key="frame" x="41" y="0.0" width="76" height="33"/>
+                                    <state key="normal" image="FinishMirrorTV_D">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" image="FinishMirrorTV_H"/>
+                                    <connections>
+                                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="f9n-0j-lss"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="117" id="ied-HL-puW"/>
+                                <constraint firstAttribute="height" constant="33" id="mi5-ud-mSv"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-hq-66m">
+                            <rect key="frame" x="10" y="0.0" width="726" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="726" id="1W3-Ns-DTa"/>
+                                <constraint firstAttribute="height" constant="44" id="AKV-2l-pr6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="hUZ-5R-AaE" secondAttribute="centerX" id="Bx1-rv-GuT"/>
+                        <constraint firstItem="RBX-hq-66m" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" constant="10" id="gad-nc-PWV"/>
+                        <constraint firstItem="RBX-hq-66m" firstAttribute="top" secondItem="8wU-0t-EXg" secondAttribute="top" id="rU0-CX-W86"/>
+                        <constraint firstItem="hUZ-5R-AaE" firstAttribute="top" secondItem="RBX-hq-66m" secondAttribute="bottom" constant="10" id="vYE-zl-q4M"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8wU-0t-EXg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EMg-xV-ew8"/>
+                <constraint firstAttribute="centerX" secondItem="8wU-0t-EXg" secondAttribute="centerX" id="PCK-CL-HNB"/>
+                <constraint firstAttribute="bottom" secondItem="8wU-0t-EXg" secondAttribute="bottom" id="X3J-0Q-loJ"/>
+                <constraint firstAttribute="trailing" secondItem="8wU-0t-EXg" secondAttribute="trailing" id="aqO-Pp-Tun"/>
+                <constraint firstAttribute="centerY" secondItem="8wU-0t-EXg" secondAttribute="centerY" id="m5J-g4-cPk"/>
+                <constraint firstItem="8wU-0t-EXg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pMJ-Kr-jsJ"/>
+            </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <point key="canvasLocation" x="350" y="305"/>
         </view>
     </objects>
+    <resources>
+        <image name="ChannelButton_D" width="33" height="33"/>
+        <image name="ChannelButton_H" width="33" height="33"/>
+        <image name="FinishMirrorTV_D" width="76" height="33"/>
+        <image name="FinishMirrorTV_H" width="76" height="33"/>
+    </resources>
 </document>

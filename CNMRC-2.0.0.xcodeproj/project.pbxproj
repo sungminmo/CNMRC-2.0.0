@@ -80,7 +80,6 @@
 		1DA28B3C1A3C85C5007D7F4E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B3B1A3C85C5007D7F4E /* Reachability.m */; };
 		1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A0071AB1232D004AB586 /* CMNumberKey_6P.xib */; };
 		1DA6A00A1AB1235F004AB586 /* CMNumberKey_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A0091AB1235F004AB586 /* CMNumberKey_6.xib */; };
-		1DA6A00C1AB165ED004AB586 /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A00B1AB165ED004AB586 /* CMMirrorTVViewController.xib */; };
 		1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */; };
 		1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */; };
 		1DB9B91E1A613DB000E89E27 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8FB1A613DB000E89E27 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -200,6 +199,7 @@
 		1DBA76CE1A20B4C8003AB966 /* libprotoc.la in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA76C21A20B4C8003AB966 /* libprotoc.la */; };
 		1DBA76CF1A20B4C8003AB966 /* protobuf-lite.pc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA76C41A20B4C8003AB966 /* protobuf-lite.pc */; };
 		1DBA76D01A20B4C8003AB966 /* protobuf.pc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA76C51A20B4C8003AB966 /* protobuf.pc */; };
+		1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -405,7 +405,6 @@
 		1DA28B3B1A3C85C5007D7F4E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		1DA6A0071AB1232D004AB586 /* CMNumberKey_6P.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMNumberKey_6P.xib; sourceTree = "<group>"; };
 		1DA6A0091AB1235F004AB586 /* CMNumberKey_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMNumberKey_6.xib; sourceTree = "<group>"; };
-		1DA6A00B1AB165ED004AB586 /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 		1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMRCViewController.xib; sourceTree = "<group>"; };
 		1DB9B8EB1A6129CB00E89E27 /* CMContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMContainerViewController.h; sourceTree = "<group>"; };
 		1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMContainerViewController.m; sourceTree = "<group>"; };
@@ -666,6 +665,7 @@
 		1DBA76C21A20B4C8003AB966 /* libprotoc.la */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libprotoc.la; sourceTree = "<group>"; };
 		1DBA76C41A20B4C8003AB966 /* protobuf-lite.pc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "protobuf-lite.pc"; sourceTree = "<group>"; };
 		1DBA76C51A20B4C8003AB966 /* protobuf.pc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = protobuf.pc; sourceTree = "<group>"; };
+		1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1149,7 +1149,7 @@
 				1D14AA821A6169E300FECF55 /* CMChannelInfo.m */,
 				1D14AA841A6169E300FECF55 /* CMMirrorTVViewController.h */,
 				1D14AA851A6169E300FECF55 /* CMMirrorTVViewController.mm */,
-				1DA6A00B1AB165ED004AB586 /* CMMirrorTVViewController.xib */,
+				1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */,
 				1D14AA871A6169E300FECF55 /* CMPlayerLayerView.h */,
 				1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */,
 			);
@@ -1774,7 +1774,7 @@
 				1DBA76C61A20B4C8003AB966 /* protoc in Resources */,
 				1DB9BA271A615A9200E89E27 /* CMSetProductViewController.xib in Resources */,
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
-				1DA6A00C1AB165ED004AB586 /* CMMirrorTVViewController.xib in Resources */,
+				1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
