@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMMirrorTVViewController">
             <connections>
                 <outlet property="controlPannel" destination="8wU-0t-EXg" id="fCr-cD-Qyk"/>
+                <outlet property="playerLayerView" destination="cIM-id-vqR" id="fOg-cO-eXg"/>
                 <outlet property="titleLabel" destination="RBX-hq-66m" id="m9O-ac-IBO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="PLl-p4-WCV"/>
             </connections>
@@ -17,9 +18,24 @@
             <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIM-id-vqR" customClass="CMPlayerLayerView">
+                    <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wU-0t-EXg">
                     <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-hq-66m">
+                            <rect key="frame" x="10" y="0.0" width="726" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="726" id="1W3-Ns-DTa"/>
+                                <constraint firstAttribute="height" constant="44" id="AKV-2l-pr6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUZ-5R-AaE">
                             <rect key="frame" x="310" y="54" width="117" height="33"/>
                             <subviews>
@@ -50,21 +66,41 @@
                                 <constraint firstAttribute="height" constant="33" id="mi5-ud-mSv"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBX-hq-66m">
-                            <rect key="frame" x="10" y="0.0" width="726" height="44"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMx-zB-3g4">
+                            <rect key="frame" x="10" y="99" width="110" height="215"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ControlBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Xtq-H1-iMk">
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="215"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="726" id="1W3-Ns-DTa"/>
-                                <constraint firstAttribute="height" constant="44" id="AKV-2l-pr6"/>
+                                <constraint firstAttribute="width" constant="110" id="U83-vz-BsE"/>
+                                <constraint firstAttribute="height" constant="215" id="d3D-Tf-lNT"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-va-N7N">
+                            <rect key="frame" x="616" y="99" width="110" height="215"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ControlBackground" translatesAutoresizingMaskIntoConstraints="NO" id="1On-bp-9VN">
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="215"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="lly-Ot-xUy"/>
+                                <constraint firstAttribute="height" constant="215" id="mmQ-Pc-hMk"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="XMx-zB-3g4" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" constant="10" id="3rh-nt-XEr"/>
                         <constraint firstAttribute="centerX" secondItem="hUZ-5R-AaE" secondAttribute="centerX" id="Bx1-rv-GuT"/>
+                        <constraint firstAttribute="centerY" secondItem="XMx-zB-3g4" secondAttribute="centerY" id="aMJ-OQ-XVe"/>
+                        <constraint firstAttribute="trailing" secondItem="k7l-va-N7N" secondAttribute="trailing" constant="10" id="aqZ-56-YhS"/>
                         <constraint firstItem="RBX-hq-66m" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" constant="10" id="gad-nc-PWV"/>
+                        <constraint firstAttribute="centerY" secondItem="k7l-va-N7N" secondAttribute="centerY" id="gw8-QY-IZM"/>
                         <constraint firstItem="RBX-hq-66m" firstAttribute="top" secondItem="8wU-0t-EXg" secondAttribute="top" id="rU0-CX-W86"/>
                         <constraint firstItem="hUZ-5R-AaE" firstAttribute="top" secondItem="RBX-hq-66m" secondAttribute="bottom" constant="10" id="vYE-zl-q4M"/>
                     </constraints>
@@ -72,12 +108,18 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="cIM-id-vqR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3UH-dQ-Zsb"/>
                 <constraint firstItem="8wU-0t-EXg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EMg-xV-ew8"/>
+                <constraint firstAttribute="trailing" secondItem="cIM-id-vqR" secondAttribute="trailing" id="Gja-Ly-9iX"/>
                 <constraint firstAttribute="centerX" secondItem="8wU-0t-EXg" secondAttribute="centerX" id="PCK-CL-HNB"/>
+                <constraint firstAttribute="centerX" secondItem="cIM-id-vqR" secondAttribute="centerX" id="WP4-5e-Jo6"/>
                 <constraint firstAttribute="bottom" secondItem="8wU-0t-EXg" secondAttribute="bottom" id="X3J-0Q-loJ"/>
                 <constraint firstAttribute="trailing" secondItem="8wU-0t-EXg" secondAttribute="trailing" id="aqO-Pp-Tun"/>
+                <constraint firstAttribute="centerY" secondItem="cIM-id-vqR" secondAttribute="centerY" id="gke-wD-3pR"/>
                 <constraint firstAttribute="centerY" secondItem="8wU-0t-EXg" secondAttribute="centerY" id="m5J-g4-cPk"/>
+                <constraint firstItem="cIM-id-vqR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mXw-pp-xT5"/>
                 <constraint firstItem="8wU-0t-EXg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pMJ-Kr-jsJ"/>
+                <constraint firstAttribute="bottom" secondItem="cIM-id-vqR" secondAttribute="bottom" id="zFL-hr-Je6"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -87,6 +129,7 @@
     <resources>
         <image name="ChannelButton_D" width="33" height="33"/>
         <image name="ChannelButton_H" width="33" height="33"/>
+        <image name="ControlBackground" width="110" height="215"/>
         <image name="FinishMirrorTV_D" width="76" height="33"/>
         <image name="FinishMirrorTV_H" width="76" height="33"/>
     </resources>
