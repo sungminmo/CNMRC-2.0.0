@@ -7,10 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMMirrorTVViewController">
             <connections>
+                <outlet property="backgroundView" destination="mzB-QY-vdB" id="Don-gh-Qo1"/>
                 <outlet property="channelNoIndicatorLabel" destination="rxv-Zc-TDY" id="lmb-iE-Ayp"/>
                 <outlet property="channelNoLabel" destination="cFm-k1-0YX" id="Qkp-KX-Dvi"/>
                 <outlet property="closeButton" destination="RBX-hq-66m" id="XUf-pw-teo"/>
                 <outlet property="controlPannel" destination="8wU-0t-EXg" id="fCr-cD-Qyk"/>
+                <outlet property="loadingImageView" destination="j0r-AE-aBa" id="xSN-lH-Y1N"/>
+                <outlet property="loadingView" destination="sCv-X2-fts" id="XW0-Le-H5C"/>
+                <outlet property="noticeLabel" destination="0Xn-Qe-3Ox" id="wVg-ym-Ig3"/>
                 <outlet property="playerLayerView" destination="cIM-id-vqR" id="fOg-cO-eXg"/>
                 <outlet property="titleLabel" destination="RBX-hq-66m" id="m9O-ac-IBO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="PLl-p4-WCV"/>
@@ -26,6 +30,38 @@
                     <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzB-QY-vdB">
+                    <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="M_Background" translatesAutoresizingMaskIntoConstraints="NO" id="NSU-C8-0Au">
+                            <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="736" id="6Ld-Bl-7sy"/>
+                                <constraint firstAttribute="height" constant="414" id="kdn-K7-5pT"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xn-Qe-3Ox">
+                            <rect key="frame" x="203" y="44" width="330" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="7pI-3M-UYs"/>
+                                <constraint firstAttribute="width" constant="330" id="NWU-F4-2DC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="736" id="A48-Or-lcu"/>
+                        <constraint firstAttribute="bottom" secondItem="NSU-C8-0Au" secondAttribute="bottom" id="Hjd-Ic-BKL"/>
+                        <constraint firstItem="NSU-C8-0Au" firstAttribute="leading" secondItem="mzB-QY-vdB" secondAttribute="leading" id="Lg5-PS-f2E"/>
+                        <constraint firstAttribute="height" constant="414" id="QjP-mn-fmO"/>
+                        <constraint firstAttribute="centerX" secondItem="0Xn-Qe-3Ox" secondAttribute="centerX" id="RPh-GS-7Nc"/>
+                        <constraint firstItem="NSU-C8-0Au" firstAttribute="top" secondItem="mzB-QY-vdB" secondAttribute="top" id="aol-Oa-a8m"/>
+                        <constraint firstItem="0Xn-Qe-3Ox" firstAttribute="top" secondItem="mzB-QY-vdB" secondAttribute="top" constant="44" id="gAo-5n-4XK"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wU-0t-EXg">
                     <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
@@ -446,21 +482,47 @@
                         <constraint firstAttribute="centerX" secondItem="rxv-Zc-TDY" secondAttribute="centerX" id="zqK-fO-arB"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-X2-fts">
+                    <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="M_LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="X6n-T6-BwE">
+                            <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="414" id="XBI-8U-IvC"/>
+                        <constraint firstAttribute="width" constant="736" id="nHE-9W-xjm"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-AE-aBa">
+                    <rect key="frame" x="352" y="191" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="1c5-M9-fT4"/>
+                        <constraint firstAttribute="height" constant="32" id="Knk-5u-hbg"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="cIM-id-vqR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3UH-dQ-Zsb"/>
                 <constraint firstItem="8wU-0t-EXg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EMg-xV-ew8"/>
+                <constraint firstAttribute="centerY" secondItem="mzB-QY-vdB" secondAttribute="centerY" id="Fyq-xv-hSC"/>
                 <constraint firstAttribute="trailing" secondItem="cIM-id-vqR" secondAttribute="trailing" id="Gja-Ly-9iX"/>
                 <constraint firstAttribute="centerX" secondItem="8wU-0t-EXg" secondAttribute="centerX" id="PCK-CL-HNB"/>
                 <constraint firstAttribute="centerX" secondItem="cIM-id-vqR" secondAttribute="centerX" id="WP4-5e-Jo6"/>
                 <constraint firstAttribute="bottom" secondItem="8wU-0t-EXg" secondAttribute="bottom" id="X3J-0Q-loJ"/>
                 <constraint firstAttribute="trailing" secondItem="8wU-0t-EXg" secondAttribute="trailing" id="aqO-Pp-Tun"/>
+                <constraint firstAttribute="centerX" secondItem="j0r-AE-aBa" secondAttribute="centerX" id="eud-ki-ula"/>
                 <constraint firstAttribute="centerY" secondItem="cIM-id-vqR" secondAttribute="centerY" id="gke-wD-3pR"/>
+                <constraint firstAttribute="centerY" secondItem="j0r-AE-aBa" secondAttribute="centerY" id="hYf-Ln-bd2"/>
+                <constraint firstAttribute="centerY" secondItem="sCv-X2-fts" secondAttribute="centerY" id="hfV-Vt-ZMd"/>
                 <constraint firstAttribute="centerY" secondItem="8wU-0t-EXg" secondAttribute="centerY" id="m5J-g4-cPk"/>
                 <constraint firstItem="cIM-id-vqR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mXw-pp-xT5"/>
                 <constraint firstItem="8wU-0t-EXg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pMJ-Kr-jsJ"/>
+                <constraint firstAttribute="centerX" secondItem="mzB-QY-vdB" secondAttribute="centerX" id="rjo-Oy-7Ii"/>
                 <constraint firstAttribute="bottom" secondItem="cIM-id-vqR" secondAttribute="bottom" id="zFL-hr-Je6"/>
+                <constraint firstAttribute="centerX" secondItem="sCv-X2-fts" secondAttribute="centerX" id="zaf-4d-rK2"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -473,6 +535,8 @@
         <image name="ControlBackground" width="110" height="215"/>
         <image name="FinishMirrorTV_D" width="76" height="33"/>
         <image name="FinishMirrorTV_H" width="76" height="33"/>
+        <image name="Loading" width="64" height="64"/>
+        <image name="M_Background" width="1136" height="640"/>
         <image name="M_ChannelDown_D" width="60" height="60"/>
         <image name="M_ChannelDown_H" width="60" height="60"/>
         <image name="M_ChannelUp_D" width="60" height="60"/>
@@ -481,6 +545,7 @@
         <image name="M_Confirm_H" width="124" height="78"/>
         <image name="M_Delete_D" width="124" height="78"/>
         <image name="M_Delete_H" width="124" height="78"/>
+        <image name="M_LoadingBackground" width="1136" height="640"/>
         <image name="M_MuteOn_D" width="60" height="49"/>
         <image name="M_MuteOn_H" width="60" height="49"/>
         <image name="M_No_0_D" width="78" height="78"/>
