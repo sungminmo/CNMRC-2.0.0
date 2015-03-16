@@ -12,6 +12,7 @@
 #define TR_NO_CM02 @"CM02"
 #define TR_NO_CM03 @"CM03"
 #define TR_NO_CM04 @"CM04"
+#define TR_NO_CM041 @"CM041"
 #define TR_NO_CM05 @"CM05"
 #define TR_NO_CM06 @"CM06"
 #define CMDataObject @"DataObject"

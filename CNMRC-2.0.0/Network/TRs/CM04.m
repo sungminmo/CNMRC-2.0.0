@@ -49,3 +49,22 @@
 }
 
 @end
+
+@implementation CM041
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        // 프라퍼티의 길이: 프라퍼티의 갯수와 일치해야 함!
+        self.propertiesLength = @[@4, @4, @1, @100, @1];
+        
+        // 옵셋 생성.
+        self.propertiesOffset = [self createOffsets];
+    }
+    
+    return self;
+}
+
+@end

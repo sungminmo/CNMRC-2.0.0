@@ -14,7 +14,7 @@
 
 @property (assign, nonatomic) BOOL isiPhoneFive;            // iPhone5 여부.
 @property (assign, nonatomic) BOOL isPaired;                // 페어링 여부.
-
+@property (assign, nonatomic) BOOL isSecondTV;              // SecondTV 여부.(수신된 SecondTV 필드의 값이 1 이면 SecondTV 이다.)
 
 // 설정 관련.
 @property (assign, nonatomic) BOOL isVibration;             // 진동효과 사용 여부.

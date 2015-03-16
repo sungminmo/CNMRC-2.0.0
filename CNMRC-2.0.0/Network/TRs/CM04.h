@@ -25,3 +25,14 @@
 @property (strong, nonatomic) NSString *assetID;
 
 @end
+
+// Response(SecondTV 용).
+@interface CM041 : CMTRObject
+
+@property (strong, nonatomic) NSString *size;
+@property (strong, nonatomic) NSString *trNo;
+@property (strong, nonatomic) NSString *result;
+@property (strong, nonatomic) NSString *assetID;
+@property (strong, nonatomic) NSString *secondTV;
+
+@end

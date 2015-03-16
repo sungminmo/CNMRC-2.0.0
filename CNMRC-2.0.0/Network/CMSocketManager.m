@@ -243,6 +243,11 @@
     // 데이터에서 전문번호(!: 파서에 전달할 클래스 이름) 확인.
     NSString *trNo = [self trNo:data];
     
+    // SecondTV 예외 처리.
+    if ([trNo isEqualToString:@"CM04"] && [data length] == 110) {
+        trNo = @"CM041";
+    }
+    
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
     // 응답 문자열로부터 딕셔너리 획득.

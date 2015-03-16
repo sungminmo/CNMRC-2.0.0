@@ -130,6 +130,7 @@ using namespace anymote::messages;
     // 전문 수신용 옵저버 등록: CM04, CM05, CM06.
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM04 object:nil];
+    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM041 object:nil];
     [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM05 object:nil];
     [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM06 object:nil];
     
@@ -591,6 +592,35 @@ using namespace anymote::messages;
         }
     }
     
+    // CM041: Mirror TV 실행 요청(SeconTV 예외 처리).
+    if ([notification.name isEqualToString:TR_NO_CM041])
+    {
+        CM041 *data = [[notification userInfo] objectForKey:CMDataObject];
+        NSLog(@"Received data trNo: %@(1), result: %@", data.trNo, data.result);
+        
+        NSInteger result = [data.result integerValue];
+        if (result == 0)
+        {
+            // 미러TV URL 생성.
+            self.mirrorTVURL = [self genMirrorTVURL:data.assetID];
+            
+            // SecondTV 설정.
+            if ([data.secondTV isEqualToString:@"1"]) {
+                AppInfo.isSecondTV = YES;
+            }
+            
+            // 미러TV 로드.
+            [self loadMirrorTV];
+            NSLog(@"MirrorTV URL: %@", self.mirrorTVURL);
+        }
+        else
+        {
+            // 에러 처리.
+            // 미러TV 종료.
+            [self alertMirrorTVError];
+        }
+    }
+    
     // CM05: Mirror TV 정지 요청.
     if ([notification.name isEqualToString:TR_NO_CM05])
     {
@@ -733,6 +763,17 @@ using namespace anymote::messages;
             }
                 break;
                 
+            case 5:
+            {
+                // 채널 정보 변경.
+                [self changeChannelInfo:data];
+                [self setupChannelInfo];
+                
+                // UHD.
+                [self showNotice:MIRRORTV_ERROR_MSG_UHD];
+            }
+                break;
+                
             default:
                 break;
         }
@@ -845,12 +886,26 @@ using namespace anymote::messages;
     if (buttonTag == 0)
     {
         // 채널 업.
-        [[RemoteManager sender] sendClickForKey:KEYCODE_CHANNEL_UP error:NULL];
+        if (AppInfo.isSecondTV)
+        {
+            [[RemoteManager sender] sendClickForKey:BTN_GAME_12 error:NULL];
+        }
+        else
+        {
+            [[RemoteManager sender] sendClickForKey:KEYCODE_CHANNEL_UP error:NULL];
+        }
     }
     else
     {
         // 채널 다운.
-        [[RemoteManager sender] sendClickForKey:KEYCODE_CHANNEL_DOWN error:NULL];
+        if (AppInfo.isSecondTV)
+        {
+            [[RemoteManager sender] sendClickForKey:BTN_GAME_13 error:NULL];
+        }
+        else
+        {
+            [[RemoteManager sender] sendClickForKey:KEYCODE_CHANNEL_DOWN error:NULL];
+        }
     }
     
     // 4초후에 컨트롤 패널 감추기.
@@ -860,46 +915,93 @@ using namespace anymote::messages;
 // 숫자키패드 키코드 반환.
 - (int)keycodeForNumberButton:(UIButton *)button
 {
-    switch (button.tag)
+    if (AppInfo.isSecondTV)
     {
-        case 0: // 0.
-            return KEYCODE_0;
-            
-        case 1: // 1.
-            return KEYCODE_1;
-            
-        case 2: // 2.
-            return KEYCODE_2;
-            
-        case 3: // 3.
-            return KEYCODE_3;
-            
-        case 4: // 4.
-            return KEYCODE_4;
-            
-        case 5: // 5.
-            return KEYCODE_5;
-            
-        case 6: // 6.
-            return KEYCODE_6;
-            
-        case 7: // 7.
-            return KEYCODE_7;
-            
-        case 8: // 8.
-            return KEYCODE_8;
-            
-        case 9: // 9.
-            return KEYCODE_9;
-            
-        case 10: // 지우기.
-            return KEYCODE_DEL;
-            
-        case 11: // 확인.
-            return KEYCODE_ENTER;
-            
-        default:
-            return KEYCODE_UNKNOWN;
+        switch (button.tag)
+        {
+            case 0: // 0.
+                return BTN_0;
+                
+            case 1: // 1.
+                return BTN_1;
+                
+            case 2: // 2.
+                return BTN_2;
+                
+            case 3: // 3.
+                return BTN_3;
+                
+            case 4: // 4.
+                return BTN_4;
+                
+            case 5: // 5.
+                return BTN_5;
+                
+            case 6: // 6.
+                return BTN_6;
+                
+            case 7: // 7.
+                return BTN_7;
+                
+            case 8: // 8.
+                return BTN_8;
+                
+            case 9: // 9.
+                return BTN_9;
+                
+            case 10: // 지우기.
+                return KEYCODE_DEL;
+                
+            case 11: // 확인.
+                return KEYCODE_ENTER;
+                
+            default:
+                return KEYCODE_UNKNOWN;
+        }
+    }
+    else
+    {
+        switch (button.tag)
+        {
+            case 0: // 0.
+                return KEYCODE_0;
+                
+            case 1: // 1.
+                return KEYCODE_1;
+                
+            case 2: // 2.
+                return KEYCODE_2;
+                
+            case 3: // 3.
+                return KEYCODE_3;
+                
+            case 4: // 4.
+                return KEYCODE_4;
+                
+            case 5: // 5.
+                return KEYCODE_5;
+                
+            case 6: // 6.
+                return KEYCODE_6;
+                
+            case 7: // 7.
+                return KEYCODE_7;
+                
+            case 8: // 8.
+                return KEYCODE_8;
+                
+            case 9: // 9.
+                return KEYCODE_9;
+                
+            case 10: // 지우기.
+                return KEYCODE_DEL;
+                
+            case 11: // 확인.
+                return KEYCODE_ENTER;
+                
+            default:
+                return KEYCODE_UNKNOWN;
+        }
     }
 }
 
