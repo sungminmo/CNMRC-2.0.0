@@ -68,9 +68,6 @@ using namespace anymote::messages;
     // CM06 에러 횟수.
     NSInteger _errorCount;
     
-    // 컨트롤 패널 토글 타임 카운트.
-    NSInteger _contolPannelHiddenTime;
-    
     // 플레이어.
     BOOL seekToZeroBeforePlay;
 }
@@ -200,6 +197,7 @@ using namespace anymote::messages;
 	[_player play];
     
     // 4초후에 컨트롤 패널 감추기.
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
@@ -247,9 +245,6 @@ using namespace anymote::messages;
     
     // 에러 횟수 초기화.
     _errorCount = 0;
-    
-    // 컨트롤 패널 토글 타임 카운트 초기화.
-    _contolPannelHiddenTime = 4;
 
     // 채널 정보 설정.
     [self setupChannelInfo];
@@ -369,7 +364,6 @@ using namespace anymote::messages;
     if (_isHide)
     {
         [self toggleControl:YES];
-        _contolPannelHiddenTime = 4;
     }
 }
 
@@ -852,6 +846,8 @@ using namespace anymote::messages;
     [self performSelector:@selector(hideVolumeProgressView) withObject:nil afterDelay:1];
     
     // 4초 후에 컨트롤 패널 감추기.
+    //[NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
@@ -875,6 +871,7 @@ using namespace anymote::messages;
     _isMuted = !_isMuted;
     
     // 4초후에 컨트롤 패널 감추기.
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
@@ -909,6 +906,7 @@ using namespace anymote::messages;
     }
     
     // 4초후에 컨트롤 패널 감추기.
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
@@ -1011,7 +1009,6 @@ using namespace anymote::messages;
     // 채널번호.
     UIButton *button = (UIButton *)sender;
     self.channelNoIndicatorLabel.hidden = NO;
-    _contolPannelHiddenTime += 4;
     
     [[RemoteManager sender] sendClickForKey:[self keycodeForNumberButton:button] error:NULL];
     
@@ -1053,7 +1050,8 @@ using namespace anymote::messages;
     }
     
     // 4초후에 컨트롤 패널 감추기.
-    [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:_contolPannelHiddenTime];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
+    [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
 #pragma mark - 제스처 델리게이트 메서드
