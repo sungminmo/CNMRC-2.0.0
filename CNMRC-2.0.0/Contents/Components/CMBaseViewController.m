@@ -10,6 +10,7 @@
 #import "HTProgressHUD.h"
 #import "CMSearchViewController.h"
 #import "CMTableViewCell.h"
+#import "DQAlertView.h"
 
 @interface CMBaseViewController ()
 {
@@ -236,12 +237,12 @@
             break;
     }
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알람"
-                                                    message:msg
-                                                   delegate:nil
-                                          cancelButtonTitle:@"확인"
-                                          otherButtonTitles:nil, nil];
-    [alert show];
+    // 연결이 안되어 있는 경우.
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
+                                                        message:msg
+                                              cancelButtonTitle:@"확인"
+                                               otherButtonTitle:nil];
+    [alertView show];
 }
 
 // VOD 시청 등급 아이콘.
