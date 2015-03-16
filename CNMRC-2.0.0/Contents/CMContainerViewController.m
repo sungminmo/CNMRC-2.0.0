@@ -330,7 +330,7 @@
         
         // 연결이 안되어 있는 경우.
         DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알람"
-                                                            message:@"셋탑박스가 연결되어 있지 않습니다!"
+                                                            message:@"셋톱박스가 연결되어 있지 않습니다!"
                                                   cancelButtonTitle:@"확인"
                                                    otherButtonTitle:nil];
         [alertView show];

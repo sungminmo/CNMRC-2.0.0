@@ -498,7 +498,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     }
 }
 
-// 셋탑박스 설정.
+// 셋톱박스 설정.
 - (void)goSTBSettings
 {
     [[RemoteManager sender] sendClickForKey:KEYCODE_SETTINGS error:NULL];

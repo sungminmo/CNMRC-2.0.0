@@ -320,7 +320,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 - (void)checkPairing
 {
     DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"씨앤앰 TV 연결"
-                                                        message:@"씨앤앰 셋탑박스를 \n연결하시겠습니까?"
+                                                        message:@"씨앤앰 셋톱박스를 \n연결하시겠습니까?"
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
@@ -371,7 +371,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     if ([self recentlyUsedBox] == nil)
     {
         DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
-                                                            message:@"시앤앰 셋탑박스가 선택되지 않았습니다.\n 셋탑박스를 찾습니다."
+                                                            message:@"시앤앰 셋톱박스가 선택되지 않았습니다.\n 셋톱박스를 찾습니다."
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
@@ -408,7 +408,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     [RToast showToast:NSLocalizedString(@"연결됐습니다.", @"") forDuration:2];
     AppInfo.isPaired = YES;
     
-    // 셋탑박스가 연결되면, VOD 찜하기 데이터를 전송한다.
+    // 셋톱박스가 연결되면, VOD 찜하기 데이터를 전송한다.
     [self sendWishList];
     
     if ([self currentBox])
@@ -432,7 +432,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     
     if (_appState == kAppStateConnected)
     {
-        [RToast showToast:NSLocalizedString(@"셋탑박스에 연결되지 않았습니다.", @"") forDuration:2];
+        [RToast showToast:NSLocalizedString(@"셋톱박스에 연결되지 않았습니다.", @"") forDuration:2];
         [self changeState:kAppStateIdle];
         [_sender close];
         [self onStateIdle];
@@ -440,7 +440,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     else if (_appState == kAppStateConnecting && code == POLO_ERR_CONNECTION_FAILURE)
     {
         [self changeState:kAppStateIdle];
-        [RToast showToast:NSLocalizedString(@"씨앤앰 셋탑박스에 연결할 수 없습니다.", @"") forDuration:2];
+        [RToast showToast:NSLocalizedString(@"씨앤앰 셋톱박스에 연결할 수 없습니다.", @"") forDuration:2];
         [self showDeviceFinder];
     }
     else if (_appState == kAppStateDeviceFinder)

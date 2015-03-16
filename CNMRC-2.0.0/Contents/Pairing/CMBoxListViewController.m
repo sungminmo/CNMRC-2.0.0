@@ -32,7 +32,7 @@ const NSInteger kDefualtPairingPort = 9551;
 {
     [super viewDidLoad];
     
-    self.titleLabel.text = @"셋탑박스 연결";
+    self.titleLabel.text = @"셋톱박스 연결";
     
     // 테이블뷰 UI 설정.
     if (isiOS7)
@@ -236,7 +236,7 @@ const NSInteger kDefualtPairingPort = 9551;
         headerLabel.backgroundColor = [UIColor clearColor];
         headerLabel.textColor = UIColorFromRGB(0x7961aa);
         headerLabel.font = [UIFont boldSystemFontOfSize:17];
-        headerLabel.text = @"셋탑박스를 선택하세요.";
+        headerLabel.text = @"셋톱박스를 선택하세요.";
         [headerView addSubview:headerLabel];
         return headerView;
     }

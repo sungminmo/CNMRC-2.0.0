@@ -222,7 +222,7 @@
     {
         // 연결이 안되어 있는 경우: 10개까지 로컬에 저장한다, 그리고 STB가 연결되면 일괄 전송한다.
         DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
-                                                            message:@"셋탑박스가 연결이 되어 있지 않습니다.\n폰에 저장한 후 셋탑박스가 연결되면 일괄 저장 됩니다!"
+                                                            message:@"셋톱박스가 연결이 되어 있지 않습니다.\n폰에 저장한 후 셋톱박스가 연결되면 일괄 저장 됩니다!"
                                                   cancelButtonTitle:nil
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
@@ -272,7 +272,7 @@
     {
         // 연결이 안되어 있는 경우.
         DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"알림"
-                                                            message:@"셋탑박스가 연결되어 있지 않습니다!"
+                                                            message:@"셋톱박스가 연결되어 있지 않습니다!"
                                                   cancelButtonTitle:@"확인"
                                                    otherButtonTitle:nil];        
         [alertView show];
