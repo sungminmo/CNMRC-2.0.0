@@ -53,6 +53,8 @@ typedef void (^DQAlertViewBlock)(void);
 
 #pragma mark - Public Properties
 
+@property (nonatomic, assign) BOOL isLandscape;
+
 // Set the custom frame for the Alert View, if this property has not been set the Alert will be shown at center of the view. Don't use the default method [UIView setFrame:]
 @property (nonatomic, assign) CGRect customFrame; // Default is same as UIAlertView
 

@@ -127,6 +127,7 @@
     if ( ! hasModifiedFrame) {
         self.frame = CGRectMake((view.frame.size.width - self.frame.size.width )/2, (view.frame.size.height - self.frame.size.height) /2, self.frame.size.width, self.frame.size.height);
     }
+    
     UIView *window = [[[UIApplication sharedApplication] delegate] window];
 
     if (self.shouldDimBackgroundWhenShowInView && view != window) {
@@ -259,6 +260,13 @@
     else if (self.appearAnimationType == DQAlertViewAnimationTypeNone)
     {
         [self didAppearAlertView];
+    }
+    
+    // 얼럿 가로 모드.
+    if (self.isLandscape) {
+        CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+        rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
+        self.transform = rotationTransform;
     }
 }
 

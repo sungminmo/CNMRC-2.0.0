@@ -738,6 +738,7 @@ using namespace anymote::messages;
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitles:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
+    alertView.isLandscape = YES;
     alertView.cancelButtonAction = ^{
         //Debug(@"Cancel Clicked");
     };
@@ -755,7 +756,7 @@ using namespace anymote::messages;
         // 채널을 선택한 경우.
         if ([sender tag] == CHANNEL_BUTTON_TAG)
         {
-            CMRCViewController *rcViewController = (CMRCViewController *)[AppDelegate.container.viewControllers first];
+            CMRCViewController *rcViewController = (CMRCViewController *)[CMAppDelegate.container.viewControllers first];
             [rcViewController channelAction:sender];
         }
     };
