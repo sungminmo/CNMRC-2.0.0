@@ -81,20 +81,20 @@ static const int kSimultaneousTouchesCount = 5;
 
 - (void)touchAnimation:(CGPoint)point
 {
-    NSArray *images = @[[UIImage imageNamed:@"tappress01@2x.png"],
-                        [UIImage imageNamed:@"tappress02@2x.png"],
-                        [UIImage imageNamed:@"tappress03@2x.png"],
-                        [UIImage imageNamed:@"tappress04@2x.png"]];
-    
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 65.0, 65.0)];
-    imageView.center = point;
-    imageView.animationImages = images;
-    imageView.animationDuration = 0.2;
-    imageView.animationRepeatCount = 1; // 0 = nonStop repeat
-    [imageView startAnimating];
-    
-    [self insertSubview:imageView belowSubview:self.topButton];
-    [self performSelector:@selector(removeAnimation:) withObject:imageView afterDelay:0.2];
+//    NSArray *images = @[[UIImage imageNamed:@"tappress01@2x.png"],
+//                        [UIImage imageNamed:@"tappress02@2x.png"],
+//                        [UIImage imageNamed:@"tappress03@2x.png"],
+//                        [UIImage imageNamed:@"tappress04@2x.png"]];
+//    
+//    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 65.0, 65.0)];
+//    imageView.center = point;
+//    imageView.animationImages = images;
+//    imageView.animationDuration = 0.2;
+//    imageView.animationRepeatCount = 1; // 0 = nonStop repeat
+//    [imageView startAnimating];
+//    
+//    [self insertSubview:imageView belowSubview:self.topButton];
+//    [self performSelector:@selector(removeAnimation:) withObject:imageView afterDelay:0.2];
 }
 
 - (UIView *)viewClosedToLocation:(CGPoint)point
