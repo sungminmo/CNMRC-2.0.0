@@ -139,12 +139,12 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     self.touchPad.delegate = self;
     self.touchPad.hidden = YES;
     
-    CommandHandler *commandHandler = [RemoteManager commandHandler];
-    if (!_tapTracker) {
-        _tapTracker = [[CMTapTracker alloc] initWithBackgroundView:self.touchPad
-                                                    commandHandler:commandHandler];
-        [self.touchPad setTouchHandler:_tapTracker];
-    }
+//    CommandHandler *commandHandler = [RemoteManager commandHandler];
+//    if (!_tapTracker) {
+//        _tapTracker = [[CMTapTracker alloc] initWithBackgroundView:self.touchPad
+//                                                    commandHandler:commandHandler];
+//        [self.touchPad setTouchHandler:_tapTracker];
+//    }
     
     // 사방향키 패드에 제스처 추가.
     // 상.
@@ -172,15 +172,15 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 //    [self.touchPad addGestureRecognizer:right];
     
     // 애니메이션과 트랙(터치)패드을 위한 팬 제스처 추가.
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    pan.delegate = self;
-    pan.minimumNumberOfTouches = 2;
-    pan.maximumNumberOfTouches = 2;
-    [self.touchPad addGestureRecognizer:pan];
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+//    pan.delegate = self;
+//    pan.minimumNumberOfTouches = 2;
+//    pan.maximumNumberOfTouches = 2;
+//    [self.touchPad addGestureRecognizer:pan];
     
     // 줌을 위핸 핀치 제처처 추가.
-    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
-    [self.touchPad addGestureRecognizer:pinch];
+//    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
+//    [self.touchPad addGestureRecognizer:pinch];
     
     // 트릭플레이 패드.
 //    CMControlPad *ctr = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMControlPadSD", @"CMControlPad") owner:self options:nil] objectAtIndex:0];
@@ -513,7 +513,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 // 페어링 여부.
 - (void)checkParing
 {
-    //[RemoteManager checkPairing];
+    [RemoteManager checkPairing];
 }
 
 #pragma mark - CMNumberKeyDelegate
@@ -538,13 +538,13 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
         // 음소거 버튼.
         if (!_isVolumeMuted)
         {
-            [key setImage:[UIImage imageNamed:@"mute_off.png"] forState:UIControlStateNormal];
-            [key setImage:[UIImage imageNamed:@"mute_off.png"] forState:UIControlStateHighlighted];
+            [key setImage:[UIImage imageNamed:@"Mute_D"] forState:UIControlStateNormal];
+            [key setImage:[UIImage imageNamed:@"Mute_H"] forState:UIControlStateHighlighted];
         }
         else
         {
-            [key setImage:[UIImage imageNamed:@"mute_on.png"] forState:UIControlStateNormal];
-            [key setImage:[UIImage imageNamed:@"mute_on.png"] forState:UIControlStateHighlighted];
+            [key setImage:[UIImage imageNamed:@"Mute_D"] forState:UIControlStateNormal];
+            [key setImage:[UIImage imageNamed:@"Mute_H"] forState:UIControlStateHighlighted];
         }
         _isVolumeMuted = !_isVolumeMuted;
     }
