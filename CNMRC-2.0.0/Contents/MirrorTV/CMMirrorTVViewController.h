@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 @property (weak, nonatomic) IBOutlet CMPlayerLayerView *playerLayerView;
 @property (strong, nonatomic) AVPlayer *player;
 @property (strong, nonatomic) AVPlayerItem *playerItem;
+@property (weak, nonatomic) IBOutlet UIProgressView *volumeProgressView;
+@property (nonatomic) float currentVolume;
 
 // 백그라운드.
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;

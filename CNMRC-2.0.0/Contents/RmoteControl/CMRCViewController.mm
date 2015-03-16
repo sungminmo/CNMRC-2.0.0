@@ -543,8 +543,8 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
         }
         else
         {
-            [key setImage:[UIImage imageNamed:@"mute_off.png"] forState:UIControlStateNormal];
-            [key setImage:[UIImage imageNamed:@"mute_off.png"] forState:UIControlStateHighlighted];
+            [key setImage:[UIImage imageNamed:@"mute_on.png"] forState:UIControlStateNormal];
+            [key setImage:[UIImage imageNamed:@"mute_on.png"] forState:UIControlStateHighlighted];
         }
         _isVolumeMuted = !_isVolumeMuted;
     }

@@ -19,6 +19,7 @@
                 <outlet property="titleLabel" destination="RBX-hq-66m" id="m9O-ac-IBO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="PLl-p4-WCV"/>
                 <outlet property="volumeMuteButton" destination="ZIq-O7-jyZ" id="hTG-oZ-aXo"/>
+                <outlet property="volumeProgressView" destination="pg4-Sv-SDZ" id="nQ8-1G-0l4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -463,19 +464,30 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pg4-Sv-SDZ">
+                            <rect key="frame" x="168" y="206" width="400" height="2"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="WHq-Ak-yEp"/>
+                                <constraint firstAttribute="width" constant="400" id="t2v-hq-Rqp"/>
+                            </constraints>
+                        </progressView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="XMx-zB-3g4" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" constant="10" id="3rh-nt-XEr"/>
                         <constraint firstAttribute="centerX" secondItem="8f2-kb-Zbc" secondAttribute="centerX" id="7JZ-Wy-FGp"/>
                         <constraint firstAttribute="centerX" secondItem="hUZ-5R-AaE" secondAttribute="centerX" id="Bx1-rv-GuT"/>
+                        <constraint firstAttribute="centerX" secondItem="pg4-Sv-SDZ" secondAttribute="centerX" id="EzB-16-BIH"/>
                         <constraint firstItem="8f2-kb-Zbc" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" id="Hd1-fc-pOb"/>
                         <constraint firstAttribute="centerY" secondItem="rxv-Zc-TDY" secondAttribute="centerY" id="Moq-IS-IcW"/>
+                        <constraint firstItem="pg4-Sv-SDZ" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" constant="168" id="V34-Bz-xwo"/>
+                        <constraint firstAttribute="trailing" secondItem="pg4-Sv-SDZ" secondAttribute="trailing" constant="168" id="a2h-TJ-CgT"/>
                         <constraint firstAttribute="centerY" secondItem="XMx-zB-3g4" secondAttribute="centerY" id="aMJ-OQ-XVe"/>
                         <constraint firstAttribute="trailing" secondItem="k7l-va-N7N" secondAttribute="trailing" constant="10" id="aqZ-56-YhS"/>
                         <constraint firstItem="RBX-hq-66m" firstAttribute="leading" secondItem="8wU-0t-EXg" secondAttribute="leading" constant="10" id="gad-nc-PWV"/>
                         <constraint firstAttribute="centerY" secondItem="k7l-va-N7N" secondAttribute="centerY" id="gw8-QY-IZM"/>
                         <constraint firstAttribute="bottom" secondItem="8f2-kb-Zbc" secondAttribute="bottom" id="oFQ-7h-hYU"/>
+                        <constraint firstAttribute="centerY" secondItem="pg4-Sv-SDZ" secondAttribute="centerY" id="ozV-d5-zSA"/>
                         <constraint firstItem="RBX-hq-66m" firstAttribute="top" secondItem="8wU-0t-EXg" secondAttribute="top" id="rU0-CX-W86"/>
                         <constraint firstAttribute="trailing" secondItem="8f2-kb-Zbc" secondAttribute="trailing" id="tNK-sL-JFA"/>
                         <constraint firstItem="hUZ-5R-AaE" firstAttribute="top" secondItem="RBX-hq-66m" secondAttribute="bottom" constant="10" id="vYE-zl-q4M"/>

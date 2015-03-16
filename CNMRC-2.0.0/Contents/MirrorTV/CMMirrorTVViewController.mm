@@ -7,6 +7,7 @@
 //
 
 #import "CMMirrorTVViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 #import "DQAlertView.h"
 #import "CMRCViewController.h"
 #include "keycodes.pb.h"
@@ -44,8 +45,14 @@ NSString *kTimedMetadataKey	= @"currentItem.timedMetadata";
 
 using namespace anymote::messages;
 
+// 영상 확장자.
 #define HLS_EXTENTION @"m3u8"
+
+// 채널버튼 태그.
 #define CHANNEL_BUTTON_TAG 1000
+
+// 볼륨 단위.
+#define VOLUME_UNIT 0.0625f
 
 @interface CMMirrorTVViewController ()
 {
@@ -129,7 +136,6 @@ using namespace anymote::messages;
     // CMO6 heartbeat 타이머 설정(2초마다).
     self.heartbeatTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(requestHeartbeat) userInfo:nil repeats:YES];
     
-    
     // HLS URL 생성을 위해 AssetID 요청.
     [self requestAssetID];
     
@@ -138,6 +144,12 @@ using namespace anymote::messages;
     
     // 로딩 시작.
     [self adjustLayout:CMMirrorTVStatusLoading];
+    
+    // 볼륨 프로그레스바 초기화.
+    [self.volumeProgressView setProgress:self.player.volume animated:YES];
+    
+    // 현재 볼륨 초기화.
+    self.currentVolume = self.player.volume;
 }
 
 
@@ -342,6 +354,12 @@ using namespace anymote::messages;
     }
     
     _isHide = !hidden;
+}
+
+// 볼륨 프로그레스바 감추기.
+- (void)hideVolumeProgressView
+{
+    self.volumeProgressView.hidden = YES;
 }
 
 // 컨트롤 패널 감추기.
@@ -767,19 +785,32 @@ using namespace anymote::messages;
 - (IBAction)volumeAction:(id)sender
 {
     NSInteger buttonTag = [sender tag];
-    
+
     if (buttonTag == 0)
     {
-        // 볼륨 업.
-        [[RemoteManager sender] sendClickForKey:KEYCODE_VOLUME_UP error:NULL];
+        if (self.currentVolume < 1.0) {
+            // 볼륨 업.
+            self.currentVolume += VOLUME_UNIT;
+            self.player.volume = self.currentVolume;
+        }
     }
     else
     {
-        // 볼륨 다운.
-        [[RemoteManager sender] sendClickForKey:KEYCODE_VOLUME_DOWN error:NULL];
+        if (self.currentVolume > 0) {
+            // 볼륨 다운.
+            self.currentVolume -= VOLUME_UNIT;
+            self.player.volume = self.currentVolume;
+        }
     }
     
-    // 4초후에 컨트롤 패널 감추기.
+    // 볼륨 프로그레스바 UI 설정.
+    self.volumeProgressView.hidden = NO;
+    [self.volumeProgressView setProgress:self.currentVolume animated:YES];
+    
+    // 1초 후에 볼륨 프로그레스바 감추가.
+    [self performSelector:@selector(hideVolumeProgressView) withObject:nil afterDelay:1];
+    
+    // 4초 후에 컨트롤 패널 감추기.
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
@@ -789,18 +820,18 @@ using namespace anymote::messages;
     // 토글 시 버튼 이미지 변경.
     if (_isMuted)
     {
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteoffbtn_normal@2x.png"] forState:UIControlStateNormal];
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteoffbtn_press@2x.png"] forState:UIControlStateHighlighted];
+        self.player.muted = NO;
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOff_D"] forState:UIControlStateNormal];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOff_H"] forState:UIControlStateHighlighted];
     }
     else
     {
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteonbtn_normal@2x.png"] forState:UIControlStateNormal];
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteonbtn_press@2x.png"] forState:UIControlStateHighlighted];
+        self.player.muted = YES;
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOn_D"] forState:UIControlStateNormal];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOn_H"] forState:UIControlStateHighlighted];
     }
     
     _isMuted = !_isMuted;
-    
-    [[RemoteManager sender] sendClickForKey:KEYCODE_MUTE error:NULL];
     
     // 4초후에 컨트롤 패널 감추기.
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
@@ -891,7 +922,7 @@ using namespace anymote::messages;
             self.channelNoIndicatorLabel.text = @"";
         }
         
-        self.channelNoIndicatorLabel.text = [NSString stringWithFormat:@"%@%d", self.channelNoIndicatorLabel.text, button.tag];
+        self.channelNoIndicatorLabel.text = [NSString stringWithFormat:@"%@%@", self.channelNoIndicatorLabel.text, @(button.tag)];
     }
     
     // 끝에서 부터 지운다.
