@@ -253,7 +253,7 @@ using namespace anymote::messages;
 }
 
 // 제스처 콜백.
-- (void)recognizeTapGesture:(UILongPressGestureRecognizer *)recognizer
+- (void)recognizeTapGesture:(UITapGestureRecognizer *)recognizer
 {
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {
