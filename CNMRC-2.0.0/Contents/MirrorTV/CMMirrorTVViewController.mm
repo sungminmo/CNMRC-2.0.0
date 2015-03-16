@@ -755,8 +755,8 @@ using namespace anymote::messages;
         // 채널을 선택한 경우.
         if ([sender tag] == CHANNEL_BUTTON_TAG)
         {
-//            CMRCViewController *rcViewController = (CMRCViewController *)[AppDelegate.container.viewControllers first];
-//            [rcViewController channelAction:sender];
+            CMRCViewController *rcViewController = (CMRCViewController *)[AppDelegate.container.viewControllers first];
+            [rcViewController channelAction:sender];
         }
     };
     [alertView show];
