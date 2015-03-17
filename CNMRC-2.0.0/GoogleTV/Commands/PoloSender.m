@@ -85,10 +85,10 @@
   [poloConnection_ scheduleWithRunloop:[NSRunLoop mainRunLoop]
                                   mode:NSDefaultRunLoopMode];
     
-  DDLogDebug(@"%@ - %@ - %d - %@", client, host, port, encodings);
+  DDLogDebug(@"%@ - %@ - %d - %@", client, host, (int)port, encodings);
   NSError *err = nil;
   if (![poloConnection_ openWithError:&err]) {
-    NSLog(@"Can't open connection: %@", err);
+    DDLogWarn(@"Can't open connection: %@", err);
     [poloConnection_ release];
     poloConnection_ = nil;
     [self notifyAboutFailure:err];

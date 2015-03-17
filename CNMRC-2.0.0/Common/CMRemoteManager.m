@@ -309,8 +309,10 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
         [_sender close];
         [self changeState:kAppStateIdle];
     }
-    [_sender close];
-    [self changeState:kAppStateDeviceFinder];
+    else
+    {
+        [self changeState:kAppStateDeviceFinder];
+    }
 //    NSArray *controllersInNav = [AppDelegate.container viewControllers];
 //    if (![controllersInNav containsObject:boxListController_])
 //    {

@@ -142,15 +142,15 @@ const NSInteger kDefualtPairingPort = 9551;
     return 2;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    if (section == 0)
-    {
-        return @"구글TV를 선택하세요.";
-    }
-    
-    return nil;
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    if (section == 0)
+//    {
+//        return @"구글TV를 선택하세요.";
+//    }
+//    
+//    return nil;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -191,15 +191,18 @@ const NSInteger kDefualtPairingPort = 9551;
         
         // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
         // 사설IP(192로 시작...)  여부.
-        if ([self isPrivateAddress:[box.addresses objectAtIndex:0]])
-        {
-            cell.detailTextLabel.text = [box.addresses objectAtIndex:0];
-        }
-        else
-        {
-            // 박스 이름에서 IP를 가져온다.
-            cell.detailTextLabel.text = [self genAddress:box.name];
-        }
+//        if ([self isPrivateAddress:[box.addresses objectAtIndex:0]])
+//        {
+//            cell.detailTextLabel.text = [box.addresses objectAtIndex:0];
+//        }
+//        else
+//        {
+//            // 박스 이름에서 IP를 가져온다.
+//            cell.detailTextLabel.text = [self genAddress:box.name];
+//        }
+        
+        // 박스 이름에서 IP를 가져온다.
+        cell.detailTextLabel.text = [self genAddress:box.name];
         
         return cell;
     }
