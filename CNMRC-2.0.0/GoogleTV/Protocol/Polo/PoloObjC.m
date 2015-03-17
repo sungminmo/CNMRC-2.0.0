@@ -478,7 +478,7 @@ void PoloObjCConnectionRLSourcePerformFunc(void *info) {
   PoloConnectionObjCBridgeInfo *bridgeInfo;
   bridgeInfo = (PoloConnectionObjCBridgeInfo *)connection->objcInfo;
   NSMutableArray *pendingInvocations = bridgeInfo->pendingInvocations;
-  NSUInteger count;
+  NSUInteger count = 0;
   NSInvocation *invocation;
 
   [bridgeInfo->pendingInvocationsLock lock];
