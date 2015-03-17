@@ -107,7 +107,7 @@
         {
             // 읽어야 할 전문 길이 확인.
 			_dataLength = [self dataLength:data];
-			Debug(@"Data length: %d", _dataLength);
+			DDLogDebug(@"Data length: %d", _dataLength);
 			
             // 버퍼에 헤더의 데이터크기(size) 추가.
 			[_rxBuffer appendData:data];
@@ -203,7 +203,7 @@
 // 데이터 덤프.
 - (void)dumpData:(NSData *)data
 {
-    Debug(@"\n-----------------------------------------------------------------------\
+    DDLogDebug(@"\n-----------------------------------------------------------------------\
           \nData length: [%d]\
           \n-----------------------------------------------------------------------\
           \n%@\
@@ -213,7 +213,7 @@
 // 데이터 전송: NSString.
 - (void)sendData:(NSString *)stringData
 {
-    //Debug(@"Send data: %@", stringData);
+    //DDLogDebug(@"Send data: %@", stringData);
     
     NSData *data = [self castStringToData:stringData];
     
@@ -238,7 +238,7 @@
     //[self dumpData:data];
     
     NSString *stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    Debug(@"Receive data: %@", stringData);
+    DDLogDebug(@"Receive data: %@", stringData);
     
     // 데이터에서 전문번호(!: 파서에 전달할 클래스 이름) 확인.
     NSString *trNo = [self trNo:data];

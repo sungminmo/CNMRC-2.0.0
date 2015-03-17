@@ -471,11 +471,11 @@ using namespace anymote::messages;
     {
         NSLog(@"Device input mode: %@", [mode primaryLanguage]);
     }
-    GTMLoggerDebug(@"Currnet input mode: %@", [[UITextInputMode currentInputMode] primaryLanguage]);
+    DDLogDebug(@"Currnet input mode: %@", [[UITextInputMode currentInputMode] primaryLanguage]);
     
     self.currentInputMode = [[UITextInputMode currentInputMode] primaryLanguage];
     
-    NSLog(@"현재 입력모드: %@", self.currentInputMode);
+    DDLogDebug(@"현재 입력모드: %@", self.currentInputMode);
     
     // STB에 한영 변환 알림!
     if ([self.currentInputMode isEqualToString:@"en-US"])

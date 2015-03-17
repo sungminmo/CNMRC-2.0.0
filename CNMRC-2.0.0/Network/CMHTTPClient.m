@@ -115,7 +115,7 @@
     NSData *data = [NSURLConnection sendSynchronousRequest:request
                                          returningResponse:&response
                                                      error:&error];
-    //Debug(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+    //DDLogDebug(@"%@", [NSString stringWithUTF8String:[data bytes]]);
     if (error == nil && response)
     {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -150,7 +150,7 @@
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        Debug(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
     };
     
     [alertView show];
@@ -194,7 +194,7 @@
 
 - (void)requestWithURL:(NSURL *)url delegate:(id)obj andDictionary:(NSDictionary *)dict sync:(BOOL)isSynchronous
 {
-    Debug(@"\n Request url: %@ \n Request data: %@", url, dict);
+    DDLogDebug(@"\n Request url: %@ \n Request data: %@", url, dict);
     
     if (dict == nil)
     {
@@ -269,7 +269,7 @@
         {
             for (NSHTTPCookie *cookie in cookies)
             {
-                NSLog(@"Cookie: %@ = %@", [cookie name], [cookie value]);
+                DDLogDebug(@"Cookie: %@ = %@", [cookie name], [cookie value]);
                 
                 // 통신 상태 에러 처리.
             }
@@ -279,7 +279,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    Debug(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+    DDLogDebug(@"%@", [NSString stringWithUTF8String:[data bytes]]);
 
     // XML 파싱.
     [self parseXML:data];

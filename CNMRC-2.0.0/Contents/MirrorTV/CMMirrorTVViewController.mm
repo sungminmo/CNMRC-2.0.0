@@ -793,7 +793,7 @@ using namespace anymote::messages;
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.isLandscape = YES;
     alertView.cancelButtonAction = ^{
-        //Debug(@"Cancel Clicked");
+        //DDLogDebug(@"Cancel Clicked");
     };
     alertView.otherButtonAction = ^{
         // 타이머 정지.
@@ -807,7 +807,7 @@ using namespace anymote::messages;
         [self dismissViewControllerAnimated:YES completion:nil];
         
         // 채널을 선택한 경우.
-        if ([sender tag] == CHANNEL_BUTTON_TAG)
+        if ([(UIButton *)sender tag] == CHANNEL_BUTTON_TAG)
         {
             CMRCViewController *rcViewController = (CMRCViewController *)[CMAppDelegate.container.viewControllers first];
             [rcViewController channelAction:sender];
@@ -819,7 +819,7 @@ using namespace anymote::messages;
 // 볼륨 조절.
 - (IBAction)volumeAction:(id)sender
 {
-    NSInteger buttonTag = [sender tag];
+    NSInteger buttonTag = [(UIButton *)sender tag];
 
     if (buttonTag == 0)
     {
@@ -878,7 +878,7 @@ using namespace anymote::messages;
 // 채널 이동.
 - (IBAction)channelAction:(id)sender
 {
-    NSInteger buttonTag = [sender tag];
+    NSInteger buttonTag = [(UIButton *)sender tag];
     
     if (buttonTag == 0)
     {
@@ -1460,11 +1460,11 @@ using namespace anymote::messages;
 #pragma mark - DQAlertViewDelegate
 
 //- (void)cancelButtonClickedOnAlertView:(DQAlertView *)alertView {
-//    Debug(@"OK Clicked");
+//    DDLogDebug(@"OK Clicked");
 //}
 //
 //- (void)otherButtonClickedOnAlertView:(DQAlertView *)alertView {
-//    Debug(@"OK Clicked");
+//    DDLogDebug(@"OK Clicked");
 //    // 타이머 정지.
 //    [self.heartbeatTimer invalidate];
 //    

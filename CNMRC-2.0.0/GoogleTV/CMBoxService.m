@@ -40,7 +40,7 @@
 {
     [encoder encodeObject:_addresses forKey:@"addresses"];
     [encoder encodeObject:_name forKey:@"name"];
-    [encoder encodeInt32:_port forKey:@"port"];
+    [encoder encodeInt32:(int)_port forKey:@"port"];
 }
 
 - (NSComparisonResult)gidCompare:(CMBoxService *)other
@@ -86,15 +86,15 @@
 {
     int prime = 31;
     int result = 1;
-    result = prime * result + [[self name] hash];
-    result = prime * result + [self port];
-    result = prime * result + [[self addresses] hash];
+    result = prime * result + (int)[[self name] hash];
+    result = prime * result + (int)[self port];
+    result = prime * result + (int)[[self addresses] hash];
     return result;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"CMBoxService(%@, %@, %d)", [self name], [[self addresses] description], [self port]];
+    return [NSString stringWithFormat:@"CMBoxService(%@, %@, %d)", [self name], [[self addresses] description], (int)[self port]];
 }
 
 @end

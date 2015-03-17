@@ -120,7 +120,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    Debug(@"Receive data: %@", dict);
+    DDLogDebug(@"Receive data: %@", dict);
     
     NSInteger errorCode = [[dict valueForKey:@"resultCode"] integerValue];
     if (errorCode == 100)
@@ -134,7 +134,7 @@
                                                   cancelButtonTitle:@"확인"
                                                    otherButtonTitle:nil];
         alertView.otherButtonAction = ^{
-            Debug(@"OK Clicked");
+            DDLogDebug(@"OK Clicked");
             
         };
         

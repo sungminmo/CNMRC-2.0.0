@@ -123,7 +123,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    Debug(@"Receive data: %@", dict);
+    DDLogDebug(@"Receive data: %@", dict);
     
     NSInteger errorCode = [[dict valueForKey:@"resultCode"] integerValue];
     if (errorCode == 100)

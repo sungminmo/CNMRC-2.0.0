@@ -153,7 +153,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    Debug(@"Receive data: %@", dict);
+    DDLogDebug(@"Receive data: %@", dict);
     
     NSInteger errorCode = [[dict valueForKey:@"resultCode"] integerValue];
     
@@ -169,7 +169,7 @@
                                                        otherButtonTitle:@"확인"];
             alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
-                Debug(@"OK Clicked");
+                DDLogDebug(@"OK Clicked");
             };
             
             [alertView show];

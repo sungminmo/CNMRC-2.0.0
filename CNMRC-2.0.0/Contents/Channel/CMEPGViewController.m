@@ -181,7 +181,7 @@
 // 데이터 갱신.
 - (void)handleRefreshList:(UIRefreshControl *)refreshControl
 {
-    Debug(@"데이터 갱신");
+    DDLogDebug(@"데이터 갱신");
     
     // 데이터 요청.
     [self requestdataWithChannelID:[self.data valueForKey:@"Channel_ID"]
@@ -342,14 +342,14 @@
         if ([self isPossibleWatchTV:currentTime andNextTime:nextTime])
         {
             // TV에서 시청하기 얼럿.
-            Debug(@"TV에서 시청하기!");
+            DDLogDebug(@"TV에서 시청하기!");
             DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"TV에서 시청 하시겠습니까?"
                                                                 message:programTitle
                                                       cancelButtonTitle:@"취소"
                                                        otherButtonTitle:@"확인"];
             alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
-                Debug(@"OK Clicked");
+                DDLogDebug(@"OK Clicked");
                 // TV에서 시청하기.
             };
             
@@ -364,7 +364,7 @@
                                                        otherButtonTitle:@"확인"];
             alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
-                Debug(@"OK Clicked");
+                DDLogDebug(@"OK Clicked");
                 // 알람 등록.
                 [CMAlarmManager fireLocalNotificationWitTitle:programTitle andDate:[self dateFromStringBroadcastingTime:currentTime]];
                 
@@ -388,7 +388,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    Debug(@"Receive data: %@", dict);
+    DDLogDebug(@"Receive data: %@", dict);
     
     NSInteger errorCode = [[dict valueForKey:@"resultCode"] integerValue];
     
@@ -404,7 +404,7 @@
                                                        otherButtonTitle:@"확인"];
             alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
-                Debug(@"OK Clicked");
+                DDLogDebug(@"OK Clicked");
             };
             
             [alertView show];

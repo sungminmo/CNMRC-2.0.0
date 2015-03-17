@@ -140,7 +140,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        Debug(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
         // 상태 변경.
         if (_appState == kAppStateIdle)
         {
@@ -309,6 +309,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
         [_sender close];
         [self changeState:kAppStateIdle];
     }
+    [_sender close];
     [self changeState:kAppStateDeviceFinder];
 //    NSArray *controllersInNav = [AppDelegate.container viewControllers];
 //    if (![controllersInNav containsObject:boxListController_])
@@ -327,7 +328,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        Debug(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
         // 박스 찾기.
         CMBoxListViewController *viewController = [[CMBoxListViewController alloc] initWithNibName:@"CMBoxListViewController" bundle:nil];
         viewController.delegate = self;
@@ -378,7 +379,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            Debug(@"OK Clicked");
+            DDLogDebug(@"OK Clicked");
             // 상태 변경.
             if (_appState == kAppStateIdle)
             {

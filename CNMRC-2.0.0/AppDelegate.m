@@ -27,9 +27,12 @@
 {
     // 앱 실행 횟수 확인
     [NSObject load];
-    Debug(@"\n------------------------------------------------------------------\
+    NSLog(@"\n------------------------------------------------------------------\
           \nNow is the %dth execution!\
           \n------------------------------------------------------------------", [LPAppStats numAppOpens]);
+    
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
     // 알림을 통한 진입인지 확인
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
@@ -102,7 +105,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            Debug(@"OK Clicked");
+            NSLog(@"OK Clicked");
             // 로컬노티피케이션 취소.
             [[UIApplication sharedApplication] cancelLocalNotification:notification];
         };
@@ -121,7 +124,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    Debug(@"NavigationController view controller count: %d", navigationController.viewControllers.count);
+    DDLogDebug(@"NavigationController view controller count: %d", navigationController.viewControllers.count);
     
     // 리모콘이 아닌 하위 메뉴일 경우...
     if (navigationController.viewControllers.count == 1)

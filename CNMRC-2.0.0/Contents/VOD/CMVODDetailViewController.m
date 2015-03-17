@@ -227,7 +227,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            Debug(@"OK Clicked");
+            DDLogDebug(@"OK Clicked");
             WishList *wishList = [WishList create];
             wishList.assetID = [self.data valueForKey:@"VOD_ID"];
             wishList.date = [NSDate date];

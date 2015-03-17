@@ -73,7 +73,7 @@
   poloConnection_ = [[PoloConnection alloc] init];
   [poloConnection_ setClient:client];
   [poloConnection_ setHost:host];
-  [poloConnection_ setPort:port];
+  [poloConnection_ setPort:(int)port];
   [poloConnection_ setPreferredRole:PoloConnectionRoleInput];
   NSArray *encodings = [NSArray arrayWithObjects:
                         [PoloConnectionEncodingEntry entryWithEncoding:PoloConnectionEncodingHexadecimal
@@ -81,11 +81,11 @@
                         nil];
   [poloConnection_ setInputEncodings:encodings];
   [poloConnection_ setDelegate:self];
-  [poloConnection_ setPairingPort:port + 1];
+  [poloConnection_ setPairingPort:(int)port + 1];
   [poloConnection_ scheduleWithRunloop:[NSRunLoop mainRunLoop]
                                   mode:NSDefaultRunLoopMode];
     
-    Debug(@"%@ - %@ - %d - %@", client, host, port, encodings);
+  DDLogDebug(@"%@ - %@ - %d - %@", client, host, port, encodings);
   NSError *err = nil;
   if (![poloConnection_ openWithError:&err]) {
     NSLog(@"Can't open connection: %@", err);
@@ -98,9 +98,9 @@
 }
 
 - (void)connectToHost:(NSString *)host atPort:(NSInteger)port {
-    Debug(@"Connect box address:%@ prot: %d", host, port);
+  NSLog(@"Connect box address:%@ prot: %d", host, (int)port);
     
-  NSArray *objects = [NSArray arrayWithObjects:host, [NSNumber numberWithInt:port], nil];
+  NSArray *objects = [NSArray arrayWithObjects:host, [NSNumber numberWithInt:(int)port], nil];
   NSArray *keys = [NSArray arrayWithObjects:@"host", @"port", nil];
   NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
   NSOperation *op = [[[NSInvocationOperation alloc]
@@ -123,7 +123,7 @@
                                                  otherButtonTitle:@"확인"];
       alertView.shouldDismissOnActionButtonClicked = YES;
       alertView.otherButtonAction = ^{
-          Debug(@"OK Clicked");
+          DDLogDebug(@"OK Clicked");
       };
       
       [alertView show];
