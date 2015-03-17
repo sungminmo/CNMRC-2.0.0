@@ -1669,9 +1669,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D4A49BC1A20859C0088FA93 /* CNMRC-2.0.0 */ = {
+		1D4A49BC1A20859C0088FA93 /* CNMRC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D4A49E01A20859C0088FA93 /* Build configuration list for PBXNativeTarget "CNMRC-2.0.0" */;
+			buildConfigurationList = 1D4A49E01A20859C0088FA93 /* Build configuration list for PBXNativeTarget "CNMRC" */;
 			buildPhases = (
 				1D4A49B91A20859C0088FA93 /* Sources */,
 				1D4A49BA1A20859C0088FA93 /* Frameworks */,
@@ -1681,14 +1681,14 @@
 			);
 			dependencies = (
 			);
-			name = "CNMRC-2.0.0";
+			name = CNMRC;
 			productName = "CNMRC-2.0.0";
 			productReference = 1D4A49BD1A20859C0088FA93 /* CNMRC-2.0.0.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1D4A49D51A20859C0088FA93 /* CNMRC-2.0.0Tests */ = {
+		1D4A49D51A20859C0088FA93 /* CNMRCTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D4A49E31A20859C0088FA93 /* Build configuration list for PBXNativeTarget "CNMRC-2.0.0Tests" */;
+			buildConfigurationList = 1D4A49E31A20859C0088FA93 /* Build configuration list for PBXNativeTarget "CNMRCTests" */;
 			buildPhases = (
 				1D4A49D21A20859C0088FA93 /* Sources */,
 				1D4A49D31A20859C0088FA93 /* Frameworks */,
@@ -1699,7 +1699,7 @@
 			dependencies = (
 				1D4A49D81A20859C0088FA93 /* PBXTargetDependency */,
 			);
-			name = "CNMRC-2.0.0Tests";
+			name = CNMRCTests;
 			productName = "CNMRC-2.0.0Tests";
 			productReference = 1D4A49D61A20859C0088FA93 /* CNMRC-2.0.0Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1741,8 +1741,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D4A49BC1A20859C0088FA93 /* CNMRC-2.0.0 */,
-				1D4A49D51A20859C0088FA93 /* CNMRC-2.0.0Tests */,
+				1D4A49BC1A20859C0088FA93 /* CNMRC */,
+				1D4A49D51A20859C0088FA93 /* CNMRCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1948,7 +1948,7 @@
 /* Begin PBXTargetDependency section */
 		1D4A49D81A20859C0088FA93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1D4A49BC1A20859C0088FA93 /* CNMRC-2.0.0 */;
+			target = 1D4A49BC1A20859C0088FA93 /* CNMRC */;
 			targetProxy = 1D4A49D71A20859C0088FA93 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2134,7 +2134,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D4A49E01A20859C0088FA93 /* Build configuration list for PBXNativeTarget "CNMRC-2.0.0" */ = {
+		1D4A49E01A20859C0088FA93 /* Build configuration list for PBXNativeTarget "CNMRC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D4A49E11A20859C0088FA93 /* Debug */,
@@ -2143,7 +2143,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D4A49E31A20859C0088FA93 /* Build configuration list for PBXNativeTarget "CNMRC-2.0.0Tests" */ = {
+		1D4A49E31A20859C0088FA93 /* Build configuration list for PBXNativeTarget "CNMRCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D4A49E41A20859C0088FA93 /* Debug */,

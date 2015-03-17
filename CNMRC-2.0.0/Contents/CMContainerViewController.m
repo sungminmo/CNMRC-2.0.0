@@ -101,17 +101,7 @@
     // 앱을 최초 실행했을 경우 도움말을 보여준다.
     if ([LPAppStats numAppOpens] == 1)
     {
-        NSString *imageName = nil;
-        
-        if (AppInfo.isiPhoneFive)
-        {
-            imageName = @"coachmark01@2x.png";
-        }
-        else
-        {
-            imageName = @"coachmark@2x.png";
-        }
-        
+        NSString *imageName = @"CoachMark";
         UIImageView *help = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
         help.frame = self.view.frame;
         help.userInteractionEnabled = YES;

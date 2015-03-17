@@ -504,6 +504,9 @@ void PoloObjCConnectionRLSourcePerformFunc(void *info) {
 - (void)scheduleInvocation:(NSInvocation *)invocation {
   PoloConnectionObjCBridgeInfo *info = ((PoloConnectionRef)self)->objcInfo;
   [info->pendingInvocationsLock lock];
+    if (info) {
+        [info->pendingInvocations addObject:invocation];
+    }
   [info->pendingInvocations addObject:invocation];
   [info->pendingInvocationsLock unlock];
   CFRunLoopSourceSignal(info->runloopSource);
@@ -626,9 +629,9 @@ void PoloObjCConnectionDidOpen(PoloConnectionRef connection) {
   return (id)PoloRetain(self);
 }
 
-- (void)release {
-  PoloRelease(self);
-}
+//- (void)release {
+//  PoloRelease(self);
+//}
 
 - (NSUInteger)retainCount {
   return PoloMemoryAllocatorGetRefCount(self);
