@@ -259,7 +259,7 @@
                                                             </state>
                                                             <state key="highlighted" image="VolumeDown_H"/>
                                                             <connections>
-                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchDragInside" id="shA-Y5-JEX"/>
+                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="lzb-Md-Vto"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="qsd-ss-P8B">
@@ -315,7 +315,7 @@
                                                                 <constraint firstAttribute="width" constant="67" id="Wp7-ul-BVA"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-8j-met">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-8j-met">
                                                             <rect key="frame" x="80" y="0.0" width="111" height="76"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="111" id="0Ba-4c-y9o"/>
@@ -329,7 +329,7 @@
                                                                 <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="Psg-lC-qcA"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKG-aY-3d2">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKG-aY-3d2">
                                                             <rect key="frame" x="80" y="243" width="111" height="76"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="76" id="4dQ-ee-XbD"/>
@@ -340,7 +340,7 @@
                                                             </state>
                                                             <state key="highlighted" image="ChannelDown_H"/>
                                                             <connections>
-                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchDragInside" id="3Uh-B1-kUj"/>
+                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="5a1-bI-M5s"/>
                                                             </connections>
                                                         </button>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="XYI-ZA-c1L">

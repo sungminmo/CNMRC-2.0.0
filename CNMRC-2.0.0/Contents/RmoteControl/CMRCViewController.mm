@@ -47,7 +47,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     
     // TODO:
     // 페어링 확인.(최초)
-    //[RemoteManager checkPairing];
+    [RemoteManager checkPairing];
     
     if (isiOS7)
     {

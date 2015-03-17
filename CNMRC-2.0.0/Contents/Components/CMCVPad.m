@@ -32,12 +32,7 @@
 
 - (void)setupLayout
 {
-    // 백그라운드 패드 이미지.
-    UIImage *bgImage = [UIImage imageNamed:DeviceSpecificSetting(@"chvol_bg@2x.png", @"chvol_bg01@2x.png")];
-    
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    bgImageView.image = bgImage;
-    [self insertSubview:bgImageView atIndex:0];
+
 }
 
 - (IBAction)buttonAction:(id)sender
