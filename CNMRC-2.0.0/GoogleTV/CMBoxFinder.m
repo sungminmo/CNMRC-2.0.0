@@ -53,7 +53,7 @@ static NSString* const kBoxServiceType = @"_anymote._tcp";
 
 - (int)count
 {
-    return [_boxes count];
+    return (int)[_boxes count];
 }
 
 #pragma mark - NSNetServiceBrowserDelegate
