@@ -204,13 +204,11 @@ struct polo_connection {
   PoloConnectionEncoding encoding;
   PoloConnectionRole preferredRole;
   PoloConnectionRole role;
-  PoloCertificatesStorageRef certificatesStorage;
-  //__strong PoloCertificatesStorageRef certificatesStorage;
+  __strong PoloCertificatesStorageRef certificatesStorage;
   SSL_CTX *sslContext;
   BIO *bio;
   struct PoloConnectionCallbacks callbacks;
-  const char *host;
-  //__strong const char *host;
+  __strong const char *host;
   int port;
   int pairingPort;
   pthread_mutex_t peerNameMutex;

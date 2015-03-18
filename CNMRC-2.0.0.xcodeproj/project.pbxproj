@@ -200,6 +200,7 @@
 		1DBA76CF1A20B4C8003AB966 /* protobuf-lite.pc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA76C41A20B4C8003AB966 /* protobuf-lite.pc */; };
 		1DBA76D01A20B4C8003AB966 /* protobuf.pc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA76C51A20B4C8003AB966 /* protobuf.pc */; };
 		1DBCC9ED1AB91D9E001AAB91 /* libc++abi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCC9EC1AB91D9E001AAB91 /* libc++abi.dylib */; };
+		1DBCCA191AB952AC001AAB91 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA181AB952AC001AAB91 /* FCFileManager.m */; };
 		1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -665,6 +666,8 @@
 		1DBA76C41A20B4C8003AB966 /* protobuf-lite.pc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "protobuf-lite.pc"; sourceTree = "<group>"; };
 		1DBA76C51A20B4C8003AB966 /* protobuf.pc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = protobuf.pc; sourceTree = "<group>"; };
 		1DBCC9EC1AB91D9E001AAB91 /* libc++abi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++abi.dylib"; path = "usr/lib/libc++abi.dylib"; sourceTree = SDKROOT; };
+		1DBCCA171AB952AC001AAB91 /* FCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFileManager.h; sourceTree = "<group>"; };
+		1DBCCA181AB952AC001AAB91 /* FCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFileManager.m; sourceTree = "<group>"; };
 		1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1469,6 +1472,7 @@
 		1DBA76781A20AE0D003AB966 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1DBCCA161AB952AC001AAB91 /* FCFileManager */,
 				1D00F89A1AB856B200003DC4 /* openssl */,
 				1D20C3D91A8183B7004C84A9 /* Debugging */,
 				1D20C3D51A8183B3004C84A9 /* LPPhoneVersion */,
@@ -1652,6 +1656,15 @@
 				1DBA76C51A20B4C8003AB966 /* protobuf.pc */,
 			);
 			path = pkgconfig;
+			sourceTree = "<group>";
+		};
+		1DBCCA161AB952AC001AAB91 /* FCFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				1DBCCA171AB952AC001AAB91 /* FCFileManager.h */,
+				1DBCCA181AB952AC001AAB91 /* FCFileManager.m */,
+			);
+			path = FCFileManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1920,6 +1933,7 @@
 				1D14AA8D1A6169E300FECF55 /* CMPlayerLayerView.m in Sources */,
 				1DB9B9A21A614FCD00E89E27 /* CMCVPad.m in Sources */,
 				1DB9B9661A614F1B00E89E27 /* CMBoxService.m in Sources */,
+				1DBCCA191AB952AC001AAB91 /* FCFileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -179,8 +179,6 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     {
         [self showDeviceFinder];
     }
-    
-//    [self showDeviceFinder];
 }
 
 
@@ -423,6 +421,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
         NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
         [ud setObject:[NSKeyedArchiver archivedDataWithRootObject:[self currentBox]]
                forKey:kLastBoxKey];
+        [ud synchronize];
     }
     
     if (CMAppDelegate.container.viewControllers.count >= 2)

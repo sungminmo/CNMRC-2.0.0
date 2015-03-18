@@ -79,7 +79,7 @@ static id sharedClientPlaceholder = nil;
 }
 
 - (void)release {
-  PoloRelease(self);
+  //PoloRelease(self);
 }
 
 - (NSUInteger)retainCount {

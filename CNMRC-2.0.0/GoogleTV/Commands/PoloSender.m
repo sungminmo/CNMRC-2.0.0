@@ -127,7 +127,6 @@
       };
       
       [alertView show];
-      [alertView release];
   }
   return isOK;
 }
