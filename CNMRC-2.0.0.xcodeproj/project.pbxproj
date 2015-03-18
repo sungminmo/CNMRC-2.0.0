@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D00F8991AB841D400003DC4 /* libCocoaLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D00F8951AB841D400003DC4 /* libCocoaLumberjack.a */; };
 		1D00F8EC1AB856B200003DC4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1D00F89C1AB856B200003DC4 /* LICENSE */; };
 		1D00F8ED1AB856B200003DC4 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D00F8EA1AB856B200003DC4 /* libcrypto.a */; };
 		1D00F8EE1AB856B200003DC4 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D00F8EB1AB856B200003DC4 /* libssl.a */; };
@@ -215,20 +214,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D00F8891AB841D400003DC4 /* CocoaLumberjack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLumberjack.h; sourceTree = "<group>"; };
-		1D00F88A1AB841D400003DC4 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
-		1D00F88B1AB841D400003DC4 /* DDASLLogCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogCapture.h; sourceTree = "<group>"; };
-		1D00F88C1AB841D400003DC4 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
-		1D00F88D1AB841D400003DC4 /* DDAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAssertMacros.h; sourceTree = "<group>"; };
-		1D00F88E1AB841D400003DC4 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
-		1D00F88F1AB841D400003DC4 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
-		1D00F8901AB841D400003DC4 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
-		1D00F8911AB841D400003DC4 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
-		1D00F8921AB841D400003DC4 /* DDLogMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLogMacros.h; sourceTree = "<group>"; };
-		1D00F8931AB841D400003DC4 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
-		1D00F8941AB841D400003DC4 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
-		1D00F8951AB841D400003DC4 /* libCocoaLumberjack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCocoaLumberjack.a; sourceTree = "<group>"; };
-		1D00F8981AB841D400003DC4 /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
 		1D00F89C1AB856B200003DC4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1D00F89E1AB856B200003DC4 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		1D00F89F1AB856B200003DC4 /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
@@ -711,7 +696,6 @@
 				1DA28AF11A3C7A28007D7F4E /* CoreLocation.framework in Frameworks */,
 				1D00F8EE1AB856B200003DC4 /* libssl.a in Frameworks */,
 				1DA28AEF1A3C7A1D007D7F4E /* MapKit.framework in Frameworks */,
-				1D00F8991AB841D400003DC4 /* libCocoaLumberjack.a in Frameworks */,
 				1DA28AED1A3C7A04007D7F4E /* MessageUI.framework in Frameworks */,
 				1DA28AEB1A3C79F5007D7F4E /* CoreMedia.framework in Frameworks */,
 				1DA28AE91A3C79E3007D7F4E /* CoreTelephony.framework in Frameworks */,
@@ -735,52 +719,6 @@
 		1D00F8861AB841D400003DC4 /* CocoaLumberjack */ = {
 			isa = PBXGroup;
 			children = (
-				1D00F8871AB841D400003DC4 /* include */,
-				1D00F8951AB841D400003DC4 /* libCocoaLumberjack.a */,
-				1D00F8961AB841D400003DC4 /* private */,
-			);
-			path = CocoaLumberjack;
-			sourceTree = "<group>";
-		};
-		1D00F8871AB841D400003DC4 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				1D00F8881AB841D400003DC4 /* CocoaLumberjack */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		1D00F8881AB841D400003DC4 /* CocoaLumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				1D00F8891AB841D400003DC4 /* CocoaLumberjack.h */,
-				1D00F88A1AB841D400003DC4 /* DDAbstractDatabaseLogger.h */,
-				1D00F88B1AB841D400003DC4 /* DDASLLogCapture.h */,
-				1D00F88C1AB841D400003DC4 /* DDASLLogger.h */,
-				1D00F88D1AB841D400003DC4 /* DDAssertMacros.h */,
-				1D00F88E1AB841D400003DC4 /* DDContextFilterLogFormatter.h */,
-				1D00F88F1AB841D400003DC4 /* DDDispatchQueueLogFormatter.h */,
-				1D00F8901AB841D400003DC4 /* DDFileLogger.h */,
-				1D00F8911AB841D400003DC4 /* DDLog.h */,
-				1D00F8921AB841D400003DC4 /* DDLogMacros.h */,
-				1D00F8931AB841D400003DC4 /* DDMultiFormatter.h */,
-				1D00F8941AB841D400003DC4 /* DDTTYLogger.h */,
-			);
-			path = CocoaLumberjack;
-			sourceTree = "<group>";
-		};
-		1D00F8961AB841D400003DC4 /* private */ = {
-			isa = PBXGroup;
-			children = (
-				1D00F8971AB841D400003DC4 /* CocoaLumberjack */,
-			);
-			path = private;
-			sourceTree = "<group>";
-		};
-		1D00F8971AB841D400003DC4 /* CocoaLumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				1D00F8981AB841D400003DC4 /* DDLog+LOGV.h */,
 			);
 			path = CocoaLumberjack;
 			sourceTree = "<group>";
