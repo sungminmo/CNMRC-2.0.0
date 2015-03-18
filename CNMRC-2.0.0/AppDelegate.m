@@ -124,7 +124,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    DDLogDebug(@"NavigationController view controller count: %d", navigationController.viewControllers.count);
+    DDLogDebug(@"NavigationController view controller count: %d", (int)navigationController.viewControllers.count);
     
     // 리모콘이 아닌 하위 메뉴일 경우...
     if (navigationController.viewControllers.count == 1)

@@ -46,4 +46,8 @@
 #import "NSDate+Helper.h"
 #import "LPPhoneVersion.h"
 
+#if DEBUG
+#import "PSPDFUIKitMainThreadGuard.h"
+#endif
+
 #endif

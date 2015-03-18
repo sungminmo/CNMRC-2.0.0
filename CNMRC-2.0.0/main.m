@@ -11,6 +11,11 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        int count;
+        for (count = 0; count < argc; count++)
+        {
+            NSLog(@"argv[%d] = %s\n", count, argv[count]);
+        }
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

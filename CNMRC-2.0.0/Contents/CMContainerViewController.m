@@ -299,6 +299,7 @@
         // 연결이 되어 있는 경우.
         // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
         // 사설IP(192로 시작...)  여부.
+        /*
         NSString *address = nil;
         if ([self isPrivateAddress:[RemoteManager.currentBox.addresses objectAtIndex:0]])
         {
@@ -309,9 +310,10 @@
             // 박스 이름에서 IP를 가져온다.
             address = [self genAddress:RemoteManager.currentBox.name];
         }
+         */
         
         // 원래 코드.
-        //NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
+        NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
         [SocketManager openSocketWithAddress:address andPort:27351];
     }
     else

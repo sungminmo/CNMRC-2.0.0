@@ -165,22 +165,20 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 
 - (void)startConnecting
 {
-//    // 마지막으로 연결되었던 박스가 사용가능하다면 연결한다.
-//    [self setCurrentBox:[self recentlyUsedBox]];
-//    if ([self currentBox])
-//    {
-//        [self changeState:kAppStateConnecting];
-//        [RToast showToastWithSpinner:NSLocalizedString(@"연결중...", @"")];
-//        CMBoxService *box = [self currentBox];
-//        NSLog(@"Connecting to last used box: %@", box);
-//        [_sender connectToHost:[[box addresses] objectAtIndex:0]
-//                        atPort:[box port]];
-//    } else
-//    {
-//        [self showDeviceFinder];
-//    }
-    
-    [self showDeviceFinder];
+    // 마지막으로 연결되었던 박스가 사용가능하다면 연결한다.
+    [self setCurrentBox:[self recentlyUsedBox]];
+    if ([self currentBox])
+    {
+        [self changeState:kAppStateConnecting];
+        [RToast showToastWithSpinner:NSLocalizedString(@"연결중...", @"")];
+        CMBoxService *box = [self currentBox];
+        NSLog(@"Connecting to last used box: %@", box);
+        [_sender connectToHost:[[box addresses] objectAtIndex:0]
+                        atPort:[box port]];
+    } else
+    {
+        [self showDeviceFinder];
+    }
 }
 
 
@@ -309,10 +307,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
         [_sender close];
         [self changeState:kAppStateIdle];
     }
-    else
-    {
-        [self changeState:kAppStateDeviceFinder];
-    }
+    [self changeState:kAppStateDeviceFinder];
 //    NSArray *controllersInNav = [AppDelegate.container viewControllers];
 //    if (![controllersInNav containsObject:boxListController_])
 //    {
