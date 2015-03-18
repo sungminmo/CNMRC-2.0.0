@@ -140,7 +140,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        DDLogDebug(@"OK Clicked");
+        NSLog(@"OK Clicked");
         // 상태 변경.
         if (_appState == kAppStateIdle)
         {
@@ -327,7 +327,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        DDLogDebug(@"OK Clicked");
+        NSLog(@"OK Clicked");
         // 박스 찾기.
         CMBoxListViewController *viewController = [[CMBoxListViewController alloc] initWithNibName:@"CMBoxListViewController" bundle:nil];
         viewController.delegate = self;
@@ -383,7 +383,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            DDLogDebug(@"OK Clicked");
+            NSLog(@"OK Clicked");
             // 상태 변경.
             if (_appState == kAppStateIdle)
             {
@@ -435,7 +435,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 - (void)poloSender:(PoloSender *)sender failedWithError:(NSError *)error
 {
     NSInteger code = [error code];
-    DDLogWarn(@"Connection error (code: %ld): %@ ", (long)code, [error localizedFailureReason]);
+    NSLog(@"Connection error (code: %ld): %@ ", (long)code, [error localizedFailureReason]);
     
     if (_appState == kAppStateConnected)
     {

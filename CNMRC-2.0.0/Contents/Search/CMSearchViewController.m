@@ -270,7 +270,7 @@
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        DDLogDebug(@"OK Clicked");
+        NSLog(@"OK Clicked");
         // 성인인증.
         CMAuthAdultViewController *viewControlelr = [[CMAuthAdultViewController alloc] initWithNibName:@"CMAuthAdultViewController" bundle:nil];
         viewControlelr.menuType = CMMenuTypeAuthAdult;
@@ -333,7 +333,7 @@
                                               otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        DDLogDebug(@"OK Clicked");
+        NSLog(@"OK Clicked");
         // 최근 검색어 삭제.
         [self deleteSearchHistory];
     };
@@ -599,7 +599,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    DDLogDebug(@"Receive data: %@", dict);
+    NSLog(@"Receive data: %@", dict);
     
     switch (_searchType)
     {

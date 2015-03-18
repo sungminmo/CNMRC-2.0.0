@@ -85,10 +85,10 @@
   [poloConnection_ scheduleWithRunloop:[NSRunLoop mainRunLoop]
                                   mode:NSDefaultRunLoopMode];
     
-  DDLogDebug(@"%@ - %@ - %d - %@", client, host, (int)port, encodings);
+  NSLog(@"%@ - %@ - %d - %@", client, host, (int)port, encodings);
   NSError *err = nil;
   if (![poloConnection_ openWithError:&err]) {
-    DDLogWarn(@"Can't open connection: %@", err);
+    NSLog(@"Can't open connection: %@", err);
     [poloConnection_ release];
     poloConnection_ = nil;
     [self notifyAboutFailure:err];
@@ -123,7 +123,7 @@
                                                  otherButtonTitle:@"확인"];
       alertView.shouldDismissOnActionButtonClicked = YES;
       alertView.otherButtonAction = ^{
-          DDLogDebug(@"OK Clicked");
+          NSLog(@"OK Clicked");
       };
       
       [alertView show];

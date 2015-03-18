@@ -71,7 +71,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            DDLogDebug(@"OK Clicked");
+            NSLog(@"OK Clicked");
             self.ipTextField.text = nil;
             [self.ipTextField becomeFirstResponder];
         };

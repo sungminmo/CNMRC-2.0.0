@@ -30,7 +30,7 @@ NSString * const CMDataObjectKey = @"DataObject";
 // 파싱 디버그.
 - (void)debugParsing:(NSString *)theValue withProperty:(NSString *)theProperty
 {
-	DDLogDebug(@"[debug] Data parsing: %@ -> %@", theProperty, theValue);
+	NSLog(@"[debug] Data parsing: %@ -> %@", theProperty, theValue);
 }
 
 

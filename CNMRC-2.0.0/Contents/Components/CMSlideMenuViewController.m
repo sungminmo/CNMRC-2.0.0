@@ -216,7 +216,7 @@
 
 - (void)handleRefreshList:(UIRefreshControl *)refreshControl
 {
-    DDLogDebug(@"데이터 갱신");
+    NSLog(@"데이터 갱신");
     
     // 데이터 요청.
     [self requestData:self.menuType subMenuIndex:self.selectedMenuIndex withDelegate:self];
@@ -532,7 +532,7 @@
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        DDLogDebug(@"OK Clicked");
+        NSLog(@"OK Clicked");
         // 성인인증.
         CMAuthAdultViewController *viewControlelr = [[CMAuthAdultViewController alloc] initWithNibName:@"CMAuthAdultViewController" bundle:nil];
         viewControlelr.menuType = CMMenuTypeAuthAdult;
@@ -599,7 +599,7 @@
     if (tableView == self.menuTable)
     {
         // 메뉴 처리.
-        DDLogDebug(@"Selected menu index: %d", indexPath.row);
+        NSLog(@"Selected menu index: %d", indexPath.row);
         
         // 현재 선택된 슬라이드메뉴 인덱스.
         self.selectedMenuIndex = indexPath.row;

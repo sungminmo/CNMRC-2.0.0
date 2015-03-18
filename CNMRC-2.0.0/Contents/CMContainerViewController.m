@@ -168,7 +168,7 @@
 - (void)toolbarAction:(id)sender
 {
     CMMenuType menuType = [(UIButton *)sender tag];
-    DDLogDebug(@"Selected menu: %d", menuType);
+    NSLog(@"Selected menu: %d", menuType);
     
     switch (menuType)
     {
@@ -215,7 +215,7 @@
 
 - (void)circleMenu:(CMCircleMenu *)circleMenu menuItem:(UIButton *)item menuIndex:(NSUInteger)index
 {
-    DDLogDebug(@"Selected circle menu: %d", index);
+    NSLog(@"Selected circle menu: %d", index);
     
     // 서클 메뉴 감추기.
     self.backgroundView.hidden = YES;
@@ -342,10 +342,10 @@
     [alertView show];
     
     alertView.cancelButtonAction = ^{
-        DDLogDebug(@"Cancel Clicked");
+        NSLog(@"Cancel Clicked");
     };
     alertView.otherButtonAction = ^{
-        DDLogDebug(@"OK Clicked");
+        NSLog(@"OK Clicked");
         // 1. STB 연결 상태를 확인한다.
         if ([self isSTBConnected])
         {
@@ -414,7 +414,7 @@
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        DDLogDebug(@"OK Clicked");
+        NSLog(@"OK Clicked");
     };
     
     [alertView show];
@@ -424,7 +424,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    DDLogDebug(@"Receive data: %@", dict);
+    NSLog(@"Receive data: %@", dict);
     self.blockChannelInfo = [[dict objectForKey:@"channelinfo"] objectForKey:@"item"];
 }
 

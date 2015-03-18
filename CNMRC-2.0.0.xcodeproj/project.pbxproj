@@ -200,14 +200,6 @@
 		1DBA76CF1A20B4C8003AB966 /* protobuf-lite.pc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA76C41A20B4C8003AB966 /* protobuf-lite.pc */; };
 		1DBA76D01A20B4C8003AB966 /* protobuf.pc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA76C51A20B4C8003AB966 /* protobuf.pc */; };
 		1DBCC9ED1AB91D9E001AAB91 /* libc++abi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCC9EC1AB91D9E001AAB91 /* libc++abi.dylib */; };
-		1DBCCA0A1AB93B91001AAB91 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCC9FB1AB93B91001AAB91 /* DDAbstractDatabaseLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1DBCCA0B1AB93B91001AAB91 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCC9FD1AB93B91001AAB91 /* DDASLLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1DBCCA0C1AB93B91001AAB91 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCC9FF1AB93B91001AAB91 /* DDFileLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1DBCCA0D1AB93B91001AAB91 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA011AB93B91001AAB91 /* DDLog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1DBCCA0E1AB93B91001AAB91 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA031AB93B91001AAB91 /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1DBCCA0F1AB93B91001AAB91 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA061AB93B91001AAB91 /* ContextFilterLogFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1DBCCA101AB93B91001AAB91 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA081AB93B91001AAB91 /* DispatchQueueLogFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1DBCCA111AB93B91001AAB91 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DBCCA091AB93B91001AAB91 /* README.txt */; };
 		1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -673,21 +665,6 @@
 		1DBA76C41A20B4C8003AB966 /* protobuf-lite.pc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "protobuf-lite.pc"; sourceTree = "<group>"; };
 		1DBA76C51A20B4C8003AB966 /* protobuf.pc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = protobuf.pc; sourceTree = "<group>"; };
 		1DBCC9EC1AB91D9E001AAB91 /* libc++abi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++abi.dylib"; path = "usr/lib/libc++abi.dylib"; sourceTree = SDKROOT; };
-		1DBCC9FA1AB93B91001AAB91 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
-		1DBCC9FB1AB93B91001AAB91 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
-		1DBCC9FC1AB93B91001AAB91 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
-		1DBCC9FD1AB93B91001AAB91 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
-		1DBCC9FE1AB93B91001AAB91 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
-		1DBCC9FF1AB93B91001AAB91 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
-		1DBCCA001AB93B91001AAB91 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
-		1DBCCA011AB93B91001AAB91 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
-		1DBCCA021AB93B91001AAB91 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
-		1DBCCA031AB93B91001AAB91 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
-		1DBCCA051AB93B91001AAB91 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
-		1DBCCA061AB93B91001AAB91 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
-		1DBCCA071AB93B91001AAB91 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
-		1DBCCA081AB93B91001AAB91 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
-		1DBCCA091AB93B91001AAB91 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -739,24 +716,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D00F8861AB841D400003DC4 /* CocoaLumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				1DBCC9FA1AB93B91001AAB91 /* DDAbstractDatabaseLogger.h */,
-				1DBCC9FB1AB93B91001AAB91 /* DDAbstractDatabaseLogger.m */,
-				1DBCC9FC1AB93B91001AAB91 /* DDASLLogger.h */,
-				1DBCC9FD1AB93B91001AAB91 /* DDASLLogger.m */,
-				1DBCC9FE1AB93B91001AAB91 /* DDFileLogger.h */,
-				1DBCC9FF1AB93B91001AAB91 /* DDFileLogger.m */,
-				1DBCCA001AB93B91001AAB91 /* DDLog.h */,
-				1DBCCA011AB93B91001AAB91 /* DDLog.m */,
-				1DBCCA021AB93B91001AAB91 /* DDTTYLogger.h */,
-				1DBCCA031AB93B91001AAB91 /* DDTTYLogger.m */,
-				1DBCCA041AB93B91001AAB91 /* Extensions */,
-			);
-			path = CocoaLumberjack;
-			sourceTree = "<group>";
-		};
 		1D00F89A1AB856B200003DC4 /* openssl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1511,7 +1470,6 @@
 			isa = PBXGroup;
 			children = (
 				1D00F89A1AB856B200003DC4 /* openssl */,
-				1D00F8861AB841D400003DC4 /* CocoaLumberjack */,
 				1D20C3D91A8183B7004C84A9 /* Debugging */,
 				1D20C3D51A8183B3004C84A9 /* LPPhoneVersion */,
 				1DB9BF4F1A7FD01C00FD58D1 /* DQAlertView */,
@@ -1696,18 +1654,6 @@
 			path = pkgconfig;
 			sourceTree = "<group>";
 		};
-		1DBCCA041AB93B91001AAB91 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1DBCCA051AB93B91001AAB91 /* ContextFilterLogFormatter.h */,
-				1DBCCA061AB93B91001AAB91 /* ContextFilterLogFormatter.m */,
-				1DBCCA071AB93B91001AAB91 /* DispatchQueueLogFormatter.h */,
-				1DBCCA081AB93B91001AAB91 /* DispatchQueueLogFormatter.m */,
-				1DBCCA091AB93B91001AAB91 /* README.txt */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1796,7 +1742,6 @@
 			files = (
 				1D00F8EC1AB856B200003DC4 /* LICENSE in Resources */,
 				1DB9BA2B1A615A9200E89E27 /* CMSettingsViewController.xib in Resources */,
-				1DBCCA111AB93B91001AAB91 /* README.txt in Resources */,
 				1DB9BA251A615A9200E89E27 /* CMSetAreaViewController.xib in Resources */,
 				1DB9B9731A614F6500E89E27 /* CMBoxListViewController.xib in Resources */,
 				1DB8F8A71A623573004DFB89 /* CMRCViewController.xib in Resources */,
@@ -1926,9 +1871,7 @@
 				1DB9B92B1A613DB000E89E27 /* UIDevice+IdentifierAddition.m in Sources */,
 				1DB9B95C1A61446D00E89E27 /* PoloPairingImpl.cpp in Sources */,
 				1DB9B92A1A613DB000E89E27 /* UIDevice+Hardware.m in Sources */,
-				1DBCCA0F1AB93B91001AAB91 /* ContextFilterLogFormatter.m in Sources */,
 				1D20C3D81A8183B3004C84A9 /* LPPhoneVersion.m in Sources */,
-				1DBCCA0B1AB93B91001AAB91 /* DDASLLogger.m in Sources */,
 				1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */,
 				1DB9B9D71A61502D00E89E27 /* CMSocketManager.m in Sources */,
 				1DB9BA331A6163AD00E89E27 /* keycodes.pb.cc in Sources */,
@@ -1936,7 +1879,6 @@
 				1DB9B9251A613DB000E89E27 /* NSString+HTML.m in Sources */,
 				1DB9B9761A614F6500E89E27 /* CMSetIPViewController.m in Sources */,
 				1DB9BA561A6165D200E89E27 /* CMVODListViewController.m in Sources */,
-				1DBCCA0D1AB93B91001AAB91 /* DDLog.m in Sources */,
 				1D4A49C61A20859C0088FA93 /* AppDelegate.m in Sources */,
 				1DB9B9A51A614FCD00E89E27 /* CMDepthIndicator.m in Sources */,
 				1DB9B9C81A61501300E89E27 /* CM06.m in Sources */,
@@ -1945,7 +1887,6 @@
 				1DB9BA241A615A9200E89E27 /* CMSetAreaViewController.m in Sources */,
 				1D1C462F1A6A3A1B00ADD92A /* LPAppStats.m in Sources */,
 				1DB9B9DD1A61506900E89E27 /* TBXML.m in Sources */,
-				1DBCCA0C1AB93B91001AAB91 /* DDFileLogger.m in Sources */,
 				1DA28B211A3C859C007D7F4E /* AsyncImageView.m in Sources */,
 				1DA28AE51A3C70A0007D7F4E /* GTMUIFont+LineHeight.m in Sources */,
 				1D14AA891A6169E300FECF55 /* CMChannelInfo.m in Sources */,
@@ -1965,16 +1906,13 @@
 				1DA28AE01A3C70A0007D7F4E /* GTMMethodCheck.m in Sources */,
 				1D5FA7471A46B2A500D51182 /* NSManagedObject+ActiveRecord.m in Sources */,
 				1DB9BA111A6157A800E89E27 /* NSSet+Additions.m in Sources */,
-				1DBCCA101AB93B91001AAB91 /* DispatchQueueLogFormatter.m in Sources */,
 				1DB9B9E91A61521500E89E27 /* Setting.m in Sources */,
 				1D4A49C31A20859C0088FA93 /* main.m in Sources */,
-				1DBCCA0E1AB93B91001AAB91 /* DDTTYLogger.m in Sources */,
 				1DB9B9C51A61501300E89E27 /* CM03.m in Sources */,
 				1D14AA7B1A6169D700FECF55 /* CMChannelListViewController.m in Sources */,
 				1DB9B9241A613DB000E89E27 /* NSString+Helper.m in Sources */,
 				1DB9B99B1A614FCD00E89E27 /* CMBaseViewController.m in Sources */,
 				1DB9B9A61A614FCD00E89E27 /* CMEPGTableViewCell.m in Sources */,
-				1DBCCA0A1AB93B91001AAB91 /* DDAbstractDatabaseLogger.m in Sources */,
 				1DB9B9391A613F1100E89E27 /* CMAppInfo.m in Sources */,
 				1DB9B9741A614F6500E89E27 /* CMPairingViewController.m in Sources */,
 				1DB9B93A1A613F1100E89E27 /* CMRemoteManager.m in Sources */,

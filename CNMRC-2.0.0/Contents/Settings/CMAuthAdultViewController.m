@@ -124,7 +124,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            DDLogDebug(@"OK Clicked");
+            NSLog(@"OK Clicked");
             [self.nameTextField becomeFirstResponder];
         };
         
@@ -140,7 +140,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            DDLogDebug(@"OK Clicked");
+            NSLog(@"OK Clicked");
             [self.ssnTextField becomeFirstResponder];
         };
         
@@ -156,7 +156,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            DDLogDebug(@"OK Clicked");
+            NSLog(@"OK Clicked");
             [self.ssnTextField becomeFirstResponder];
         };
         
@@ -269,7 +269,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    DDLogDebug(@"Receive data: %@", dict);
+    NSLog(@"Receive data: %@", dict);
     
     NSString *errorCode = [dict valueForKey:@"resultCode"];
     
@@ -286,7 +286,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            DDLogDebug(@"OK Clicked");
+            NSLog(@"OK Clicked");
             [self.navigationController popViewControllerAnimated:YES];
         };
         

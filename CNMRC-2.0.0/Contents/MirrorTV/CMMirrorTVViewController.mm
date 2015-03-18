@@ -793,7 +793,7 @@ using namespace anymote::messages;
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.isLandscape = YES;
     alertView.cancelButtonAction = ^{
-        //DDLogDebug(@"Cancel Clicked");
+        //NSLog(@"Cancel Clicked");
     };
     alertView.otherButtonAction = ^{
         // 타이머 정지.
@@ -1460,11 +1460,11 @@ using namespace anymote::messages;
 #pragma mark - DQAlertViewDelegate
 
 //- (void)cancelButtonClickedOnAlertView:(DQAlertView *)alertView {
-//    DDLogDebug(@"OK Clicked");
+//    NSLog(@"OK Clicked");
 //}
 //
 //- (void)otherButtonClickedOnAlertView:(DQAlertView *)alertView {
-//    DDLogDebug(@"OK Clicked");
+//    NSLog(@"OK Clicked");
 //    // 타이머 정지.
 //    [self.heartbeatTimer invalidate];
 //    
