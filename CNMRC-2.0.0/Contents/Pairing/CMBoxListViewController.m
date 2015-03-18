@@ -202,7 +202,7 @@ const NSInteger kDefualtPairingPort = 9551;
 //        }
         
         // 박스 이름에서 IP를 가져온다.
-        cell.detailTextLabel.text = [self genAddress:box.name];
+        cell.detailTextLabel.text = [box.addresses objectAtIndex:0];
         
         return cell;
     }

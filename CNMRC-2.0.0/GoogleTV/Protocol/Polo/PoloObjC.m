@@ -468,7 +468,8 @@ static id sharedConnectionPlaceholder = nil;
 typedef struct {
   id delegate;
   NSLock *pendingInvocationsLock;
-  __strong NSMutableArray *pendingInvocations;
+//  __strong NSMutableArray *pendingInvocations;
+  NSMutableArray *pendingInvocations;
   CFRunLoopSourceRef runloopSource;
 } PoloConnectionObjCBridgeInfo;
 
