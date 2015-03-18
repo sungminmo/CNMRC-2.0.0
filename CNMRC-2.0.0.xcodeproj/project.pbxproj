@@ -114,7 +114,6 @@
 		1DB9B9381A613F1100E89E27 /* CMAlarmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9311A613F1100E89E27 /* CMAlarmManager.m */; };
 		1DB9B9391A613F1100E89E27 /* CMAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9331A613F1100E89E27 /* CMAppInfo.m */; };
 		1DB9B93A1A613F1100E89E27 /* CMRemoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9371A613F1100E89E27 /* CMRemoteManager.m */; };
-		1DB9B93F1A61438900E89E27 /* LPDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B93E1A61438900E89E27 /* LPDebug.m */; };
 		1DB9B9471A61440300E89E27 /* CommandHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9421A61440300E89E27 /* CommandHandler.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DB9B9481A61440300E89E27 /* CommandSender.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9441A61440300E89E27 /* CommandSender.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DB9B9491A61440300E89E27 /* PoloSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B9461A61440300E89E27 /* PoloSender.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -489,8 +488,6 @@
 		1DB9B9361A613F1100E89E27 /* CMRemoteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRemoteManager.h; sourceTree = "<group>"; };
 		1DB9B9371A613F1100E89E27 /* CMRemoteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRemoteManager.m; sourceTree = "<group>"; };
 		1DB9B93B1A61416400E89E27 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		1DB9B93D1A61438900E89E27 /* LPDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDebug.h; sourceTree = "<group>"; };
-		1DB9B93E1A61438900E89E27 /* LPDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDebug.m; sourceTree = "<group>"; };
 		1DB9B9411A61440300E89E27 /* CommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandHandler.h; sourceTree = "<group>"; };
 		1DB9B9421A61440300E89E27 /* CommandHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommandHandler.mm; sourceTree = "<group>"; };
 		1DB9B9431A61440300E89E27 /* CommandSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandSender.h; sourceTree = "<group>"; };
@@ -1398,15 +1395,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		1DB9B93C1A61437500E89E27 /* LPDebug */ = {
-			isa = PBXGroup;
-			children = (
-				1DB9B93D1A61438900E89E27 /* LPDebug.h */,
-				1DB9B93E1A61438900E89E27 /* LPDebug.m */,
-			);
-			path = LPDebug;
-			sourceTree = "<group>";
-		};
 		1DB9B9401A6143F300E89E27 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
@@ -1568,7 +1556,6 @@
 				1D1C462C1A6A3A1B00ADD92A /* LPAppStats */,
 				1D14AA6B1A61692500FECF55 /* LPToast */,
 				1DB9B9D81A61505800E89E27 /* TBXML */,
-				1DB9B93C1A61437500E89E27 /* LPDebug */,
 				1D5FA73D1A46B2A500D51182 /* LPActiveRecord */,
 				1DA28B391A3C85C5007D7F4E /* Reachability */,
 				1DA28B221A3C85AD007D7F4E /* HTProgressHUD */,
@@ -1997,7 +1984,6 @@
 				1DB9B9271A613DB000E89E27 /* UIAlertView+NetworkError.m in Sources */,
 				1DB9B9C91A61501300E89E27 /* CMTRGenerator.m in Sources */,
 				1DB9B92D1A613DB000E89E27 /* UILabel+Size.m in Sources */,
-				1DB9B93F1A61438900E89E27 /* LPDebug.m in Sources */,
 				1DB9B9AA1A614FCD00E89E27 /* CMSlideMenuViewController.m in Sources */,
 				1D1949D31AB8FEFE00218ADA /* DDASLLogger.m in Sources */,
 				1DB9B9DE1A61506900E89E27 /* TBXML+Compression.m in Sources */,
