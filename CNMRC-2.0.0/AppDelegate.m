@@ -106,16 +106,16 @@
     [[LPCoreDataManager instance] saveContext];
     
     
-    NSString *storageDir;
-    NSString *processName = [[NSProcessInfo processInfo] processName];
-    storageDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
-                                                      NSUserDomainMask,
-                                                      YES) objectAtIndex:0];
-    
-    storageDir = [storageDir stringByAppendingPathComponent:processName];
-    storageDir = [storageDir stringByAppendingPathComponent:@"PoloCertificates"];
-    
-    [FCFileManager removeFilesInDirectoryAtPath:storageDir];
+//    NSString *storageDir;
+//    NSString *processName = [[NSProcessInfo processInfo] processName];
+//    storageDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
+//                                                      NSUserDomainMask,
+//                                                      YES) objectAtIndex:0];
+//    
+//    storageDir = [storageDir stringByAppendingPathComponent:processName];
+//    storageDir = [storageDir stringByAppendingPathComponent:@"PoloCertificates"];
+//    
+//    [FCFileManager removeFilesInDirectoryAtPath:storageDir];
 }
 
 // 로컬노티피케이션 처리.
