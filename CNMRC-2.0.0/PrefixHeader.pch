@@ -19,7 +19,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "CocoaLumberjack.h"
-#import "LPDebug.h"
 #import "GTMLogger.h"
 #import "CMConstants.h"
 #import "CMMacro.h"
