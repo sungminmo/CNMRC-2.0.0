@@ -166,19 +166,21 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 - (void)startConnecting
 {
     // 마지막으로 연결되었던 박스가 사용가능하다면 연결한다.
-    [self setCurrentBox:[self recentlyUsedBox]];
-    if ([self currentBox])
-    {
-        [self changeState:kAppStateConnecting];
-        [RToast showToastWithSpinner:NSLocalizedString(@"연결중...", @"")];
-        CMBoxService *box = [self currentBox];
-        NSLog(@"Connecting to last used box: %@", box);
-        [_sender connectToHost:[[box addresses] objectAtIndex:0]
-                        atPort:[box port]];
-    } else
-    {
-        [self showDeviceFinder];
-    }
+//    [self setCurrentBox:[self recentlyUsedBox]];
+//    if ([self currentBox])
+//    {
+//        [self changeState:kAppStateConnecting];
+//        [RToast showToastWithSpinner:NSLocalizedString(@"연결중...", @"")];
+//        CMBoxService *box = [self currentBox];
+//        NSLog(@"Connecting to last used box: %@", box);
+//        [_sender connectToHost:[[box addresses] objectAtIndex:0]
+//                        atPort:[box port]];
+//    } else
+//    {
+//        [self showDeviceFinder];
+//    }
+    
+    [self showDeviceFinder];
 }
 
 
@@ -349,6 +351,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
         
         // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
         // 사설IP(192로 시작...)  여부.
+        /*
         if ([self isPrivateAddress:[[service addresses] objectAtIndex:0]])
         {
             [_sender connectToHost:[[service addresses] objectAtIndex:0]
@@ -361,6 +364,10 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
             [_sender connectToHost:address
                             atPort:[service port]];
         }
+         */
+        
+        [_sender connectToHost:[[service addresses] objectAtIndex:0]
+                        atPort:[service port]];
     }
 }
 
@@ -428,7 +435,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 - (void)poloSender:(PoloSender *)sender failedWithError:(NSError *)error
 {
     NSInteger code = [error code];
-    NSLog(@"Connection error (code: %ld): %@ ", (long)code, [error localizedFailureReason]);
+    DDLogWarn(@"Connection error (code: %ld): %@ ", (long)code, [error localizedFailureReason]);
     
     if (_appState == kAppStateConnected)
     {

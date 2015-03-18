@@ -547,7 +547,7 @@ void PoloObjCConnectionInit(PoloConnectionRef connection) {
   PoloConnectionObjCBridgeInfo *info = malloc(sizeof(info));
   info->delegate = nil;
   info->pendingInvocationsLock = [[NSLock alloc] init];
-  info->pendingInvocations = [[NSMutableArray alloc] init];
+  info->pendingInvocations = [NSMutableArray array];
   info->runloopSource = CFRunLoopSourceCreate(NULL, 0, &sourceContext);
   connection->objcInfo = info;
 }
@@ -587,9 +587,20 @@ void PoloObjCConnectionDidOpen(PoloConnectionRef connection) {
   PoloMemoryAllocatorRef allocator = PoloMemoryAllocatorGetAllocatorForPtr(self);
   NSString *storageDir;
   NSString *processName = [[NSProcessInfo processInfo] processName];
-  storageDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
-                                                    NSUserDomainMask,
-                                                    YES) objectAtIndex:0];
+//  storageDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
+//                                                    NSUserDomainMask,
+//                                                    YES) objectAtIndex:0];
+ 
+    static NSString *path = nil;
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+        
+        path = [paths lastObject];
+    });
+    storageDir = path;
+    
   storageDir = [storageDir stringByAppendingPathComponent:processName];
   storageDir = [storageDir stringByAppendingPathComponent:@"PoloCertificates"];
 
