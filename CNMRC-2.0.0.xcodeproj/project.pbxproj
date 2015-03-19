@@ -2055,11 +2055,10 @@
 				GCC_PREFIX_HEADER = "CNMRC-2.0.0/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"$(SRCROOT)/Vendor/openssl/include/\"",
 					"\"$(SRCROOT)/Vendor/protobuf-2.6.0/include/\"",
 					"\"$(SRCROOT)/CNMRC-2.0.0/GoogleTV/Protocol/\"",
-					"\"$(SRCROOT)/Vendor/CocoaLumberjack/include/\"",
 				);
 				INFOPLIST_FILE = "CNMRC-2.0.0/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -2083,11 +2082,10 @@
 				GCC_PREFIX_HEADER = "CNMRC-2.0.0/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"\"$(SRCROOT)/Vendor/openssl/include/\"",
 					"\"$(SRCROOT)/Vendor/protobuf-2.6.0/include/\"",
 					"\"$(SRCROOT)/CNMRC-2.0.0/GoogleTV/Protocol/\"",
-					"\"$(SRCROOT)/Vendor/CocoaLumberjack/include/\"",
 				);
 				INFOPLIST_FILE = "CNMRC-2.0.0/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;

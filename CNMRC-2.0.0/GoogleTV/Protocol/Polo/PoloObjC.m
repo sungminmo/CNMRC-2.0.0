@@ -545,7 +545,7 @@ void PoloObjCConnectionInit(PoloConnectionRef connection) {
     NULL, // Cancel func
     PoloObjCConnectionRLSourcePerformFunc
   };
-  PoloConnectionObjCBridgeInfo *info = malloc(sizeof(info));
+  PoloConnectionObjCBridgeInfo *info = (PoloConnectionObjCBridgeInfo *)malloc(sizeof(PoloConnectionObjCBridgeInfo));//malloc(sizeof(info));
   info->delegate = nil;
   info->pendingInvocationsLock = [[NSLock alloc] init];
   info->pendingInvocations = [[NSMutableArray alloc] init];

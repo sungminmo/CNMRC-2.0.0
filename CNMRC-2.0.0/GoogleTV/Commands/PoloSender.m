@@ -52,10 +52,10 @@
 }
 
 - (void)connectOperation:(NSDictionary *)dict {
-  NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+  //NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
   NSString *host = [dict objectForKey:@"host"];
-  NSInteger port = [[dict objectForKey:@"port"] intValue];
+  NSInteger port = [[dict objectForKey:@"port"] integerValue];
 
   NSString *name = [[UIDevice currentDevice] name];
   PoloClient *client = [PoloClient clientWithName:name];
@@ -94,7 +94,7 @@
     [self notifyAboutFailure:err];
   }
 
-  [pool release];
+  //[pool release];
 }
 
 - (void)connectToHost:(NSString *)host atPort:(NSInteger)port {
