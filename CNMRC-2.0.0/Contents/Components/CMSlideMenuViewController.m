@@ -84,7 +84,7 @@
     [self.view addSubview:self.menuTable];
 
     // 컨텐츠뷰.
-    CGRect contentViewFrame = CGRectMake(0, 0, 0, 0);
+    CGRect contentViewFrame = CGRectZero;
     switch ([LPPhoneVersion deviceSize]) {
         case iPhone55inch:
             contentViewFrame = CGRectMake(0, 0, 414, 701);
@@ -186,7 +186,8 @@
                 break;
                 
             case iPhone47inch:
-                slideButtonX = 310;
+                slideButtonX = 325;
+                break;
                 
             default:
                 slideButtonX = 271.0;
