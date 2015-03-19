@@ -199,9 +199,7 @@
 		1DBCC9ED1AB91D9E001AAB91 /* libc++abi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCC9EC1AB91D9E001AAB91 /* libc++abi.dylib */; };
 		1DBCCA191AB952AC001AAB91 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA181AB952AC001AAB91 /* FCFileManager.m */; };
 		1DBCCA6C1AB96F87001AAB91 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */; };
-		1DBCCA6D1AB96F87001AAB91 /* libcrypto_Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA691AB96F87001AAB91 /* libcrypto_Mac.a */; };
 		1DBCCA6E1AB96F87001AAB91 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */; };
-		1DBCCA6F1AB96F87001AAB91 /* libssl_Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA6B1AB96F87001AAB91 /* libssl_Mac.a */; };
 		1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -667,9 +665,7 @@
 		1DBCCA651AB96F87001AAB91 /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
 		1DBCCA661AB96F87001AAB91 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto_iOS.a; sourceTree = "<group>"; };
-		1DBCCA691AB96F87001AAB91 /* libcrypto_Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto_Mac.a; sourceTree = "<group>"; };
 		1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_iOS.a; sourceTree = "<group>"; };
-		1DBCCA6B1AB96F87001AAB91 /* libssl_Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_Mac.a; sourceTree = "<group>"; };
 		1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -680,7 +676,6 @@
 			files = (
 				1DBCC9ED1AB91D9E001AAB91 /* libc++abi.dylib in Frameworks */,
 				1DA28B151A3C7B66007D7F4E /* libsqlite3.dylib in Frameworks */,
-				1DBCCA6D1AB96F87001AAB91 /* libcrypto_Mac.a in Frameworks */,
 				1DBCCA6C1AB96F87001AAB91 /* libcrypto_iOS.a in Frameworks */,
 				1DA28B131A3C7B25007D7F4E /* libiconv.dylib in Frameworks */,
 				1DA28B111A3C7B18007D7F4E /* libz.dylib in Frameworks */,
@@ -698,7 +693,6 @@
 				1DA28AFB1A3C7A81007D7F4E /* CFNetwork.framework in Frameworks */,
 				1DA28AF91A3C7A6B007D7F4E /* CoreGraphics.framework in Frameworks */,
 				1DA28AF71A3C7A4E007D7F4E /* CoreFoundation.framework in Frameworks */,
-				1DBCCA6F1AB96F87001AAB91 /* libssl_Mac.a in Frameworks */,
 				1DA28AF51A3C7A43007D7F4E /* MobileCoreServices.framework in Frameworks */,
 				1DA28AF31A3C7A33007D7F4E /* Security.framework in Frameworks */,
 				1DA28AF11A3C7A28007D7F4E /* CoreLocation.framework in Frameworks */,
@@ -1665,9 +1659,7 @@
 			isa = PBXGroup;
 			children = (
 				1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */,
-				1DBCCA691AB96F87001AAB91 /* libcrypto_Mac.a */,
 				1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */,
-				1DBCCA6B1AB96F87001AAB91 /* libssl_Mac.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -2066,8 +2058,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/protobuf-2.6.0/lib",
-					"$(PROJECT_DIR)/Vendor/openssl-1.0.1j/lib",
-					"$(PROJECT_DIR)/Vendor/CocoaLumberjack",
 					"$(PROJECT_DIR)/Vendor/openssl/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2093,8 +2083,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/protobuf-2.6.0/lib",
-					"$(PROJECT_DIR)/Vendor/openssl-1.0.1j/lib",
-					"$(PROJECT_DIR)/Vendor/CocoaLumberjack",
 					"$(PROJECT_DIR)/Vendor/openssl/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
