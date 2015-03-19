@@ -32,22 +32,6 @@
           \nNow is the %dth execution!\
           \n------------------------------------------------------------------", [LPAppStats numAppOpens]);
     
-    NSString *storageDir;
-    NSString *processName = [[NSProcessInfo processInfo] processName];
-    storageDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
-                                                      NSUserDomainMask,
-                                                      YES) objectAtIndex:0];
-    
-    storageDir = [storageDir stringByAppendingPathComponent:processName];
-    storageDir = [storageDir stringByAppendingPathComponent:@"PoloCertificates"];
-    
-    NSArray *files = [FCFileManager listFilesInDirectoryAtPath:storageDir];
-    for (NSString *str in files) {
-        NSLog(@">>>>>>>>>>>>>>>>>>%@", str);
-    }
-    
-    [FCFileManager removeFilesInDirectoryAtPath:storageDir];
-    
     // 알림을 통한 진입인지 확인
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotification)
@@ -104,18 +88,6 @@
 {
     // 코어데이터 컨텍스트 저장.
     [[LPCoreDataManager instance] saveContext];
-    
-    
-//    NSString *storageDir;
-//    NSString *processName = [[NSProcessInfo processInfo] processName];
-//    storageDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory,
-//                                                      NSUserDomainMask,
-//                                                      YES) objectAtIndex:0];
-//    
-//    storageDir = [storageDir stringByAppendingPathComponent:processName];
-//    storageDir = [storageDir stringByAppendingPathComponent:@"PoloCertificates"];
-//    
-//    [FCFileManager removeFilesInDirectoryAtPath:storageDir];
 }
 
 // 로컬노티피케이션 처리.
