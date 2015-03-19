@@ -261,6 +261,10 @@
             // 쿼티.
             CMQwertyViewController *viewController = [[CMQwertyViewController alloc] initWithNibName:@"CMQwertyViewController" bundle:nil];
             self.modalPresentationStyle = UIModalPresentationCurrentContext;
+            if (iOSVersionGreaterThanOrEqualTo(@"8.0"))
+            {
+                viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+            }
             [self presentViewController:viewController animated:YES completion:nil];
         }
             break;

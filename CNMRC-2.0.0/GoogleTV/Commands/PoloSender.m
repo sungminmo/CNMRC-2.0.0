@@ -52,7 +52,7 @@
 }
 
 - (void)connectOperation:(NSDictionary *)dict {
-  //NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+  NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
   NSString *host = [dict objectForKey:@"host"];
   NSInteger port = [[dict objectForKey:@"port"] integerValue];
@@ -94,7 +94,7 @@
     [self notifyAboutFailure:err];
   }
 
-  //[pool release];
+  [pool release];
 }
 
 - (void)connectToHost:(NSString *)host atPort:(NSInteger)port {

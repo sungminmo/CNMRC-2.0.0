@@ -89,6 +89,8 @@
 		1DB8FC331ABA8F2C00ABFB07 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8FC271ABA8F2C00ABFB07 /* DDContextFilterLogFormatter.m */; };
 		1DB8FC341ABA8F2C00ABFB07 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8FC291ABA8F2C00ABFB07 /* DDDispatchQueueLogFormatter.m */; };
 		1DB8FC351ABA8F2C00ABFB07 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8FC2B1ABA8F2C00ABFB07 /* DDMultiFormatter.m */; };
+		1DB8FC391ABA90A300ABFB07 /* CMKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8FC371ABA90A300ABFB07 /* CMKeyboardViewController.m */; };
+		1DB8FC3A1ABA90A300ABFB07 /* CMKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8FC381ABA90A300ABFB07 /* CMKeyboardViewController.xib */; };
 		1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */; };
 		1DB9B91E1A613DB000E89E27 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8FB1A613DB000E89E27 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DB9B91F1A613DB000E89E27 /* NSData+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9B8FD1A613DB000E89E27 /* NSData+Helper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -364,6 +366,9 @@
 		1DB8FC291ABA8F2C00ABFB07 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		1DB8FC2A1ABA8F2C00ABFB07 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
 		1DB8FC2B1ABA8F2C00ABFB07 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		1DB8FC361ABA90A300ABFB07 /* CMKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeyboardViewController.h; sourceTree = "<group>"; };
+		1DB8FC371ABA90A300ABFB07 /* CMKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKeyboardViewController.m; sourceTree = "<group>"; };
+		1DB8FC381ABA90A300ABFB07 /* CMKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardViewController.xib; sourceTree = "<group>"; };
 		1DB9B8EB1A6129CB00E89E27 /* CMContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMContainerViewController.h; sourceTree = "<group>"; };
 		1DB9B8EC1A6129CB00E89E27 /* CMContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMContainerViewController.m; sourceTree = "<group>"; };
 		1DB9B8FA1A613DB000E89E27 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -770,6 +775,9 @@
 				1D14AA641A6168EC00FECF55 /* CMRCViewController.h */,
 				1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */,
 				1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */,
+				1DB8FC361ABA90A300ABFB07 /* CMKeyboardViewController.h */,
+				1DB8FC371ABA90A300ABFB07 /* CMKeyboardViewController.m */,
+				1DB8FC381ABA90A300ABFB07 /* CMKeyboardViewController.xib */,
 			);
 			path = RmoteControl;
 			sourceTree = "<group>";
@@ -1865,6 +1873,7 @@
 				1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
 				1DBA76CA1A20B4C8003AB966 /* libprotobuf-lite.la in Resources */,
+				1DB8FC3A1ABA90A300ABFB07 /* CMKeyboardViewController.xib in Resources */,
 				1DB9BA031A61574800E89E27 /* keycodes.proto in Resources */,
 				1DB9BA461A61655900E89E27 /* CMWebViewController.xib in Resources */,
 				1D14AA681A6168EC00FECF55 /* CMQwertyViewController.xib in Resources */,
@@ -2014,6 +2023,7 @@
 				1DB8FC2C1ABA8F2C00ABFB07 /* CLIColor.m in Sources */,
 				1DB8FC351ABA8F2C00ABFB07 /* DDMultiFormatter.m in Sources */,
 				1DB9B9A61A614FCD00E89E27 /* CMEPGTableViewCell.m in Sources */,
+				1DB8FC391ABA90A300ABFB07 /* CMKeyboardViewController.m in Sources */,
 				1DB9B9391A613F1100E89E27 /* CMAppInfo.m in Sources */,
 				1DB9B9741A614F6500E89E27 /* CMPairingViewController.m in Sources */,
 				1DB9B93A1A613F1100E89E27 /* CMRemoteManager.m in Sources */,
