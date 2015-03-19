@@ -168,7 +168,7 @@
 - (void)toolbarAction:(id)sender
 {
     CMMenuType menuType = [(UIButton *)sender tag];
-    NSLog(@"Selected menu: %d", menuType);
+    NSLog(@"Selected menu: %@", @(menuType));
     
     switch (menuType)
     {
@@ -215,7 +215,7 @@
 
 - (void)circleMenu:(CMCircleMenu *)circleMenu menuItem:(UIButton *)item menuIndex:(NSUInteger)index
 {
-    NSLog(@"Selected circle menu: %d", index);
+    NSLog(@"Selected circle menu: %@", @(index));
     
     // 서클 메뉴 감추기.
     self.backgroundView.hidden = YES;
@@ -463,7 +463,7 @@
                     ci.programTitle = data.title;
                     
                     // 미러TV 진입.
-                    CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:DeviceSpecificSetting(@"CMMirrorTVViewController_4", @"CMMirrorTVViewController") bundle:nil];
+                    CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:@"CMMirrorTVViewController" bundle:nil];
                     viewController.blockChannelInfo = self.blockChannelInfo;
                     viewController.channelInfo = ci;
                     
