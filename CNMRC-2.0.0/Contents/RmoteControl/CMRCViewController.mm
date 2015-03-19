@@ -138,56 +138,6 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     self.touchPad.delegate = self;
     self.touchPad.hidden = YES;
     
-//    CommandHandler *commandHandler = [RemoteManager commandHandler];
-//    if (!_tapTracker) {
-//        _tapTracker = [[CMTapTracker alloc] initWithBackgroundView:self.touchPad
-//                                                    commandHandler:commandHandler];
-//        [self.touchPad setTouchHandler:_tapTracker];
-//    }
-    
-    // 사방향키 패드에 제스처 추가.
-    // 상.
-//    UISwipeGestureRecognizer *up = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(recognizeSwipeGesture:)];
-//    up.direction = UISwipeGestureRecognizerDirectionUp;
-//    up.numberOfTouchesRequired = 1;
-//    [self.touchPad addGestureRecognizer:up];
-//    
-//    // 하.
-//    UISwipeGestureRecognizer *down = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(recognizeSwipeGesture:)];
-//    down.direction = UISwipeGestureRecognizerDirectionDown;
-//    down.numberOfTouchesRequired = 1;
-//    [self.touchPad addGestureRecognizer:down];
-//    
-//    // 좌.
-//    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(recognizeSwipeGesture:)];
-//    left.direction = UISwipeGestureRecognizerDirectionLeft;
-//    left.numberOfTouchesRequired = 1;
-//    [self.touchPad addGestureRecognizer:left];
-//    
-//    // 우.
-//    UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(recognizeSwipeGesture:)];
-//    right.direction = UISwipeGestureRecognizerDirectionRight;
-//    right.numberOfTouchesRequired = 1;
-//    [self.touchPad addGestureRecognizer:right];
-    
-    // 애니메이션과 트랙(터치)패드을 위한 팬 제스처 추가.
-//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-//    pan.delegate = self;
-//    pan.minimumNumberOfTouches = 2;
-//    pan.maximumNumberOfTouches = 2;
-//    [self.touchPad addGestureRecognizer:pan];
-    
-    // 줌을 위핸 핀치 제처처 추가.
-//    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
-//    [self.touchPad addGestureRecognizer:pinch];
-    
-    // 트릭플레이 패드.
-//    CMControlPad *ctr = [[[NSBundle mainBundle] loadNibNamed:DeviceSpecificSetting(@"CMControlPadSD", @"CMControlPad") owner:self options:nil] objectAtIndex:0];
-//    //ctr.delegate = self;
-//    ctr.frame = padBackground.bounds;
-//    [padBackground addSubview:ctr];
-//    self.controlPad = ctr;
-    
     // 채널/볼륨 패드.
     self.cvPad.delegate = self;
     
