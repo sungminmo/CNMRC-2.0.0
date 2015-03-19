@@ -26,9 +26,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // CocoaLumberjack.
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+#ifdef DEBUG
+    static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+    static const DDLogLevel ddLogLevel = DDLogLevelWarn;
+#endif
+    
     // 앱 실행 횟수 확인
     [NSObject load];
-    NSLog(@"\n------------------------------------------------------------------\
+    DDLogDebug(@"\n------------------------------------------------------------------\
           \nNow is the %dth execution!\
           \n------------------------------------------------------------------", [LPAppStats numAppOpens]);
     
