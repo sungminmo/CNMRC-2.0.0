@@ -657,6 +657,11 @@
                                         <constraint firstAttribute="centerY" secondItem="fVG-Wy-tdN" secondAttribute="centerY" id="uQw-XA-bbi"/>
                                         <constraint firstItem="JNa-GR-LvU" firstAttribute="leading" secondItem="Q9y-6l-Scp" secondAttribute="trailing" constant="10" id="xgI-Lr-gOL"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="bqN-L1-kgG"/>
+                                        </mask>
+                                    </variation>
                                     <connections>
                                         <outlet property="leftBackground" destination="Q9y-6l-Scp" id="q3K-xA-WWh"/>
                                         <outlet property="leftRoundBackground" destination="ALV-Rt-6iQ" id="gsH-p5-ZZX"/>
