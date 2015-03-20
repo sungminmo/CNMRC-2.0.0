@@ -47,10 +47,10 @@
 
 - (void)buttonAnimation:(id)sender
 {
-    NSArray *images = @[[UIImage imageNamed:@"tappress01@2x.png"],
-                        [UIImage imageNamed:@"tappress02@2x.png"],
-                        [UIImage imageNamed:@"tappress03@2x.png"],
-                        [UIImage imageNamed:@"tappress04@2x.png"]];
+    NSArray *images = @[[UIImage imageNamed:@"TapPress_1"],
+                        [UIImage imageNamed:@"TapPress_2"],
+                        [UIImage imageNamed:@"TapPress_3"],
+                        [UIImage imageNamed:@"TapPress_4"]];
     
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 65.0, 65.0)];
     imageView.center = [(UIButton *)sender center];
