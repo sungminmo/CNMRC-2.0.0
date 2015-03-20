@@ -7,6 +7,9 @@
 //
 
 #import "CMKeyboardViewController.h"
+#include "keycodes.pb.h"
+
+using namespace anymote::messages;
 
 @interface CMKeyboardViewController ()
 
@@ -32,7 +35,13 @@
     
     // 탭 제스처 추가.
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizeTapGesture:)];
+    recognizer.delegate = self;
     [self.view addGestureRecognizer:recognizer];
+    
+    // 키보드 델리게이트 설정.
+    self.koKeyboard.delegate = self;
+    self.enKeyboard.delegate = self;
+    self.numberKeyboard.delegate = self;
 }
 
 - (void)recognizeTapGesture:(UITapGestureRecognizer *)recognizer
@@ -43,9 +52,35 @@
     }
 }
 
+#pragma mark - 퍼블릭 메서드 -
+
 - (IBAction)cancelAction:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)deleteTVCharacter:(id)sender
+{
+    [RemoteManager.sender sendClickForKey:KEYCODE_DEL error:NULL];
+}
+
+#pragma mark - CMKeyboardDelegate -
+
+- (void)pressedKey:(UIButton *)key
+{
+    self.searchTextField.text = @"111111";
+}
+
+#pragma mark - 제스처 델리게이트 메서드 -
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if (touch.view == self.view)
+    {
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end

@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "CMKOKeyboardView.h"
+#import "CMENKeyboardView.h"
+#import "CMNumberKeyboardView.h"
 
-@interface CMKeyboardViewController : UIViewController
+@interface CMKeyboardViewController : UIViewController <CMKeyboardDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *KeyboardBackground;
 @property (weak, nonatomic) IBOutlet CMKOKeyboardView *koKeyboard;
+@property (weak, nonatomic) IBOutlet CMENKeyboardView *enKeyboard;
+@property (weak, nonatomic) IBOutlet CMNumberKeyboardView *numberKeyboard;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 - (IBAction)cancelAction:(id)sender;
+- (IBAction)deleteTVCharacter:(id)sender;
 
 @end
