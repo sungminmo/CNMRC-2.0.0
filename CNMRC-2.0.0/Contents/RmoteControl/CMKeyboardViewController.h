@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMKOKeyboardView.h"
 
 @interface CMKeyboardViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *KeyboardBackground;
+@property (weak, nonatomic) IBOutlet CMKOKeyboardView *koKeyboard;
 
+- (IBAction)cancelAction:(id)sender;
 
 @end

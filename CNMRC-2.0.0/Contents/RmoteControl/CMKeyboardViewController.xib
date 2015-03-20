@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMKeyboardViewController">
             <connections>
+                <outlet property="KeyboardBackground" destination="0yq-8x-pYk" id="LQu-Cx-bkQ"/>
+                <outlet property="koKeyboard" destination="TzY-C0-5Jq" id="sfo-em-PPE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +16,67 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yq-8x-pYk">
+                    <rect key="frame" x="0.0" y="460" width="414" height="276"/>
+                    <subviews>
+                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-C0-5Jq" customClass="CMKOKeyboardView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="276" id="a5A-Tg-aCS"/>
+                                <constraint firstAttribute="width" constant="414" id="qhV-8F-x1u"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="view" destination="i5M-Pr-FkT" id="Q4K-LS-ZwN"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="TzY-C0-5Jq" secondAttribute="centerX" id="E39-BS-60G"/>
+                        <constraint firstAttribute="centerY" secondItem="TzY-C0-5Jq" secondAttribute="centerY" id="PLR-8l-wiZ"/>
+                        <constraint firstAttribute="height" constant="276" id="TbV-HN-xJD"/>
+                        <constraint firstAttribute="width" constant="414" id="lab-oX-JWb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmd-cd-bec">
+                    <rect key="frame" x="0.0" y="20" width="414" height="55"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-9k-KRx">
+                            <rect key="frame" x="8" y="13" width="398" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="398" id="cv6-EG-gxB"/>
+                                <constraint firstAttribute="height" constant="30" id="vMK-j9-E6u"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="GFO-9k-KRx" secondAttribute="centerY" id="4Bz-SU-Q6g"/>
+                        <constraint firstAttribute="trailing" secondItem="GFO-9k-KRx" secondAttribute="trailing" constant="8" id="6z3-5u-E97"/>
+                        <constraint firstAttribute="centerX" secondItem="GFO-9k-KRx" secondAttribute="centerX" id="B88-zu-Ib8"/>
+                        <constraint firstAttribute="width" constant="414" id="Eti-G1-cnW"/>
+                        <constraint firstAttribute="bottom" secondItem="GFO-9k-KRx" secondAttribute="bottom" constant="12" id="UrT-EG-4c2"/>
+                        <constraint firstItem="GFO-9k-KRx" firstAttribute="leading" secondItem="rmd-cd-bec" secondAttribute="leading" constant="8" id="bHu-hA-L9Z"/>
+                        <constraint firstAttribute="height" constant="55" id="nb5-Hh-NQA"/>
+                        <constraint firstItem="GFO-9k-KRx" firstAttribute="top" secondItem="rmd-cd-bec" secondAttribute="top" constant="13" id="uHG-ep-7R0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0yq-8x-pYk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EcF-gE-nko"/>
+                <constraint firstAttribute="bottom" secondItem="0yq-8x-pYk" secondAttribute="bottom" id="Lbh-rW-jOg"/>
+                <constraint firstItem="rmd-cd-bec" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MvR-9U-FVf"/>
+                <constraint firstAttribute="trailing" secondItem="0yq-8x-pYk" secondAttribute="trailing" id="RYv-2X-Ycm"/>
+                <constraint firstAttribute="trailing" secondItem="rmd-cd-bec" secondAttribute="trailing" id="cCT-XE-cl8"/>
+                <constraint firstItem="rmd-cd-bec" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="dxe-zM-fWf"/>
+                <constraint firstAttribute="centerX" secondItem="rmd-cd-bec" secondAttribute="centerX" id="enS-Kz-PaH"/>
+                <constraint firstAttribute="centerX" secondItem="0yq-8x-pYk" secondAttribute="centerX" id="zB7-PM-ZBB"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
         </view>
     </objects>

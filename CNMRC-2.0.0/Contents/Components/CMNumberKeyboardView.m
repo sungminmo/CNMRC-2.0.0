@@ -10,12 +10,31 @@
 
 @implementation CMNumberKeyboardView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        [self setup];
+    }
+    return self;
 }
-*/
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self)
+    {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup
+{
+    NSString *className = NSStringFromClass([self class]);
+    [[NSBundle mainBundle] loadNibNamed:className owner:self options:nil];
+    [self addSubview:self.view];
+}
 
 @end

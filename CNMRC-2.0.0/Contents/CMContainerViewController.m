@@ -10,6 +10,7 @@
 #import "CMOverlayView.h"
 #import "CMRCViewController.h"
 #import "CMMirrorTVViewController.h"
+#import "CMKeyboardViewController.h"
 #import "CMQwertyViewController.h"
 #import "CMSettingsViewController.h"
 #import "LPAppStats.h"
@@ -259,7 +260,8 @@
         case 3:
         {
             // 쿼티.
-            CMQwertyViewController *viewController = [[CMQwertyViewController alloc] initWithNibName:@"CMQwertyViewController" bundle:nil];
+            //CMQwertyViewController *viewController = [[CMQwertyViewController alloc] initWithNibName:@"CMQwertyViewController" bundle:nil];
+            CMKeyboardViewController *viewController = [[CMKeyboardViewController alloc] initWithNibName:@"CMKeyboardViewController" bundle:nil];
             self.modalPresentationStyle = UIModalPresentationCurrentContext;
             if (iOSVersionGreaterThanOrEqualTo(@"8.0"))
             {

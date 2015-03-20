@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMKeyboardView.h"
 
-@interface CMNumberKeyboardView : UIView
+@interface CMNumberKeyboardView : CMKeyboardView
 
 @end
