@@ -210,6 +210,8 @@
 		1DBCCA191AB952AC001AAB91 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA181AB952AC001AAB91 /* FCFileManager.m */; };
 		1DBCCA6C1AB96F87001AAB91 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */; };
 		1DBCCA6E1AB96F87001AAB91 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */; };
+		1DF4B7AD1ABBACFA0097C52B /* CMKeypadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7AB1ABBACFA0097C52B /* CMKeypadViewController.mm */; };
+		1DF4B7AE1ABBACFA0097C52B /* CMKeypadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7AC1ABBACFA0097C52B /* CMKeypadViewController.xib */; };
 		1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -701,6 +703,9 @@
 		1DBCCA661AB96F87001AAB91 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto_iOS.a; sourceTree = "<group>"; };
 		1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_iOS.a; sourceTree = "<group>"; };
+		1DF4B7AA1ABBACFA0097C52B /* CMKeypadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeypadViewController.h; sourceTree = "<group>"; };
+		1DF4B7AB1ABBACFA0097C52B /* CMKeypadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMKeypadViewController.mm; sourceTree = "<group>"; };
+		1DF4B7AC1ABBACFA0097C52B /* CMKeypadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeypadViewController.xib; sourceTree = "<group>"; };
 		1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -770,6 +775,9 @@
 				1D14AA641A6168EC00FECF55 /* CMRCViewController.h */,
 				1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */,
 				1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */,
+				1DF4B7AA1ABBACFA0097C52B /* CMKeypadViewController.h */,
+				1DF4B7AB1ABBACFA0097C52B /* CMKeypadViewController.mm */,
+				1DF4B7AC1ABBACFA0097C52B /* CMKeypadViewController.xib */,
 			);
 			path = RmoteControl;
 			sourceTree = "<group>";
@@ -1875,6 +1883,7 @@
 				1DB9B9771A614F6500E89E27 /* CMSetIPViewController.xib in Resources */,
 				1DBA76C81A20B4C8003AB966 /* descriptor.proto in Resources */,
 				1DBA76CE1A20B4C8003AB966 /* libprotoc.la in Resources */,
+				1DF4B7AE1ABBACFA0097C52B /* CMKeypadViewController.xib in Resources */,
 				1DBA76D01A20B4C8003AB966 /* protobuf.pc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1917,6 +1926,7 @@
 				1DA28B371A3C85AD007D7F4E /* HTProgressHUDPieIndicatorView.m in Sources */,
 				1DB9B9651A614F1B00E89E27 /* CMBoxFinder.m in Sources */,
 				1DB9B9A71A614FCD00E89E27 /* CMNumberKey.m in Sources */,
+				1DF4B7AD1ABBACFA0097C52B /* CMKeypadViewController.mm in Sources */,
 				1DA28AE21A3C70A0007D7F4E /* GTMLogger.m in Sources */,
 				1DB9B9EA1A61521500E89E27 /* WishList.m in Sources */,
 				1DB9B9471A61440300E89E27 /* CommandHandler.mm in Sources */,
