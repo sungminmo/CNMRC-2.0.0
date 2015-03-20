@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -219,6 +219,27 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALV-Rt-6iQ">
                                                     <rect key="frame" x="5" y="5" width="270" height="319"/>
                                                     <subviews>
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-95-JLm">
+                                                            <rect key="frame" x="80" y="0.0" width="111" height="76"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="111" id="3jT-Xu-GAL"/>
+                                                                <constraint firstAttribute="height" constant="76" id="IxV-c8-zZj"/>
+                                                            </constraints>
+                                                            <state key="normal" image="VolumeUp_D">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="highlighted" image="VolumeUp_H"/>
+                                                            <connections>
+                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="BhX-uc-vyk"/>
+                                                            </connections>
+                                                        </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="qsd-ss-P8B">
+                                                            <rect key="frame" x="122" y="95" width="26" height="5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="26" id="F7d-Gn-0lG"/>
+                                                                <constraint firstAttribute="height" constant="5" id="zCc-aB-Se9"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-dr-tsX">
                                                             <rect key="frame" x="92" y="126" width="87" height="67"/>
                                                             <constraints>
@@ -234,20 +255,13 @@
                                                                 <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="XEk-g2-YVc"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko1-95-JLm">
-                                                            <rect key="frame" x="80" y="0.0" width="111" height="76"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-WO-iVD">
+                                                            <rect key="frame" x="122" y="215" width="26" height="5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="111" id="3jT-Xu-GAL"/>
-                                                                <constraint firstAttribute="height" constant="76" id="IxV-c8-zZj"/>
+                                                                <constraint firstAttribute="width" constant="26" id="SNv-aO-AoS"/>
+                                                                <constraint firstAttribute="height" constant="5" id="VBm-aZ-Ooz"/>
                                                             </constraints>
-                                                            <state key="normal" image="VolumeUp_D">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <state key="highlighted" image="VolumeUp_H"/>
-                                                            <connections>
-                                                                <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="BhX-uc-vyk"/>
-                                                            </connections>
-                                                        </button>
+                                                        </imageView>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-Zi-GSt">
                                                             <rect key="frame" x="80" y="243" width="111" height="76"/>
                                                             <constraints>
@@ -262,20 +276,6 @@
                                                                 <action selector="buttonAction:" destination="NTJ-zb-pzp" eventType="touchUpInside" id="lzb-Md-Vto"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="qsd-ss-P8B">
-                                                            <rect key="frame" x="122" y="95" width="26" height="5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="26" id="F7d-Gn-0lG"/>
-                                                                <constraint firstAttribute="height" constant="5" id="zCc-aB-Se9"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-WO-iVD">
-                                                            <rect key="frame" x="122" y="215" width="26" height="5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="26" id="SNv-aO-AoS"/>
-                                                                <constraint firstAttribute="height" constant="5" id="VBm-aZ-Ooz"/>
-                                                            </constraints>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
