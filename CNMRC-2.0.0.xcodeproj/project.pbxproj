@@ -210,6 +210,8 @@
 		1DBCCA191AB952AC001AAB91 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA181AB952AC001AAB91 /* FCFileManager.m */; };
 		1DBCCA6C1AB96F87001AAB91 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */; };
 		1DBCCA6E1AB96F87001AAB91 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */; };
+		1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.m */; };
+		1DF4B7B31ABBE1280097C52B /* CMKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */; };
 		1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -701,6 +703,9 @@
 		1DBCCA661AB96F87001AAB91 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto_iOS.a; sourceTree = "<group>"; };
 		1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_iOS.a; sourceTree = "<group>"; };
+		1DF4B7AF1ABBE1280097C52B /* CMKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeyboardViewController.h; sourceTree = "<group>"; };
+		1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKeyboardViewController.m; sourceTree = "<group>"; };
+		1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardViewController.xib; sourceTree = "<group>"; };
 		1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -770,6 +775,9 @@
 				1D14AA641A6168EC00FECF55 /* CMRCViewController.h */,
 				1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */,
 				1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */,
+				1DF4B7AF1ABBE1280097C52B /* CMKeyboardViewController.h */,
+				1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.m */,
+				1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */,
 			);
 			path = RmoteControl;
 			sourceTree = "<group>";
@@ -1865,6 +1873,7 @@
 				1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
 				1DBA76CA1A20B4C8003AB966 /* libprotobuf-lite.la in Resources */,
+				1DF4B7B31ABBE1280097C52B /* CMKeyboardViewController.xib in Resources */,
 				1DB9BA031A61574800E89E27 /* keycodes.proto in Resources */,
 				1DB9BA461A61655900E89E27 /* CMWebViewController.xib in Resources */,
 				1D14AA681A6168EC00FECF55 /* CMQwertyViewController.xib in Resources */,
@@ -2014,6 +2023,7 @@
 				1DB8FC2C1ABA8F2C00ABFB07 /* CLIColor.m in Sources */,
 				1DB8FC351ABA8F2C00ABFB07 /* DDMultiFormatter.m in Sources */,
 				1DB9B9A61A614FCD00E89E27 /* CMEPGTableViewCell.m in Sources */,
+				1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.m in Sources */,
 				1DB9B9391A613F1100E89E27 /* CMAppInfo.m in Sources */,
 				1DB9B9741A614F6500E89E27 /* CMPairingViewController.m in Sources */,
 				1DB9B93A1A613F1100E89E27 /* CMRemoteManager.m in Sources */,
