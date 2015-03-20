@@ -1058,12 +1058,12 @@ using namespace anymote::messages;
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-    if ([touch.view isKindOfClass:[UIButton class]])
+    if (touch.view == self.view)
     {
-        return NO;
+        return YES;
     }
     
-    return YES;
+    return NO;
 }
 
 @end
