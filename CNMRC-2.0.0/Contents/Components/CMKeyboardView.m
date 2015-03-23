@@ -43,27 +43,28 @@
 
 - (IBAction)changeKeyboardTypeAction:(id)sender
 {
-    UIButton *button = (UIButton *)sender;
-    if (button.tag == KEY_TAG_KO_AND_EN)
+    self.tildeKey.hidden = YES;
+    self.shiftKey.hidden = NO;
+    [self.shiftKey setSelected:NO];
+    [self.numberKey setSelected:NO];
+    
+    if (self.keyboardType == CMKeyboardTypeKorean)
     {
-        self.tildeKey.hidden = YES;
-        self.shiftKey.hidden = NO;
-        
-        if (self.keyboardType == CMKeyboardTypeKorean)
-        {
-            [self.languageKey setSelected:YES];
-            [self changeKeyboard:CMKeyboardTypeEnglish];
-        }
-        else
-        {
-            [self.languageKey setSelected:NO];
-            [self changeKeyboard:CMKeyboardTypeKorean];
-        }
+        [self.languageKey setSelected:YES];
+        [self changeKeyboard:CMKeyboardTypeEnglish];
     }
+    else
+    {
+        [self.languageKey setSelected:NO];
+        [self changeKeyboard:CMKeyboardTypeKorean];
+    }
+    
 }
 
 - (IBAction)changeNumberKeyboardAction:(id)sender
 {
+    [self.languageKey setSelected:NO];
+    
     if (self.keyboardType != CMKeyboardTypeNumberAndSymbol)
     {
         self.tildeKey.hidden = NO;
@@ -103,6 +104,12 @@
                 }
             }
         }
+    }
+    else
+    {
+        self.isShiftKeyPressed = !self.isShiftKeyPressed;
+        [self.shiftKey setSelected:self.isShiftKeyPressed];
+        
     }
 }
 
