@@ -38,10 +38,26 @@ using namespace anymote::messages;
     recognizer.delegate = self;
     [self.view addGestureRecognizer:recognizer];
     
-    // 키보드 델리게이트 설정.
-    self.koKeyboard.delegate = self;
-    self.enKeyboard.delegate = self;
-    self.numberKeyboard.delegate = self;
+    // 키보드 추가.
+    NSString *keyboardXIB = nil;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            keyboardXIB = @"CMKeyboardView";
+            break;
+            
+        case iPhone47inch:
+            keyboardXIB = @"CMKeyboardView_6";
+            break;
+            
+        default:
+            keyboardXIB = @"CMKeyboardView_5";
+            break;
+    }
+    
+    CMKeyboardView *kb = [[[NSBundle mainBundle] loadNibNamed:keyboardXIB owner:self options:nil] objectAtIndex:0];
+    kb.delegate = self;
+    [self.KeyboardBackground addSubview:kb];
+    self.keyboard = kb;
 }
 
 - (void)recognizeTapGesture:(UITapGestureRecognizer *)recognizer

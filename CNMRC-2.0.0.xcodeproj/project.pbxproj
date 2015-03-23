@@ -210,15 +210,12 @@
 		1DBCCA191AB952AC001AAB91 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA181AB952AC001AAB91 /* FCFileManager.m */; };
 		1DBCCA6C1AB96F87001AAB91 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */; };
 		1DBCCA6E1AB96F87001AAB91 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */; };
+		1DCF4D331ABFEC8C0033413F /* CMKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D321ABFEC8C0033413F /* CMKeyboardView.xib */; };
+		1DCF4D351ABFED370033413F /* CMKeyboardView_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D341ABFED370033413F /* CMKeyboardView_6.xib */; };
+		1DCF4D371ABFED480033413F /* CMKeyboardView_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */; };
 		1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.mm */; };
 		1DF4B7B31ABBE1280097C52B /* CMKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */; };
 		1DF4B7C41ABBE80B0097C52B /* CMKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7C31ABBE80B0097C52B /* CMKeyboardButton.m */; };
-		1DF4B7C71ABBE82C0097C52B /* CMKOKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7C61ABBE82C0097C52B /* CMKOKeyboardView.m */; };
-		1DF4B7C91ABBE8360097C52B /* CMKOKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7C81ABBE8360097C52B /* CMKOKeyboardView.xib */; };
-		1DF4B7CC1ABBE8480097C52B /* CMENKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7CB1ABBE8480097C52B /* CMENKeyboardView.m */; };
-		1DF4B7CE1ABBE8590097C52B /* CMENKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7CD1ABBE8590097C52B /* CMENKeyboardView.xib */; };
-		1DF4B7D11ABBE8740097C52B /* CMNumberKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7D01ABBE8740097C52B /* CMNumberKeyboardView.m */; };
-		1DF4B7D31ABBE87F0097C52B /* CMNumberKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7D21ABBE87F0097C52B /* CMNumberKeyboardView.xib */; };
 		1DF4B7D61ABBF40E0097C52B /* CMKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7D51ABBF40E0097C52B /* CMKeyboardView.m */; };
 		1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */; };
 /* End PBXBuildFile section */
@@ -711,20 +708,14 @@
 		1DBCCA661AB96F87001AAB91 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto_iOS.a; sourceTree = "<group>"; };
 		1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_iOS.a; sourceTree = "<group>"; };
+		1DCF4D321ABFEC8C0033413F /* CMKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView.xib; sourceTree = "<group>"; };
+		1DCF4D341ABFED370033413F /* CMKeyboardView_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView_6.xib; sourceTree = "<group>"; };
+		1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView_5.xib; sourceTree = "<group>"; };
 		1DF4B7AF1ABBE1280097C52B /* CMKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeyboardViewController.h; sourceTree = "<group>"; };
 		1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMKeyboardViewController.mm; sourceTree = "<group>"; };
 		1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardViewController.xib; sourceTree = "<group>"; };
 		1DF4B7C21ABBE80B0097C52B /* CMKeyboardButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeyboardButton.h; sourceTree = "<group>"; };
 		1DF4B7C31ABBE80B0097C52B /* CMKeyboardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKeyboardButton.m; sourceTree = "<group>"; };
-		1DF4B7C51ABBE82C0097C52B /* CMKOKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKOKeyboardView.h; sourceTree = "<group>"; };
-		1DF4B7C61ABBE82C0097C52B /* CMKOKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKOKeyboardView.m; sourceTree = "<group>"; };
-		1DF4B7C81ABBE8360097C52B /* CMKOKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKOKeyboardView.xib; sourceTree = "<group>"; };
-		1DF4B7CA1ABBE8480097C52B /* CMENKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMENKeyboardView.h; sourceTree = "<group>"; };
-		1DF4B7CB1ABBE8480097C52B /* CMENKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMENKeyboardView.m; sourceTree = "<group>"; };
-		1DF4B7CD1ABBE8590097C52B /* CMENKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMENKeyboardView.xib; sourceTree = "<group>"; };
-		1DF4B7CF1ABBE8740097C52B /* CMNumberKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNumberKeyboardView.h; sourceTree = "<group>"; };
-		1DF4B7D01ABBE8740097C52B /* CMNumberKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMNumberKeyboardView.m; sourceTree = "<group>"; };
-		1DF4B7D21ABBE87F0097C52B /* CMNumberKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMNumberKeyboardView.xib; sourceTree = "<group>"; };
 		1DF4B7D41ABBF40E0097C52B /* CMKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeyboardView.h; sourceTree = "<group>"; };
 		1DF4B7D51ABBF40E0097C52B /* CMKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKeyboardView.m; sourceTree = "<group>"; };
 		1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMMirrorTVViewController.xib; sourceTree = "<group>"; };
@@ -1407,15 +1398,9 @@
 				1DF4B7C31ABBE80B0097C52B /* CMKeyboardButton.m */,
 				1DF4B7D41ABBF40E0097C52B /* CMKeyboardView.h */,
 				1DF4B7D51ABBF40E0097C52B /* CMKeyboardView.m */,
-				1DF4B7C51ABBE82C0097C52B /* CMKOKeyboardView.h */,
-				1DF4B7C61ABBE82C0097C52B /* CMKOKeyboardView.m */,
-				1DF4B7C81ABBE8360097C52B /* CMKOKeyboardView.xib */,
-				1DF4B7CA1ABBE8480097C52B /* CMENKeyboardView.h */,
-				1DF4B7CB1ABBE8480097C52B /* CMENKeyboardView.m */,
-				1DF4B7CD1ABBE8590097C52B /* CMENKeyboardView.xib */,
-				1DF4B7CF1ABBE8740097C52B /* CMNumberKeyboardView.h */,
-				1DF4B7D01ABBE8740097C52B /* CMNumberKeyboardView.m */,
-				1DF4B7D21ABBE87F0097C52B /* CMNumberKeyboardView.xib */,
+				1DCF4D321ABFEC8C0033413F /* CMKeyboardView.xib */,
+				1DCF4D341ABFED370033413F /* CMKeyboardView_6.xib */,
+				1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1886,23 +1871,22 @@
 				1DB9BA591A6165D200E89E27 /* CMVODViewController.xib in Resources */,
 				1DBA76CF1A20B4C8003AB966 /* protobuf-lite.pc in Resources */,
 				1DB9B9751A614F6500E89E27 /* CMPairingViewController.xib in Resources */,
+				1DCF4D351ABFED370033413F /* CMKeyboardView_6.xib in Resources */,
 				1DB9B9571A61446D00E89E27 /* Dependencies.txt in Resources */,
 				1DB9BA291A615A9200E89E27 /* CMSettingsCell.xib in Resources */,
 				1D6F512E1A6A930E0045FB89 /* CMCircleMenu.xib in Resources */,
 				1DA6A00A1AB1235F004AB586 /* CMNumberKey_6.xib in Resources */,
 				1DB9BA071A61574800E89E27 /* remote.proto in Resources */,
-				1DF4B7C91ABBE8360097C52B /* CMKOKeyboardView.xib in Resources */,
+				1DCF4D331ABFEC8C0033413F /* CMKeyboardView.xib in Resources */,
 				1DB9B9A01A614FCD00E89E27 /* CMControlPad.xib in Resources */,
 				1DB9BA051A61574800E89E27 /* polo.proto in Resources */,
 				1DB9BA231A615A9200E89E27 /* CMAuthAdultViewController.xib in Resources */,
 				1DB9B9A81A614FCD00E89E27 /* CMNumberKey.xib in Resources */,
-				1DF4B7D31ABBE87F0097C52B /* CMNumberKeyboardView.xib in Resources */,
 				1DBA76CC1A20B4C8003AB966 /* libprotobuf.la in Resources */,
 				1DB9BA571A6165D200E89E27 /* CMVODListViewController.xib in Resources */,
 				1D14AA7E1A6169D700FECF55 /* CMChannelViewController.xib in Resources */,
 				1DBA76C61A20B4C8003AB966 /* protoc in Resources */,
 				1DB9BA271A615A9200E89E27 /* CMSetProductViewController.xib in Resources */,
-				1DF4B7CE1ABBE8590097C52B /* CMENKeyboardView.xib in Resources */,
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
 				1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
@@ -1920,6 +1904,7 @@
 				1DB9BA2C1A615A9200E89E27 /* Settings.plist in Resources */,
 				1DB9B9771A614F6500E89E27 /* CMSetIPViewController.xib in Resources */,
 				1DBA76C81A20B4C8003AB966 /* descriptor.proto in Resources */,
+				1DCF4D371ABFED480033413F /* CMKeyboardView_5.xib in Resources */,
 				1DBA76CE1A20B4C8003AB966 /* libprotoc.la in Resources */,
 				1DBA76D01A20B4C8003AB966 /* protobuf.pc in Resources */,
 			);
@@ -2014,7 +1999,6 @@
 				1DB9B92B1A613DB000E89E27 /* UIDevice+IdentifierAddition.m in Sources */,
 				1DB8FC2E1ABA8F2C00ABFB07 /* DDASLLogCapture.m in Sources */,
 				1DB9B95C1A61446D00E89E27 /* PoloPairingImpl.cpp in Sources */,
-				1DF4B7C71ABBE82C0097C52B /* CMKOKeyboardView.m in Sources */,
 				1DB9B92A1A613DB000E89E27 /* UIDevice+Hardware.m in Sources */,
 				1D20C3D81A8183B3004C84A9 /* LPPhoneVersion.m in Sources */,
 				1DB9B8ED1A6129CB00E89E27 /* CMContainerViewController.m in Sources */,
@@ -2025,7 +2009,6 @@
 				1DB9B9761A614F6500E89E27 /* CMSetIPViewController.m in Sources */,
 				1DB9BA561A6165D200E89E27 /* CMVODListViewController.m in Sources */,
 				1D4A49C61A20859C0088FA93 /* AppDelegate.m in Sources */,
-				1DF4B7D11ABBE8740097C52B /* CMNumberKeyboardView.m in Sources */,
 				1DB9B9A51A614FCD00E89E27 /* CMDepthIndicator.m in Sources */,
 				1DB9B9C81A61501300E89E27 /* CM06.m in Sources */,
 				1DB9BA431A61655900E89E27 /* CMSearchViewController.m in Sources */,
@@ -2065,7 +2048,6 @@
 				1DB9B9A61A614FCD00E89E27 /* CMEPGTableViewCell.m in Sources */,
 				1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.mm in Sources */,
 				1DB9B9391A613F1100E89E27 /* CMAppInfo.m in Sources */,
-				1DF4B7CC1ABBE8480097C52B /* CMENKeyboardView.m in Sources */,
 				1DF4B7D61ABBF40E0097C52B /* CMKeyboardView.m in Sources */,
 				1DB9B9741A614F6500E89E27 /* CMPairingViewController.m in Sources */,
 				1DB9B93A1A613F1100E89E27 /* CMRemoteManager.m in Sources */,

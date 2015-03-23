@@ -8,7 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMKeyboardViewController">
             <connections>
                 <outlet property="KeyboardBackground" destination="0yq-8x-pYk" id="LQu-Cx-bkQ"/>
-                <outlet property="koKeyboard" destination="TzY-C0-5Jq" id="sfo-em-PPE"/>
                 <outlet property="searchTextField" destination="GFO-9k-KRx" id="vvg-tb-xdy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,23 +19,8 @@
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yq-8x-pYk">
                     <rect key="frame" x="0.0" y="514" width="414" height="222"/>
-                    <subviews>
-                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-C0-5Jq" customClass="CMKOKeyboardView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="222"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="222" id="a5A-Tg-aCS"/>
-                                <constraint firstAttribute="width" constant="414" id="qhV-8F-x1u"/>
-                            </constraints>
-                            <connections>
-                                <outlet property="view" destination="i5M-Pr-FkT" id="Q4K-LS-ZwN"/>
-                            </connections>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="centerX" secondItem="TzY-C0-5Jq" secondAttribute="centerX" id="E39-BS-60G"/>
-                        <constraint firstAttribute="centerY" secondItem="TzY-C0-5Jq" secondAttribute="centerY" id="PLR-8l-wiZ"/>
                         <constraint firstAttribute="height" constant="222" id="TbV-HN-xJD"/>
                         <constraint firstAttribute="width" constant="414" id="lab-oX-JWb"/>
                     </constraints>
