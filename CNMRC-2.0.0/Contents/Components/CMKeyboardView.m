@@ -34,11 +34,59 @@
 
 - (IBAction)keyAction:(id)sender
 {
-    DDLogDebug(@"선택된 버튼: %@", @([(UIButton *)sender tag]));
+    UIButton *button = (UIButton *)sender;
+    
+    DDLogDebug(@"선택된 버튼: %@", @(button.tag));
+    
+    // 키만 대상으로 처리한다.
+    if (button.tag < 27)
+    {
+        NSString *pressImageName = nil;
+        CGFloat pressViewWidth = 64;
+        CGFloat pressViewHight = 109;
+        CGRect pressVewFrame = CGRectZero;
+        if (button.tag == 0)
+        {
+            pressImageName = @"Key_Left_Press";
+            pressVewFrame = CGRectMake(button.frame.origin.x,
+                                       button.frame.origin.y - (pressViewHight - button.frame.size.height),
+                                       pressViewWidth,
+                                       pressViewHight);
+        }
+        else if (button.tag == 9)
+        {
+            pressImageName = @"Key_Right_Press";
+            pressVewFrame = CGRectMake(button.frame.origin.x - (pressViewWidth - button.frame.size.width),
+                                       button.frame.origin.y - (pressViewHight - button.frame.size.height),
+                                       pressViewWidth,
+                                       pressViewHight);
+        }
+        else
+        {
+            pressImageName = @"Key_Center_Press";
+            pressVewFrame = CGRectMake(button.frame.origin.x - (pressViewWidth - button.frame.size.width)/2,
+                                       button.frame.origin.y - (pressViewHight - button.frame.size.height),
+                                       pressViewWidth,
+                                       pressViewHight);
+        }
+        
+        CMPressView *pv = [[[NSBundle mainBundle] loadNibNamed:@"CMPressView" owner:self options:nil] objectAtIndex:0];
+        pv.frame = pressVewFrame;
+        [pv setImage:pressImageName andLabel:button.titleLabel.text];
+        [self addSubview:pv];
+        
+        [self performSelector:@selector(removePressView:) withObject:pv afterDelay:0.3];
+    }
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(pressedKey:)])
     {
         [self.delegate pressedKey:sender];
     }
+}
+
+- (void)removePressView:(UIView *)pressView
+{
+    [pressView removeFromSuperview];
 }
 
 - (IBAction)changeKeyboardTypeAction:(id)sender

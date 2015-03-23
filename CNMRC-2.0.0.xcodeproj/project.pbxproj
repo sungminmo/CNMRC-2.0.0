@@ -26,6 +26,8 @@
 		1D20C3D81A8183B3004C84A9 /* LPPhoneVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D20C3D71A8183B3004C84A9 /* LPPhoneVersion.m */; };
 		1D20C3DE1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D20C3DB1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.m */; };
 		1D20C3DF1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D20C3DD1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m */; };
+		1D42AE6F1AC028BE002F70E8 /* CMPressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D42AE6E1AC028BE002F70E8 /* CMPressView.m */; };
+		1D42AE711AC028CD002F70E8 /* CMPressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D42AE701AC028CD002F70E8 /* CMPressView.xib */; };
 		1D4A49C31A20859C0088FA93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A49C21A20859C0088FA93 /* main.m */; };
 		1D4A49C61A20859C0088FA93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A49C51A20859C0088FA93 /* AppDelegate.m */; };
 		1D4A49CE1A20859C0088FA93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A49CD1A20859C0088FA93 /* Images.xcassets */; };
@@ -264,6 +266,9 @@
 		1D20C3DB1A8183B7004C84A9 /* PSPDFUIKitMainThreadGuard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPDFUIKitMainThreadGuard.m; sourceTree = "<group>"; };
 		1D20C3DC1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DebuggingViewInjector.h"; sourceTree = "<group>"; };
 		1D20C3DD1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DebuggingViewInjector.m"; sourceTree = "<group>"; };
+		1D42AE6D1AC028BE002F70E8 /* CMPressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPressView.h; sourceTree = "<group>"; };
+		1D42AE6E1AC028BE002F70E8 /* CMPressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPressView.m; sourceTree = "<group>"; };
+		1D42AE701AC028CD002F70E8 /* CMPressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPressView.xib; sourceTree = "<group>"; };
 		1D4A49BD1A20859C0088FA93 /* CNMRC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNMRC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4A49C11A20859C0088FA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D4A49C21A20859C0088FA93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1401,6 +1406,9 @@
 				1DCF4D321ABFEC8C0033413F /* CMKeyboardView.xib */,
 				1DCF4D341ABFED370033413F /* CMKeyboardView_6.xib */,
 				1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */,
+				1D42AE6D1AC028BE002F70E8 /* CMPressView.h */,
+				1D42AE6E1AC028BE002F70E8 /* CMPressView.m */,
+				1D42AE701AC028CD002F70E8 /* CMPressView.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1889,6 +1897,7 @@
 				1DB9BA271A615A9200E89E27 /* CMSetProductViewController.xib in Resources */,
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
 				1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */,
+				1D42AE711AC028CD002F70E8 /* CMPressView.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
 				1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */,
@@ -2033,6 +2042,7 @@
 				1DB9B9DE1A61506900E89E27 /* TBXML+Compression.m in Sources */,
 				1DB8FC2F1ABA8F2C00ABFB07 /* DDASLLogger.m in Sources */,
 				1DB9BA351A6163AD00E89E27 /* remote.pb.cc in Sources */,
+				1D42AE6F1AC028BE002F70E8 /* CMPressView.m in Sources */,
 				1DA28AE01A3C70A0007D7F4E /* GTMMethodCheck.m in Sources */,
 				1D5FA7471A46B2A500D51182 /* NSManagedObject+ActiveRecord.m in Sources */,
 				1DB9BA111A6157A800E89E27 /* NSSet+Additions.m in Sources */,

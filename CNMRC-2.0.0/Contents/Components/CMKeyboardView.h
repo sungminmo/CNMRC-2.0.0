@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CMPressView.h"
 
 #define KEY_TAG_SHIFT 100
 #define KEY_TAG_BACK 200

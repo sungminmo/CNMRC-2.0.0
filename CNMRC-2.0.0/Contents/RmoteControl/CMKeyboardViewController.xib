@@ -17,15 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yq-8x-pYk">
-                    <rect key="frame" x="0.0" y="514" width="414" height="222"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="222" id="TbV-HN-xJD"/>
-                        <constraint firstAttribute="width" constant="414" id="lab-oX-JWb"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmd-cd-bec">
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmd-cd-bec">
                     <rect key="frame" x="0.0" y="20" width="414" height="55"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="검색어를 입력해 주세요." clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-9k-KRx">
@@ -50,7 +42,7 @@
                         <constraint firstItem="GFO-9k-KRx" firstAttribute="top" secondItem="rmd-cd-bec" secondAttribute="top" constant="13" id="uHG-ep-7R0"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyL-hJ-Yzb">
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyL-hJ-Yzb">
                     <rect key="frame" x="0.0" y="474" width="414" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ps-A8-3Ie">
@@ -91,6 +83,14 @@
                         <constraint firstAttribute="centerY" secondItem="TSq-eE-Ov2" secondAttribute="centerY" id="gdn-Tg-BxN"/>
                         <constraint firstAttribute="width" constant="414" id="mvR-h3-ytV"/>
                         <constraint firstAttribute="centerY" secondItem="0Ps-A8-3Ie" secondAttribute="centerY" id="wkS-18-2Lf"/>
+                    </constraints>
+                </view>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yq-8x-pYk">
+                    <rect key="frame" x="0.0" y="514" width="414" height="222"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="222" id="TbV-HN-xJD"/>
+                        <constraint firstAttribute="width" constant="414" id="lab-oX-JWb"/>
                     </constraints>
                 </view>
             </subviews>
