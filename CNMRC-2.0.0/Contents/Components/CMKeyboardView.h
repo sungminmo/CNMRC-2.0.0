@@ -16,12 +16,13 @@ typedef NS_ENUM(NSInteger, CMKeyboardType) {
 
 @protocol CMKeyboardDelegate;
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface CMKeyboardView : UIView
 
 @property (assign, nonatomic) id<CMKeyboardDelegate> delegate;
-@property (strong, nonatomic) IBOutlet UIView *view;
-@property (assign, nonatomic) IBInspectable CMKeyboardType keyboardType;
+@property (weak, nonatomic) IBOutlet UIView *view;
+//@property (assign, nonatomic) IBInspectable CMKeyboardType keyboardType;
+@property (assign, nonatomic) CMKeyboardType keyboardType;
 
 - (void)keyAction:(id)sender;
 
