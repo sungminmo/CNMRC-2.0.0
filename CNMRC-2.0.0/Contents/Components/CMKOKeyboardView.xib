@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="222"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-Gs-EM5">
+                <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-Gs-EM5">
                     <rect key="frame" x="4" y="4" width="36" height="46"/>
                     <state key="normal" title="ㅂ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,7 +25,7 @@
                         <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="DtA-uR-unW"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPW-VV-TFb">
+                <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPW-VV-TFb">
                     <rect key="frame" x="45" y="4" width="36" height="46"/>
                     <state key="normal" title="ㅈ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,7 +35,7 @@
                         <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="nZ7-nw-44Y"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfK-G7-GJx">
+                <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfK-G7-GJx">
                     <rect key="frame" x="86" y="4" width="36" height="46"/>
                     <state key="normal" title="ㄷ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +45,7 @@
                         <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="s3q-Wi-tAk"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9R-Lg-FC2">
+                <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9R-Lg-FC2">
                     <rect key="frame" x="127" y="4" width="36" height="46"/>
                     <state key="normal" title="ㄱ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +55,7 @@
                         <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="zbc-pe-QiC"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c04-4A-ZHc">
+                <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c04-4A-ZHc">
                     <rect key="frame" x="168" y="4" width="36" height="46"/>
                     <state key="normal" title="ㅅ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,7 +116,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRm-lL-4D5">
-                    <rect key="frame" x="31" y="60" width="36" height="46"/>
+                    <rect key="frame" x="25" y="60" width="36" height="46"/>
                     <state key="normal" title="ㅁ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,34 +125,221 @@
                         <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="eQg-pi-Jec"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnY-h8-GAC">
-                    <rect key="frame" x="53" y="116" width="36" height="46"/>
-                    <state key="normal" title="ㅂ" backgroundImage="Key_BG_D">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="QGa-dX-9Y5"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZM-dS-efx">
-                    <rect key="frame" x="73" y="172" width="36" height="46"/>
-                    <state key="normal" title="ㅂ" backgroundImage="Key_BG_D">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="5Yn-gU-4He"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwZ-dW-Bve">
-                    <rect key="frame" x="73" y="60" width="36" height="46"/>
-                    <state key="normal" title="ㅁ" backgroundImage="Key_BG_D">
+                    <rect key="frame" x="66" y="60" width="36" height="46"/>
+                    <state key="normal" title="ㄴ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="Ayq-5p-RN8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-hU-lyP">
+                    <rect key="frame" x="107" y="60" width="36" height="46"/>
+                    <state key="normal" title="ㅇ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="rJ1-19-ols"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTQ-F7-r5k">
+                    <rect key="frame" x="148" y="60" width="36" height="46"/>
+                    <state key="normal" title="ㄹ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="q7b-z0-Vhd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lem-AS-JUK">
+                    <rect key="frame" x="189" y="60" width="36" height="46"/>
+                    <state key="normal" title="ㅎ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="fUa-uD-aiI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL4-s2-WaO">
+                    <rect key="frame" x="230" y="60" width="36" height="46"/>
+                    <state key="normal" title="ㅗ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="40x-99-rg1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjF-94-zVn">
+                    <rect key="frame" x="271" y="60" width="36" height="46"/>
+                    <state key="normal" title="ㅓ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="gqC-Jp-24e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHw-K5-v7c">
+                    <rect key="frame" x="312" y="58" width="36" height="46"/>
+                    <state key="normal" title="ㅏ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="ClC-AT-STU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQN-17-Ry6">
+                    <rect key="frame" x="353" y="58" width="36" height="46"/>
+                    <state key="normal" title="ㅣ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="7LE-fD-Ork"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnY-h8-GAC">
+                    <rect key="frame" x="4" y="116" width="45" height="46"/>
+                    <state key="normal" title="⬆︎" backgroundImage="Key_Symbol_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Key_Symbol_BG_H"/>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="QGa-dX-9Y5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ca8-s6-8wS">
+                    <rect key="frame" x="66" y="116" width="36" height="46"/>
+                    <state key="normal" title="ㅋ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="ikV-XQ-bpm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hq-qz-9bG">
+                    <rect key="frame" x="107" y="116" width="36" height="46"/>
+                    <state key="normal" title="ㅌ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="6I7-o3-IVF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTd-kJ-VRf">
+                    <rect key="frame" x="148" y="116" width="36" height="46"/>
+                    <state key="normal" title="ㅊ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="Mqw-fr-Nwr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nT-tB-6bm">
+                    <rect key="frame" x="189" y="116" width="36" height="46"/>
+                    <state key="normal" title="ㅍ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="f01-Ui-qgS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ox-CQ-XLp">
+                    <rect key="frame" x="230" y="116" width="36" height="46"/>
+                    <state key="normal" title="ㅠ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="20n-gf-9PU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bce-vO-R9Q">
+                    <rect key="frame" x="271" y="116" width="36" height="46"/>
+                    <state key="normal" title="ㅜ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="gZH-2M-GuH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ab-QA-62A">
+                    <rect key="frame" x="312" y="116" width="36" height="46"/>
+                    <state key="normal" title="ㅡ" backgroundImage="Key_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="T8F-JN-wqt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="200" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byK-F5-nbc">
+                    <rect key="frame" x="364" y="116" width="45" height="46"/>
+                    <state key="normal" backgroundImage="Key_Back_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Key_Back_H"/>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="O2h-Tv-DEP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="300" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdZ-fp-50Z">
+                    <rect key="frame" x="4" y="172" width="45" height="46"/>
+                    <state key="normal" title="123" backgroundImage="Key_Symbol_BG_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Key_Symbol_BG_H"/>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="Cm0-CH-upk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="400" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaP-DF-1ZB">
+                    <rect key="frame" x="57" y="172" width="45" height="46"/>
+                    <state key="normal" backgroundImage="Key_Language_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Key_Language_H"/>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="dHL-e9-LHl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x11-nG-dKQ">
+                    <rect key="frame" x="312" y="172" width="97" height="46"/>
+                    <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                    <state key="normal" title="검색" backgroundImage="Key_Space_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Key_Space_H"/>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="Z07-pZ-AaX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="500" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZM-dS-efx">
+                    <rect key="frame" x="107" y="172" width="200" height="46"/>
+                    <state key="normal" title="간격" backgroundImage="Key_Space_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Key_Space_H"/>
+                    <connections>
+                        <action selector="keyAction:" destination="-1" eventType="touchUpInside" id="5Yn-gU-4He"/>
                     </connections>
                 </button>
             </subviews>
@@ -166,5 +353,13 @@
     </objects>
     <resources>
         <image name="Key_BG_D" width="36" height="46"/>
+        <image name="Key_Back_D" width="45" height="46"/>
+        <image name="Key_Back_H" width="45" height="46"/>
+        <image name="Key_Language_D" width="45" height="46"/>
+        <image name="Key_Language_H" width="45" height="46"/>
+        <image name="Key_Space_D" width="107" height="46"/>
+        <image name="Key_Space_H" width="107" height="46"/>
+        <image name="Key_Symbol_BG_D" width="45" height="46"/>
+        <image name="Key_Symbol_BG_H" width="45" height="46"/>
     </resources>
 </document>
