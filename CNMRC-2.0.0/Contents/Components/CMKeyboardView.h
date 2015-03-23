@@ -28,14 +28,20 @@ typedef NS_ENUM(NSInteger, CMKeyboardType) {
 @property (assign, nonatomic) id<CMKeyboardDelegate> delegate;
 @property (assign, nonatomic) CMKeyboardType keyboardType;
 @property (strong, nonatomic) NSArray *koKeyList;
+@property (strong, nonatomic) NSArray *koPairKeyList;
 @property (strong, nonatomic) NSArray *enKeyList;
 @property (strong, nonatomic) NSArray *numberKeyList;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyList;
-
+@property (assign, nonatomic) BOOL isShiftKeyPressed;
+@property (weak, nonatomic) IBOutlet UIButton *shiftKey;
+@property (weak, nonatomic) IBOutlet UIButton *numberKey;
+@property (weak, nonatomic) IBOutlet UIButton *languageKey;
+@property (weak, nonatomic) IBOutlet UIButton *tildeKey;
 
 - (IBAction)keyAction:(id)sender;
 - (IBAction)changeKeyboardTypeAction:(id)sender;
 - (IBAction)changeNumberKeyboardAction:(id)sender;
+- (IBAction)changeShiftKeyboardAction:(id)sender;
 
 @end
 

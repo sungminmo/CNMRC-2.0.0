@@ -46,12 +46,17 @@
     UIButton *button = (UIButton *)sender;
     if (button.tag == KEY_TAG_KO_AND_EN)
     {
+        self.tildeKey.hidden = YES;
+        self.shiftKey.hidden = NO;
+        
         if (self.keyboardType == CMKeyboardTypeKorean)
         {
+            [self.languageKey setSelected:YES];
             [self changeKeyboard:CMKeyboardTypeEnglish];
         }
         else
         {
+            [self.languageKey setSelected:NO];
             [self changeKeyboard:CMKeyboardTypeKorean];
         }
     }
@@ -61,11 +66,43 @@
 {
     if (self.keyboardType != CMKeyboardTypeNumberAndSymbol)
     {
+        self.tildeKey.hidden = NO;
+        self.shiftKey.hidden = YES;
+        [self.numberKey setSelected:YES];
         [self changeKeyboard:CMKeyboardTypeNumberAndSymbol];
     }
     else
     {
+        self.tildeKey.hidden = YES;
+        self.shiftKey.hidden = NO;
+        [self.numberKey setSelected:NO];
         [self changeKeyboard:CMKeyboardTypeKorean];
+    }
+}
+
+- (IBAction)changeShiftKeyboardAction:(id)sender
+{
+    if (self.keyboardType == CMKeyboardTypeKorean)
+    {
+        if (self.isShiftKeyPressed)
+        {
+            self.isShiftKeyPressed = NO;
+            [self.shiftKey setSelected:NO];
+            [self changeKeyboard:CMKeyboardTypeKorean];
+        }
+        else
+        {
+            self.isShiftKeyPressed = YES;
+            [self.shiftKey setSelected:YES];
+            for (UIButton *keyButton in self.keyList)
+            {
+                if (keyButton.tag < 10)
+                {
+                    NSString *keyTitle = self.koPairKeyList[keyButton.tag];
+                    [keyButton setTitle:keyTitle forState:UIControlStateNormal];
+                }
+            }
+        }
     }
 }
 
@@ -78,6 +115,9 @@
     
     // 한글 키.
     self.koKeyList = @[@"ㅂ", @"ㅈ", @"ㄷ", @"ㄱ", @"ㅅ", @"ㅛ", @"ㅕ", @"ㅑ", @"ㅐ", @"ㅔ", @"ㅁ", @"ㄴ", @"ㅇ", @"ㄹ", @"ㅎ", @"ㅗ", @"ㅓ", @"ㅏ", @"ㅣ", @"ㅋ", @"ㅌ", @"ㅊ", @"ㅍ", @"ㅠ", @"ㅜ", @"ㅡ"];
+    
+    // 한글 쌍 모음/자음 키.
+    self.koPairKeyList = @[@"ㅃ", @"ㅉ", @"ㄸ", @"ㄲ", @"ㅆ", @"ㅛ", @"ㅕ", @"ㅑ", @"ㅒ", @"ㅖ"];
     
     // 영문 키.
     self.enKeyList = @[@"Q", @"W", @"E", @"R", @"T", @"Y", @"U", @"I", @"O", @"P", @"A", @"S", @"D", @"F", @"G", @"H", @"J", @"K", @"L", @"Z", @"X", @"C", @"V", @"B", @"N", @"M"];
@@ -127,11 +167,6 @@
             
             for (UIButton *keyButton in self.keyList)
             {
-                if (keyButton.tag == 26)
-                {
-                    keyButton.hidden = NO;
-                }
-                
                 NSString *keyTitle = self.numberKeyList[keyButton.tag];
                 [keyButton setTitle:keyTitle forState:UIControlStateNormal];
                 [keyButton setNeedsDisplay];
