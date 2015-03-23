@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yq-8x-pYk">
-                    <rect key="frame" x="0.0" y="460" width="414" height="276"/>
+                    <rect key="frame" x="0.0" y="514" width="414" height="222"/>
                     <subviews>
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-C0-5Jq" customClass="CMKOKeyboardView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
@@ -36,8 +36,8 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="TzY-C0-5Jq" secondAttribute="centerX" id="E39-BS-60G"/>
-                        <constraint firstAttribute="centerY" secondItem="TzY-C0-5Jq" secondAttribute="centerY" id="PLR-8l-wiZ"/>
-                        <constraint firstAttribute="height" constant="276" id="TbV-HN-xJD"/>
+                        <constraint firstAttribute="centerY" secondItem="TzY-C0-5Jq" secondAttribute="centerY" constant="-27" id="PLR-8l-wiZ"/>
+                        <constraint firstAttribute="height" constant="222" id="TbV-HN-xJD"/>
                         <constraint firstAttribute="width" constant="414" id="lab-oX-JWb"/>
                     </constraints>
                 </view>
@@ -67,7 +67,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyL-hJ-Yzb">
-                    <rect key="frame" x="0.0" y="420" width="414" height="40"/>
+                    <rect key="frame" x="0.0" y="474" width="414" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ps-A8-3Ie">
                             <rect key="frame" x="290" y="5" width="120" height="30"/>
