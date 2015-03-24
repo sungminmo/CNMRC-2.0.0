@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *KeyboardBackground;
 @property (strong, nonatomic) CMKeyboardView *keyboard;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (assign, nonatomic) CMKeyboardType currentInputMode;
 
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)deleteTVCharacter:(id)sender;

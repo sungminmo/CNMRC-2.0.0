@@ -62,6 +62,10 @@ using namespace anymote::messages;
     [self.KeyboardBackground addSubview:kb];
     self.KeyboardBackground.clipsToBounds = NO;
     self.keyboard = kb;
+    
+    // 키보드 언어 설정(한글).
+    self.currentInputMode = CMKeyboardTypeKorean;
+    [RemoteManager.sender sendClickForKey:BTN_GAME_16 error:NULL];
 }
 
 - (void)recognizeTapGesture:(UITapGestureRecognizer *)recognizer
@@ -445,8 +449,76 @@ using namespace anymote::messages;
 
 - (void)pressedKey:(UIButton *)key
 {
-    NSString *newText = [self.searchTextField.text stringByAppendingString:key.titleLabel.text];
-    self.searchTextField.text = newText;
+    NSInteger keyTag = key.tag;
+    NSString *string = key.titleLabel.text;
+    
+    if (keyTag == KEY_TAG_BACK)
+    {
+        // 삭제 키.
+        NSString *oldText = self.searchTextField.text;
+        if (oldText.length > 0)
+        {
+            // 한 글자씩 삭제한다.
+            [RemoteManager.sender sendClickForKey:KEYCODE_DEL error:NULL];
+            
+            NSString *newText = [oldText substringToIndex:[oldText length] - 1];
+            self.searchTextField.text = newText;
+        }
+    }
+    else if (keyTag == KEY_TAG_SPACE)
+    {
+        // 스페이스 키.
+        string = @"";
+        [RemoteManager.sender enterText:string error:NULL];
+        NSString *newText = [self.searchTextField.text stringByAppendingString:string];
+        self.searchTextField.text = newText;
+    }
+    else if (keyTag == KEY_TAG_SEARCH)
+    {
+        // 검색 키.
+        [RemoteManager.sender sendClickForKey:KEYCODE_ENTER error:NULL];
+    }
+    else
+    {
+        if (self.currentInputMode == CMKeyboardTypeEnglish)
+        {
+            // 영문일 경우 텍스트 전송.
+            [RemoteManager.sender enterText:string error:NULL];
+        }
+        else
+        {
+            NSLog(@"Input string: %@", string);
+            
+            // !!!: 한글이 단모음/단자음일 경우 Anymote 키코드 전송, 쌍모음/쌍자음일 경우 영문 텍스트 전송.
+            if ([self isPair:string])
+            {
+                [RemoteManager.sender enterText:[self mappingHanguelToEnglish:string] error:NULL];
+            }
+            else
+            {
+                [RemoteManager.sender sendClickForKey:[self mappingHanguelToKeycode:string] error:NULL];
+            }
+        }
+        
+        NSString *newText = [self.searchTextField.text stringByAppendingString:string];
+        self.searchTextField.text = newText;
+    }
+}
+
+- (void)keyboardDidChange:(CMKeyboardType)type
+{
+    NSLog(@"현재 입력모드: %@", @(type));
+    self.currentInputMode = type;
+    
+    // STB에 한영 변환 알림!
+    if (self.currentInputMode == CMKeyboardTypeEnglish)
+    {
+        [RemoteManager.sender sendClickForKey:BTN_GAME_15 error:NULL];
+    }
+    else
+    {
+        [RemoteManager.sender sendClickForKey:BTN_GAME_16 error:NULL];
+    }
 }
 
 #pragma mark - 제스처 델리게이트 메서드 -

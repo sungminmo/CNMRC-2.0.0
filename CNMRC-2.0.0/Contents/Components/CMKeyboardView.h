@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "CMPressView.h"
 
-#define KEY_TAG_SHIFT 100
-#define KEY_TAG_BACK 200
-#define KEY_TAG_LANGUAGE_AND_NUMBER 300
-#define KEY_TAG_KO_AND_EN 400
-#define KEY_TAG_SPACE 500
-#define KEY_TAG_SEARCH 600
+#define KEY_TAG_SHIFT 100               // 쉬프트 키.
+#define KEY_TAG_BACK 200                // 삭제 키.
+#define KEY_TAG_LANGUAGE_AND_NUMBER 300 // 숫자 변환 키.
+#define KEY_TAG_KO_AND_EN 400           // 한/영 변환 키.
+#define KEY_TAG_SPACE 500               // 스페이스 키.
+#define KEY_TAG_SEARCH 600              // 검색 키.
 
 typedef NS_ENUM(NSInteger, CMKeyboardType) {
     CMKeyboardTypeKorean,
@@ -49,4 +49,5 @@ typedef NS_ENUM(NSInteger, CMKeyboardType) {
 
 @protocol CMKeyboardDelegate <NSObject>
 - (void)pressedKey:(UIButton *)key;
+- (void)keyboardDidChange:(CMKeyboardType)type;
 @end

@@ -261,6 +261,12 @@
         default:
             break;
     }
+    
+    // 언어 변경 노티.
+    if (self.delegate && [self.delegate respondsToSelector:@selector(keyboardDidChange:)])
+    {
+        [self.delegate keyboardDidChange:self.keyboardType];
+    }
 }
 
 @end
