@@ -507,7 +507,7 @@ using namespace anymote::messages;
 
 - (void)keyboardDidChange:(CMKeyboardType)type
 {
-    NSLog(@"현재 입력모드: %@", @(type));
+    DDLogDebug(@"현재 입력모드: %@", @(type));
     self.currentInputMode = type;
     
     // STB에 한영 변환 알림!
