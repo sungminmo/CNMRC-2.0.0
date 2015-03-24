@@ -30,7 +30,8 @@ typedef NS_ENUM(NSInteger, CMKeyboardType) {
 @property (assign, nonatomic) CMKeyboardType keyboardType;
 @property (strong, nonatomic) NSArray *koKeyList;
 @property (strong, nonatomic) NSArray *koPairKeyList;
-@property (strong, nonatomic) NSArray *enKeyList;
+@property (strong, nonatomic) NSArray *enUpperCaseKeyList;
+@property (strong, nonatomic) NSArray *enLowerCaseKeyList;
 @property (strong, nonatomic) NSArray *numberKeyList;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyList;
 @property (assign, nonatomic) BOOL isShiftKeyPressed;

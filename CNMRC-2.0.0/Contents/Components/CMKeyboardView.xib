@@ -221,7 +221,6 @@
                     <state key="highlighted" backgroundImage="Key_Symbol_BG_H"/>
                     <connections>
                         <action selector="changeShiftKeyboardAction:" destination="Nug-NK-4tl" eventType="touchUpInside" id="pas-lf-8wN"/>
-                        <action selector="keyAction:" destination="Nug-NK-4tl" eventType="touchUpInside" id="NaF-oE-88b"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="19" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLl-P9-RQa">

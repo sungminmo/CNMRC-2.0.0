@@ -89,12 +89,14 @@
     [pressView removeFromSuperview];
 }
 
+// 한/영 키 변환.
 - (IBAction)changeKeyboardTypeAction:(id)sender
 {
     self.tildeKey.hidden = YES;
     self.shiftKey.hidden = NO;
     [self.shiftKey setSelected:NO];
     [self.numberKey setSelected:NO];
+    self.isShiftKeyPressed = NO;
     
     if (self.keyboardType == CMKeyboardTypeKorean)
     {
@@ -109,6 +111,7 @@
     
 }
 
+// 숫자키 변환.
 - (IBAction)changeNumberKeyboardAction:(id)sender
 {
     [self.languageKey setSelected:NO];
@@ -129,6 +132,7 @@
     }
 }
 
+// 쉬프트 키 선택.
 - (IBAction)changeShiftKeyboardAction:(id)sender
 {
     if (self.keyboardType == CMKeyboardTypeKorean)
@@ -153,11 +157,33 @@
             }
         }
     }
+    else if (self.keyboardType == CMKeyboardTypeEnglish)
+    {
+        if (self.isShiftKeyPressed)
+        {
+            self.isShiftKeyPressed = NO;
+            [self.shiftKey setSelected:NO];
+            [self changeKeyboard:CMKeyboardTypeEnglish];
+        }
+        else
+        {
+            self.isShiftKeyPressed = YES;
+            [self.shiftKey setSelected:YES];
+            for (UIButton *keyButton in self.keyList)
+            {
+                if (keyButton.tag != 26)
+                {
+                    NSString *keyTitle = self.enLowerCaseKeyList[keyButton.tag];
+                    [keyButton setTitle:keyTitle forState:UIControlStateNormal];
+                    [keyButton setNeedsDisplay];
+                }
+            }
+        }
+    }
     else
     {
         self.isShiftKeyPressed = !self.isShiftKeyPressed;
         [self.shiftKey setSelected:self.isShiftKeyPressed];
-        
     }
 }
 
@@ -174,8 +200,11 @@
     // 한글 쌍 모음/자음 키.
     self.koPairKeyList = @[@"ㅃ", @"ㅉ", @"ㄸ", @"ㄲ", @"ㅆ", @"ㅛ", @"ㅕ", @"ㅑ", @"ㅒ", @"ㅖ"];
     
-    // 영문 키.
-    self.enKeyList = @[@"Q", @"W", @"E", @"R", @"T", @"Y", @"U", @"I", @"O", @"P", @"A", @"S", @"D", @"F", @"G", @"H", @"J", @"K", @"L", @"Z", @"X", @"C", @"V", @"B", @"N", @"M"];
+    // 영문 대문자 키.
+    self.enUpperCaseKeyList = @[@"Q", @"W", @"E", @"R", @"T", @"Y", @"U", @"I", @"O", @"P", @"A", @"S", @"D", @"F", @"G", @"H", @"J", @"K", @"L", @"Z", @"X", @"C", @"V", @"B", @"N", @"M"];
+    
+    // 영문 소문자 키.
+    self.enLowerCaseKeyList = @[@"q", @"w", @"e", @"r", @"r", @"y", @"u", @"i", @"o", @"p", @"a", @"s", @"d", @"f", @"g", @"h", @"j", @"k", @"l", @"z", @"x", @"c", @"v", @"b", @"n", @"m"];
     
     // 숮자 키.
     self.numberKeyList = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", @"&", @"/", @":", @";", @"(", @")", @"-", @"+", @"$", @",", @"?", @"!", @"`", @"\"", @"*", @"#", @"~"];
@@ -208,7 +237,7 @@
             {
                 if (keyButton.tag != 26)
                 {
-                    NSString *keyTitle = self.enKeyList[keyButton.tag];
+                    NSString *keyTitle = self.enUpperCaseKeyList[keyButton.tag];
                     [keyButton setTitle:keyTitle forState:UIControlStateNormal];
                     [keyButton setNeedsDisplay];
                 }

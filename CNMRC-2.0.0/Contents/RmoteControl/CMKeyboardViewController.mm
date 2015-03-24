@@ -445,7 +445,8 @@ using namespace anymote::messages;
 
 - (void)pressedKey:(UIButton *)key
 {
-    self.searchTextField.text = @"111111";
+    NSString *newText = [self.searchTextField.text stringByAppendingString:key.titleLabel.text];
+    self.searchTextField.text = newText;
 }
 
 #pragma mark - 제스처 델리게이트 메서드 -
