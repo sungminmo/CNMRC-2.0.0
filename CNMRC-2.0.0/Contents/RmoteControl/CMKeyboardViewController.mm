@@ -480,7 +480,7 @@ using namespace anymote::messages;
     }
     else
     {
-        if (self.currentInputMode == CMKeyboardTypeEnglish)
+        if (self.currentInputMode == CMKeyboardTypeEnglish || self.currentInputMode == CMKeyboardTypeNumberAndSymbol)
         {
             // 영문일 경우 텍스트 전송.
             [RemoteManager.sender enterText:string error:NULL];

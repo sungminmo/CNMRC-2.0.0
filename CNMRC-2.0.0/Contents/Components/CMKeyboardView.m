@@ -47,7 +47,7 @@
         NSString *pressViewXIB = nil;
         switch ([LPPhoneVersion deviceSize]) {
             case iPhone55inch:
-                pressViewWidth = 64;
+                pressViewWidth = 62;
                 pressViewXIB = @"CMPressView";
                 break;
                 
