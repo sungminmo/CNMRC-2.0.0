@@ -7,337 +7,329 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="ojO-GH-DD8" customClass="CMKeyboardView">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="ZsI-kf-DnK" customClass="CMKeyboardView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="222"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMi-Wi-yDz">
-                    <rect key="frame" x="4" y="4" width="36" height="46"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bl-d2-IN0">
+                    <rect key="frame" x="5" y="4" width="32" height="46"/>
                     <state key="normal" title="ㅂ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="Kw9-N3-uUB"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="Qp4-vR-Iqm"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li9-Rk-ejL">
-                    <rect key="frame" x="45" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80U-QL-jmt">
+                    <rect key="frame" x="41" y="4" width="32" height="46"/>
                     <state key="normal" title="ㅈ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="LVm-6o-cTX"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="tPX-bm-Aod"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0A-Dg-wC5">
-                    <rect key="frame" x="86" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDM-FG-QG0">
+                    <rect key="frame" x="78" y="4" width="32" height="46"/>
                     <state key="normal" title="ㄷ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="Qnz-yo-X71"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="arc-OK-lBK"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSg-6B-7MR">
-                    <rect key="frame" x="127" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-ex-URV">
+                    <rect key="frame" x="115" y="4" width="32" height="46"/>
                     <state key="normal" title="ㄱ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="9gg-xg-rJa"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="FYj-wY-u5L"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nli-nz-1jk">
-                    <rect key="frame" x="168" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r06-ut-ttF">
+                    <rect key="frame" x="152" y="4" width="32" height="46"/>
                     <state key="normal" title="ㅅ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="l9d-4O-udv"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="0bZ-QO-Nrt"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7u-YM-Mql">
-                    <rect key="frame" x="209" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLh-9d-H7q">
+                    <rect key="frame" x="189" y="4" width="32" height="46"/>
                     <state key="normal" title="ㅛ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="GgE-61-AO4"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="q6a-OD-cV4"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7H-63-nIh">
-                    <rect key="frame" x="250" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-YT-F53">
+                    <rect key="frame" x="226" y="4" width="32" height="46"/>
                     <state key="normal" title="ㅕ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="qfz-my-fsb"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="BCp-qZ-8rl"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJ0-3P-Hm4">
-                    <rect key="frame" x="291" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-k1-QMU">
+                    <rect key="frame" x="264" y="4" width="32" height="46"/>
                     <state key="normal" title="ㅑ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="NBL-8P-Y20"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="Ic9-nh-ei3"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kF3-X3-qmu">
-                    <rect key="frame" x="332" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrx-U4-Yhk">
+                    <rect key="frame" x="301" y="4" width="32" height="46"/>
                     <state key="normal" title="ㅐ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="eZn-Kn-Qqe"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="WQC-aP-VOy"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxX-g9-bid">
-                    <rect key="frame" x="373" y="4" width="36" height="46"/>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RI-hP-OhA">
+                    <rect key="frame" x="338" y="4" width="32" height="46"/>
                     <state key="normal" title="ㅔ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="Xkh-HS-zbh"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="z0y-MY-sq5"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuo-yq-HTt">
-                    <rect key="frame" x="25" y="60" width="36" height="46"/>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOT-5H-9s7">
+                    <rect key="frame" x="10" y="60" width="32" height="46"/>
                     <state key="normal" title="ㅁ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="9oV-Hc-giU"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="9ns-ex-LuX"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAy-LI-BzS">
-                    <rect key="frame" x="66" y="60" width="36" height="46"/>
+                <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fB-Hj-XFQ">
+                    <rect key="frame" x="51" y="60" width="32" height="46"/>
                     <state key="normal" title="ㄴ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="lbp-Vh-R5N"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="gf8-n7-033"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPK-om-TEE">
-                    <rect key="frame" x="107" y="60" width="36" height="46"/>
+                <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsL-LE-PhI">
+                    <rect key="frame" x="92" y="60" width="32" height="46"/>
                     <state key="normal" title="ㅇ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="kct-vY-yHm"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="tW5-Xo-6oU"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr6-t2-oVL">
-                    <rect key="frame" x="148" y="60" width="36" height="46"/>
+                <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJn-26-zqT">
+                    <rect key="frame" x="133" y="60" width="32" height="46"/>
                     <state key="normal" title="ㄹ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="e5p-Pc-XM6"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="hGj-5V-iEl"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UI-sW-GHU">
-                    <rect key="frame" x="189" y="60" width="36" height="46"/>
+                <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrh-io-fen">
+                    <rect key="frame" x="174" y="60" width="32" height="46"/>
                     <state key="normal" title="ㅎ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="UHH-Ud-hBK"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="xKs-jL-Jqn"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLl-Mh-vWm">
-                    <rect key="frame" x="230" y="60" width="36" height="46"/>
+                <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eS-JL-oA2">
+                    <rect key="frame" x="215" y="60" width="32" height="46"/>
                     <state key="normal" title="ㅗ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="m5q-Ge-gbA"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="zGd-ps-ORR"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="16" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOc-U4-TwH">
-                    <rect key="frame" x="271" y="60" width="36" height="46"/>
+                <button opaque="NO" tag="16" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JR-QM-6R8">
+                    <rect key="frame" x="256" y="60" width="32" height="46"/>
                     <state key="normal" title="ㅓ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="3ty-bh-wJy"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="iSF-zr-W5Q"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="17" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA6-uj-h3R">
-                    <rect key="frame" x="312" y="58" width="36" height="46"/>
+                <button opaque="NO" tag="17" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NB-53-u0P">
+                    <rect key="frame" x="297" y="58" width="32" height="46"/>
                     <state key="normal" title="ㅏ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="fdm-yL-wdS"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="tGt-B7-ycx"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="18" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9U-5X-Eah">
-                    <rect key="frame" x="353" y="58" width="36" height="46"/>
+                <button opaque="NO" tag="18" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqh-ML-bXc">
+                    <rect key="frame" x="338" y="58" width="32" height="46"/>
                     <state key="normal" title="ㅣ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="5O2-xd-Svw"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="5ac-DP-Zzb"/>
                     </connections>
                 </button>
-                <button hidden="YES" opaque="NO" tag="26" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4D-rA-Gzm">
-                    <rect key="frame" x="25" y="116" width="36" height="46"/>
+                <button hidden="YES" opaque="NO" tag="26" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HS-st-Sgs">
+                    <rect key="frame" x="14" y="116" width="32" height="46"/>
                     <state key="normal" title="~" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="iUO-yD-fD3"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="Dp9-CM-0ba"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHU-3a-ekt">
+                <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZD-Ja-eNK">
                     <rect key="frame" x="4" y="116" width="45" height="46"/>
                     <state key="normal" title="⬆︎" backgroundImage="Key_Symbol_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" backgroundImage="Key_Symbol_BG_H"/>
                     <state key="highlighted" backgroundImage="Key_Symbol_BG_H"/>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="E7k-wF-vPd"/>
+                        <action selector="changeShiftKeyboardAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="o2j-3v-Kwj"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="19" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kan-xp-pBl">
-                    <rect key="frame" x="66" y="116" width="36" height="46"/>
+                <button opaque="NO" tag="19" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZm-cj-X5h">
+                    <rect key="frame" x="56" y="116" width="32" height="46"/>
                     <state key="normal" title="ㅋ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="o5J-er-8Bd"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="nGL-9l-OfP"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6n-tV-uaJ">
-                    <rect key="frame" x="107" y="116" width="36" height="46"/>
+                <button opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pln-d1-eSI">
+                    <rect key="frame" x="93" y="116" width="32" height="46"/>
                     <state key="normal" title="ㅌ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="rpe-Uo-rQJ"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="oRt-sU-68P"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="21" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPr-fD-S68">
-                    <rect key="frame" x="148" y="116" width="36" height="46"/>
+                <button opaque="NO" tag="21" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyF-PZ-9Ni">
+                    <rect key="frame" x="130" y="116" width="32" height="46"/>
                     <state key="normal" title="ㅊ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="bYq-gd-z5J"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="UYy-hc-sUs"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="22" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pi4-cS-S30">
-                    <rect key="frame" x="189" y="116" width="36" height="46"/>
+                <button opaque="NO" tag="22" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tx5-lS-iZa">
+                    <rect key="frame" x="167" y="116" width="32" height="46"/>
                     <state key="normal" title="ㅍ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="Pq2-Ye-uNT"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="yIl-PK-dRR"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="23" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3T-Oy-wng">
-                    <rect key="frame" x="230" y="116" width="36" height="46"/>
+                <button opaque="NO" tag="23" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oup-jx-hlx">
+                    <rect key="frame" x="205" y="116" width="32" height="46"/>
                     <state key="normal" title="ㅠ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="pA1-uR-6H5"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="u7K-MT-IgI"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="24" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtJ-F7-r8A">
-                    <rect key="frame" x="271" y="116" width="36" height="46"/>
+                <button opaque="NO" tag="24" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glM-rA-S8G">
+                    <rect key="frame" x="242" y="116" width="32" height="46"/>
                     <state key="normal" title="ㅜ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="zX4-oV-6Vj"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="9Ci-eZ-UjN"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaS-BT-xFD">
-                    <rect key="frame" x="312" y="116" width="36" height="46"/>
+                <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ut-YT-A51">
+                    <rect key="frame" x="280" y="116" width="32" height="46"/>
                     <state key="normal" title="ㅡ" backgroundImage="Key_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="DJG-V8-AkH"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="Mhh-Cb-qAi"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="200" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAP-gs-UJe">
-                    <rect key="frame" x="364" y="116" width="45" height="46"/>
+                <button opaque="NO" tag="200" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNw-ZY-mLb">
+                    <rect key="frame" x="325" y="116" width="45" height="46"/>
                     <state key="normal" backgroundImage="Key_Back_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="highlighted" backgroundImage="Key_Back_H"/>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="0TK-5w-9b0"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="8Tl-nf-Atd"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="300" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LML-pm-tfF">
-                    <rect key="frame" x="4" y="172" width="45" height="46"/>
+                <button opaque="NO" tag="300" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua0-rA-csg">
+                    <rect key="frame" x="5" y="172" width="45" height="46"/>
                     <state key="normal" title="123" backgroundImage="Key_Symbol_BG_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" backgroundImage="Key_Symbol_BG_H"/>
                     <state key="highlighted" backgroundImage="Key_Symbol_BG_H"/>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="QLX-e8-biL"/>
+                        <action selector="changeNumberKeyboardAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="mAt-WI-uK8"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="400" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhw-eK-fXH">
+                <button opaque="NO" tag="400" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73j-fO-ZSG">
                     <rect key="frame" x="57" y="172" width="45" height="46"/>
                     <state key="normal" backgroundImage="Key_Language_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" backgroundImage="Key_Language_H"/>
                     <state key="highlighted" backgroundImage="Key_Language_H"/>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="svj-5E-MPp"/>
+                        <action selector="changeKeyboardTypeAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="zmS-84-DAD"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="500" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yab-CF-6ce">
-                    <rect key="frame" x="107" y="172" width="200" height="46"/>
-                    <state key="normal" title="간격" backgroundImage="Key_Space_D">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="Key_Space_H"/>
-                    <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="9Bt-Jl-z3r"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLA-cO-cIV">
-                    <rect key="frame" x="312" y="172" width="97" height="46"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fov-bb-AMz">
+                    <rect key="frame" x="280" y="172" width="90" height="46"/>
                     <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                     <state key="normal" title="검색" backgroundImage="Key_Space_D">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -345,7 +337,18 @@
                     </state>
                     <state key="highlighted" backgroundImage="Key_Space_H"/>
                     <connections>
-                        <action selector="keyAction:" destination="ojO-GH-DD8" eventType="touchUpInside" id="tdK-XF-yu2"/>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="RB2-8F-Iu1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="500" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxT-ig-4qH">
+                    <rect key="frame" x="110" y="172" width="164" height="46"/>
+                    <state key="normal" title="간격" backgroundImage="Key_Space_D">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Key_Space_H"/>
+                    <connections>
+                        <action selector="keyAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="3CD-JN-xpD"/>
                     </connections>
                 </button>
             </subviews>
@@ -355,6 +358,39 @@
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="languageKey" destination="73j-fO-ZSG" id="u69-BR-Tae"/>
+                <outlet property="numberKey" destination="ua0-rA-csg" id="m2j-dk-EZy"/>
+                <outlet property="shiftKey" destination="5ZD-Ja-eNK" id="57d-9Y-f6D"/>
+                <outlet property="tildeKey" destination="9HS-st-Sgs" id="p7M-rJ-HuH"/>
+                <outletCollection property="keyList" destination="9bl-d2-IN0" id="fPM-Kb-8vL"/>
+                <outletCollection property="keyList" destination="80U-QL-jmt" id="bnc-n1-ZXd"/>
+                <outletCollection property="keyList" destination="dDM-FG-QG0" id="7bL-KE-6Ld"/>
+                <outletCollection property="keyList" destination="bVE-ex-URV" id="lcW-pO-PS0"/>
+                <outletCollection property="keyList" destination="r06-ut-ttF" id="mo2-Kf-j0e"/>
+                <outletCollection property="keyList" destination="lLh-9d-H7q" id="OYz-l6-BLP"/>
+                <outletCollection property="keyList" destination="oUo-YT-F53" id="ZaN-Hv-lks"/>
+                <outletCollection property="keyList" destination="UUs-k1-QMU" id="TrV-CK-dq4"/>
+                <outletCollection property="keyList" destination="Wrx-U4-Yhk" id="BhE-zQ-41Y"/>
+                <outletCollection property="keyList" destination="8RI-hP-OhA" id="m9P-3g-f22"/>
+                <outletCollection property="keyList" destination="zOT-5H-9s7" id="3e5-2k-QHW"/>
+                <outletCollection property="keyList" destination="7fB-Hj-XFQ" id="Cqu-gN-JIj"/>
+                <outletCollection property="keyList" destination="ZsL-LE-PhI" id="B1e-ut-N1N"/>
+                <outletCollection property="keyList" destination="vJn-26-zqT" id="S3b-A9-HqN"/>
+                <outletCollection property="keyList" destination="Lrh-io-fen" id="h9U-dA-IKa"/>
+                <outletCollection property="keyList" destination="1eS-JL-oA2" id="cWY-03-FcS"/>
+                <outletCollection property="keyList" destination="0JR-QM-6R8" id="17E-qY-FCS"/>
+                <outletCollection property="keyList" destination="8NB-53-u0P" id="rhu-Uw-4wB"/>
+                <outletCollection property="keyList" destination="fqh-ML-bXc" id="3Zp-8k-gt2"/>
+                <outletCollection property="keyList" destination="iZm-cj-X5h" id="kLq-qJ-BJv"/>
+                <outletCollection property="keyList" destination="pln-d1-eSI" id="fa3-I8-XEG"/>
+                <outletCollection property="keyList" destination="FyF-PZ-9Ni" id="oCQ-O6-PW9"/>
+                <outletCollection property="keyList" destination="tx5-lS-iZa" id="cFP-mS-bu1"/>
+                <outletCollection property="keyList" destination="oup-jx-hlx" id="R3H-CD-neK"/>
+                <outletCollection property="keyList" destination="glM-rA-S8G" id="zpe-bw-OGB"/>
+                <outletCollection property="keyList" destination="7Ut-YT-A51" id="ngs-pp-BcI"/>
+                <outletCollection property="keyList" destination="9HS-st-Sgs" id="0ww-vM-VQB"/>
+            </connections>
         </view>
     </objects>
     <resources>
