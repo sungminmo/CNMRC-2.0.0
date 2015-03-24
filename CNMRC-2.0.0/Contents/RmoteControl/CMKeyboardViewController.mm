@@ -57,10 +57,10 @@ using namespace anymote::messages;
     }
     
     CMKeyboardView *kb = [[[NSBundle mainBundle] loadNibNamed:keyboardXIB owner:self options:nil] objectAtIndex:0];
+    kb.frame = self.KeyboardBackground.bounds;
     kb.clipsToBounds = NO;
     kb.delegate = self;
     [self.KeyboardBackground addSubview:kb];
-    self.KeyboardBackground.clipsToBounds = NO;
     self.keyboard = kb;
     
     // 키보드 언어 설정(한글).

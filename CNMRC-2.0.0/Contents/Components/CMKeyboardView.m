@@ -42,8 +42,26 @@
     if (button.tag < 27)
     {
         NSString *pressImageName = nil;
-        CGFloat pressViewWidth = 64;
+        CGFloat pressViewWidth = 0;
         CGFloat pressViewHight = 109;
+        NSString *pressViewXIB = nil;
+        switch ([LPPhoneVersion deviceSize]) {
+            case iPhone55inch:
+                pressViewWidth = 64;
+                pressViewXIB = @"CMPressView";
+                break;
+                
+            case iPhone47inch:
+                pressViewWidth = 56;
+                pressViewXIB = @"CMPressView_6";
+                break;
+                
+            default:
+                pressViewWidth = 52;
+                pressViewXIB = @"CMPressView_5";
+                break;
+        }
+        
         CGRect pressVewFrame = CGRectZero;
         if (button.tag == 0)
         {
@@ -70,7 +88,7 @@
                                        pressViewHight);
         }
         
-        CMPressView *pv = [[[NSBundle mainBundle] loadNibNamed:@"CMPressView" owner:self options:nil] objectAtIndex:0];
+        CMPressView *pv = [[[NSBundle mainBundle] loadNibNamed:pressViewXIB owner:self options:nil] objectAtIndex:0];
         pv.frame = pressVewFrame;
         [pv setImage:pressImageName andLabel:button.titleLabel.text];
         [self addSubview:pv];

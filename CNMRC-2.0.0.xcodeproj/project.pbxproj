@@ -37,6 +37,8 @@
 		1D5FA7461A46B2A500D51182 /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7421A46B2A500D51182 /* NSArray+Accessors.m */; };
 		1D5FA7471A46B2A500D51182 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7441A46B2A500D51182 /* NSManagedObject+ActiveRecord.m */; };
 		1D6F512E1A6A930E0045FB89 /* CMCircleMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F512D1A6A930E0045FB89 /* CMCircleMenu.xib */; };
+		1D708E1A1AC11286005B5CBE /* CMPressView_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D708E191AC11286005B5CBE /* CMPressView_6.xib */; };
+		1D708E1C1AC11292005B5CBE /* CMPressView_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D708E1B1AC11292005B5CBE /* CMPressView_5.xib */; };
 		1DA28AE01A3C70A0007D7F4E /* GTMMethodCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD01A3C70A0007D7F4E /* GTMMethodCheck.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DA28AE11A3C70A0007D7F4E /* GTMGeometryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD41A3C70A0007D7F4E /* GTMGeometryUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DA28AE21A3C70A0007D7F4E /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28AD61A3C70A0007D7F4E /* GTMLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -286,6 +288,8 @@
 		1D5FA7431A46B2A500D51182 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
 		1D5FA7441A46B2A500D51182 /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
 		1D6F512D1A6A930E0045FB89 /* CMCircleMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMCircleMenu.xib; sourceTree = "<group>"; };
+		1D708E191AC11286005B5CBE /* CMPressView_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPressView_6.xib; sourceTree = "<group>"; };
+		1D708E1B1AC11292005B5CBE /* CMPressView_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPressView_5.xib; sourceTree = "<group>"; };
 		1DA28ACF1A3C70A0007D7F4E /* GTMMethodCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMMethodCheck.h; sourceTree = "<group>"; };
 		1DA28AD01A3C70A0007D7F4E /* GTMMethodCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMMethodCheck.m; sourceTree = "<group>"; };
 		1DA28AD21A3C70A0007D7F4E /* GTMGarbageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGarbageCollection.h; sourceTree = "<group>"; };
@@ -1404,6 +1408,8 @@
 				1D42AE6D1AC028BE002F70E8 /* CMPressView.h */,
 				1D42AE6E1AC028BE002F70E8 /* CMPressView.m */,
 				1D42AE701AC028CD002F70E8 /* CMPressView.xib */,
+				1D708E191AC11286005B5CBE /* CMPressView_6.xib */,
+				1D708E1B1AC11292005B5CBE /* CMPressView_5.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1895,6 +1901,7 @@
 				1D42AE711AC028CD002F70E8 /* CMPressView.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
+				1D708E1A1AC11286005B5CBE /* CMPressView_6.xib in Resources */,
 				1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
 				1DBA76CA1A20B4C8003AB966 /* libprotobuf-lite.la in Resources */,
@@ -1911,6 +1918,7 @@
 				1DCF4D371ABFED480033413F /* CMKeyboardView_5.xib in Resources */,
 				1DBA76CE1A20B4C8003AB966 /* libprotoc.la in Resources */,
 				1DBA76D01A20B4C8003AB966 /* protobuf.pc in Resources */,
+				1D708E1C1AC11292005B5CBE /* CMPressView_5.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
