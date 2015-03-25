@@ -43,18 +43,23 @@
     return self;
 }
 
-- (void)sharedSetup {
+- (void)sharedSetup
+{
     UIImage *loadingImage = [UIImage imageNamed:@"Loading"];
     self.image = loadingImage;
 }
 
 #pragma mark - Public Methods
 
-- (void)setAnimating:(BOOL)animating {
+- (void)setAnimating:(BOOL)animating
+{
     _animating = animating;
-    if (_animating) {
+    if (_animating)
+    {
         [self startAnimating];
-    } else {
+    }
+    else
+    {
         [self stopAnimating];
     }
 }
