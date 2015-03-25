@@ -207,7 +207,7 @@
           \nData length: [%d]\
           \n-----------------------------------------------------------------------\
           \n%@\
-          \n-----------------------------------------------------------------------", [data length], [data hexDump]);
+          \n-----------------------------------------------------------------------", (int)[data length], [data hexDump]);
 }
 
 // 데이터 전송: NSString.
@@ -231,6 +231,7 @@
 // 데이터 수신: 데이터 필터링 및 푸시.
 - (void)receiveData:(NSData *)data
 {
+    DDLogDebug(@">>>>>>>>>>>>>%@", @(data.length));
     // 소켓을 닫는다.
     [self closeSocket];
     
@@ -244,7 +245,7 @@
     NSString *trNo = [self trNo:data];
     
     // SecondTV 예외 처리.
-    if ([trNo isEqualToString:@"CM04"] && [data length] == 110) {
+    if ([trNo isEqualToString:@"CM04"] && [self dataLength:data] == 110) {
         trNo = @"CM041";
     }
     

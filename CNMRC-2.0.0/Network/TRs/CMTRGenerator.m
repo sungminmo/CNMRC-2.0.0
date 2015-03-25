@@ -42,14 +42,14 @@
           \nData length: [%d]\
           \n-----------------------------------------------------------------------\
           \n%@\
-          \n-----------------------------------------------------------------------", [tr lengthOfBytesUsingEncoding:NSUTF8StringEncoding], tr);
+          \n-----------------------------------------------------------------------", (int)[tr lengthOfBytesUsingEncoding:NSUTF8StringEncoding], tr);
 }
 
 // 문자열 뒤집기.
 - (NSString *)reverseString:(NSString *)string
 {
 	NSMutableString *reversedString;
-	int len = [string length];
+	int len = (int)[string length];
 	reversedString = [NSMutableString stringWithCapacity:len];
 	
 	while (len > 0)
@@ -63,7 +63,7 @@
 {
 	NSString *stringDataLength = [NSString stringWithFormat:@"%d", num];
 	stringDataLength = [self reverseString:stringDataLength];
-    int repeatNum = cipher - [stringDataLength length];
+    int repeatNum = cipher - (int)[stringDataLength length];
 	
 	for (int i = 0; i < repeatNum; i++)
     {
@@ -115,7 +115,7 @@
 // 전문 데이터의 길이.
 - (int)dataLength:(CMTRObject *)tr
 {
-    return [[tr description] lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    return (int)[[tr description] lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
 }
 
 #pragma mark - 전문 생성.

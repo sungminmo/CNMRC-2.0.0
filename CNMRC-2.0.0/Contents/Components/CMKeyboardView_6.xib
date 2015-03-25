@@ -328,7 +328,7 @@
                         <action selector="changeKeyboardTypeAction:" destination="ZsI-kf-DnK" eventType="touchUpInside" id="zmS-84-DAD"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fov-bb-AMz">
+                <button opaque="NO" tag="600" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fov-bb-AMz">
                     <rect key="frame" x="280" y="172" width="90" height="46"/>
                     <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                     <state key="normal" title="검색" backgroundImage="Key_Space_D">

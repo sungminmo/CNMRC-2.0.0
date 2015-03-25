@@ -76,8 +76,6 @@ using namespace anymote::messages;
     }
 }
 
-#pragma mark - 프라이빗 메스드
-
 // 쌍모음/쌍자음 확인.
 - (BOOL)isPair:(NSString *)hangeul
 {
@@ -468,7 +466,7 @@ using namespace anymote::messages;
     else if (keyTag == KEY_TAG_SPACE)
     {
         // 스페이스 키.
-        string = @"";
+        string = @" ";
         [RemoteManager.sender enterText:string error:NULL];
         NSString *newText = [self.searchTextField.text stringByAppendingString:string];
         self.searchTextField.text = newText;
@@ -482,7 +480,7 @@ using namespace anymote::messages;
     {
         if (self.currentInputMode == CMKeyboardTypeEnglish || self.currentInputMode == CMKeyboardTypeNumberAndSymbol)
         {
-            // 영문일 경우 텍스트 전송.
+            // 영문과 숫자/기호일 경우 텍스트 전송.
             [RemoteManager.sender enterText:string error:NULL];
         }
         else

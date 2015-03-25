@@ -249,7 +249,7 @@ using namespace anymote::messages;
     // 채널 정보 설정.
     [self setupChannelInfo];
     
-    [self.view bringSubviewToFront:self.playerLayerView];
+    //[self.view bringSubviewToFront:self.playerLayerView];
 }
 
 // 제스처 콜백.
@@ -371,7 +371,7 @@ using namespace anymote::messages;
 - (void)setupChannelInfo
 {
     // 제목.
-    self.titleLabel.text = self.channelInfo.programTitle;
+    self.titleLabel.text = [NSString stringWithFormat:@" %@", self.channelInfo.programTitle];
     
     // 채널 번호.
     self.channelNoLabel.text = self.channelInfo.channelNo;
@@ -406,6 +406,7 @@ using namespace anymote::messages;
                          // 회전 애니메이션을 줄 이미지가 완전한 원이 아니라 화살표가 있기 때문에 90도씩 계속 반복시킨다.
                          if (finished)
                          {
+                             [self stopLoading];
                              [self startLoading];
                          }
                      }];
@@ -414,7 +415,7 @@ using namespace anymote::messages;
 // 로딩 애니메이션 중지.
 - (void)stopLoading
 {
-    //[self.loadingImageView.layer removeAllAnimations];
+    [self.loadingImageView.layer removeAllAnimations];
     self.loadingImageView.hidden = YES;
 }
 
@@ -422,6 +423,7 @@ using namespace anymote::messages;
 - (void)requestAssetID
 {
     // 로딩 시작.
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
     [self performSelector:@selector(startLoading) withObject:nil afterDelay:2];
     
     // 전문 생성.
@@ -481,19 +483,19 @@ using namespace anymote::messages;
     
     // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
     // 사설IP(192로 시작...)  여부.
-    NSString *address = nil;
-    if ([self isPrivateAddress:[RemoteManager.currentBox.addresses objectAtIndex:0]])
-    {
-        address = [RemoteManager.currentBox.addresses objectAtIndex:0];
-    }
-    else
-    {
-        // 박스 이름에서 IP를 가져온다.
-        address = [self genAddress:RemoteManager.currentBox.name];
-    }
+//    NSString *address = nil;
+//    if ([self isPrivateAddress:[RemoteManager.currentBox.addresses objectAtIndex:0]])
+//    {
+//        address = [RemoteManager.currentBox.addresses objectAtIndex:0];
+//    }
+//    else
+//    {
+//        // 박스 이름에서 IP를 가져온다.
+//        address = [self genAddress:RemoteManager.currentBox.name];
+//    }
     
     // 원래 코드.
-    //NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
+    NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
     
     NSString *stringURL = [NSString stringWithFormat:@"http://%@/%@.%@", address, assetID, HLS_EXTENTION];
     return [NSURL URLWithString:stringURL];
@@ -1058,12 +1060,13 @@ using namespace anymote::messages;
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-    if (touch.view == self.view)
-    {
-        return YES;
-    }
-    
-    return NO;
+//    if (touch.view == self.view)
+//    {
+//        return YES;
+//    }
+//    
+//    return NO;
+    return YES;
 }
 
 @end

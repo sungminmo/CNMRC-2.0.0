@@ -339,7 +339,7 @@
                         <action selector="keyAction:" destination="Nug-NK-4tl" eventType="touchUpInside" id="WJg-o6-nt1"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-OD-u9e">
+                <button opaque="NO" tag="600" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-OD-u9e">
                     <rect key="frame" x="312" y="172" width="97" height="46"/>
                     <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                     <state key="normal" title="검색" backgroundImage="Key_Space_D">
