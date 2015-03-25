@@ -214,6 +214,7 @@
 		1DBCCA191AB952AC001AAB91 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCCA181AB952AC001AAB91 /* FCFileManager.m */; };
 		1DBCCA6C1AB96F87001AAB91 /* libcrypto_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */; };
 		1DBCCA6E1AB96F87001AAB91 /* libssl_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */; };
+		1DC455DE1AC2AB8F00CFB27E /* CMActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC455DD1AC2AB8F00CFB27E /* CMActivityIndicator.m */; };
 		1DCF4D331ABFEC8C0033413F /* CMKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D321ABFEC8C0033413F /* CMKeyboardView.xib */; };
 		1DCF4D351ABFED370033413F /* CMKeyboardView_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D341ABFED370033413F /* CMKeyboardView_6.xib */; };
 		1DCF4D371ABFED480033413F /* CMKeyboardView_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */; };
@@ -716,6 +717,8 @@
 		1DBCCA661AB96F87001AAB91 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		1DBCCA681AB96F87001AAB91 /* libcrypto_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto_iOS.a; sourceTree = "<group>"; };
 		1DBCCA6A1AB96F87001AAB91 /* libssl_iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl_iOS.a; sourceTree = "<group>"; };
+		1DC455DC1AC2AB8F00CFB27E /* CMActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMActivityIndicator.h; sourceTree = "<group>"; };
+		1DC455DD1AC2AB8F00CFB27E /* CMActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMActivityIndicator.m; sourceTree = "<group>"; };
 		1DCF4D321ABFEC8C0033413F /* CMKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView.xib; sourceTree = "<group>"; };
 		1DCF4D341ABFED370033413F /* CMKeyboardView_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView_6.xib; sourceTree = "<group>"; };
 		1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView_5.xib; sourceTree = "<group>"; };
@@ -1410,6 +1413,8 @@
 				1D42AE701AC028CD002F70E8 /* CMPressView.xib */,
 				1D708E191AC11286005B5CBE /* CMPressView_6.xib */,
 				1D708E1B1AC11292005B5CBE /* CMPressView_5.xib */,
+				1DC455DC1AC2AB8F00CFB27E /* CMActivityIndicator.h */,
+				1DC455DD1AC2AB8F00CFB27E /* CMActivityIndicator.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1993,6 +1998,7 @@
 				1DB9B92C1A613DB000E89E27 /* UIImage+FlatUI.m in Sources */,
 				1DB9B9AF1A614FCD00E89E27 /* CMVODListTableViewCell.m in Sources */,
 				1DB9B99C1A614FCD00E89E27 /* CMChannelTableViewCell.m in Sources */,
+				1DC455DE1AC2AB8F00CFB27E /* CMActivityIndicator.m in Sources */,
 				1DB9B9D61A61502D00E89E27 /* CMParser.m in Sources */,
 				1DB9B95A1A61446D00E89E27 /* PoloClient.c in Sources */,
 				1DB9B9C41A61501300E89E27 /* CM02.m in Sources */,

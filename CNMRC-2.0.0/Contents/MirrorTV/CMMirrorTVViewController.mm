@@ -148,8 +148,18 @@ using namespace anymote::messages;
     
     // 현재 볼륨 초기화.
     self.currentVolume = self.player.volume;
+    
+    // 테스트.
+//    self.mirrorTVURL = [NSURL URLWithString:@"https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8"];
+//    [self loadMirrorTV];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)didReceiveMemoryWarning
 {
