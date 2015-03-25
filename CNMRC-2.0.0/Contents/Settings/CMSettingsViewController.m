@@ -39,7 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-    
+
 	// 설정 정보(디스플레이용) 로드.
 	self.settings = [self loadSettings];
     
@@ -268,7 +268,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	if (section == 0 || section == 1 || section == 2) {
-		UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, tableView.bounds.size.width - 20, 30)];
+		UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, tableView.bounds.size.width, 30)];
 		headerView.backgroundColor = [UIColor clearColor];
 		UILabel *headerLabel = [[UILabel alloc] initWithFrame:headerView.frame];
 		headerLabel.backgroundColor = [UIColor clearColor];
@@ -283,7 +283,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
 	if (section == 2 && !AppInfo.isAutoAuthAdult) {
-		UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 70)];
+		UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 40)];
 		footerView.backgroundColor = [UIColor clearColor];
 		UILabel *footerLabel = [[UILabel alloc] initWithFrame:footerView.frame];
 		footerLabel.backgroundColor = [UIColor clearColor];
@@ -299,9 +299,17 @@
 	return nil;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 3) {
+        return 0;
+    }
+    
+    return 40;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
 	if (section == 2 && !AppInfo.isAutoAuthAdult) {
-		return 70.0;
+		return 40.0;
 	}
     
 	return 0;
