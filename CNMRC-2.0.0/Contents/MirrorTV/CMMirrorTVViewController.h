@@ -11,6 +11,7 @@
 #import <CoreMedia/CoreMedia.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "CMChannelInfo.h"
+#import "CMActivityIndicator.h"
 
 // 미러TV 상태.
 typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
@@ -42,7 +43,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 
 // 로딩.
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
-@property (weak, nonatomic) IBOutlet UIImageView *loadingImageView;
+@property (weak, nonatomic) IBOutlet CMActivityIndicator *loadingImageView;
 
 // 컨트롤.
 @property (weak, nonatomic) IBOutlet UIView *controlPannel;
