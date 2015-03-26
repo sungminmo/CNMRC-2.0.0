@@ -145,13 +145,12 @@ using namespace anymote::messages;
     // 로딩 시작.
     [self adjustLayout:CMMirrorTVStatusLoading];
     
-    self.player.volume = 0.5;
-    
     // 볼륨 프로그레스바 초기화.
-    [self.volumeProgressView setProgress:self.player.volume animated:YES];
+    [self.volumeProgressView setProgress:0.625 animated:YES];
     
     // 현재 볼륨 초기화.
-    self.currentVolume = self.player.volume;
+    self.currentVolume = 0.625;
+    self.player.volume = self.currentVolumehr;
     
     // 테스트.
 //    self.mirrorTVURL = [NSURL URLWithString:@"https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8"];
@@ -546,11 +545,11 @@ using namespace anymote::messages;
 //        [self.player pause];
 //        [self.player seekToTime:kCMTimeZero];
 //    }
-    [self.playerItem removeObserver:self forKeyPath:kStatusKey];
-    [self.playerItem removeObserver:self forKeyPath:kRateKey];
-    [self.playerItem removeObserver:self forKeyPath:kPlayableKey];
-    [self.playerItem removeObserver:self forKeyPath:kCurrentItemKey];
-    [self.playerItem removeObserver:self forKeyPath:kTimedMetadataKey];
+    //[self.playerItem removeObserver:self forKeyPath:kStatusKey];
+    //[self.playerItem removeObserver:self forKeyPath:kRateKey];
+    //[self.playerItem removeObserver:self forKeyPath:kPlayableKey];
+    //[self.playerItem removeObserver:self forKeyPath:kCurrentItemKey];
+    //[self.playerItem removeObserver:self forKeyPath:kTimedMetadataKey];
     //[self setPlayer:nil];
 }
 
