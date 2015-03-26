@@ -15,6 +15,7 @@
 #import "CMSettingsViewController.h"
 #import "LPAppStats.h"
 #import "DQAlertView.h"
+#import "CMPlayerViewController.h"
 
 // 소켓 관련.
 #import "CMTRGenerator.h"
@@ -359,9 +360,12 @@
         }
         
         // 테스트 용 -----------------------------------.
-        CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:@"CMMirrorTVViewController" bundle:nil];
-        viewController.blockChannelInfo = self.blockChannelInfo;
-        self.modalPresentationStyle = UIModalPresentationCurrentContext;
+//        CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:@"CMMirrorTVViewController" bundle:nil];
+//        viewController.blockChannelInfo = self.blockChannelInfo;
+//        self.modalPresentationStyle = UIModalPresentationCurrentContext;
+//        [self presentViewController:viewController animated:YES completion:nil];
+        
+        CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
         [self presentViewController:viewController animated:YES completion:nil];
         // 테스트 용 -----------------------------------.
     };

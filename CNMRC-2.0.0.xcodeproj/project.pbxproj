@@ -36,6 +36,9 @@
 		1D5FA7451A46B2A500D51182 /* LPCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7401A46B2A500D51182 /* LPCoreDataManager.m */; };
 		1D5FA7461A46B2A500D51182 /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7421A46B2A500D51182 /* NSArray+Accessors.m */; };
 		1D5FA7471A46B2A500D51182 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7441A46B2A500D51182 /* NSManagedObject+ActiveRecord.m */; };
+		1D6BBC411AC3CF86005B1706 /* CMPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6BBC3D1AC3CF86005B1706 /* CMPlayerView.m */; };
+		1D6BBC421AC3CF86005B1706 /* CMPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6BBC3F1AC3CF86005B1706 /* CMPlayerViewController.m */; };
+		1D6BBC431AC3CF86005B1706 /* CMPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6BBC401AC3CF86005B1706 /* CMPlayerViewController.xib */; };
 		1D6F512E1A6A930E0045FB89 /* CMCircleMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F512D1A6A930E0045FB89 /* CMCircleMenu.xib */; };
 		1D708E1A1AC11286005B5CBE /* CMPressView_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D708E191AC11286005B5CBE /* CMPressView_6.xib */; };
 		1D708E1C1AC11292005B5CBE /* CMPressView_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D708E1B1AC11292005B5CBE /* CMPressView_5.xib */; };
@@ -288,6 +291,11 @@
 		1D5FA7421A46B2A500D51182 /* NSArray+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Accessors.m"; sourceTree = "<group>"; };
 		1D5FA7431A46B2A500D51182 /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
 		1D5FA7441A46B2A500D51182 /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
+		1D6BBC3C1AC3CF86005B1706 /* CMPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPlayerView.h; sourceTree = "<group>"; };
+		1D6BBC3D1AC3CF86005B1706 /* CMPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPlayerView.m; sourceTree = "<group>"; };
+		1D6BBC3E1AC3CF86005B1706 /* CMPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPlayerViewController.h; sourceTree = "<group>"; };
+		1D6BBC3F1AC3CF86005B1706 /* CMPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPlayerViewController.m; sourceTree = "<group>"; };
+		1D6BBC401AC3CF86005B1706 /* CMPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPlayerViewController.xib; sourceTree = "<group>"; };
 		1D6F512D1A6A930E0045FB89 /* CMCircleMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMCircleMenu.xib; sourceTree = "<group>"; };
 		1D708E191AC11286005B5CBE /* CMPressView_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPressView_6.xib; sourceTree = "<group>"; };
 		1D708E1B1AC11292005B5CBE /* CMPressView_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPressView_5.xib; sourceTree = "<group>"; };
@@ -1159,6 +1167,11 @@
 		1DB9B8F01A612AE900E89E27 /* MirrorTV */ = {
 			isa = PBXGroup;
 			children = (
+				1D6BBC3C1AC3CF86005B1706 /* CMPlayerView.h */,
+				1D6BBC3D1AC3CF86005B1706 /* CMPlayerView.m */,
+				1D6BBC3E1AC3CF86005B1706 /* CMPlayerViewController.h */,
+				1D6BBC3F1AC3CF86005B1706 /* CMPlayerViewController.m */,
+				1D6BBC401AC3CF86005B1706 /* CMPlayerViewController.xib */,
 				1D14AA811A6169E300FECF55 /* CMChannelInfo.h */,
 				1D14AA821A6169E300FECF55 /* CMChannelInfo.m */,
 				1D14AA841A6169E300FECF55 /* CMMirrorTVViewController.h */,
@@ -1904,6 +1917,7 @@
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
 				1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */,
 				1D42AE711AC028CD002F70E8 /* CMPressView.xib in Resources */,
+				1D6BBC431AC3CF86005B1706 /* CMPlayerViewController.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
 				1D708E1A1AC11286005B5CBE /* CMPressView_6.xib in Resources */,
@@ -2040,6 +2054,7 @@
 				1D14AA711A61692500FECF55 /* RToast.m in Sources */,
 				1DB9B9381A613F1100E89E27 /* CMAlarmManager.m in Sources */,
 				1DA28AE31A3C70A0007D7F4E /* GTMNSString+URLArguments.m in Sources */,
+				1D6BBC421AC3CF86005B1706 /* CMPlayerViewController.m in Sources */,
 				1DB9B9481A61440300E89E27 /* CommandSender.mm in Sources */,
 				1DB9BA261A615A9200E89E27 /* CMSetProductViewController.m in Sources */,
 				1DB9B9CB1A61501300E89E27 /* CMTRParser.m in Sources */,
@@ -2062,6 +2077,7 @@
 				1DB9B99B1A614FCD00E89E27 /* CMBaseViewController.m in Sources */,
 				1DB8FC301ABA8F2C00ABFB07 /* DDFileLogger.m in Sources */,
 				1DB8FC2C1ABA8F2C00ABFB07 /* CLIColor.m in Sources */,
+				1D6BBC411AC3CF86005B1706 /* CMPlayerView.m in Sources */,
 				1DB8FC351ABA8F2C00ABFB07 /* DDMultiFormatter.m in Sources */,
 				1DB9B9A61A614FCD00E89E27 /* CMEPGTableViewCell.m in Sources */,
 				1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.mm in Sources */,
