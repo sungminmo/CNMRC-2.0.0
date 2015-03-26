@@ -260,7 +260,6 @@
         case 3:
         {
             // 쿼티.
-            //CMQwertyViewController *viewController = [[CMQwertyViewController alloc] initWithNibName:@"CMQwertyViewController" bundle:nil];
             CMKeyboardViewController *viewController = [[CMKeyboardViewController alloc] initWithNibName:@"CMKeyboardViewController" bundle:nil];
             self.modalPresentationStyle = UIModalPresentationCurrentContext;
             if (iOSVersionGreaterThanOrEqualTo(@"8.0"))
