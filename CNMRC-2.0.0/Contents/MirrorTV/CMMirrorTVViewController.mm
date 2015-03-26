@@ -88,6 +88,9 @@ using namespace anymote::messages;
 - (NSURL *)genMirrorTVURL:(NSString *)receivedAssetID;
 - (BOOL)isBlockedChannel:(NSString *)sourceID;
 - (void)showNotice:(NSString *)msg;
+- (void)alertMirrorTVError;
+- (void)showAlertWithMessage:(NSString *)msg;
+- (void)stop;
 
 @end
 
@@ -273,7 +276,7 @@ using namespace anymote::messages;
     }
 }
 
-// 레이아웃 조정.
+// 레이아웃 조정(NO가 활성화 이다.).
 - (void)adjustLayout:(CMMirrorTVStatus)status
 {
     switch (status)
@@ -399,8 +402,8 @@ using namespace anymote::messages;
 - (void)requestAssetID
 {
     // 로딩 시작.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(startLoading) object:nil];
-    [self performSelector:@selector(startLoading) withObject:nil afterDelay:2];
+//    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(startLoading) object:nil];
+//    [self performSelector:@selector(startLoading) withObject:nil afterDelay:2];
     
     // 전문 생성.
     CMTRGenerator *generator = [[CMTRGenerator alloc] init];
@@ -533,6 +536,22 @@ using namespace anymote::messages;
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.disappearAnimationType = DQAlertViewAnimationTypeNone;
     [alertView show];
+}
+
+// 플레이어 중지.
+- (void)stop
+{
+//    [self.player setAllowsExternalPlayback:NO];
+//    if (self.player) {
+//        [self.player pause];
+//        [self.player seekToTime:kCMTimeZero];
+//    }
+    [self.playerItem removeObserver:self forKeyPath:kStatusKey];
+    [self.playerItem removeObserver:self forKeyPath:kRateKey];
+    [self.playerItem removeObserver:self forKeyPath:kPlayableKey];
+    [self.playerItem removeObserver:self forKeyPath:kCurrentItemKey];
+    [self.playerItem removeObserver:self forKeyPath:kTimedMetadataKey];
+    //[self setPlayer:nil];
 }
 
 #pragma mark - 데이터 수신
@@ -782,9 +801,7 @@ using namespace anymote::messages;
         
         // 플레이어 종료.
         [self requestStop];
-        
-        // 크래시 테스트.
-        //[self.playerItem removeObserver:self forKeyPath:kStatusKey];
+        [self stop];
         
         // 미러TV 나가기.
         [[UIApplication sharedApplication] setStatusBarHidden:NO];
@@ -1187,7 +1204,7 @@ using namespace anymote::messages;
 - (void)assetFailedToPrepareForPlayback:(NSError *)error
 {
     // 로딩 시작.
-    //[self adjustLayout:CMMirrorTVStatusLoading];
+    [self adjustLayout:CMMirrorTVStatusLoading];
     
     // HLS URL 생성을 위해 AssetID 요청.
     [self requestAssetID];
