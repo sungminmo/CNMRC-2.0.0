@@ -149,7 +149,8 @@ typedef struct PoloConnectionEncoding PoloConnectionEncoding;
 // Encodings are sorted by preference. Entry 0 is the preferred encoding.
 struct PoloConnectionEncodingsSet {
   size_t count;
-  __strong PoloConnectionEncoding *entries;
+//  __strong PoloConnectionEncoding *entries;
+    PoloConnectionEncoding *entries;
 };
 typedef struct PoloConnectionEncodingsSet PoloConnectionEncodingsSet;
 

@@ -52,7 +52,7 @@
 }
 
 - (void)connectOperation:(NSDictionary *)dict {
-  NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
   NSString *host = [dict objectForKey:@"host"];
   NSInteger port = [[dict objectForKey:@"port"] integerValue];
@@ -100,7 +100,7 @@
 - (void)connectToHost:(NSString *)host atPort:(NSInteger)port {
   NSLog(@"Connect box address:%@ prot: %d", host, (int)port);
     
-  NSArray *objects = [NSArray arrayWithObjects:host, [NSNumber numberWithInt:(int)port], nil];
+  NSArray *objects = [NSArray arrayWithObjects:host, [NSNumber numberWithInteger:port], nil];
   NSArray *keys = [NSArray arrayWithObjects:@"host", @"port", nil];
   NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
   NSOperation *op = [[[NSInvocationOperation alloc]

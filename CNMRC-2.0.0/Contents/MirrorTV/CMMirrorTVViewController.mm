@@ -82,15 +82,13 @@ using namespace anymote::messages;
 - (void)toggleLoading:(BOOL)hidden;
 - (void)toggleControl:(BOOL)hidden;
 - (void)setupChannelInfo;
+- (void)startLoading;
 - (void)requestAssetID;
 - (void)requestStop;
 - (void)requestHeartbeat;
 - (NSURL *)genMirrorTVURL:(NSString *)receivedAssetID;
 - (BOOL)isBlockedChannel:(NSString *)sourceID;
 - (void)showNotice:(NSString *)msg;
-- (void)alertMirrorTVError;
-- (void)showAlertWithMessage:(NSString *)msg;
-- (void)stop;
 
 @end
 
@@ -128,8 +126,8 @@ using namespace anymote::messages;
     
     // 전문 수신용 옵저버 등록: CM04, CM05, CM06.
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM04 object:nil];    // 구 STB 용.
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM041 object:nil];   // 신규 STB 용.
+    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM04 object:nil];
+    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM041 object:nil];
     [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM05 object:nil];
     [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM06 object:nil];
     
@@ -146,23 +144,16 @@ using namespace anymote::messages;
     [self adjustLayout:CMMirrorTVStatusLoading];
     
     // 볼륨 프로그레스바 초기화.
-    [self.volumeProgressView setProgress:0.625 animated:YES];
+    [self.volumeProgressView setProgress:self.player.volume animated:YES];
     
     // 현재 볼륨 초기화.
-    self.currentVolume = 0.625;
-    self.player.volume = self.currentVolume;
+    self.currentVolume = self.player.volume;
     
     // 테스트.
-//    self.mirrorTVURL = [NSURL URLWithString:@"https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8"];
-//    [self loadMirrorTV];
+    self.mirrorTVURL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
+    [self loadMirrorTV];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -262,7 +253,7 @@ using namespace anymote::messages;
     // 채널 정보 설정.
     [self setupChannelInfo];
     
-    [self.view bringSubviewToFront:self.playerLayerView];
+    //[self.view bringSubviewToFront:self.playerLayerView];
 }
 
 // 제스처 콜백.
@@ -275,7 +266,7 @@ using namespace anymote::messages;
     }
 }
 
-// 레이아웃 조정(NO가 활성화 이다.).
+// 레이아웃 조정.
 - (void)adjustLayout:(CMMirrorTVStatus)status
 {
     switch (status)
@@ -331,15 +322,17 @@ using namespace anymote::messages;
     
     if (hidden)
     {
-        // 로딩 종료.
         [self.view sendSubviewToBack:self.loadingView];
-        [self.loadingImageView stopAnimating];
+        
+        // 로딩 종료.
+        [self stopLoading];
     }
     else
     {
-        // 로딩 시작.
         [self.view bringSubviewToFront:self.loadingView];
-        [self.loadingImageView startAnimating];
+        
+        // 로딩 시작.
+        [self startLoading];
     }
 }
 
@@ -397,12 +390,45 @@ using namespace anymote::messages;
     self.channelInfo.programTitle = data.title;
 }
 
+// 로딩 애니메이션 시작.
+- (void)startLoading
+{
+    self.loadingImageView.hidden = NO;
+    [self.view bringSubviewToFront:self.loadingImageView];
+    
+    NSTimeInterval duration = 0.25f;
+    CGFloat angle = M_PI / 2.0f; // 90도.
+    CGAffineTransform rotateTransform = CGAffineTransformRotate(self.loadingImageView.transform, angle);
+    
+    [UIView animateWithDuration:duration
+                          delay:0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.loadingImageView.transform = rotateTransform;
+                     }
+                     completion:^(BOOL finished) {
+                         // 회전 애니메이션을 줄 이미지가 완전한 원이 아니라 화살표가 있기 때문에 90도씩 계속 반복시킨다.
+                         if (finished)
+                         {
+                             [self stopLoading];
+                             [self startLoading];
+                         }
+                     }];
+}
+
+// 로딩 애니메이션 중지.
+- (void)stopLoading
+{
+    [self.loadingImageView.layer removeAllAnimations];
+    self.loadingImageView.hidden = YES;
+}
+
 // CM04: AssetID 요청.
 - (void)requestAssetID
 {
     // 로딩 시작.
-//    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(startLoading) object:nil];
-//    [self performSelector:@selector(startLoading) withObject:nil afterDelay:2];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
+    [self performSelector:@selector(startLoading) withObject:nil afterDelay:2];
     
     // 전문 생성.
     CMTRGenerator *generator = [[CMTRGenerator alloc] init];
@@ -521,7 +547,6 @@ using namespace anymote::messages;
                                               cancelButtonTitle:@"Cancel"
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
-    alertView.disappearAnimationType = DQAlertViewAnimationTypeNone;
     [alertView show];
 }
 
@@ -533,24 +558,7 @@ using namespace anymote::messages;
                                               cancelButtonTitle:nil
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
-    alertView.disappearAnimationType = DQAlertViewAnimationTypeNone;
     [alertView show];
-}
-
-// 플레이어 중지.
-- (void)stop
-{
-//    [self.player setAllowsExternalPlayback:NO];
-//    if (self.player) {
-//        [self.player pause];
-//        [self.player seekToTime:kCMTimeZero];
-//    }
-    //[self.playerItem removeObserver:self forKeyPath:kStatusKey];
-    //[self.playerItem removeObserver:self forKeyPath:kRateKey];
-    //[self.playerItem removeObserver:self forKeyPath:kPlayableKey];
-    //[self.playerItem removeObserver:self forKeyPath:kCurrentItemKey];
-    //[self.playerItem removeObserver:self forKeyPath:kTimedMetadataKey];
-    //[self setPlayer:nil];
 }
 
 #pragma mark - 데이터 수신
@@ -789,7 +797,6 @@ using namespace anymote::messages;
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitles:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
-    alertView.disappearAnimationType = DQAlertViewAnimationTypeNone;
     alertView.isLandscape = YES;
     alertView.cancelButtonAction = ^{
         //NSLog(@"Cancel Clicked");
@@ -800,7 +807,6 @@ using namespace anymote::messages;
         
         // 플레이어 종료.
         [self requestStop];
-        [self stop];
         
         // 미러TV 나가기.
         [[UIApplication sharedApplication] setStatusBarHidden:NO];
@@ -846,6 +852,7 @@ using namespace anymote::messages;
     [self performSelector:@selector(hideVolumeProgressView) withObject:nil afterDelay:1];
     
     // 4초 후에 컨트롤 패널 감추기.
+    //[NSObject cancelPreviousPerformRequestsWithTarget:self];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
@@ -1456,5 +1463,31 @@ using namespace anymote::messages;
     
     return;
 }
+
+#pragma mark - DQAlertViewDelegate
+
+//- (void)cancelButtonClickedOnAlertView:(DQAlertView *)alertView {
+//    NSLog(@"OK Clicked");
+//}
+//
+//- (void)otherButtonClickedOnAlertView:(DQAlertView *)alertView {
+//    NSLog(@"OK Clicked");
+//    // 타이머 정지.
+//    [self.heartbeatTimer invalidate];
+//    
+//    // 플레이어 종료.
+//    [self requestStop];
+//    
+//    // 미러TV 나가기.
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    
+//    // 채널을 선택한 경우.
+//    if (alertView.tag == CHANNEL_BUTTON_TAG)
+//    {
+//        CMRCViewController *rcViewController = (CMRCViewController *)[CMAppDelegate.container.viewControllers first];
+//        [rcViewController channelAction:nil];
+//    }
+//}
 
 @end

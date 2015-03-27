@@ -33,8 +33,9 @@
 
 - (void)addPlayer {
     self.playerView.delegate = self;
-    
-    NSURL *URL = [NSURL URLWithString:@"http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"];
+    //NSURL *URL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new/SERV4732.m3u8"];
+    //NSURL *URL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/old/SERV2150.m3u8"];
+    NSURL *URL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
     [self.playerView setVideoURL:URL];
     [self.playerView prepareAndPlayAutomatically:YES];
 }
