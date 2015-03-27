@@ -360,13 +360,13 @@
         }
         
         // 테스트 용 -----------------------------------.
-        CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:@"CMMirrorTVViewController" bundle:nil];
-        viewController.blockChannelInfo = self.blockChannelInfo;
-        self.modalPresentationStyle = UIModalPresentationCurrentContext;
-        [self presentViewController:viewController animated:YES completion:nil];
-        
-//        CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
+//        CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:@"CMMirrorTVViewController" bundle:nil];
+//        viewController.blockChannelInfo = self.blockChannelInfo;
+//        self.modalPresentationStyle = UIModalPresentationCurrentContext;
 //        [self presentViewController:viewController animated:YES completion:nil];
+        
+        CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
+        [self presentViewController:viewController animated:YES completion:nil];
         // 테스트 용 -----------------------------------.
     };
 }
