@@ -346,24 +346,6 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
         [self setCurrentBox:service];
         [self changeState:kAppStateConnecting];
         [RToast showToastWithSpinner:NSLocalizedString(@"연결중...", @"")];
-        
-        // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
-        // 사설IP(192로 시작...)  여부.
-        /*
-        if ([self isPrivateAddress:[[service addresses] objectAtIndex:0]])
-        {
-            [_sender connectToHost:[[service addresses] objectAtIndex:0]
-                            atPort:[service port]];
-        }
-        else
-        {
-            // 박스 이름에서 IP를 가져온다.
-            NSString *address = [self genAddress:service.name];
-            [_sender connectToHost:address
-                            atPort:[service port]];
-        }
-         */
-        
         [_sender connectToHost:[[service addresses] objectAtIndex:0]
                         atPort:[service port]];
     }
