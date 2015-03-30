@@ -192,32 +192,20 @@ using namespace anymote::messages;
 
 - (void)orientationChanged:(NSNotification *)notification
 {
-    [self adjustViewsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
-}
-
-- (void)adjustViewsForOrientation:(UIInterfaceOrientation)orientation
-{
-    switch (orientation)
-    {
-        case UIInterfaceOrientationPortrait:
-        case UIInterfaceOrientationPortraitUpsideDown:
-        case UIInterfaceOrientationLandscapeLeft:
-        {
-            // 뷰 로테이션(-90도).
-            CGAffineTransform rotationTransform = CGAffineTransformIdentity;
-            rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
-            self.view.transform = rotationTransform;
-        }
-            break;
-        case UIInterfaceOrientationLandscapeRight:
-        {
-            // 뷰 로테이션(-90도).
-            CGAffineTransform rotationTransform = CGAffineTransformIdentity;
-            rotationTransform = CGAffineTransformRotate(rotationTransform, M_PI/2);
-            self.view.transform = rotationTransform;
-        }
-            break;
-        case UIInterfaceOrientationUnknown:break;
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    
+    if (orientation == UIDeviceOrientationLandscapeLeft) {
+        // 뷰 로테이션(-90도).
+        CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+        rotationTransform = CGAffineTransformRotate(rotationTransform, M_PI/2);
+        self.view.transform = rotationTransform;
+    }
+    
+    if (orientation == UIDeviceOrientationLandscapeRight) {
+        // 뷰 로테이션(-90도).
+        CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+        rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
+        self.view.transform = rotationTransform;
     }
 }
 
