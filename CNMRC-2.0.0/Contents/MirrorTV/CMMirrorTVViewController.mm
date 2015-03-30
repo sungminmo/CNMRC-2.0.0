@@ -38,7 +38,6 @@ NSString *kTimedMetadataKey	= @"currentItem.timedMetadata";
 - (CMTime)playerItemDuration;
 - (BOOL)isPlaying;
 - (void)handleTimedMetadata:(AVMetadataItem*)timedMetadata;
-- (void)updateAdList:(NSArray *)newAdList;
 - (void)assetFailedToPrepareForPlayback:(NSError *)error;
 - (void)prepareToPlayAsset:(AVURLAsset *)asset withKeys:(NSArray *)requestedKeys;
 @end
@@ -65,6 +64,9 @@ using namespace anymote::messages;
     // 블락채널 여부.
     BOOL _isBlockChannel;
     
+    // 로딩 애니메이션 진행 여부.
+    BOOL _isLoadingAnimation;
+    
     // CM06 에러 횟수.
     NSInteger _errorCount;
     
@@ -82,7 +84,6 @@ using namespace anymote::messages;
 - (void)toggleLoading:(BOOL)hidden;
 - (void)toggleControl:(BOOL)hidden;
 - (void)setupChannelInfo;
-- (void)startLoading;
 - (void)requestAssetID;
 - (void)requestStop;
 - (void)requestHeartbeat;
@@ -118,11 +119,12 @@ using namespace anymote::messages;
         // iOS 7
         [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
     }
-    else
-    {
-        // iOS 6
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-    }
+    
+    // Device Rotation Change 옵저버 등록.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(orientationChanged:)
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:nil];
     
     // 전문 수신용 옵저버 등록: CM04, CM05, CM06.
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -141,7 +143,7 @@ using namespace anymote::messages;
     [self setupLayout];
     
     // 로딩 시작.
-    [self adjustLayout:CMMirrorTVStatusLoading];
+    [self.loadingImageView startAnimating];
     
     // 볼륨 프로그레스바 초기화.
     [self.volumeProgressView setProgress:self.player.volume animated:YES];
@@ -154,6 +156,11 @@ using namespace anymote::messages;
     [self loadMirrorTV];
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -178,13 +185,44 @@ using namespace anymote::messages;
 //
 //- (BOOL)shouldAutorotate
 //{
-//    return YES;
+//    return NO;
 //}
 //
 //- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 //{
 //    return UIInterfaceOrientationLandscapeLeft;
 //}
+
+- (void)orientationChanged:(NSNotification *)notification
+{
+    [self adjustViewsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+}
+
+- (void)adjustViewsForOrientation:(UIInterfaceOrientation)orientation
+{
+    switch (orientation)
+    {
+        case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationPortraitUpsideDown:
+        case UIInterfaceOrientationLandscapeLeft:
+        {
+            // 뷰 로테이션(-90도).
+            CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+            rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
+            self.view.transform = rotationTransform;
+        }
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+        {
+            // 뷰 로테이션(-90도).
+            CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+            rotationTransform = CGAffineTransformRotate(rotationTransform, M_PI/2);
+            self.view.transform = rotationTransform;
+        }
+            break;
+        case UIInterfaceOrientationUnknown:break;
+    }
+}
 
 #pragma mark - 플레이어
 
@@ -205,10 +243,20 @@ using namespace anymote::messages;
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
-// 정지.
+// 일시 정지.
 - (void)pause
 {
 	[_player pause];
+}
+
+// 플레이어 스탑.
+- (void)stop
+{
+    if (_player)
+    {
+        [self pause];
+        [_player seekToTime:kCMTimeZero];
+    }
 }
 
 // 미러TV URL 로드.
@@ -323,16 +371,10 @@ using namespace anymote::messages;
     if (hidden)
     {
         [self.view sendSubviewToBack:self.loadingView];
-        
-        // 로딩 종료.
-        [self stopLoading];
     }
     else
     {
         [self.view bringSubviewToFront:self.loadingView];
-        
-        // 로딩 시작.
-        [self startLoading];
     }
 }
 
@@ -390,46 +432,9 @@ using namespace anymote::messages;
     self.channelInfo.programTitle = data.title;
 }
 
-// 로딩 애니메이션 시작.
-- (void)startLoading
-{
-    self.loadingImageView.hidden = NO;
-    [self.view bringSubviewToFront:self.loadingImageView];
-    
-    NSTimeInterval duration = 0.25f;
-    CGFloat angle = M_PI / 2.0f; // 90도.
-    CGAffineTransform rotateTransform = CGAffineTransformRotate(self.loadingImageView.transform, angle);
-    
-    [UIView animateWithDuration:duration
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.loadingImageView.transform = rotateTransform;
-                     }
-                     completion:^(BOOL finished) {
-                         // 회전 애니메이션을 줄 이미지가 완전한 원이 아니라 화살표가 있기 때문에 90도씩 계속 반복시킨다.
-                         if (finished)
-                         {
-                             [self stopLoading];
-                             [self startLoading];
-                         }
-                     }];
-}
-
-// 로딩 애니메이션 중지.
-- (void)stopLoading
-{
-    [self.loadingImageView.layer removeAllAnimations];
-    self.loadingImageView.hidden = YES;
-}
-
 // CM04: AssetID 요청.
 - (void)requestAssetID
 {
-    // 로딩 시작.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
-    [self performSelector:@selector(startLoading) withObject:nil afterDelay:2];
-    
     // 전문 생성.
     CMTRGenerator *generator = [[CMTRGenerator alloc] init];
     NSString *tr = [generator genCM04];
@@ -1078,9 +1083,7 @@ using namespace anymote::messages;
 
 @implementation CMMirrorTVViewController (Player)
 
-#pragma mark -
-
-#pragma mark Player
+#pragma mark - Player -
 
 /* ---------------------------------------------------------
  **  Get the duration for a AVPlayerItem.
@@ -1116,7 +1119,7 @@ using namespace anymote::messages;
 	return [_player rate] != 0.f;
 }
 
-#pragma mark Player Notifications
+#pragma mark - Player Notifications -
 
 /* Called when the player item has played to its end time. */
 - (void)playerItemDidReachEnd:(NSNotification *) aNotification
@@ -1139,36 +1142,16 @@ using namespace anymote::messages;
 		{
 			NSDictionary *propertyList = (NSDictionary *)[timedMetadata value];
             
-			/* Metadata payload could be the list of ads. */
-			NSArray *newAdList = [propertyList objectForKey:@"ad-list"];
-			if (newAdList != nil)
-			{
-				[self updateAdList:newAdList];
-				NSLog(@"ad-list is %@", newAdList);
-			}
-            
 			/* Or it might be an ad record. */
 			NSString *adURL = [propertyList objectForKey:@"url"];
 			if (adURL != nil)
 			{
 				if ([adURL isEqualToString:@""])
 				{
-					/* Ad is not playing, so clear text. */
-//					self.isPlayingAdText.text = @"";
-//                    
-//                    [self enablePlayerButtons];
-//                    [self enableScrubber]; /* Enable seeking for main content. */
-                    
 					NSLog(@"enabling seek at %g", CMTimeGetSeconds([_player currentTime]));
 				}
 				else
 				{
-					/* Display text indicating that an Ad is now playing. */
-//					self.isPlayingAdText.text = @"< Ad now playing, seeking is disabled on the movie controller... >";
-//					
-//                    [self disablePlayerButtons];
-//                    [self disableScrubber]; 	/* Disable seeking for ad content. */
-                    
 					NSLog(@"disabling seek at %g", CMTimeGetSeconds([_player currentTime]));
 				}
 			}
@@ -1176,23 +1159,7 @@ using namespace anymote::messages;
 	}
 }
 
-#pragma mark Ad list
-
-/* Update current ad list, set slider to match current player item seekable time ranges */
-- (void)updateAdList:(NSArray *)newAdList
-{
-//	if (!adList || ![adList isEqualToArray:newAdList])
-//	{
-//		newAdList = [newAdList copy];
-//		[adList release];
-//		adList = newAdList;
-//        
-//		[self sliderSyncToPlayerSeekableTimeRanges];
-//	}
-}
-
-#pragma mark -
-#pragma mark Loading the Asset Keys Asynchronously
+#pragma mark - Loading the Asset Keys Asynchronously -
 
 #pragma mark -
 #pragma mark Error Handling - Preparing Assets for Playback Failed
@@ -1335,16 +1302,12 @@ using namespace anymote::messages;
          asynchronously; observe the currentItem property to find out when the
          replacement will/did occur*/
         [[self player] replaceCurrentItemWithPlayerItem:self.playerItem];
-        
-//        [self syncPlayPauseButtons];
     }
 	
 //    [movieTimeControl setValue:0.0];
 }
 
-#pragma mark -
-#pragma mark Asset Key Value Observing
-#pragma mark
+#pragma mark - Asset Key Value Observing -
 
 #pragma mark Key Value Observer for player rate, currentItem, player item status
 
@@ -1369,9 +1332,6 @@ using namespace anymote::messages;
 	/* AVPlayerItem "status" property value observer. */
 	if (context == CMMirrorTVViewControllerPlayerItemStatusObserverContext)
 	{
-//		[self syncPlayPauseButtons];
-        
-//        AVPlayerStatus status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
         NSInteger status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
         switch (status)
         {
@@ -1379,11 +1339,7 @@ using namespace anymote::messages;
                  it has not tried to load new media resources for playback */
             case AVPlayerStatusUnknown:
             {
-//                [self removePlayerTimeObserver];
-//                [self syncScrubber];
-//                
-//                [self disableScrubber];
-//                [self disablePlayerButtons];
+
             }
                 break;
                 
@@ -1417,7 +1373,7 @@ using namespace anymote::messages;
 	/* AVPlayer "rate" property value observer. */
 	else if (context == CMMirrorTVViewControllerRateObservationContext)
 	{
-//        [self syncPlayPauseButtons];
+
 	}
 	/* AVPlayer "currentItem" property observer.
      Called when the AVPlayer replaceCurrentItemWithPlayerItem:
@@ -1429,10 +1385,7 @@ using namespace anymote::messages;
         /* New player item null? */
         if (newPlayerItem == (id)[NSNull null])
         {
-//            [self disablePlayerButtons];
-//            [self disableScrubber];
-//            
-//            self.isPlayingAdText.text = @"";
+
         }
         else /* Replacement of player currentItem has occurred */
         {
@@ -1442,8 +1395,6 @@ using namespace anymote::messages;
             /* Specifies that the player should preserve the video’s aspect ratio and
              fit the video within the layer’s bounds. */
             [_playerLayerView setVideoFillMode:AVLayerVideoGravityResizeAspect];
-            
-//            [self syncPlayPauseButtons];
         }
 	}
 	/* Observe the AVPlayer "currentItem.timedMetadata" property to parse the media stream
@@ -1463,31 +1414,5 @@ using namespace anymote::messages;
     
     return;
 }
-
-#pragma mark - DQAlertViewDelegate
-
-//- (void)cancelButtonClickedOnAlertView:(DQAlertView *)alertView {
-//    NSLog(@"OK Clicked");
-//}
-//
-//- (void)otherButtonClickedOnAlertView:(DQAlertView *)alertView {
-//    NSLog(@"OK Clicked");
-//    // 타이머 정지.
-//    [self.heartbeatTimer invalidate];
-//    
-//    // 플레이어 종료.
-//    [self requestStop];
-//    
-//    // 미러TV 나가기.
-//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    
-//    // 채널을 선택한 경우.
-//    if (alertView.tag == CHANNEL_BUTTON_TAG)
-//    {
-//        CMRCViewController *rcViewController = (CMRCViewController *)[CMAppDelegate.container.viewControllers first];
-//        [rcViewController channelAction:nil];
-//    }
-//}
 
 @end

@@ -455,7 +455,7 @@
                                 <constraint firstItem="IHy-xb-RAL" firstAttribute="width" secondItem="bIB-AI-XCh" secondAttribute="width" id="zKb-cw-yKr"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxv-Zc-TDY">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxv-Zc-TDY">
                             <rect key="frame" x="318" y="182" width="100" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="88i-aI-odS"/>

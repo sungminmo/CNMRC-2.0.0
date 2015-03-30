@@ -130,7 +130,7 @@
     [self.player setAllowsExternalPlayback:NO];
     [self stop];
     [self.player removeObserver:self forKeyPath:@"rate"];
-    //[self.player removeObserver:self forKeyPath:@"status"];
+    //[self.currentItem removeObserver:self forKeyPath:@"status"];
     [self setPlayer:nil];
     [self setPlayerLayer:nil];
     [self removeFromSuperview];
