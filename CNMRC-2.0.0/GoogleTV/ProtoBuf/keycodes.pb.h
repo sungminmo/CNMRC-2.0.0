@@ -259,8 +259,8 @@ enum Code {
   BTN_GAME_12 = 306,
   BTN_GAME_13 = 307,
   BTN_GAME_14 = 308,
-  BTN_GAME_15 = 309,
-  BTN_GAME_16 = 310
+  BTN_GAME_15 = 309,    // C&M STB: 영어.
+  BTN_GAME_16 = 310     // C&M STB: 한글.
 };
 bool Code_IsValid(int value);
 const Code Code_MIN = KEYCODE_UNKNOWN;
