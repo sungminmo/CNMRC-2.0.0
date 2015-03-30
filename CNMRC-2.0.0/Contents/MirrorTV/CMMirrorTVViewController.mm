@@ -149,8 +149,8 @@ using namespace anymote::messages;
     self.currentVolume = self.player.volume;
     
     // 테스트.
-    self.mirrorTVURL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
-    [self loadMirrorTV];
+//    self.mirrorTVURL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
+//    [self loadMirrorTV];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -464,19 +464,6 @@ using namespace anymote::messages;
     // 앞에서 8자리까지가 AssetID 이다.
     NSString *assetID = [receivedAssetID substringToIndex:8];
     
-    // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
-    // 사설IP(192로 시작...)  여부.
-//    NSString *address = nil;
-//    if ([self isPrivateAddress:[RemoteManager.currentBox.addresses objectAtIndex:0]])
-//    {
-//        address = [RemoteManager.currentBox.addresses objectAtIndex:0];
-//    }
-//    else
-//    {
-//        // 박스 이름에서 IP를 가져온다.
-//        address = [self genAddress:RemoteManager.currentBox.name];
-//    }
-    
     // 원래 코드.
     NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
     
@@ -776,11 +763,15 @@ using namespace anymote::messages;
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitles:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
+    alertView.disappearAnimationType = DQAlertViewAnimationTypeNone;
     alertView.isLandscape = YES;
     alertView.cancelButtonAction = ^{
         //NSLog(@"Cancel Clicked");
     };
     alertView.otherButtonAction = ^{
+        // 옵저버 삭제.
+        [[NSNotificationCenter defaultCenter] removeObserver:self.player];
+        
         // 타이머 정지.
         [self.heartbeatTimer invalidate];
         
