@@ -149,8 +149,8 @@ using namespace anymote::messages;
     self.currentVolume = self.player.volume;
     
     // 테스트.
-//    self.mirrorTVURL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
-//    [self loadMirrorTV];
+    self.mirrorTVURL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
+    [self loadMirrorTV];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -174,21 +174,6 @@ using namespace anymote::messages;
 {
     return YES;
 }
-
-//- (NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskLandscape;
-//}
-//
-//- (BOOL)shouldAutorotate
-//{
-//    return NO;
-//}
-//
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-//{
-//    return UIInterfaceOrientationLandscapeLeft;
-//}
 
 - (void)orientationChanged:(NSNotification *)notification
 {
@@ -288,8 +273,6 @@ using namespace anymote::messages;
     
     // 로딩 시작.
     [self.loadingImageView startAnimating];
-    
-    //[self.view bringSubviewToFront:self.playerLayerView];
 }
 
 // 제스처 콜백.
