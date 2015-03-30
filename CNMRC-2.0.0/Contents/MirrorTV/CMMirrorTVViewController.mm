@@ -142,9 +142,6 @@ using namespace anymote::messages;
     // 화면 설정.
     [self setupLayout];
     
-    // 로딩 시작.
-    [self.loadingImageView startAnimating];
-    
     // 볼륨 프로그레스바 초기화.
     [self.volumeProgressView setProgress:self.player.volume animated:YES];
     
@@ -152,8 +149,8 @@ using namespace anymote::messages;
     self.currentVolume = self.player.volume;
     
     // 테스트.
-    self.mirrorTVURL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
-    [self loadMirrorTV];
+//    self.mirrorTVURL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
+//    [self loadMirrorTV];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -301,6 +298,9 @@ using namespace anymote::messages;
     // 채널 정보 설정.
     [self setupChannelInfo];
     
+    // 로딩 시작.
+    [self.loadingImageView startAnimating];
+    
     //[self.view bringSubviewToFront:self.playerLayerView];
 }
 
@@ -417,7 +417,10 @@ using namespace anymote::messages;
 - (void)setupChannelInfo
 {
     // 제목.
-    self.titleLabel.text = [NSString stringWithFormat:@" %@", self.channelInfo.programTitle];
+    if (self.channelInfo.programTitle)
+    {
+        self.titleLabel.text = [NSString stringWithFormat:@" %@", self.channelInfo.programTitle];
+    }
     
     // 채널 번호.
     self.channelNoLabel.text = self.channelInfo.channelNo;
