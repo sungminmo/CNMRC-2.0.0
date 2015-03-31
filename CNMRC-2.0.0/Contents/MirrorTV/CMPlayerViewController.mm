@@ -29,29 +29,6 @@ NSString * const KxMovieParameterMinBufferedDuration = @"KxMovieParameterMinBuff
 NSString * const KxMovieParameterMaxBufferedDuration = @"KxMovieParameterMaxBufferedDuration";
 NSString * const KxMovieParameterDisableDeinterlacing = @"KxMovieParameterDisableDeinterlacing";
 
-////////////////////////////////////////////////////////////////////////////////
-
-static NSString * formatTimeInterval(CGFloat seconds, BOOL isLeft)
-{
-    seconds = MAX(0, seconds);
-    
-    NSInteger s = seconds;
-    NSInteger m = s / 60;
-    NSInteger h = m / 60;
-    
-    s = s % 60;
-    m = m % 60;
-    
-    NSMutableString *format = [(isLeft && seconds >= 0.5 ? @"-" : @"") mutableCopy];
-    if (h != 0) [format appendFormat:@"%ld:%0.2ld", h, m];
-    else        [format appendFormat:@"%ld", m];
-    [format appendFormat:@":%0.2ld", s];
-    
-    return format;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
 enum {
     
     KxMovieInfoSectionGeneral,
@@ -71,7 +48,7 @@ enum {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-static NSMutableDictionary * gHistory;
+static NSMutableDictionary *gHistory;
 
 #define LOCAL_MIN_BUFFERED_DURATION   0.2
 #define LOCAL_MAX_BUFFERED_DURATION   0.4
@@ -112,7 +89,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     dispatch_queue_t    _dispatchQueue;
     NSMutableArray      *_videoFrames;
     NSMutableArray      *_audioFrames;
-    NSMutableArray      *_subtitles;
     NSData              *_currentAudioFrame;
     NSUInteger          _currentAudioFramePos;
     CGFloat             _moviePosition;
@@ -155,6 +131,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     // CM06 에러 횟수.
     NSInteger _errorCount;
+    
+    // 채널변경 에러 카운트 테스트.
+    NSInteger _changeChannelErrorCount;
 }
 
 @property (readwrite) BOOL playing;
@@ -387,7 +366,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSError *error = nil;
-        sleep(9);
+        sleep(8);
         [decoder openFile:path error:&error];
         __strong CMPlayerViewController *strongSelf = weakSelf;
         
@@ -395,7 +374,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [strongSelf setMovieDecoder:decoder withError:error];
-                [self restorePlay];
+                [self play];
+                //[self restorePlay];
                 [self hideLoading];
             });
         }
@@ -419,7 +399,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     self.playing = YES;
     _interrupted = NO;
-    _disableUpdateHUD = NO;
     _tickCorrectionTime = 0;
     _tickCounter = 0;
     
@@ -457,20 +436,26 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 
 - (void)stop
 {
-    if (_decoder) {
-        
+    UIView *view = [self.view viewWithTag:100];
+    view.backgroundColor = [UIColor yellowColor];
+    //view.hidden = YES;
+    
+    if (self.playing)
+    {
         [self pause];
-        
-        if (_moviePosition == 0 || _decoder.isEOF)
-            [gHistory removeObjectForKey:_decoder.path];
-        else if (!_decoder.isNetwork)
-            [gHistory setValue:[NSNumber numberWithFloat:_moviePosition]
-                        forKey:_decoder.path];
+    }
+    else
+    {
+        [self freeBufferedFrames];
+        [_decoder closeFile];
     }
     
-    [[UIApplication sharedApplication] setIdleTimerDisabled:_savedIdleTimer];
+    if (_decoder)
+    {
+        [_decoder closeFile];
+    }
+    
     _buffered = NO;
-    _interrupted = YES;
 }
 
 - (void)setMoviePosition:(CGFloat)position
@@ -488,7 +473,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     });
 }
 
-#pragma mark - 액션
+#pragma mark - 액션 -
 
 // 채널 메뉴로 이동.
 - (IBAction)goChannelAction:(id)sender
@@ -535,6 +520,22 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 - (void)hideVolumeView
 {
     self.volumeHolder.hidden = YES;
+}
+
+// 시스템 볼륨 인디케이터 감추기.
+- (void)preventSystemVolumePopup
+{
+    // Prevent Audio-Change Popus
+    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-2000., -2000., 0.f, 0.f)];
+    NSArray *windows = [UIApplication sharedApplication].windows;
+    
+    volumeView.alpha = 0.1f;
+    volumeView.userInteractionEnabled = NO;
+    
+    if (windows.count > 0)
+    {
+        [[windows objectAtIndex:0] addSubview:volumeView];
+    }
 }
 
 // 볼륨 조절.
@@ -790,7 +791,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [self performSelector:@selector(hideControl) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
 }
 
-#pragma mark - 프라이빗
+#pragma mark - 플레이어 관련 -
 
 - (void)setMovieDecoder:(KxMovieDecoder *)decoder withError:(NSError *)error
 {
@@ -800,11 +801,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         _dispatchQueue  = dispatch_queue_create("KxMovie", DISPATCH_QUEUE_SERIAL);
         _videoFrames    = [NSMutableArray array];
         _audioFrames    = [NSMutableArray array];
-        
-        if (_decoder.subtitleStreamsCount)
-        {
-            _subtitles = [NSMutableArray array];
-        }
         
         if (_decoder.isNetwork)
         {
@@ -1053,18 +1049,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
             for (KxMovieFrame *frame in frames)
                 if (frame.type == KxMovieFrameTypeArtwork)
                     self.artworkFrame = (KxArtworkFrame *)frame;
-        }
-    }
-    
-    if (_decoder.validSubtitles)
-    {
-        @synchronized(_subtitles)
-        {
-            for (KxMovieFrame *frame in frames)
-                if (frame.type == KxMovieFrameTypeSubtitle)
-                {
-                    [_subtitles addObject:frame];
-                }
         }
     }
     
@@ -1373,14 +1357,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         _currentAudioFrame = nil;
     }
     
-    if (_subtitles)
-    {
-        @synchronized(_subtitles)
-        {
-            [_subtitles removeAllObjects];
-        }
-    }
-    
     _bufferedDuration = 0;
 }
 
@@ -1401,6 +1377,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     //    return NO;
     return _interrupted;
 }
+
+#pragma mark - 프라이빗 -
 
 // 화면 설정.
 - (void)setupLayout
@@ -1428,6 +1406,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     // 볼륨 초기화.
     self.currentVolume = VOLUME_DEFAULT;
+    
+    // 시스템 볼륨 인디케이터 감추기.
+    [self preventSystemVolumePopup];
     
     // 에러 횟수 초기화.
     _errorCount = 0;
@@ -1674,7 +1655,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [alertView show];
 }
 
-#pragma mark - 제스처 델리게이트 메서드
+#pragma mark - 제스처 델리게이트 메서드 -
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
@@ -1686,7 +1667,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     return YES;
 }
 
-#pragma mark - 데이터 수신
+#pragma mark - 데이터 수신 -
 
 // CM06: Mirror TV Heartbeat.
 - (void)receiveSocketData:(NSNotification *)notification
@@ -1815,11 +1796,14 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                 {
                     _isBlockChannel = NO;
                     
-                    if (self.playing) {
-                        // 플레이어 중지.
-                        [self pause];
-                        [self stop];
+                    _changeChannelErrorCount++;
+                    
+                    if (_changeChannelErrorCount > 1) {
+                        return;
                     }
+                    
+                    // 플레이어 정지.
+                    [self stop];
                     
                     // HLS URL 생성을 위해 AssetID 요청.
                     [self requestAssetID];
