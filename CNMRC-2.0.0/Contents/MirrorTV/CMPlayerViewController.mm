@@ -97,7 +97,7 @@ using namespace anymote::messages;
 #define CONTROL_PANNEL_HIDDEN_TIME 4
 
 // Heartbit 시간 설정.
-#define HEARTBEAT_TIME 2
+#define HEARTBEAT_TIME 4
 
 // 미러TV 상태.
 typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
@@ -270,8 +270,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                                              selector:@selector(applicationWillResignActive:)
                                                  name:UIApplicationWillResignActiveNotification
                                                object:[UIApplication sharedApplication]];
-    
-    //float volume = [MPMusicPlayerController applicationMusicPlayer].volume = 10.0f;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -368,7 +366,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 #pragma mark - 퍼블릭 -
 
 - (void)testPlay {
-    [self playWithContentPath:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8" parameters:nil];
+//    [self playWithContentPath:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8" parameters:nil];
+    //[self playWithContentPath:@"http://192.168.200.193/SERV5015.m3u8" parameters:nil];
 }
 
 - (void)playWithContentPath:(NSString *)path parameters:(NSDictionary *)parameters
@@ -388,6 +387,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSError *error = nil;
+        sleep(9);
         [decoder openFile:path error:&error];
         __strong CMPlayerViewController *strongSelf = weakSelf;
         
@@ -453,6 +453,24 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     //_interrupted = YES;
     [self enableAudio:NO];
     DDLogDebug(@"미러TV 일시 정지");
+}
+
+- (void)stop
+{
+    if (_decoder) {
+        
+        [self pause];
+        
+        if (_moviePosition == 0 || _decoder.isEOF)
+            [gHistory removeObjectForKey:_decoder.path];
+        else if (!_decoder.isNetwork)
+            [gHistory setValue:[NSNumber numberWithFloat:_moviePosition]
+                        forKey:_decoder.path];
+    }
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:_savedIdleTimer];
+    _buffered = NO;
+    _interrupted = YES;
 }
 
 - (void)setMoviePosition:(CGFloat)position
@@ -866,6 +884,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     }
     
     UIView *frameView = [self frameView];
+    frameView.tag = 1000;
     frameView.contentMode = UIViewContentModeScaleAspectFit;
     
     [self.view insertSubview:frameView atIndex:0];
@@ -1708,11 +1727,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
             }
             
             // 플레이.
-//            [self playWithContentPath:[self genContentPath:data.assetID] parameters:nil];
-//            DDLogDebug(@"MirrorTV URL: %@", [self genContentPath:data.assetID]);
-            
-            // 테스트 용.
-            [self testPlay];
+            [self playWithContentPath:[self genContentPath:data.assetID] parameters:nil];
+            DDLogDebug(@"MirrorTV URL: %@", [self genContentPath:data.assetID]);
         }
         else
         {
@@ -1799,8 +1815,11 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                 {
                     _isBlockChannel = NO;
                     
-                    // 플레이어 중지.
-                    [self pause];
+                    if (self.playing) {
+                        // 플레이어 중지.
+                        [self pause];
+                        [self stop];
+                    }
                     
                     // HLS URL 생성을 위해 AssetID 요청.
                     [self requestAssetID];

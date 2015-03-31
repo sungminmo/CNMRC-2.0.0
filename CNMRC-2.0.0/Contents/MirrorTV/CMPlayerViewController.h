@@ -17,7 +17,7 @@ extern NSString * const KxMovieParameterMinBufferedDuration;    // Float
 extern NSString * const KxMovieParameterMaxBufferedDuration;    // Float
 extern NSString * const KxMovieParameterDisableDeinterlacing;   // BOOL
 
-@interface CMPlayerViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface CMPlayerViewController : UIViewController <UIGestureRecognizerDelegate, CMHTTPClientDelegate>
 
 // 플레이 여부.
 @property (readonly) BOOL playing;
@@ -50,6 +50,7 @@ extern NSString * const KxMovieParameterDisableDeinterlacing;   // BOOL
 - (void)playWithContentPath:(NSString *)path parameters:(NSDictionary *)parameters;
 - (void)play;
 - (void)pause;
+- (void)stop;
 
 // 채널정보 페이지로 이동.
 - (IBAction)goChannelAction:(id)sender;
