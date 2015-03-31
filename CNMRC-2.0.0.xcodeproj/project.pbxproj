@@ -218,6 +218,8 @@
 		1DCF4D331ABFEC8C0033413F /* CMKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D321ABFEC8C0033413F /* CMKeyboardView.xib */; };
 		1DCF4D351ABFED370033413F /* CMKeyboardView_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D341ABFED370033413F /* CMKeyboardView_6.xib */; };
 		1DCF4D371ABFED480033413F /* CMKeyboardView_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */; };
+		1DD6BAB71ACA3F40001A529B /* CMPlayerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BAB51ACA3F40001A529B /* CMPlayerViewController.mm */; };
+		1DD6BABA1ACA3F67001A529B /* CMPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD6BAB91ACA3F67001A529B /* CMPlayerViewController.xib */; };
 		1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.mm */; };
 		1DF4B7B31ABBE1280097C52B /* CMKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */; };
 		1DF4B7D61ABBF40E0097C52B /* CMKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7D51ABBF40E0097C52B /* CMKeyboardView.m */; };
@@ -722,6 +724,9 @@
 		1DCF4D321ABFEC8C0033413F /* CMKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView.xib; sourceTree = "<group>"; };
 		1DCF4D341ABFED370033413F /* CMKeyboardView_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView_6.xib; sourceTree = "<group>"; };
 		1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardView_5.xib; sourceTree = "<group>"; };
+		1DD6BAB41ACA3F40001A529B /* CMPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPlayerViewController.h; sourceTree = "<group>"; };
+		1DD6BAB51ACA3F40001A529B /* CMPlayerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMPlayerViewController.mm; sourceTree = "<group>"; };
+		1DD6BAB91ACA3F67001A529B /* CMPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPlayerViewController.xib; sourceTree = "<group>"; };
 		1DF4B7AF1ABBE1280097C52B /* CMKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeyboardViewController.h; sourceTree = "<group>"; };
 		1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMKeyboardViewController.mm; sourceTree = "<group>"; };
 		1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardViewController.xib; sourceTree = "<group>"; };
@@ -1166,6 +1171,9 @@
 				1DF7CF521AB27241009153CC /* CMMirrorTVViewController.xib */,
 				1D14AA871A6169E300FECF55 /* CMPlayerLayerView.h */,
 				1D14AA881A6169E300FECF55 /* CMPlayerLayerView.m */,
+				1DD6BAB41ACA3F40001A529B /* CMPlayerViewController.h */,
+				1DD6BAB51ACA3F40001A529B /* CMPlayerViewController.mm */,
+				1DD6BAB91ACA3F67001A529B /* CMPlayerViewController.xib */,
 			);
 			path = MirrorTV;
 			sourceTree = "<group>";
@@ -1904,6 +1912,7 @@
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
 				1DF7CF531AB27241009153CC /* CMMirrorTVViewController.xib in Resources */,
 				1D42AE711AC028CD002F70E8 /* CMPressView.xib in Resources */,
+				1DD6BABA1ACA3F67001A529B /* CMPlayerViewController.xib in Resources */,
 				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
 				1D708E1A1AC11286005B5CBE /* CMPressView_6.xib in Resources */,
@@ -2068,6 +2077,7 @@
 				1DB9B9391A613F1100E89E27 /* CMAppInfo.m in Sources */,
 				1DF4B7D61ABBF40E0097C52B /* CMKeyboardView.m in Sources */,
 				1DB9B9741A614F6500E89E27 /* CMPairingViewController.m in Sources */,
+				1DD6BAB71ACA3F40001A529B /* CMPlayerViewController.mm in Sources */,
 				1DB9B93A1A613F1100E89E27 /* CMRemoteManager.m in Sources */,
 				1DB9BA2A1A615A9200E89E27 /* CMSettingsViewController.m in Sources */,
 				1D14AA8D1A6169E300FECF55 /* CMPlayerLayerView.m in Sources */,
