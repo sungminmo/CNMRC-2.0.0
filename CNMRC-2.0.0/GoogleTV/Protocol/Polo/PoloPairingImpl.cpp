@@ -52,7 +52,7 @@ extern "C" {
 static inline size_t PoloWriteToBIO(BIO *bio, const void *bytes, size_t len) {
     size_t totalSent = 0;
     do {
-        size_t sent = BIO_write(bio, bytes, len);
+        size_t sent = BIO_write(bio, bytes, (int)len);
         
         // 0 means the connection was closed
         if (sent == 0) {

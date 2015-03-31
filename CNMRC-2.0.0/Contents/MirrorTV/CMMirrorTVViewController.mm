@@ -38,20 +38,15 @@ NSString *kTimedMetadataKey	= @"currentItem.timedMetadata";
 - (CMTime)playerItemDuration;
 - (BOOL)isPlaying;
 - (void)handleTimedMetadata:(AVMetadataItem*)timedMetadata;
+- (void)updateAdList:(NSArray *)newAdList;
 - (void)assetFailedToPrepareForPlayback:(NSError *)error;
 - (void)prepareToPlayAsset:(AVURLAsset *)asset withKeys:(NSArray *)requestedKeys;
 @end
 
 using namespace anymote::messages;
 
-// 영상 확장자.
 #define HLS_EXTENTION @"m3u8"
-
-// 채널버튼 태그.
 #define CHANNEL_BUTTON_TAG 1000
-
-// 볼륨 단위.
-#define VOLUME_UNIT 0.0625f
 
 @interface CMMirrorTVViewController ()
 {
@@ -64,11 +59,11 @@ using namespace anymote::messages;
     // 블락채널 여부.
     BOOL _isBlockChannel;
     
-    // 로딩 애니메이션 진행 여부.
-    BOOL _isLoadingAnimation;
-    
     // CM06 에러 횟수.
     NSInteger _errorCount;
+    
+    // 컨트롤 패널 토글 타임 카운트.
+    NSInteger _contolPannelHiddenTime;
     
     // 플레이어.
     BOOL seekToZeroBeforePlay;
@@ -84,6 +79,7 @@ using namespace anymote::messages;
 - (void)toggleLoading:(BOOL)hidden;
 - (void)toggleControl:(BOOL)hidden;
 - (void)setupChannelInfo;
+- (void)startLoading;
 - (void)requestAssetID;
 - (void)requestStop;
 - (void)requestHeartbeat;
@@ -108,17 +104,22 @@ using namespace anymote::messages;
 {
     [super viewDidLoad];
     
-    // 뷰 로테이션(-90도).
-    CGAffineTransform rotationTransform = CGAffineTransformIdentity;
-    rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
-    self.view.transform = rotationTransform;
-    
     // 상태바 감추기.
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
     {
         // iOS 7
         [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
     }
+    else
+    {
+        // iOS 6
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    }
+    
+    // 뷰 로테이션(-90도).
+    CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+    rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
+    self.view.transform = rotationTransform;
     
     // Device Rotation Change 옵저버 등록.
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -136,28 +137,17 @@ using namespace anymote::messages;
     // CMO6 heartbeat 타이머 설정(2초마다).
     self.heartbeatTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(requestHeartbeat) userInfo:nil repeats:YES];
     
+    
     // HLS URL 생성을 위해 AssetID 요청.
     [self requestAssetID];
     
     // 화면 설정.
     [self setupLayout];
     
-    // 볼륨 프로그레스바 초기화.
-    [self.volumeProgressView setProgress:self.player.volume animated:YES];
-    
-    // 현재 볼륨 초기화.
-    self.currentVolume = self.player.volume;
-    
-    // 테스트.
-//    self.mirrorTVURL = [NSURL URLWithString:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8"];
-//    [self loadMirrorTV];
+    // 로딩 시작.
+    [self adjustLayout:CMMirrorTVStatusLoading];
 }
 
--(void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -180,7 +170,7 @@ using namespace anymote::messages;
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
     
     if (orientation == UIDeviceOrientationLandscapeLeft) {
-        // 뷰 로테이션(-90도).
+        // 뷰 로테이션(90도).
         CGAffineTransform rotationTransform = CGAffineTransformIdentity;
         rotationTransform = CGAffineTransformRotate(rotationTransform, M_PI/2);
         self.view.transform = rotationTransform;
@@ -200,59 +190,50 @@ using namespace anymote::messages;
 - (void)play
 {
     // 영상의 마지막이면 플레이가 시작되기 전에 반드시 처음으로 돌아가야 한다.
-	if (YES == seekToZeroBeforePlay)
-	{
-		seekToZeroBeforePlay = NO;
-		[_player seekToTime:kCMTimeZero];
-	}
+    if (YES == seekToZeroBeforePlay)
+    {
+        seekToZeroBeforePlay = NO;
+        [_player seekToTime:kCMTimeZero];
+    }
     
-	[_player play];
+    [_player play];
     
     // 4초후에 컨트롤 패널 감추기.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
-// 일시 정지.
+// 정지.
 - (void)pause
 {
-	[_player pause];
-}
-
-// 플레이어 스탑.
-- (void)stop
-{
-    if (_player)
-    {
-        [self pause];
-        [_player seekToTime:kCMTimeZero];
-    }
+    [_player pause];
 }
 
 // 미러TV URL 로드.
 - (void)loadMirrorTV
 {
-	if (self.mirrorTVURL)
-	{
+    if (self.mirrorTVURL)
+    {
         // URL이 정상인지 확인한다.
-		if ([self.mirrorTVURL scheme])
-		{
+        if ([self.mirrorTVURL scheme])
+        {
             // URL로 어셋을 생성하여 어셋 키인 "tracks", "playable" 값을 로드 한다.
             AVURLAsset *asset = [AVURLAsset URLAssetWithURL:self.mirrorTVURL options:nil];
             
-			NSArray *requestedKeys = [NSArray arrayWithObjects:kTracksKey, kPlayableKey, nil];
-			
+            NSArray *requestedKeys = nil;//[NSArray arrayWithObjects:kTracksKey, kPlayableKey, nil];
+            
             // 아직 로드되지 않은 특정 키의 값을 로드한다.
-			[asset loadValuesAsynchronouslyForKeys:requestedKeys completionHandler:
-			 ^{
-				 dispatch_async( dispatch_get_main_queue(),
-								^{
-									// AVPlayer와 AVPlayerItem은 반드시 메인 큐에서...
-									[self prepareToPlayAsset:asset withKeys:requestedKeys];
-								});
-			 }];
-		}
-	}
+            [asset loadValuesAsynchronouslyForKeys:requestedKeys completionHandler:
+             ^{
+                 dispatch_async( dispatch_get_main_queue(),
+                                ^{
+                                    // AVPlayer와 AVPlayerItem은 반드시 메인 큐에서...
+                                    [self prepareToPlayAsset:asset withKeys:requestedKeys];
+                                });
+             }];
+        }
+    }
+    
+    [self.playerLayerView layoutIfNeeded];
 }
 
 #pragma mark - 프라이빗 메서드
@@ -267,16 +248,18 @@ using namespace anymote::messages;
     
     // 에러 횟수 초기화.
     _errorCount = 0;
-
+    
+    // 컨트롤 패널 토글 타임 카운트 초기화.
+    _contolPannelHiddenTime = 4;
+    
     // 채널 정보 설정.
     [self setupChannelInfo];
     
-    // 로딩 시작.
-    [self.loadingImageView startAnimating];
+    [self.view bringSubviewToFront:self.playerLayerView];
 }
 
 // 제스처 콜백.
-- (void)recognizeTapGesture:(UITapGestureRecognizer *)recognizer
+- (void)recognizeTapGesture:(UILongPressGestureRecognizer *)recognizer
 {
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {
@@ -342,10 +325,16 @@ using namespace anymote::messages;
     if (hidden)
     {
         [self.view sendSubviewToBack:self.loadingView];
+        
+        // 로딩 종료.
+        [self stopLoading];
     }
     else
     {
         [self.view bringSubviewToFront:self.loadingView];
+        
+        // 로딩 시작.
+        [self startLoading];
     }
 }
 
@@ -369,18 +358,13 @@ using namespace anymote::messages;
     _isHide = !hidden;
 }
 
-// 볼륨 프로그레스바 감추기.
-- (void)hideVolumeProgressView
-{
-    self.volumeProgressView.hidden = YES;
-}
-
 // 컨트롤 패널 감추기.
 - (void)hideControlPannel
 {
     if (_isHide)
     {
         [self toggleControl:YES];
+        _contolPannelHiddenTime = 4;
     }
 }
 
@@ -388,10 +372,7 @@ using namespace anymote::messages;
 - (void)setupChannelInfo
 {
     // 제목.
-    if (self.channelInfo.programTitle)
-    {
-        self.titleLabel.text = [NSString stringWithFormat:@" %@", self.channelInfo.programTitle];
-    }
+    self.titleLabel.text = self.channelInfo.programTitle;
     
     // 채널 번호.
     self.channelNoLabel.text = self.channelInfo.channelNo;
@@ -406,9 +387,44 @@ using namespace anymote::messages;
     self.channelInfo.programTitle = data.title;
 }
 
+// 로딩 애니메이션 시작.
+- (void)startLoading
+{
+    self.loadingImageView.hidden = NO;
+    [self.view bringSubviewToFront:self.loadingImageView];
+    
+    NSTimeInterval duration = 0.25f;
+    CGFloat angle = M_PI / 2.0f; // 90도.
+    CGAffineTransform rotateTransform = CGAffineTransformRotate(self.loadingImageView.transform, angle);
+    
+    [UIView animateWithDuration:duration
+                          delay:0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.loadingImageView.transform = rotateTransform;
+                     }
+                     completion:^(BOOL finished) {
+                         // 회전 애니메이션을 줄 이미지가 완전한 원이 아니라 화살표가 있기 때문에 90도씩 계속 반복시킨다.
+                         if (finished)
+                         {
+                             [self startLoading];
+                         }
+                     }];
+}
+
+// 로딩 애니메이션 중지.
+- (void)stopLoading
+{
+    //[self.loadingImageView.layer removeAllAnimations];
+    self.loadingImageView.hidden = YES;
+}
+
 // CM04: AssetID 요청.
 - (void)requestAssetID
 {
+    // 로딩 시작.
+    [self performSelector:@selector(startLoading) withObject:nil afterDelay:2];
+    
     // 전문 생성.
     CMTRGenerator *generator = [[CMTRGenerator alloc] init];
     NSString *tr = [generator genCM04];
@@ -464,8 +480,21 @@ using namespace anymote::messages;
     // 앞에서 8자리까지가 AssetID 이다.
     NSString *assetID = [receivedAssetID substringToIndex:8];
     
+    // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
+    // 사설IP(192로 시작...)  여부.
+    NSString *address = nil;
+    if ([self isPrivateAddress:[RemoteManager.currentBox.addresses objectAtIndex:0]])
+    {
+        address = [RemoteManager.currentBox.addresses objectAtIndex:0];
+    }
+    else
+    {
+        // 박스 이름에서 IP를 가져온다.
+        address = [self genAddress:RemoteManager.currentBox.name];
+    }
+    
     // 원래 코드.
-    NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
+    //NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
     
     NSString *stringURL = [NSString stringWithFormat:@"http://%@/%@.%@", address, assetID, HLS_EXTENTION];
     return [NSURL URLWithString:stringURL];
@@ -729,17 +758,6 @@ using namespace anymote::messages;
             }
                 break;
                 
-            case 5:
-            {
-                // 채널 정보 변경.
-                [self changeChannelInfo:data];
-                [self setupChannelInfo];
-                
-                // UHD.
-                [self showNotice:MIRRORTV_ERROR_MSG_UHD];
-            }
-                break;
-                
             default:
                 break;
         }
@@ -761,7 +779,7 @@ using namespace anymote::messages;
                                                         message:@"미러TV를 종료하시겠습니까?"
                                                        delegate:self
                                               cancelButtonTitle:@"취소"
-                                               otherButtonTitles:@"확인"];
+                                              otherButtonTitles:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.disappearAnimationType = DQAlertViewAnimationTypeNone;
     alertView.isLandscape = YES;
@@ -770,6 +788,7 @@ using namespace anymote::messages;
     };
     alertView.otherButtonAction = ^{
         // 옵저버 삭제.
+        [[NSNotificationCenter defaultCenter] removeObserver:self.playerItem];
         [[NSNotificationCenter defaultCenter] removeObserver:self.player];
         
         // 타이머 정지.
@@ -796,34 +815,19 @@ using namespace anymote::messages;
 - (IBAction)volumeAction:(id)sender
 {
     NSInteger buttonTag = [(UIButton *)sender tag];
-
+    
     if (buttonTag == 0)
     {
-        if (self.currentVolume < 1.0) {
-            // 볼륨 업.
-            self.currentVolume += VOLUME_UNIT;
-            self.player.volume = self.currentVolume;
-        }
+        // 볼륨 업.
+        [[RemoteManager sender] sendClickForKey:KEYCODE_VOLUME_UP error:NULL];
     }
     else
     {
-        if (self.currentVolume > 0) {
-            // 볼륨 다운.
-            self.currentVolume -= VOLUME_UNIT;
-            self.player.volume = self.currentVolume;
-        }
+        // 볼륨 다운.
+        [[RemoteManager sender] sendClickForKey:KEYCODE_VOLUME_DOWN error:NULL];
     }
     
-    // 볼륨 프로그레스바 UI 설정.
-    self.volumeProgressView.hidden = NO;
-    [self.volumeProgressView setProgress:self.currentVolume animated:YES];
-    
-    // 1초 후에 볼륨 프로그레스바 감추가.
-    [self performSelector:@selector(hideVolumeProgressView) withObject:nil afterDelay:1];
-    
-    // 4초 후에 컨트롤 패널 감추기.
-    //[NSObject cancelPreviousPerformRequestsWithTarget:self];
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
+    // 4초후에 컨트롤 패널 감추기.
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
@@ -833,21 +837,20 @@ using namespace anymote::messages;
     // 토글 시 버튼 이미지 변경.
     if (_isMuted)
     {
-        self.player.muted = NO;
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOff_D"] forState:UIControlStateNormal];
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOff_H"] forState:UIControlStateHighlighted];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteoffbtn_normal@2x.png"] forState:UIControlStateNormal];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteoffbtn_press@2x.png"] forState:UIControlStateHighlighted];
     }
     else
     {
-        self.player.muted = YES;
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOn_D"] forState:UIControlStateNormal];
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOn_H"] forState:UIControlStateHighlighted];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteonbtn_normal@2x.png"] forState:UIControlStateNormal];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteonbtn_press@2x.png"] forState:UIControlStateHighlighted];
     }
     
     _isMuted = !_isMuted;
     
+    [[RemoteManager sender] sendClickForKey:KEYCODE_MUTE error:NULL];
+    
     // 4초후에 컨트롤 패널 감추기.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
 }
 
@@ -985,6 +988,7 @@ using namespace anymote::messages;
     // 채널번호.
     UIButton *button = (UIButton *)sender;
     self.channelNoIndicatorLabel.hidden = NO;
+    _contolPannelHiddenTime += 4;
     
     [[RemoteManager sender] sendClickForKey:[self keycodeForNumberButton:button] error:NULL];
     
@@ -997,7 +1001,7 @@ using namespace anymote::messages;
             self.channelNoIndicatorLabel.text = @"";
         }
         
-        self.channelNoIndicatorLabel.text = [NSString stringWithFormat:@"%@%@", self.channelNoIndicatorLabel.text, @(button.tag)];
+        self.channelNoIndicatorLabel.text = [NSString stringWithFormat:@"%@%d", self.channelNoIndicatorLabel.text, (int)button.tag];
     }
     
     // 끝에서 부터 지운다.
@@ -1026,20 +1030,18 @@ using namespace anymote::messages;
     }
     
     // 4초후에 컨트롤 패널 감추기.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
-    [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:4];
+    [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:_contolPannelHiddenTime];
 }
 
 #pragma mark - 제스처 델리게이트 메서드
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-//    if (touch.view == self.view)
-//    {
-//        return YES;
-//    }
-//    
-//    return NO;
+    if ([touch.view isKindOfClass:[UIButton class]])
+    {
+        return NO;
+    }
+    
     return YES;
 }
 
@@ -1048,7 +1050,9 @@ using namespace anymote::messages;
 
 @implementation CMMirrorTVViewController (Player)
 
-#pragma mark - Player -
+#pragma mark -
+
+#pragma mark Player
 
 /* ---------------------------------------------------------
  **  Get the duration for a AVPlayerItem.
@@ -1056,9 +1060,9 @@ using namespace anymote::messages;
 
 - (CMTime)playerItemDuration
 {
-	AVPlayerItem *thePlayerItem = [_player currentItem];
-	if (thePlayerItem.status == AVPlayerItemStatusReadyToPlay)
-	{
+    AVPlayerItem *thePlayerItem = [_player currentItem];
+    if (thePlayerItem.status == AVPlayerItemStatusReadyToPlay)
+    {
         /*
          NOTE:
          Because of the dynamic nature of HTTP Live Streaming Media, the best practice
@@ -1073,25 +1077,25 @@ using namespace anymote::messages;
          See the AV Foundation Release Notes for iOS 4.3 for more information.
          */
         
-		return([_playerItem duration]);
-	}
+        return([_playerItem duration]);
+    }
     
-	return(kCMTimeInvalid);
+    return(kCMTimeInvalid);
 }
 
 - (BOOL)isPlaying
 {
-	return [_player rate] != 0.f;
+    return [_player rate] != 0.f;
 }
 
-#pragma mark - Player Notifications -
+#pragma mark Player Notifications
 
 /* Called when the player item has played to its end time. */
 - (void)playerItemDidReachEnd:(NSNotification *) aNotification
 {
-	/* After the movie has played to its end time, seek back to time zero
+    /* After the movie has played to its end time, seek back to time zero
      to play it again */
-	seekToZeroBeforePlay = YES;
+    seekToZeroBeforePlay = YES;
 }
 
 #pragma mark -
@@ -1100,31 +1104,67 @@ using namespace anymote::messages;
 
 - (void)handleTimedMetadata:(AVMetadataItem*)timedMetadata
 {
-	/* We expect the content to contain plists encoded as timed metadata. AVPlayer turns these into NSDictionaries. */
-	if ([(NSString *)[timedMetadata key] isEqualToString:AVMetadataID3MetadataKeyGeneralEncapsulatedObject])
-	{
-		if ([[timedMetadata value] isKindOfClass:[NSDictionary class]])
-		{
-			NSDictionary *propertyList = (NSDictionary *)[timedMetadata value];
+    /* We expect the content to contain plists encoded as timed metadata. AVPlayer turns these into NSDictionaries. */
+    if ([(NSString *)[timedMetadata key] isEqualToString:AVMetadataID3MetadataKeyGeneralEncapsulatedObject])
+    {
+        if ([[timedMetadata value] isKindOfClass:[NSDictionary class]])
+        {
+            NSDictionary *propertyList = (NSDictionary *)[timedMetadata value];
             
-			/* Or it might be an ad record. */
-			NSString *adURL = [propertyList objectForKey:@"url"];
-			if (adURL != nil)
-			{
-				if ([adURL isEqualToString:@""])
-				{
-					NSLog(@"enabling seek at %g", CMTimeGetSeconds([_player currentTime]));
-				}
-				else
-				{
-					NSLog(@"disabling seek at %g", CMTimeGetSeconds([_player currentTime]));
-				}
-			}
-		}
-	}
+            /* Metadata payload could be the list of ads. */
+            NSArray *newAdList = [propertyList objectForKey:@"ad-list"];
+            if (newAdList != nil)
+            {
+                [self updateAdList:newAdList];
+                NSLog(@"ad-list is %@", newAdList);
+            }
+            
+            /* Or it might be an ad record. */
+            NSString *adURL = [propertyList objectForKey:@"url"];
+            if (adURL != nil)
+            {
+                if ([adURL isEqualToString:@""])
+                {
+                    /* Ad is not playing, so clear text. */
+                    //					self.isPlayingAdText.text = @"";
+                    //
+                    //                    [self enablePlayerButtons];
+                    //                    [self enableScrubber]; /* Enable seeking for main content. */
+                    
+                    NSLog(@"enabling seek at %g", CMTimeGetSeconds([_player currentTime]));
+                }
+                else
+                {
+                    /* Display text indicating that an Ad is now playing. */
+                    //					self.isPlayingAdText.text = @"< Ad now playing, seeking is disabled on the movie controller... >";
+                    //
+                    //                    [self disablePlayerButtons];
+                    //                    [self disableScrubber]; 	/* Disable seeking for ad content. */
+                    
+                    NSLog(@"disabling seek at %g", CMTimeGetSeconds([_player currentTime]));
+                }
+            }
+        }
+    }
 }
 
-#pragma mark - Loading the Asset Keys Asynchronously -
+#pragma mark Ad list
+
+/* Update current ad list, set slider to match current player item seekable time ranges */
+- (void)updateAdList:(NSArray *)newAdList
+{
+    //	if (!adList || ![adList isEqualToArray:newAdList])
+    //	{
+    //		newAdList = [newAdList copy];
+    //		[adList release];
+    //		adList = newAdList;
+    //
+    //		[self sliderSyncToPlayerSeekableTimeRanges];
+    //	}
+}
+
+#pragma mark -
+#pragma mark Loading the Asset Keys Asynchronously
 
 #pragma mark -
 #pragma mark Error Handling - Preparing Assets for Playback Failed
@@ -1142,18 +1182,18 @@ using namespace anymote::messages;
 - (void)assetFailedToPrepareForPlayback:(NSError *)error
 {
     // 로딩 시작.
-    [self adjustLayout:CMMirrorTVStatusLoading];
-    
-    // HLS URL 생성을 위해 AssetID 요청.
-    [self requestAssetID];
+//    [self adjustLayout:CMMirrorTVStatusLoading];
+//    
+//    // HLS URL 생성을 위해 AssetID 요청.
+//    [self requestAssetID];
     
     // 테스트 시 확인 용.
-//	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
-//														message:[error localizedFailureReason]
-//													   delegate:nil
-//											  cancelButtonTitle:@"OK"
-//											  otherButtonTitles:nil];
-//	[alertView show];
+    	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
+    														message:[error localizedFailureReason]
+    													   delegate:nil
+    											  cancelButtonTitle:@"OK"
+    											  otherButtonTitles:nil];
+    	[alertView show];
 }
 
 #pragma mark Prepare to play asset
@@ -1164,57 +1204,57 @@ using namespace anymote::messages;
  If so, sets up an AVPlayerItem and an AVPlayer to play the asset.
  */
 - (void)prepareToPlayAsset:(AVURLAsset *)asset withKeys:(NSArray *)requestedKeys
-{    
+{
     /* Make sure that the value of each key has loaded successfully. */
-	for (NSString *thisKey in requestedKeys)
-	{
-		NSError *error = nil;
-		AVKeyValueStatus keyStatus = [asset statusOfValueForKey:thisKey error:&error];
-		if (keyStatus == AVKeyValueStatusFailed)
-		{
-			[self assetFailedToPrepareForPlayback:error];
-			return;
-		}
-		/* If you are also implementing the use of -[AVAsset cancelLoading], add your code here to bail
+    for (NSString *thisKey in requestedKeys)
+    {
+        NSError *error = nil;
+        AVKeyValueStatus keyStatus = [asset statusOfValueForKey:thisKey error:&error];
+        if (keyStatus == AVKeyValueStatusFailed)
+        {
+            [self assetFailedToPrepareForPlayback:error];
+            return;
+        }
+        /* If you are also implementing the use of -[AVAsset cancelLoading], add your code here to bail
          out properly in the case of cancellation. */
-	}
+    }
     
     /* Use the AVAsset playable property to detect whether the asset can be played. */
     if (!asset.playable)
     {
         /* Generate an error describing the failure. */
-		NSString *localizedDescription = NSLocalizedString(@"Item cannot be played", @"Item cannot be played description");
-		NSString *localizedFailureReason = NSLocalizedString(@"The assets tracks were loaded, but could not be made playable.", @"Item cannot be played failure reason");
-		NSDictionary *errorDict = [NSDictionary dictionaryWithObjectsAndKeys:
-								   localizedDescription, NSLocalizedDescriptionKey,
-								   localizedFailureReason, NSLocalizedFailureReasonErrorKey,
-								   nil];
-		NSError *assetCannotBePlayedError = [NSError errorWithDomain:@"StitchedStreamPlayer" code:0 userInfo:errorDict];
+        NSString *localizedDescription = NSLocalizedString(@"Item cannot be played", @"Item cannot be played description");
+        NSString *localizedFailureReason = NSLocalizedString(@"The assets tracks were loaded, but could not be made playable.", @"Item cannot be played failure reason");
+        NSDictionary *errorDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   localizedDescription, NSLocalizedDescriptionKey,
+                                   localizedFailureReason, NSLocalizedFailureReasonErrorKey,
+                                   nil];
+        NSError *assetCannotBePlayedError = [NSError errorWithDomain:@"StitchedStreamPlayer" code:0 userInfo:errorDict];
         
         /* Display the error to the user. */
         [self assetFailedToPrepareForPlayback:assetCannotBePlayedError];
         
         return;
     }
-	
-	/* At this point we're ready to set up for playback of the asset. */
     
-//	[self initScrubberTimer];
-//	[self enableScrubber];
-//	[self enablePlayerButtons];
-	
+    /* At this point we're ready to set up for playback of the asset. */
+    
+    //	[self initScrubberTimer];
+    //	[self enableScrubber];
+    //	[self enablePlayerButtons];
+    
     /* Stop observing our prior AVPlayerItem, if we have one. */
     if (self.playerItem)
     {
         /* Remove existing player item key value observers and notifications. */
         
         [self.playerItem removeObserver:self forKeyPath:kStatusKey];
-		
+        
         [[NSNotificationCenter defaultCenter] removeObserver:self
                                                         name:AVPlayerItemDidPlayToEndTimeNotification
                                                       object:self.playerItem];
     }
-	
+    
     /* Create a new instance of AVPlayerItem from the now successfully loaded AVAsset. */
     self.playerItem = [AVPlayerItem playerItemWithAsset:asset];
     
@@ -1223,22 +1263,22 @@ using namespace anymote::messages;
                       forKeyPath:kStatusKey
                          options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                          context:CMMirrorTVViewControllerPlayerItemStatusObserverContext];
-	
+    
     /* When the player item has played to its end time we'll toggle
      the movie controller Pause button to be the Play button */
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(playerItemDidReachEnd:)
                                                  name:AVPlayerItemDidPlayToEndTimeNotification
                                                object:self.playerItem];
-	
+    
     seekToZeroBeforePlay = NO;
-	
+    
     /* Create new player, if we don't already have one. */
     if (![self player])
     {
         /* Get a new AVPlayer initialized to play the specified player item. */
         [self setPlayer:[AVPlayer playerWithPlayerItem:self.playerItem]];
-		
+        
         /* Observe the AVPlayer "currentItem" property to find out when any
          AVPlayer replaceCurrentItemWithPlayerItem: replacement will/did
          occur.*/
@@ -1267,12 +1307,16 @@ using namespace anymote::messages;
          asynchronously; observe the currentItem property to find out when the
          replacement will/did occur*/
         [[self player] replaceCurrentItemWithPlayerItem:self.playerItem];
+        
+        //        [self syncPlayPauseButtons];
     }
-	
-//    [movieTimeControl setValue:0.0];
+    
+    //    [movieTimeControl setValue:0.0];
 }
 
-#pragma mark - Asset Key Value Observing -
+#pragma mark -
+#pragma mark Asset Key Value Observing
+#pragma mark
 
 #pragma mark Key Value Observer for player rate, currentItem, player item status
 
@@ -1294,9 +1338,12 @@ using namespace anymote::messages;
                         change:(NSDictionary*)change
                        context:(void*)context
 {
-	/* AVPlayerItem "status" property value observer. */
-	if (context == CMMirrorTVViewControllerPlayerItemStatusObserverContext)
-	{
+    /* AVPlayerItem "status" property value observer. */
+    if (context == CMMirrorTVViewControllerPlayerItemStatusObserverContext)
+    {
+        //		[self syncPlayPauseButtons];
+        
+//        AVPlayerStatus status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
         NSInteger status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
         switch (status)
         {
@@ -1304,7 +1351,11 @@ using namespace anymote::messages;
                  it has not tried to load new media resources for playback */
             case AVPlayerStatusUnknown:
             {
-
+                //                [self removePlayerTimeObserver];
+                //                [self syncScrubber];
+                //
+                //                [self disableScrubber];
+                //                [self disablePlayerButtons];
             }
                 break;
                 
@@ -1334,23 +1385,26 @@ using namespace anymote::messages;
             }
                 break;
         }
-	}
-	/* AVPlayer "rate" property value observer. */
-	else if (context == CMMirrorTVViewControllerRateObservationContext)
-	{
-
-	}
-	/* AVPlayer "currentItem" property observer.
+    }
+    /* AVPlayer "rate" property value observer. */
+    else if (context == CMMirrorTVViewControllerRateObservationContext)
+    {
+        //        [self syncPlayPauseButtons];
+    }
+    /* AVPlayer "currentItem" property observer.
      Called when the AVPlayer replaceCurrentItemWithPlayerItem:
      replacement will/did occur. */
-	else if (context == CMMirrorTVViewControllerCurrentItemObservationContext)
-	{
+    else if (context == CMMirrorTVViewControllerCurrentItemObservationContext)
+    {
         AVPlayerItem *newPlayerItem = [change objectForKey:NSKeyValueChangeNewKey];
         
         /* New player item null? */
         if (newPlayerItem == (id)[NSNull null])
         {
-
+            //            [self disablePlayerButtons];
+            //            [self disableScrubber];
+            //            
+            //            self.isPlayingAdText.text = @"";
         }
         else /* Replacement of player currentItem has occurred */
         {
@@ -1360,22 +1414,24 @@ using namespace anymote::messages;
             /* Specifies that the player should preserve the video’s aspect ratio and
              fit the video within the layer’s bounds. */
             [_playerLayerView setVideoFillMode:AVLayerVideoGravityResizeAspect];
+            
+            //            [self syncPlayPauseButtons];
         }
-	}
-	/* Observe the AVPlayer "currentItem.timedMetadata" property to parse the media stream
+    }
+    /* Observe the AVPlayer "currentItem.timedMetadata" property to parse the media stream
      timed metadata. */
-	else if (context == CMMirrorTVViewControllerTimedMetadataObserverContext)
-	{
-		NSArray *array = [[_player currentItem] timedMetadata];
-		for (AVMetadataItem *metadataItem in array)
-		{
-			[self handleTimedMetadata:metadataItem];
-		}
-	}
-	else
-	{
-		[super observeValueForKeyPath:path ofObject:object change:change context:context];
-	}
+    else if (context == CMMirrorTVViewControllerTimedMetadataObserverContext)
+    {
+        NSArray *array = [[_player currentItem] timedMetadata];
+        for (AVMetadataItem *metadataItem in array)
+        {
+            [self handleTimedMetadata:metadataItem];
+        }
+    }
+    else
+    {
+        [super observeValueForKeyPath:path ofObject:object change:change context:context];
+    }
     
     return;
 }
