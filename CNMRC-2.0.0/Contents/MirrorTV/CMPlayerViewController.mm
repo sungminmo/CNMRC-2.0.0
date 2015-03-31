@@ -142,7 +142,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     NSDictionary        *_parameters;
     
     // 컨트롤 패널 토글(감추기 여부).
-    BOOL _isHide;
+    BOOL _isHideControl;
     
     // Mute 여부.
     BOOL _isMuted;
@@ -162,9 +162,11 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 - (void)setupLayout;
 - (void)showLoading;
 - (void)hideLoading;
-- (void)adjustLayout:(CMMirrorTVStatus)status;
-- (void)toggleBackground:(BOOL)hidden;
-- (void)toggleLoading:(BOOL)hidden;
+- (void)showBackground;
+- (void)hideBackground;
+- (void)showControl;
+- (void)hideControl;
+- (void)changeLayout:(CMMirrorTVStatus)status;
 - (void)toggleControl:(BOOL)hidden;
 - (void)setupChannelInfo;
 - (void)requestAssetID;
@@ -523,8 +525,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     }
     
     // 4초후에 컨트롤 패널 감추기.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
-    [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControl) object:nil];
+    [self performSelector:@selector(hideControl) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
 }
 
 // 볼륨 끄기/켜기.
@@ -533,13 +535,13 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     // 토글 시 버튼 이미지 변경.
     if (_isMuted)
     {
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteoffbtn_normal@2x.png"] forState:UIControlStateNormal];
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteoffbtn_press@2x.png"] forState:UIControlStateHighlighted];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOff_D"] forState:UIControlStateNormal];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOff_H"] forState:UIControlStateHighlighted];
     }
     else
     {
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteonbtn_normal@2x.png"] forState:UIControlStateNormal];
-        [_volumeMuteButton setImage:[UIImage imageNamed:@"m_volmuteonbtn_press@2x.png"] forState:UIControlStateHighlighted];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOn_D"] forState:UIControlStateNormal];
+        [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOn_H"] forState:UIControlStateHighlighted];
     }
     
     _isMuted = !_isMuted;
@@ -547,8 +549,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [[RemoteManager sender] sendClickForKey:KEYCODE_MUTE error:NULL];
     
     // 4초후에 컨트롤 패널 감추기.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
-    [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControl) object:nil];
+    [self performSelector:@selector(hideControl) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
 }
 
 // 채널 이동.
@@ -582,8 +584,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     }
     
     // 4초후에 컨트롤 패널 감추기.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
-    [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControl) object:nil];
+    [self performSelector:@selector(hideControl) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
 }
 
 // 숫자키패드 키코드 반환.
@@ -726,8 +728,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     }
     
     // 4초후에 컨트롤 패널 감추기.
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControlPannel) object:nil];
-    [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControl) object:nil];
+    [self performSelector:@selector(hideControl) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
 }
 
 #pragma mark - 프라이빗
@@ -1354,6 +1356,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     recognizer.delegate = self;
     [self.view addGestureRecognizer:recognizer];
     
+    // 컨트롤 토글 초기화.
+    _isHideControl = YES;
+    
     // 에러 횟수 초기화.
     _errorCount = 0;
     
@@ -1367,7 +1372,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     if (recognizer.state == UIGestureRecognizerStateEnded)
     {
         // 플레이어 컨트롤을 토글 시킨다.
-        [self toggleControl:_isHide];
+        [self toggleControl:_isHideControl];
     }
 }
 
@@ -1385,74 +1390,64 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [self.loadingImageView stopAnimating];
 }
 
-// 레이아웃 조정.
-- (void)adjustLayout:(CMMirrorTVStatus)status
+// 에러 표시: 백그라운드 보이기.
+- (void)showBackground
+{
+    self.backgroundView.hidden = NO;
+}
+
+// 에러 표시: 백그라운드 감추기.
+- (void)hideBackground
+{
+    self.backgroundView.hidden = YES;
+}
+
+// 컨르롤 보이기.
+- (void)showControl
+{
+    self.controlPannel.hidden = NO;
+    _isHideControl = NO;
+}
+
+// 컨트롤 감추가.
+- (void)hideControl
+{
+    self.controlPannel.hidden = YES;
+    _isHideControl = YES;
+}
+
+// 레이아웃 변경.
+- (void)changeLayout:(CMMirrorTVStatus)status
 {
     switch (status)
     {
         case CMMirrorTVStatusPlaying:
         {
-            [self toggleBackground:YES];
-            [self toggleLoading:YES];
-            [self toggleControl:NO];
+            [self hideBackground];
+            [self hideLoading];
+            [self showControl];
         }
             break;
             
         case CMMirrorTVStatusLoading:
         {
-            [self toggleBackground:YES];
-            [self toggleLoading:NO];
-            [self toggleControl:YES];
+            [self hideBackground];
+            [self showLoading];
+            [self hideControl];
         }
             break;
             
         case CMMirrorTVStatusError:
         {
-            [self toggleBackground:NO];
-            [self toggleLoading:YES];
-            [self toggleControl:YES];
+            [self showBackground];
+            [self hideLoading];
+            [self hideControl];
         }
             break;
             
         default:
             break;
     }
-}
-
-// 백그라운드 토글.
-- (void)toggleBackground:(BOOL)hidden
-{
-    self.backgroundView.hidden = hidden;
-    
-    if (hidden)
-    {
-        [self.view sendSubviewToBack:self.backgroundView];
-    }
-    else
-    {
-        [self.view bringSubviewToFront:self.backgroundView];
-    }
-}
-
-// 로딩 토글.
-- (void)toggleLoading:(BOOL)hidden
-{
-//    self.loadingView.hidden = hidden;
-//    
-//    if (hidden)
-//    {
-//        [self.view sendSubviewToBack:self.loadingView];
-//        
-//        // 로딩 종료.
-//        [self stopLoading];
-//    }
-//    else
-//    {
-//        [self.view bringSubviewToFront:self.loadingView];
-//        
-//        // 로딩 시작.
-//        [self startLoading];
-//    }
 }
 
 // 컨트롤 토글.
@@ -1465,23 +1460,14 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     if (hidden)
     {
-        [self.view sendSubviewToBack:self.controlPannel];
+        [self hideControl];
     }
     else
     {
-        [self.view bringSubviewToFront:self.controlPannel];
+        [self showControl];
     }
     
-    _isHide = !hidden;
-}
-
-// 컨트롤 패널 감추기.
-- (void)hideControlPannel
-{
-    if (_isHide)
-    {
-        [self toggleControl:YES];
-    }
+    _isHideControl = !_isHideControl;
 }
 
 // 채널 정보 설정.
@@ -1539,12 +1525,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [SocketManager sendData:tr];
 }
 
-// IP 주소가 공인IP 인지 사설IP인지 체크한다.
-- (BOOL)isPrivateAddress:(NSString *)address
-{
-    return [address hasPrefix:@"192"];
-}
-
 // 박스의 이름에서 IP를 가져온다.
 // 예: stb_catv_cnm-192-168-0-131
 - (NSString *)genAddress:(NSString *)boxName
@@ -1599,7 +1579,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     self.noticeLabel.text = msg;
     self.noticeLabel.hidden = NO;
     
-    [self adjustLayout:CMMirrorTVStatusError];
+    [self changeLayout:CMMirrorTVStatusError];
 }
 
 // 에러로 인한 미러TV 종료 공지!
@@ -1622,6 +1602,18 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     [alertView show];
+}
+
+#pragma mark - 제스처 델리게이트 메서드
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if ([touch.view isKindOfClass:[UIButton class]])
+    {
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma mark - 데이터 수신
@@ -1755,9 +1747,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                 else
                 {
                     _isBlockChannel = NO;
-                    
-                    // 로딩 시작.
-                    [self adjustLayout:CMMirrorTVStatusLoading];
                     
                     // 플레이어 중지.
                     [self pause];
