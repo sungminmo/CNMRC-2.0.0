@@ -7,6 +7,34 @@
 //
 
 #import "CMPlayerViewController.h"
+#import "DQAlertView.h"
+#import "CMRCViewController.h"
+#include "keycodes.pb.h"
+
+// 소켓 관련.
+#import "CMTRGenerator.h"
+#import "CM04.h"
+#import "CM05.h"
+#import "CM06.h"
+
+// 애니모트.
+using namespace anymote::messages;
+
+// 영상 확장자.
+#define HLS_EXTENTION @"m3u8"
+
+// 채널버튼 태그.
+#define CHANNEL_BUTTON_TAG 1000
+
+// 볼륨 단위.
+#define VOLUME_UNIT 0.0625f
+
+// 미러TV 상태.
+typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
+    CMMirrorTVStatusPlaying = 0,
+    CMMirrorTVStatusLoading,
+    CMMirrorTVStatusError
+};
 
 @interface CMPlayerViewController ()
 

@@ -220,6 +220,17 @@
 		1DCF4D371ABFED480033413F /* CMKeyboardView_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DCF4D361ABFED480033413F /* CMKeyboardView_5.xib */; };
 		1DD6BAB71ACA3F40001A529B /* CMPlayerViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BAB51ACA3F40001A529B /* CMPlayerViewController.mm */; };
 		1DD6BABA1ACA3F67001A529B /* CMPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DD6BAB91ACA3F67001A529B /* CMPlayerViewController.xib */; };
+		1DD6BAC11ACA42BD001A529B /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD6BABC1ACA42BD001A529B /* libavcodec.a */; };
+		1DD6BAC21ACA42BD001A529B /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD6BABD1ACA42BD001A529B /* libavformat.a */; };
+		1DD6BAC31ACA42BD001A529B /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD6BABE1ACA42BD001A529B /* libavutil.a */; };
+		1DD6BAC41ACA42BD001A529B /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD6BABF1ACA42BD001A529B /* libswresample.a */; };
+		1DD6BAC51ACA42BD001A529B /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD6BAC01ACA42BD001A529B /* libswscale.a */; };
+		1DD6BAD31ACA44C8001A529B /* KxAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BAC81ACA44C8001A529B /* KxAudioManager.m */; };
+		1DD6BAD41ACA44C8001A529B /* kxmovie.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DD6BACB1ACA44C8001A529B /* kxmovie.bundle */; };
+		1DD6BAD51ACA44C8001A529B /* KxMovieDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BACD1ACA44C8001A529B /* KxMovieDecoder.m */; };
+		1DD6BAD61ACA44C8001A529B /* KxMovieGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BACF1ACA44C8001A529B /* KxMovieGLView.m */; };
+		1DD6BAD71ACA44C8001A529B /* KxMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BAD11ACA44C8001A529B /* KxMovieViewController.m */; };
+		1DD6BAD81ACA44C8001A529B /* libkxmovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD6BAD21ACA44C8001A529B /* libkxmovie.a */; };
 		1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.mm */; };
 		1DF4B7B31ABBE1280097C52B /* CMKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */; };
 		1DF4B7D61ABBF40E0097C52B /* CMKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7D51ABBF40E0097C52B /* CMKeyboardView.m */; };
@@ -727,6 +738,23 @@
 		1DD6BAB41ACA3F40001A529B /* CMPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPlayerViewController.h; sourceTree = "<group>"; };
 		1DD6BAB51ACA3F40001A529B /* CMPlayerViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMPlayerViewController.mm; sourceTree = "<group>"; };
 		1DD6BAB91ACA3F67001A529B /* CMPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPlayerViewController.xib; sourceTree = "<group>"; };
+		1DD6BABC1ACA42BD001A529B /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavcodec.a; sourceTree = "<group>"; };
+		1DD6BABD1ACA42BD001A529B /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavformat.a; sourceTree = "<group>"; };
+		1DD6BABE1ACA42BD001A529B /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavutil.a; sourceTree = "<group>"; };
+		1DD6BABF1ACA42BD001A529B /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
+		1DD6BAC01ACA42BD001A529B /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
+		1DD6BAC71ACA44C8001A529B /* KxAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxAudioManager.h; sourceTree = "<group>"; };
+		1DD6BAC81ACA44C8001A529B /* KxAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxAudioManager.m; sourceTree = "<group>"; };
+		1DD6BAC91ACA44C8001A529B /* KxLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxLogger.h; sourceTree = "<group>"; };
+		1DD6BACA1ACA44C8001A529B /* kxmovie-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kxmovie-Prefix.pch"; sourceTree = "<group>"; };
+		1DD6BACB1ACA44C8001A529B /* kxmovie.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = kxmovie.bundle; sourceTree = "<group>"; };
+		1DD6BACC1ACA44C8001A529B /* KxMovieDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieDecoder.h; sourceTree = "<group>"; };
+		1DD6BACD1ACA44C8001A529B /* KxMovieDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieDecoder.m; sourceTree = "<group>"; };
+		1DD6BACE1ACA44C8001A529B /* KxMovieGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieGLView.h; sourceTree = "<group>"; };
+		1DD6BACF1ACA44C8001A529B /* KxMovieGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieGLView.m; sourceTree = "<group>"; };
+		1DD6BAD01ACA44C8001A529B /* KxMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieViewController.h; sourceTree = "<group>"; };
+		1DD6BAD11ACA44C8001A529B /* KxMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieViewController.m; sourceTree = "<group>"; };
+		1DD6BAD21ACA44C8001A529B /* libkxmovie.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libkxmovie.a; sourceTree = "<group>"; };
 		1DF4B7AF1ABBE1280097C52B /* CMKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeyboardViewController.h; sourceTree = "<group>"; };
 		1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMKeyboardViewController.mm; sourceTree = "<group>"; };
 		1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMKeyboardViewController.xib; sourceTree = "<group>"; };
@@ -740,24 +768,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA28B131A3C7B25007D7F4E /* libiconv.dylib in Frameworks */,
+				1DA28B011A3C7AA1007D7F4E /* Accelerate.framework in Frameworks */,
+				1DD6BAC51ACA42BD001A529B /* libswscale.a in Frameworks */,
+				1DA28AFD1A3C7A8D007D7F4E /* AudioToolbox.framework in Frameworks */,
+				1DA28AFF1A3C7A94007D7F4E /* CoreAudio.framework in Frameworks */,
+				1DA28B0B1A3C7AE8007D7F4E /* MediaPlayer.framework in Frameworks */,
+				1DD6BAD81ACA44C8001A529B /* libkxmovie.a in Frameworks */,
 				1DBCC9ED1AB91D9E001AAB91 /* libc++abi.dylib in Frameworks */,
 				1DA28B151A3C7B66007D7F4E /* libsqlite3.dylib in Frameworks */,
 				1DBCCA6C1AB96F87001AAB91 /* libcrypto_iOS.a in Frameworks */,
-				1DA28B131A3C7B25007D7F4E /* libiconv.dylib in Frameworks */,
 				1DA28B111A3C7B18007D7F4E /* libz.dylib in Frameworks */,
 				1DA28B0F1A3C7B01007D7F4E /* UIKit.framework in Frameworks */,
 				1DA28B0D1A3C7AF9007D7F4E /* Foundation.framework in Frameworks */,
 				1DBCCA6E1AB96F87001AAB91 /* libssl_iOS.a in Frameworks */,
-				1DA28B0B1A3C7AE8007D7F4E /* MediaPlayer.framework in Frameworks */,
 				1DA28B091A3C7ADC007D7F4E /* AVFoundation.framework in Frameworks */,
+				1DD6BAC11ACA42BD001A529B /* libavcodec.a in Frameworks */,
 				1DA28B071A3C7AD1007D7F4E /* SystemConfiguration.framework in Frameworks */,
+				1DD6BAC31ACA42BD001A529B /* libavutil.a in Frameworks */,
 				1DA28B051A3C7ABD007D7F4E /* QuartzCore.framework in Frameworks */,
 				1DA28B031A3C7AA9007D7F4E /* OpenGLES.framework in Frameworks */,
-				1DA28B011A3C7AA1007D7F4E /* Accelerate.framework in Frameworks */,
-				1DA28AFF1A3C7A94007D7F4E /* CoreAudio.framework in Frameworks */,
-				1DA28AFD1A3C7A8D007D7F4E /* AudioToolbox.framework in Frameworks */,
 				1DA28AFB1A3C7A81007D7F4E /* CFNetwork.framework in Frameworks */,
 				1DA28AF91A3C7A6B007D7F4E /* CoreGraphics.framework in Frameworks */,
+				1DD6BAC21ACA42BD001A529B /* libavformat.a in Frameworks */,
 				1DA28AF71A3C7A4E007D7F4E /* CoreFoundation.framework in Frameworks */,
 				1DA28AF51A3C7A43007D7F4E /* MobileCoreServices.framework in Frameworks */,
 				1DA28AF31A3C7A33007D7F4E /* Security.framework in Frameworks */,
@@ -765,6 +798,7 @@
 				1DA28AEF1A3C7A1D007D7F4E /* MapKit.framework in Frameworks */,
 				1DA28AED1A3C7A04007D7F4E /* MessageUI.framework in Frameworks */,
 				1DA28AEB1A3C79F5007D7F4E /* CoreMedia.framework in Frameworks */,
+				1DD6BAC41ACA42BD001A529B /* libswresample.a in Frameworks */,
 				1DA28AE91A3C79E3007D7F4E /* CoreTelephony.framework in Frameworks */,
 				1DA28AE71A3C79D0007D7F4E /* CoreData.framework in Frameworks */,
 				1DBA76CB1A20B4C8003AB966 /* libprotobuf.a in Frameworks */,
@@ -1502,6 +1536,8 @@
 		1DBA76781A20AE0D003AB966 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1DD6BAC61ACA44C8001A529B /* KxMovie */,
+				1DD6BABB1ACA42BD001A529B /* FFmpeg */,
 				1DB8FBC01ABA8BEC00ABFB07 /* CocoaLumberjack */,
 				1DBCCA161AB952AC001AAB91 /* FCFileManager */,
 				1D00F89A1AB856B200003DC4 /* openssl */,
@@ -1797,6 +1833,37 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		1DD6BABB1ACA42BD001A529B /* FFmpeg */ = {
+			isa = PBXGroup;
+			children = (
+				1DD6BABC1ACA42BD001A529B /* libavcodec.a */,
+				1DD6BABD1ACA42BD001A529B /* libavformat.a */,
+				1DD6BABE1ACA42BD001A529B /* libavutil.a */,
+				1DD6BABF1ACA42BD001A529B /* libswresample.a */,
+				1DD6BAC01ACA42BD001A529B /* libswscale.a */,
+			);
+			path = FFmpeg;
+			sourceTree = "<group>";
+		};
+		1DD6BAC61ACA44C8001A529B /* KxMovie */ = {
+			isa = PBXGroup;
+			children = (
+				1DD6BAC71ACA44C8001A529B /* KxAudioManager.h */,
+				1DD6BAC81ACA44C8001A529B /* KxAudioManager.m */,
+				1DD6BAC91ACA44C8001A529B /* KxLogger.h */,
+				1DD6BACA1ACA44C8001A529B /* kxmovie-Prefix.pch */,
+				1DD6BACB1ACA44C8001A529B /* kxmovie.bundle */,
+				1DD6BACC1ACA44C8001A529B /* KxMovieDecoder.h */,
+				1DD6BACD1ACA44C8001A529B /* KxMovieDecoder.m */,
+				1DD6BACE1ACA44C8001A529B /* KxMovieGLView.h */,
+				1DD6BACF1ACA44C8001A529B /* KxMovieGLView.m */,
+				1DD6BAD01ACA44C8001A529B /* KxMovieViewController.h */,
+				1DD6BAD11ACA44C8001A529B /* KxMovieViewController.m */,
+				1DD6BAD21ACA44C8001A529B /* libkxmovie.a */,
+			);
+			path = KxMovie;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1922,6 +1989,7 @@
 				1DF4B7B31ABBE1280097C52B /* CMKeyboardViewController.xib in Resources */,
 				1DB9BA031A61574800E89E27 /* keycodes.proto in Resources */,
 				1DB9BA461A61655900E89E27 /* CMWebViewController.xib in Resources */,
+				1DD6BAD41ACA44C8001A529B /* kxmovie.bundle in Resources */,
 				1D14AA681A6168EC00FECF55 /* CMQwertyViewController.xib in Resources */,
 				1DBA76C71A20B4C8003AB966 /* plugin.proto in Resources */,
 				1D14AA801A6169D700FECF55 /* CMEPGViewController.xib in Resources */,
@@ -1984,6 +2052,7 @@
 				1DB9B9C71A61501300E89E27 /* CM05.m in Sources */,
 				1DB9B9AC1A614FCD00E89E27 /* CMTouchPad.m in Sources */,
 				1D20C3DF1A8183B7004C84A9 /* UIViewController+DebuggingViewInjector.m in Sources */,
+				1DD6BAD51ACA44C8001A529B /* KxMovieDecoder.m in Sources */,
 				1DA28B341A3C85AD007D7F4E /* HTProgressHUDFadeAnimation.m in Sources */,
 				1DB9B91F1A613DB000E89E27 /* NSData+Helper.m in Sources */,
 				1DB9BA221A615A9200E89E27 /* CMAuthAdultViewController.m in Sources */,
@@ -2001,6 +2070,7 @@
 				1DB9B9581A61446D00E89E27 /* PoloBase.cc in Sources */,
 				1DA28B351A3C85AD007D7F4E /* HTProgressHUDFadeZoomAnimation.m in Sources */,
 				1DB9BA101A6157A800E89E27 /* NSNetService+Additions.m in Sources */,
+				1DD6BAD71ACA44C8001A529B /* KxMovieViewController.m in Sources */,
 				1D5FA7451A46B2A500D51182 /* LPCoreDataManager.m in Sources */,
 				1DA28B3C1A3C85C5007D7F4E /* Reachability.m in Sources */,
 				1DB9B9A91A614FCD00E89E27 /* CMOverlayView.m in Sources */,
@@ -2043,6 +2113,7 @@
 				1D1C462F1A6A3A1B00ADD92A /* LPAppStats.m in Sources */,
 				1DB9B9DD1A61506900E89E27 /* TBXML.m in Sources */,
 				1DA28B211A3C859C007D7F4E /* AsyncImageView.m in Sources */,
+				1DD6BAD31ACA44C8001A529B /* KxAudioManager.m in Sources */,
 				1DA28AE51A3C70A0007D7F4E /* GTMUIFont+LineHeight.m in Sources */,
 				1D14AA891A6169E300FECF55 /* CMChannelInfo.m in Sources */,
 				1DA28AE11A3C70A0007D7F4E /* GTMGeometryUtils.m in Sources */,
@@ -2075,6 +2146,7 @@
 				1DB9B9A61A614FCD00E89E27 /* CMEPGTableViewCell.m in Sources */,
 				1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.mm in Sources */,
 				1DB9B9391A613F1100E89E27 /* CMAppInfo.m in Sources */,
+				1DD6BAD61ACA44C8001A529B /* KxMovieGLView.m in Sources */,
 				1DF4B7D61ABBF40E0097C52B /* CMKeyboardView.m in Sources */,
 				1DB9B9741A614F6500E89E27 /* CMPairingViewController.m in Sources */,
 				1DD6BAB71ACA3F40001A529B /* CMPlayerViewController.mm in Sources */,
@@ -2198,7 +2270,7 @@
 		1D4A49E11A20859C0088FA93 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jong Pil Park (U5N72GZ2GL)";
 				GCC_PREFIX_HEADER = "CNMRC-2.0.0/PrefixHeader.pch";
@@ -2216,17 +2288,19 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/protobuf-2.6.0/lib",
 					"$(PROJECT_DIR)/Vendor/openssl/lib",
+					"$(PROJECT_DIR)/Vendor/FFmpeg",
+					"$(PROJECT_DIR)/Vendor/KxMovie",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = /Users/lambert/Projects/_Lib/FFmpeg;
 			};
 			name = Debug;
 		};
 		1D4A49E21A20859C0088FA93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "CNMRC-2.0.0/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2243,10 +2317,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/protobuf-2.6.0/lib",
 					"$(PROJECT_DIR)/Vendor/openssl/lib",
+					"$(PROJECT_DIR)/Vendor/FFmpeg",
+					"$(PROJECT_DIR)/Vendor/KxMovie",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = NO;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = /Users/lambert/Projects/_Lib/FFmpeg;
 			};
 			name = Release;
 		};
