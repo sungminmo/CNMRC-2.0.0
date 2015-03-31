@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CMChannelInfo.h"
 #import "CMActivityIndicator.h"
+#import <MediaPlayer/MPVolumeView.h>
 
 @class KxMovieDecoder;
 
@@ -25,8 +26,10 @@ extern NSString * const KxMovieParameterDisableDeinterlacing;   // BOOL
 @property (strong, nonatomic) NSArray *blockChannelInfo;
 @property (strong, nonatomic) CMChannelInfo *channelInfo;
 
-// 볼륨 프로그레스뷰.
-@property (weak, nonatomic) IBOutlet UIProgressView *volumeProgressView;
+// 볼륨.
+@property (weak, nonatomic) IBOutlet UIView *volumeHolder;
+@property (strong, nonatomic) MPVolumeView *volumeView;
+@property (nonatomic) float currentVolume;
 
 // 백그라운드.
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;

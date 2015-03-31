@@ -90,6 +90,9 @@ using namespace anymote::messages;
 // 볼륨 단위.
 #define VOLUME_UNIT 0.0625f
 
+// 볼륨 기본갑.
+#define VOLUME_DEFAULT 0.625f
+
 // 컨트롤 패널 감추는 시간 설정.
 #define CONTROL_PANNEL_HIDDEN_TIME 4
 
@@ -267,6 +270,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                                              selector:@selector(applicationWillResignActive:)
                                                  name:UIApplicationWillResignActiveNotification
                                                object:[UIApplication sharedApplication]];
+    
+    //float volume = [MPMusicPlayerController applicationMusicPlayer].volume = 10.0f;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -508,6 +513,12 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [alertView show];
 }
 
+// 볼륨 프로그레스바 감추기.
+- (void)hideVolumeView
+{
+    self.volumeHolder.hidden = YES;
+}
+
 // 볼륨 조절.
 - (IBAction)volumeAction:(id)sender
 {
@@ -515,14 +526,34 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     if (buttonTag == 0)
     {
-        // 볼륨 업.
-        [[RemoteManager sender] sendClickForKey:KEYCODE_VOLUME_UP error:NULL];
+        if (self.currentVolume < 1.0) {
+            // 볼륨 업.
+            self.currentVolume += VOLUME_UNIT;
+        }
     }
     else
     {
-        // 볼륨 다운.
-        [[RemoteManager sender] sendClickForKey:KEYCODE_VOLUME_DOWN error:NULL];
+        if (self.currentVolume > 0) {
+            // 볼륨 다운.
+            self.currentVolume -= VOLUME_UNIT;
+        }
     }
+    
+    // 볼륨 프로그레스바 UI 설정.
+    self.volumeHolder.hidden = NO;
+    
+    // 봃륨뷰에서 슬라이더 찾기.
+    UISlider *volumeViewSlider = nil;
+    for (UIView *view in [self.volumeView subviews])
+    {
+        if ([[[view class] description] isEqualToString:@"MPVolumeSlider"]) {
+            volumeViewSlider = (UISlider *)view;
+        }
+    }
+    [volumeViewSlider setValue:self.currentVolume animated:YES];
+    
+    // 1초 후에 볼륨뷰 감추가.
+    [self performSelector:@selector(hideVolumeView) withObject:nil afterDelay:1];
     
     // 4초후에 컨트롤 패널 감추기.
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControl) object:nil];
@@ -532,21 +563,30 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 // 볼륨 끄기/켜기.
 - (IBAction)volumeMuteAction:(id)sender
 {
+    // 봃륨뷰에서 슬라이더 찾기.
+    UISlider *volumeViewSlider = nil;
+    for (UIView *view in [self.volumeView subviews])
+    {
+        if ([[[view class] description] isEqualToString:@"MPVolumeSlider"]) {
+            volumeViewSlider = (UISlider *)view;
+        }
+    }
+    
     // 토글 시 버튼 이미지 변경.
     if (_isMuted)
     {
         [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOff_D"] forState:UIControlStateNormal];
         [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOff_H"] forState:UIControlStateHighlighted];
+        [volumeViewSlider setValue:0.0f animated:YES];
     }
     else
     {
         [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOn_D"] forState:UIControlStateNormal];
         [_volumeMuteButton setImage:[UIImage imageNamed:@"M_MuteOn_H"] forState:UIControlStateHighlighted];
+        [volumeViewSlider setValue:VOLUME_DEFAULT animated:YES];
     }
     
     _isMuted = !_isMuted;
-    
-    [[RemoteManager sender] sendClickForKey:KEYCODE_MUTE error:NULL];
     
     // 4초후에 컨트롤 패널 감추기.
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControl) object:nil];
@@ -1351,6 +1391,14 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
     self.view.transform = rotationTransform;
     
+    // 볼륨뷰.
+    CGRect volumeViewFrame = CGRectMake(52, 13, 320, 44);
+    self.volumeView = [[MPVolumeView alloc] initWithFrame:volumeViewFrame];
+    self.volumeView.showsRouteButton = NO;
+    self.volumeView.showsVolumeSlider = YES;
+    [self.volumeHolder addSubview:self.volumeView];
+    self.volumeHolder.hidden = YES;
+    
     // 탭 제스처: 플레이어 컨트롤 토글 용.
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizeTapGesture:)];
     recognizer.delegate = self;
@@ -1358,6 +1406,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     // 컨트롤 토글 초기화.
     _isHideControl = YES;
+    
+    // 볼륨 초기화.
+    self.currentVolume = VOLUME_DEFAULT;
     
     // 에러 횟수 초기화.
     _errorCount = 0;
