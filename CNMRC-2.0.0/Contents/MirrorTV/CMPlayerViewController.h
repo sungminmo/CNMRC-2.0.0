@@ -10,13 +10,20 @@
 #import "CMChannelInfo.h"
 #import "CMActivityIndicator.h"
 
+@class KxMovieDecoder;
+
+extern NSString * const KxMovieParameterMinBufferedDuration;    // Float
+extern NSString * const KxMovieParameterMaxBufferedDuration;    // Float
+extern NSString * const KxMovieParameterDisableDeinterlacing;   // BOOL
+
 @interface CMPlayerViewController : UIViewController <UIGestureRecognizerDelegate>
+
+// 플레이 여부.
+@property (readonly) BOOL playing;
 
 // 데이터.
 @property (strong, nonatomic) NSArray *blockChannelInfo;
 @property (strong, nonatomic) CMChannelInfo *channelInfo;
-
-// 플레이어 뷰.
 
 // 볼륨 프로그레스뷰.
 @property (weak, nonatomic) IBOutlet UIProgressView *volumeProgressView;
@@ -35,6 +42,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *volumeMuteButton;
 @property (weak, nonatomic) IBOutlet UILabel *channelNoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *channelNoIndicatorLabel;
+
+// 플레이어 관련.
+- (void)playWithContentPath:(NSString *)path parameters:(NSDictionary *)parameters;
+- (void)play;
+- (void)pause;
 
 // 채널정보 페이지로 이동.
 - (IBAction)goChannelAction:(id)sender;

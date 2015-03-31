@@ -57,7 +57,7 @@
                         <constraint firstItem="qCJ-TC-aAS" firstAttribute="top" secondItem="p9h-QK-GFh" secondAttribute="top" id="wFi-ZJ-hfZ"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3o-jT-MrL">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3o-jT-MrL">
                     <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oif-IL-6Au">

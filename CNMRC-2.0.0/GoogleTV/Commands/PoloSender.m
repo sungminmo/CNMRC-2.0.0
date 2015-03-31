@@ -61,8 +61,6 @@
   PoloClient *client = [PoloClient clientWithName:name];
   [client setClientName:name];
   [client setServiceName:@"IpRemote"];
-
-    NSLog(@">>>>>>>>>>>>>>>>%@", [client isSaved] ? @"YES" : @"NO");
     
   if (![client isSaved]) {
     [client saveToKeychain];

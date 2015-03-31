@@ -231,7 +231,6 @@
 // 데이터 수신: 데이터 필터링 및 푸시.
 - (void)receiveData:(NSData *)data
 {
-    DDLogDebug(@">>>>>>>>>>>>>%@", @(data.length));
     // 소켓을 닫는다.
     [self closeSocket];
     

@@ -229,7 +229,6 @@
 		1DD6BAD41ACA44C8001A529B /* kxmovie.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DD6BACB1ACA44C8001A529B /* kxmovie.bundle */; };
 		1DD6BAD51ACA44C8001A529B /* KxMovieDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BACD1ACA44C8001A529B /* KxMovieDecoder.m */; };
 		1DD6BAD61ACA44C8001A529B /* KxMovieGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BACF1ACA44C8001A529B /* KxMovieGLView.m */; };
-		1DD6BAD71ACA44C8001A529B /* KxMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD6BAD11ACA44C8001A529B /* KxMovieViewController.m */; };
 		1DD6BAD81ACA44C8001A529B /* libkxmovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD6BAD21ACA44C8001A529B /* libkxmovie.a */; };
 		1DF4B7B21ABBE1280097C52B /* CMKeyboardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.mm */; };
 		1DF4B7B31ABBE1280097C52B /* CMKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4B7B11ABBE1280097C52B /* CMKeyboardViewController.xib */; };
@@ -752,8 +751,6 @@
 		1DD6BACD1ACA44C8001A529B /* KxMovieDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieDecoder.m; sourceTree = "<group>"; };
 		1DD6BACE1ACA44C8001A529B /* KxMovieGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieGLView.h; sourceTree = "<group>"; };
 		1DD6BACF1ACA44C8001A529B /* KxMovieGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieGLView.m; sourceTree = "<group>"; };
-		1DD6BAD01ACA44C8001A529B /* KxMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieViewController.h; sourceTree = "<group>"; };
-		1DD6BAD11ACA44C8001A529B /* KxMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieViewController.m; sourceTree = "<group>"; };
 		1DD6BAD21ACA44C8001A529B /* libkxmovie.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libkxmovie.a; sourceTree = "<group>"; };
 		1DF4B7AF1ABBE1280097C52B /* CMKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeyboardViewController.h; sourceTree = "<group>"; };
 		1DF4B7B01ABBE1280097C52B /* CMKeyboardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMKeyboardViewController.mm; sourceTree = "<group>"; };
@@ -1857,8 +1854,6 @@
 				1DD6BACD1ACA44C8001A529B /* KxMovieDecoder.m */,
 				1DD6BACE1ACA44C8001A529B /* KxMovieGLView.h */,
 				1DD6BACF1ACA44C8001A529B /* KxMovieGLView.m */,
-				1DD6BAD01ACA44C8001A529B /* KxMovieViewController.h */,
-				1DD6BAD11ACA44C8001A529B /* KxMovieViewController.m */,
 				1DD6BAD21ACA44C8001A529B /* libkxmovie.a */,
 			);
 			path = KxMovie;
@@ -2070,7 +2065,6 @@
 				1DB9B9581A61446D00E89E27 /* PoloBase.cc in Sources */,
 				1DA28B351A3C85AD007D7F4E /* HTProgressHUDFadeZoomAnimation.m in Sources */,
 				1DB9BA101A6157A800E89E27 /* NSNetService+Additions.m in Sources */,
-				1DD6BAD71ACA44C8001A529B /* KxMovieViewController.m in Sources */,
 				1D5FA7451A46B2A500D51182 /* LPCoreDataManager.m in Sources */,
 				1DA28B3C1A3C85C5007D7F4E /* Reachability.m in Sources */,
 				1DB9B9A91A614FCD00E89E27 /* CMOverlayView.m in Sources */,
