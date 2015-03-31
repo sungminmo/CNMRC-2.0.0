@@ -157,11 +157,11 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 @property (readwrite) BOOL playing;
 @property (readwrite) BOOL decoding;
 @property (readwrite, strong) KxArtworkFrame *artworkFrame;
-
-@property (weak, nonatomic) NSURL *mirrorTVURL;
 @property (strong, nonatomic) NSTimer *heartbeatTimer;
 
 - (void)setupLayout;
+- (void)showLoading;
+- (void)hideLoading;
 - (void)adjustLayout:(CMMirrorTVStatus)status;
 - (void)toggleBackground:(BOOL)hidden;
 - (void)toggleLoading:(BOOL)hidden;
@@ -170,7 +170,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 - (void)requestAssetID;
 - (void)requestStop;
 - (void)requestHeartbeat;
-- (NSURL *)genMirrorTVURL:(NSString *)receivedAssetID;
+- (NSString *)genContentPath:(NSString *)receivedAssetID;
 - (BOOL)isBlockedChannel:(NSString *)sourceID;
 - (void)showNotice:(NSString *)msg;
 
@@ -215,8 +215,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         //parameters[KxMovieParameterMaxBufferedDuration] = @(0.0f);
         
         // 테스트 용.
-//        [self playWithContentPath:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8" parameters:nil];
-        [self performSelector:@selector(testPlay) withObject:nil afterDelay:10];
+        //[self playWithContentPath:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8" parameters:nil];
+        //[self performSelector:@selector(testPlay) withObject:nil afterDelay:5];
     }
     return self;
 }
@@ -253,9 +253,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     // 화면 설정.
     [self setupLayout];
-    
-    // 로딩 시작.
-    //[self adjustLayout:CMMirrorTVStatusLoading];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -263,11 +260,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [super viewDidAppear:animated];
     
     _savedIdleTimer = [[UIApplication sharedApplication] isIdleTimerDisabled];
-    
-    if (_decoder)
-    {
-        [self restorePlay];
-    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationWillResignActive:)
@@ -370,11 +362,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 
 - (void)testPlay {
     [self playWithContentPath:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8" parameters:nil];
-    
-    if (_decoder)
-    {
-        [self restorePlay];
-    }
 }
 
 - (void)playWithContentPath:(NSString *)path parameters:(NSDictionary *)parameters
@@ -401,6 +388,8 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [strongSelf setMovieDecoder:decoder withError:error];
+                [self restorePlay];
+                [self hideLoading];
             });
         }
     });
@@ -494,7 +483,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     alertView.disappearAnimationType = DQAlertViewAnimationTypeNone;
     alertView.isLandscape = YES;
     alertView.cancelButtonAction = ^{
-        //NSLog(@"Cancel Clicked");
+        DDLogDebug(@"Cancel Clicked");
     };
     alertView.otherButtonAction = ^{        
         // 타이머 정지.
@@ -741,13 +730,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [self performSelector:@selector(hideControlPannel) withObject:nil afterDelay:CONTROL_PANNEL_HIDDEN_TIME];
 }
 
-- (void)progressDidChange:(id)sender
-{
-    NSAssert(_decoder.duration != MAXFLOAT, @"bugcheck");
-    UISlider *slider = sender;
-    [self setMoviePosition:slider.value * _decoder.duration];
-}
-
 #pragma mark - 프라이빗
 
 - (void)setMovieDecoder:(KxMovieDecoder *)decoder withError:(NSError *)error
@@ -843,12 +825,12 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     UIView *frameView = [self frameView];
     frameView.contentMode = UIViewContentModeScaleAspectFit;
-    frameView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
     
     [self.view insertSubview:frameView atIndex:0];
     self.view.backgroundColor = [UIColor clearColor];
 }
 
+// TODO: 이 곳에서 에러 처리?
 - (UIView *)frameView
 {
     return _glView ? _glView : _imageView;
@@ -1389,6 +1371,20 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     }
 }
 
+// 로딩 보이기.
+- (void)showLoading
+{
+    self.loadingView.hidden = NO;
+    [self.loadingImageView startAnimating];
+}
+
+// 로딩 감추기.
+- (void)hideLoading
+{
+    self.loadingView.hidden = YES;
+    [self.loadingImageView stopAnimating];
+}
+
 // 레이아웃 조정.
 - (void)adjustLayout:(CMMirrorTVStatus)status
 {
@@ -1441,22 +1437,22 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 // 로딩 토글.
 - (void)toggleLoading:(BOOL)hidden
 {
-    self.loadingView.hidden = hidden;
-    
-    if (hidden)
-    {
-        [self.view sendSubviewToBack:self.loadingView];
-        
-        // 로딩 종료.
-        [self stopLoading];
-    }
-    else
-    {
-        [self.view bringSubviewToFront:self.loadingView];
-        
-        // 로딩 시작.
-        [self startLoading];
-    }
+//    self.loadingView.hidden = hidden;
+//    
+//    if (hidden)
+//    {
+//        [self.view sendSubviewToBack:self.loadingView];
+//        
+//        // 로딩 종료.
+//        [self stopLoading];
+//    }
+//    else
+//    {
+//        [self.view bringSubviewToFront:self.loadingView];
+//        
+//        // 로딩 시작.
+//        [self startLoading];
+//    }
 }
 
 // 컨트롤 토글.
@@ -1507,40 +1503,11 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     self.channelInfo.programTitle = data.title;
 }
 
-// 로딩 애니메이션 시작.
-- (void)startLoading
-{
-    NSTimeInterval duration = 0.25f;
-    CGFloat angle = M_PI / 2.0f; // 90도.
-    CGAffineTransform rotateTransform = CGAffineTransformRotate(self.loadingImageView.transform, angle);
-    
-    [UIView animateWithDuration:duration
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.loadingImageView.transform = rotateTransform;
-                     }
-                     completion:^(BOOL finished) {
-                         // 회전 애니메이션을 줄 이미지가 완전한 원이 아니라 화살표가 있기 때문에 90도씩 계속 반복시킨다.
-                         if (finished)
-                         {
-                             [self startLoading];
-                         }
-                     }];
-}
-
-// 로딩 애니메이션 중지.
-- (void)stopLoading
-{
-    //[self.loadingImageView.layer removeAllAnimations];
-    self.loadingImageView.hidden = YES;
-}
-
 // CM04: AssetID 요청.
 - (void)requestAssetID
 {
     // 로딩 시작.
-    [self performSelector:@selector(startLoading) withObject:nil afterDelay:2];
+    [self showLoading];
     
     // 전문 생성.
     CMTRGenerator *generator = [[CMTRGenerator alloc] init];
@@ -1589,32 +1556,16 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     return [address stringByReplacingOccurrencesOfString:@"-" withString:@"."];
 }
 
-// 미러TV URL 생성.
-- (NSURL *)genMirrorTVURL:(NSString *)receivedAssetID
+// 미러TV 서버 패스 생성.
+- (NSString *)genContentPath:(NSString *)receivedAssetID;
 {
     if (!receivedAssetID) return nil;
     
     // 앞에서 8자리까지가 AssetID 이다.
     NSString *assetID = [receivedAssetID substringToIndex:8];
+    NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
     
-    // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
-    // 사설IP(192로 시작...)  여부.
-    NSString *address = nil;
-    if ([self isPrivateAddress:[RemoteManager.currentBox.addresses objectAtIndex:0]])
-    {
-        address = [RemoteManager.currentBox.addresses objectAtIndex:0];
-    }
-    else
-    {
-        // 박스 이름에서 IP를 가져온다.
-        address = [self genAddress:RemoteManager.currentBox.name];
-    }
-    
-    // 원래 코드.
-    //NSString *address = [RemoteManager.currentBox.addresses objectAtIndex:0];
-    
-    NSString *stringURL = [NSString stringWithFormat:@"http://%@/%@.%@", address, assetID, HLS_EXTENTION];
-    return [NSURL URLWithString:stringURL];
+    return [NSString stringWithFormat:@"http://%@/%@.%@", address, assetID, HLS_EXTENTION];
 }
 
 // 블럭 채널 확인.
@@ -1687,12 +1638,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         NSInteger result = [data.result integerValue];
         if (result == 0)
         {
-            // 미러TV URL 생성.
-            self.mirrorTVURL = [self genMirrorTVURL:data.assetID];
-            
-            // 미러TV 로드.
-            //[self loadMirrorTV];
-            NSLog(@"MirrorTV URL: %@", self.mirrorTVURL);
+            // 플레이.
+            [self playWithContentPath:[self genContentPath:data.assetID] parameters:nil];
+            DDLogDebug(@"MirrorTV URL: %@", [self genContentPath:data.assetID]);
         }
         else
         {
@@ -1711,17 +1659,17 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         NSInteger result = [data.result integerValue];
         if (result == 0)
         {
-            // 미러TV URL 생성.
-            self.mirrorTVURL = [self genMirrorTVURL:data.assetID];
-            
             // SecondTV 설정.
             if ([data.secondTV isEqualToString:@"1"]) {
                 AppInfo.isSecondTV = YES;
             }
             
-            // 미러TV 로드.
-            //[self loadMirrorTV];
-            NSLog(@"MirrorTV URL: %@", self.mirrorTVURL);
+            // 플레이.
+//            [self playWithContentPath:[self genContentPath:data.assetID] parameters:nil];
+//            DDLogDebug(@"MirrorTV URL: %@", [self genContentPath:data.assetID]);
+            
+            // 테스트 용.
+            [self testPlay];
         }
         else
         {
