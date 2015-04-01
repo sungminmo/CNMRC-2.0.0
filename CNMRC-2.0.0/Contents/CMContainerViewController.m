@@ -343,8 +343,8 @@
         }
         
         // 테스트 용 -----------------------------------.        
-        CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
-        [self presentViewController:viewController animated:YES completion:nil];
+//        CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
+//        [self presentViewController:viewController animated:YES completion:nil];
         // 테스트 용 -----------------------------------.
     };
 }
@@ -450,10 +450,10 @@
                     ci.programTitle = data.title;
                     
                     // 미러TV 진입.
-//                    CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
-//                    viewController.blockChannelInfo = self.blockChannelInfo;
-//                    viewController.channelInfo = ci;
-//                    [self presentViewController:viewController animated:YES completion:nil];
+                    CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
+                    viewController.blockChannelInfo = self.blockChannelInfo;
+                    viewController.channelInfo = ci;
+                    [self presentViewController:viewController animated:YES completion:nil];
                     
                     // 미러TV에 진입하면 CM06에 대한 옵저버를 삭제한다.
                     [[NSNotificationCenter defaultCenter] removeObserver:self];
