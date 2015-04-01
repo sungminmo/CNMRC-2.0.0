@@ -66,7 +66,7 @@
 // 데이터 갱신.
 - (void)handleRefreshList:(UIRefreshControl *)refreshControl
 {
-    NSLog(@"데이터 갱신");
+    DDLogDebug(@"데이터 갱신");
     
     if ([[self.data valueForKey:@"Genre_More"] isEqualToString:@"YES"])
     {
@@ -259,7 +259,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    NSLog(@"Receive data: %@", dict);
+    DDLogDebug(@"Receive data: %@", dict);
     
     NSInteger errorCode = [[dict valueForKey:@"resultCode"] integerValue];
     NSString *itemKey = nil;
@@ -278,7 +278,7 @@
                                                        otherButtonTitle:@"확인"];
             alertView.shouldDismissOnActionButtonClicked = YES;
             alertView.otherButtonAction = ^{
-                NSLog(@"OK Clicked");
+                DDLogDebug(@"OK Clicked");
             };
             
             [alertView show];

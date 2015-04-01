@@ -113,7 +113,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            NSLog(@"OK Clicked");
+            DDLogDebug(@"OK Clicked");
             // 로컬노티피케이션 취소.
             [[UIApplication sharedApplication] cancelLocalNotification:notification];
         };
@@ -131,7 +131,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    NSLog(@"NavigationController view controller count: %d", (int)navigationController.viewControllers.count);
+    DDLogDebug(@"NavigationController view controller count: %d", (int)navigationController.viewControllers.count);
     
     // 리모콘이 아닌 하위 메뉴일 경우...
     if (navigationController.viewControllers.count == 1)

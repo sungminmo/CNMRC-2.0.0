@@ -121,7 +121,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 {
     if (!_isWifiEnabled)
     {
-        NSLog(@"WiFi is still not available. Changing state to idle.");
+        DDLogDebug(@"WiFi is still not available. Changing state to idle.");
         [_sender close];
         [self changeState:kAppStateIdle];
     }
@@ -140,7 +140,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        NSLog(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
         // 상태 변경.
         if (_appState == kAppStateIdle)
         {
@@ -172,7 +172,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
         [self changeState:kAppStateConnecting];
         [RToast showToastWithSpinner:NSLocalizedString(@"연결중...", @"")];
         CMBoxService *box = [self currentBox];
-        NSLog(@"Connecting to last used box: %@", box);
+        DDLogDebug(@"Connecting to last used box: %@", box);
         [_sender connectToHost:[[box addresses] objectAtIndex:0]
                         atPort:[box port]];
     } else
@@ -203,12 +203,12 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     NSSet *allowed = [[self allowedTransitions] objectAtIndex:_appState];
     if ([allowed containsObject:[NSNumber numberWithInt:toState]])
     {
-        NSLog(@"Changing state from %@ to %@", [self stateName:_appState], [self stateName:toState]);
+        DDLogDebug(@"Changing state from %@ to %@", [self stateName:_appState], [self stateName:toState]);
         _appState = toState;
     }
     else
     {
-        NSLog(@"WARNING: incorrect app state change from %@ to %@",
+        DDLogDebug(@"WARNING: incorrect app state change from %@ to %@",
                    [self stateName:_appState], [self stateName:toState]);
     }
 }
@@ -325,7 +325,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        NSLog(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
         // 박스 찾기.
         CMBoxListViewController *viewController = [[CMBoxListViewController alloc] initWithNibName:@"CMBoxListViewController" bundle:nil];
         viewController.delegate = self;
@@ -363,7 +363,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            NSLog(@"OK Clicked");
+            DDLogDebug(@"OK Clicked");
             // 상태 변경.
             if (_appState == kAppStateIdle)
             {
@@ -390,7 +390,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 - (void)poloSenderDidConnect:(PoloSender *)sender
 {
     [self changeState:kAppStateConnected];
-    NSLog(@"Connected to box");
+    DDLogDebug(@"Connected to box");
     
     [RToast showToast:NSLocalizedString(@"연결됐습니다.", @"") forDuration:2];
     AppInfo.isPaired = YES;
@@ -416,7 +416,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 - (void)poloSender:(PoloSender *)sender failedWithError:(NSError *)error
 {
     NSInteger code = [error code];
-    NSLog(@"Connection error (code: %ld): %@ ", (long)code, [error localizedFailureReason]);
+    DDLogDebug(@"Connection error (code: %ld): %@ ", (long)code, [error localizedFailureReason]);
     
     if (_appState == kAppStateConnected)
     {

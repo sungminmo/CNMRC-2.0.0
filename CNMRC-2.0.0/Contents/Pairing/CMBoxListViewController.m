@@ -117,7 +117,7 @@ const NSInteger kDefualtPairingPort = 9551;
 // 박스가 발견되면 호출된다.
 - (void)didChangeBoxList:(NSArray *)boxes
 {
-    NSLog(@"Found box(es): %@", [boxes description]);
+    DDLogDebug(@"Found box(es): %@", [boxes description]);
     [self setAvailableBoxes:boxes];
     [self.boxTable reloadData];
 }

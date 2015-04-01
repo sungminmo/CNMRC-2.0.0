@@ -67,12 +67,12 @@
         return;
     }
     
-    NSLog(@"Data length: %lu", (unsigned long)[data length]);
+    DDLogDebug(@"Data length: %lu", (unsigned long)[data length]);
     // 서버 자체에 문제가 생겻을 경우 데이터가 없다.
     // TODO: 오류처리 방법 결정할 것.
     if ([NSString stringWithUTF8String:[data bytes]] == nil)
     {
-        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+        DDLogDebug(@"%@", [NSString stringWithUTF8String:[data bytes]]);
         [self serverErrorAlert];
         
         return;
@@ -90,7 +90,7 @@
     }
     else
     {
-        NSLog(@"서버에 문제가 있습니다. 관리자에게 문의 바랍니다!");
+        DDLogDebug(@"서버에 문제가 있습니다. 관리자에게 문의 바랍니다!");
         [self serverErrorAlert];
         
         return;
@@ -100,7 +100,7 @@
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(receiveData:)])
     {
-        NSLog(@"Received view controller: %@", NSStringFromClass([self.delegate class]));
+        DDLogDebug(@"Received view controller: %@", NSStringFromClass([self.delegate class]));
         
         // 뷰컨트롤러에 NSDictionary 타입으로 전달.
         [self.delegate receiveData:dict];
@@ -150,7 +150,7 @@
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        NSLog(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
     };
     
     [alertView show];
@@ -194,7 +194,7 @@
 
 - (void)requestWithURL:(NSURL *)url delegate:(id)obj andDictionary:(NSDictionary *)dict sync:(BOOL)isSynchronous
 {
-    NSLog(@"\n Request url: %@ \n Request data: %@", url, dict);
+    DDLogDebug(@"\n Request url: %@ \n Request data: %@", url, dict);
     
     if (dict == nil)
     {
@@ -241,7 +241,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"네워쿼크 연결에 문제가 있습니다.");
+    DDLogDebug(@"네워쿼크 연결에 문제가 있습니다.");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self hide];
 }
@@ -259,7 +259,7 @@
         // headers에 포함되어 있는 항목들 출력
         for (NSString *key in headers)
         {
-            NSLog(@"Header: %@ = %@", key, [headers objectForKey:key]);
+            DDLogDebug(@"Header: %@ = %@", key, [headers objectForKey:key]);
         }
         
         // cookies에 포함되어 있는 항목들 출력
@@ -269,7 +269,7 @@
         {
             for (NSHTTPCookie *cookie in cookies)
             {
-                NSLog(@"Cookie: %@ = %@", [cookie name], [cookie value]);
+                DDLogDebug(@"Cookie: %@ = %@", [cookie name], [cookie value]);
                 
                 // 통신 상태 에러 처리.
             }

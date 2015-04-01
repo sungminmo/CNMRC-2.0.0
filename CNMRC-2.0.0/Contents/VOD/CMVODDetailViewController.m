@@ -227,7 +227,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            NSLog(@"OK Clicked");
+            DDLogDebug(@"OK Clicked");
             WishList *wishList = [WishList create];
             wishList.assetID = [self.data valueForKey:@"VOD_ID"];
             wishList.date = [NSDate date];
@@ -332,14 +332,14 @@
     if ([notification.name isEqualToString:TR_NO_CM01])
     {
         CM01 *data = [[notification userInfo] objectForKey:CMDataObject];
-        NSLog(@"Received data trNo: %@, result: %@", data.trNo, data.result);
+        DDLogDebug(@"Received data trNo: %@, result: %@", data.trNo, data.result);
     }
     
     // VOD TV에서 보기.
     if ([notification.name isEqualToString:TR_NO_CM02])
     {
         CM02 *data = [[notification userInfo] objectForKey:CMDataObject];
-        NSLog(@"Received data trNo: %@, result: %@", data.trNo, data.result);
+        DDLogDebug(@"Received data trNo: %@, result: %@", data.trNo, data.result);
     }
 }
 

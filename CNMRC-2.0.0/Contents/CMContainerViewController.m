@@ -155,7 +155,7 @@
 - (void)toolbarAction:(id)sender
 {
     CMMenuType menuType = [(UIButton *)sender tag];
-    NSLog(@"Selected menu: %@", @(menuType));
+    DDLogDebug(@"Selected menu: %@", @(menuType));
     
     switch (menuType)
     {
@@ -202,7 +202,7 @@
 
 - (void)circleMenu:(CMCircleMenu *)circleMenu menuItem:(UIButton *)item menuIndex:(NSUInteger)index
 {
-    NSLog(@"Selected circle menu: %@", @(index));
+    DDLogDebug(@"Selected circle menu: %@", @(index));
     
     // 서클 메뉴 감추기.
     self.backgroundView.hidden = YES;
@@ -333,10 +333,10 @@
     [alertView show];
     
     alertView.cancelButtonAction = ^{
-        NSLog(@"Cancel Clicked");
+        DDLogDebug(@"Cancel Clicked");
     };
     alertView.otherButtonAction = ^{
-        NSLog(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
         // 1. STB 연결 상태를 확인한다.
         if ([self isSTBConnected])
         {
@@ -344,12 +344,7 @@
             [self requestChannelStatus];
         }
         
-        // 테스트 용 -----------------------------------.
-//        CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:@"CMMirrorTVViewController" bundle:nil];
-//        viewController.blockChannelInfo = self.blockChannelInfo;
-//        self.modalPresentationStyle = UIModalPresentationCurrentContext;
-//        [self presentViewController:viewController animated:YES completion:nil];
-        
+        // 테스트 용 -----------------------------------.        
         CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
         [self presentViewController:viewController animated:YES completion:nil];
         // 테스트 용 -----------------------------------.
@@ -408,7 +403,7 @@
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        NSLog(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
     };
     
     [alertView show];
@@ -418,7 +413,7 @@
 
 - (void)receiveData:(NSDictionary *)dict
 {
-    NSLog(@"Receive data: %@", dict);
+    DDLogDebug(@"Receive data: %@", dict);
     self.blockChannelInfo = [[dict objectForKey:@"channelinfo"] objectForKey:@"item"];
 }
 
@@ -431,7 +426,7 @@
     if ([notification.name isEqualToString:TR_NO_CM06])
     {
         CM06 *data = [[notification userInfo] objectForKey:CMDataObject];
-        NSLog(@"Received data trNo: %@, result: %@", data.trNo, data.result);
+        DDLogDebug(@"Received data trNo: %@, result: %@", data.trNo, data.result);
         
         // TV 상태 확인.
         NSInteger tvStatus = [data.tvStatus integerValue];
@@ -464,9 +459,6 @@
                     
                     // 미러TV에 진입하면 CM06에 대한 옵저버를 삭제한다.
                     [[NSNotificationCenter defaultCenter] removeObserver:self];
-                    
-                    // 소켓 종료.
-                    [SocketManager closeSocket];
                 }
             }
                 break;

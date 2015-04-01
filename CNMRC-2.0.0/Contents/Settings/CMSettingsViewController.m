@@ -144,7 +144,7 @@
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
     alertView.otherButtonAction = ^{
-        NSLog(@"OK Clicked");
+        DDLogDebug(@"OK Clicked");
         // 모든 설정 초기화.
         [self resetSetting];
     };

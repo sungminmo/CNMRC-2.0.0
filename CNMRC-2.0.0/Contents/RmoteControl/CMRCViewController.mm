@@ -470,7 +470,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 - (void)selectedNumberKey:(UIButton *)numberKey
 {
     NSInteger selectedKey = [(UIButton *)numberKey tag];
-    NSLog(@"Selected number key: %ld", (long)selectedKey);
+    DDLogDebug(@"Selected number key: %ld", (long)selectedKey);
     
     [[RemoteManager sender] sendClickForKey:[self keycodeForNumberButton:numberKey] error:NULL];
 }
@@ -480,7 +480,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 - (void)cvPad:(CMCVPad *)pad selectedKey:(UIButton *)key
 {
     NSInteger selectedKey = [(UIButton *)key tag];
-    NSLog(@"Selected channel/volume key: %ld", (long)selectedKey);
+    DDLogDebug(@"Selected channel/volume key: %ld", (long)selectedKey);
     
     if (selectedKey == 5)
     {
@@ -507,7 +507,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
 - (void)touchPad:(CMTouchPad *)pad selectedKey:(UIButton *)key
 {
     NSInteger selectedKey = [(UIButton *)key tag];
-    NSLog(@"Selected touch pad key: %ld", (long)selectedKey);
+    DDLogDebug(@"Selected touch pad key: %ld", (long)selectedKey);
     
     [[RemoteManager sender] sendClickForKey:[self keycodeForFourDirectionButton:key] error:NULL];
 }

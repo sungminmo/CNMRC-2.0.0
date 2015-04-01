@@ -485,7 +485,7 @@ using namespace anymote::messages;
         }
         else
         {
-            NSLog(@"Input string: %@", string);
+            DDLogDebug(@"Input string: %@", string);
             
             // !!!: 한글이 단모음/단자음일 경우 Anymote 키코드 전송, 쌍모음/쌍자음일 경우 영문 텍스트 전송.
             if ([self isPair:string])

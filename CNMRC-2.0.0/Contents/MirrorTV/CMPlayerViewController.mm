@@ -376,8 +376,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     };
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSError *error = nil;
+        // !!!: STB에서 스트림 파일 생성 지연 때문에 파일 로드 시점을 지연 시킨다.
         //sleep(8);
+        NSError *error = nil;
         [decoder openFile:path error:&error];
         __strong CMPlayerViewController *strongSelf = weakSelf;
         
@@ -386,7 +387,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [strongSelf setMovieDecoder:decoder withError:error];
                 [self play];
-                //[self restorePlay];
                 [self hideLoading];
             });
         }

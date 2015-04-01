@@ -55,7 +55,7 @@
                                                    otherButtonTitle:@"확인"];
         alertView.shouldDismissOnActionButtonClicked = YES;
         alertView.otherButtonAction = ^{
-            NSLog(@"OK Clicked");
+            DDLogDebug(@"OK Clicked");
             [self.codeTextField becomeFirstResponder];
         };
         
