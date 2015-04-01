@@ -97,11 +97,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     NSTimeInterval      _tickCorrectionTime;
     NSTimeInterval      _tickCorrectionPosition;
     NSUInteger          _tickCounter;
-    BOOL                _fullscreen;
-    BOOL                _hiddenHUD;
-    BOOL                _fitMode;
-    BOOL                _infoMode;
-    BOOL                _restoreIdleTimer;
     BOOL                _interrupted;
 
     KxMovieGLView       *_glView;
@@ -466,7 +461,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        
         [self updatePosition:position playMode:playMode];
     });
 }
@@ -1385,7 +1379,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     [self.view addGestureRecognizer:recognizer];
     
     // 컨트롤 토글 초기화.
-    _isHideControl = YES;
+    _isHideControl = NO;
     
     // 볼륨 초기화.
     self.currentVolume = VOLUME_DEFAULT;
