@@ -224,11 +224,11 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                                                object:nil];
     
     // 전문 수신용 옵저버 등록: CM04, CM05, CM06.
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM04 object:nil];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM041 object:nil];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM05 object:nil];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM06 object:nil];
+//    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+//    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM04 object:nil];
+//    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM041 object:nil];
+//    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM05 object:nil];
+//    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM06 object:nil];
     
     // CMO6 heartbeat 타이머 설정(2초마다).
     self.heartbeatTimer = [NSTimer scheduledTimerWithTimeInterval:HEARTBEAT_TIME target:self selector:@selector(requestHeartbeat) userInfo:nil repeats:YES];

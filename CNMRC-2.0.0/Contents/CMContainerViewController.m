@@ -10,7 +10,6 @@
 #import "CMOverlayView.h"
 #import "CMRCViewController.h"
 #import "CMKeyboardViewController.h"
-#import "CMQwertyViewController.h"
 #import "CMSettingsViewController.h"
 #import "LPAppStats.h"
 #import "DQAlertView.h"

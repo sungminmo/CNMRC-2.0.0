@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */ = {isa = PBXBuildFile; fileRef = 1D0EE5C31AB291C00055A92A /* tap-muted.aif */; };
-		1D14AA671A6168EC00FECF55 /* CMQwertyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA621A6168EC00FECF55 /* CMQwertyViewController.mm */; };
-		1D14AA681A6168EC00FECF55 /* CMQwertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D14AA631A6168EC00FECF55 /* CMQwertyViewController.xib */; };
 		1D14AA691A6168EC00FECF55 /* CMRCViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */; };
 		1D14AA701A61692500FECF55 /* LPToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA6D1A61692500FECF55 /* LPToast.m */; };
 		1D14AA711A61692500FECF55 /* RToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AA6F1A61692500FECF55 /* RToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -245,9 +243,6 @@
 
 /* Begin PBXFileReference section */
 		1D0EE5C31AB291C00055A92A /* tap-muted.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tap-muted.aif"; sourceTree = "<group>"; };
-		1D14AA611A6168EC00FECF55 /* CMQwertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMQwertyViewController.h; sourceTree = "<group>"; };
-		1D14AA621A6168EC00FECF55 /* CMQwertyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMQwertyViewController.mm; sourceTree = "<group>"; };
-		1D14AA631A6168EC00FECF55 /* CMQwertyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMQwertyViewController.xib; sourceTree = "<group>"; };
 		1D14AA641A6168EC00FECF55 /* CMRCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRCViewController.h; sourceTree = "<group>"; };
 		1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMRCViewController.mm; sourceTree = "<group>"; };
 		1D14AA6C1A61692500FECF55 /* LPToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPToast.h; sourceTree = "<group>"; };
@@ -818,9 +813,6 @@
 		1D14AA601A6168EC00FECF55 /* RmoteControl */ = {
 			isa = PBXGroup;
 			children = (
-				1D14AA611A6168EC00FECF55 /* CMQwertyViewController.h */,
-				1D14AA621A6168EC00FECF55 /* CMQwertyViewController.mm */,
-				1D14AA631A6168EC00FECF55 /* CMQwertyViewController.xib */,
 				1D14AA641A6168EC00FECF55 /* CMRCViewController.h */,
 				1D14AA651A6168EC00FECF55 /* CMRCViewController.mm */,
 				1DB8F8A61A623573004DFB89 /* CMRCViewController.xib */,
@@ -1971,7 +1963,6 @@
 				1DB9BA031A61574800E89E27 /* keycodes.proto in Resources */,
 				1DB9BA461A61655900E89E27 /* CMWebViewController.xib in Resources */,
 				1DD6BAD41ACA44C8001A529B /* kxmovie.bundle in Resources */,
-				1D14AA681A6168EC00FECF55 /* CMQwertyViewController.xib in Resources */,
 				1DBA76C71A20B4C8003AB966 /* plugin.proto in Resources */,
 				1D14AA801A6169D700FECF55 /* CMEPGViewController.xib in Resources */,
 				1D4A49CE1A20859C0088FA93 /* Images.xcassets in Resources */,
@@ -2005,7 +1996,6 @@
 				1DA28B321A3C85AD007D7F4E /* HTProgressHUD.m in Sources */,
 				1DB9B91E1A613DB000E89E27 /* GTMNSString+HTML.m in Sources */,
 				1DB9BA451A61655900E89E27 /* CMWebViewController.m in Sources */,
-				1D14AA671A6168EC00FECF55 /* CMQwertyViewController.mm in Sources */,
 				1DB9B9C61A61501300E89E27 /* CM04.m in Sources */,
 				1DB9B95B1A61446D00E89E27 /* PoloObjC.m in Sources */,
 				1DA28B361A3C85AD007D7F4E /* HTProgressHUDIndicatorView.m in Sources */,
