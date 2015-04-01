@@ -46,8 +46,6 @@ enum {
     KxMovieInfoGeneralCount,
 };
 
-////////////////////////////////////////////////////////////////////////////////
-
 static NSMutableDictionary *gHistory;
 
 #define LOCAL_MIN_BUFFERED_DURATION   0.2
@@ -75,6 +73,9 @@ using namespace anymote::messages;
 
 // Heartbit 시간 설정.
 #define HEARTBEAT_TIME 4
+
+// kxMovieGLView 태그.
+#define MOVIE_GL_VIEW_TAG 10000
 
 // 미러TV 상태.
 typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
@@ -134,6 +135,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     // 채널변경 에러 카운트 테스트.
     NSInteger _changeChannelErrorCount;
+    
+    // 플레이어 뷰 테스트.
+    NSInteger _viewOrderCount;
 }
 
 @property (readwrite) BOOL playing;
@@ -200,7 +204,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         
         // 테스트 용.
         //[self playWithContentPath:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8" parameters:nil];
-        //[self performSelector:@selector(testPlay) withObject:nil afterDelay:5];
+        [self performSelector:@selector(testPlay) withObject:nil afterDelay:5];
+        
+        [self performSelector:@selector(testPlay2) withObject:nil afterDelay:20];
     }
     return self;
 }
@@ -223,11 +229,11 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                                                object:nil];
     
     // 전문 수신용 옵저버 등록: CM04, CM05, CM06.
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM04 object:nil];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM041 object:nil];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM05 object:nil];
-    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM06 object:nil];
+//    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+//    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM04 object:nil];
+//    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM041 object:nil];
+//    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM05 object:nil];
+//    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM06 object:nil];
     
     // CMO6 heartbeat 타이머 설정(2초마다).
     self.heartbeatTimer = [NSTimer scheduledTimerWithTimeInterval:HEARTBEAT_TIME target:self selector:@selector(requestHeartbeat) userInfo:nil repeats:YES];
@@ -345,8 +351,12 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 #pragma mark - 퍼블릭 -
 
 - (void)testPlay {
-//    [self playWithContentPath:@"http://192.168.0.35/VideoSample/new-2/SERV2257.m3u8" parameters:nil];
-    //[self playWithContentPath:@"http://192.168.200.193/SERV5015.m3u8" parameters:nil];
+    [self playWithContentPath:@"http://devimages.apple.com/iphone/samples/bipbop/gear4/prog_index.m3u8" parameters:nil];
+}
+
+- (void)testPlay2 {
+    [self showLoading];
+    [self playWithContentPath:@"http://walterebert.com/playground/video/hls/sintel-trailer.m3u8" parameters:nil];
 }
 
 - (void)playWithContentPath:(NSString *)path parameters:(NSDictionary *)parameters
@@ -354,7 +364,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     NSAssert(path.length > 0, @"empty path");
     
     _moviePosition = 0;
-    //self.wantsFullScreenLayout = YES;
     _parameters = parameters;
     __weak CMPlayerViewController *weakSelf = self;
     KxMovieDecoder *decoder = [[KxMovieDecoder alloc] init];
@@ -366,7 +375,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSError *error = nil;
-        sleep(8);
+        //sleep(8);
         [decoder openFile:path error:&error];
         __strong CMPlayerViewController *strongSelf = weakSelf;
         
@@ -431,31 +440,18 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     self.playing = NO;
     //_interrupted = YES;
     [self enableAudio:NO];
+    
     DDLogDebug(@"미러TV 일시 정지");
 }
 
 - (void)stop
 {
-    UIView *view = [self.view viewWithTag:100];
-    view.backgroundColor = [UIColor yellowColor];
-    //view.hidden = YES;
+    [self pause];
+    [self freeBufferedFrames];
+    [_decoder closeFile];
     
-    if (self.playing)
-    {
-        [self pause];
-    }
-    else
-    {
-        [self freeBufferedFrames];
-        [_decoder closeFile];
-    }
-    
-    if (_decoder)
-    {
-        [_decoder closeFile];
-    }
-    
-    _buffered = NO;
+    UIView *view = [self.view viewWithTag:MOVIE_GL_VIEW_TAG];
+    view.hidden = YES;
 }
 
 - (void)setMoviePosition:(CGFloat)position
@@ -880,11 +876,17 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     }
     
     UIView *frameView = [self frameView];
-    frameView.tag = 1000;
+    // 다른 영상 재생을 위해 태깅을 해둔다.
+    frameView.tag = MOVIE_GL_VIEW_TAG;
     frameView.contentMode = UIViewContentModeScaleAspectFit;
     
-    [self.view insertSubview:frameView atIndex:0];
+    DDLogDebug(@"1:>>>>>>>>>>>%ld", self.view.subviews.count);
+    
+    [self.view insertSubview:frameView atIndex:_viewOrderCount];
     self.view.backgroundColor = [UIColor clearColor];
+    _viewOrderCount++;
+    
+    DDLogDebug(@"1:>>>>>>>>>>>%ld", self.view.subviews.count);
 }
 
 // TODO: 이 곳에서 에러 처리?
@@ -1127,7 +1129,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     {
         _tickCorrectionTime = 0;
         _buffered = NO;
-        //[_activityIndicatorView stopAnimating];
     }
     
     CGFloat interval = 0;
@@ -1145,14 +1146,12 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
             if (_decoder.isEOF)
             {
                 [self pause];
-                //[self updateHUD];
                 return;
             }
             
             if (_minBufferedDuration > 0 && !_buffered)
             {
                 _buffered = YES;
-                //[_activityIndicatorView startAnimating];
             }
         }
         
@@ -1171,7 +1170,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     
     if ((_tickCounter++ % 3) == 0)
     {
-        //[self updateHUD];
+
     }
 }
 
@@ -1238,9 +1237,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
         }
     }
     
-    if (_decoder.validSubtitles)
-        //[self presentSubtitles];
-    
 #ifdef DEBUG
     if (self.playing && _debugStartTime < 0)
         _debugStartTime = [NSDate timeIntervalSinceReferenceDate] - _moviePosition;
@@ -1264,17 +1260,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     _moviePosition = frame.position;
     
     return frame.duration;
-}
-
-- (void)fullscreenMode:(BOOL)on
-{
-    _fullscreen = on;
-    UIApplication *app = [UIApplication sharedApplication];
-    [app setStatusBarHidden:on withAnimation:UIStatusBarAnimationNone];
-    // if (!self.presentingViewController) {
-    //[self.navigationController setNavigationBarHidden:on animated:YES];
-    //[self.tabBarController setTabBarHidden:on animated:YES];
-    // }
 }
 
 - (void)setMoviePositionFromDecoder
@@ -1337,7 +1322,6 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                     [strongSelf enableUpdateHUD];
                     [strongSelf setMoviePositionFromDecoder];
                     [strongSelf presentFrame];
-                    //[strongSelf updateHUD];
                 }
             });
         }
@@ -1362,12 +1346,12 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 
 - (void)handleDecoderMovieError:(NSError *)error
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Failure", nil)
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:NSLocalizedString(@"Failure", nil)
                                                         message:[error localizedDescription]
-                                                       delegate:nil
-                                              cancelButtonTitle:NSLocalizedString(@"Close", nil)
-                                              otherButtonTitles:nil];
-    
+                                              cancelButtonTitle:nil
+                                               otherButtonTitle:@"확인"];
+    alertView.shouldDismissOnActionButtonClicked = YES;
+    alertView.isLandscape = YES;
     [alertView show];
 }
 
@@ -1641,6 +1625,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                                               cancelButtonTitle:@"Cancel"
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
+    alertView.isLandscape = YES;
     [alertView show];
 }
 
@@ -1652,6 +1637,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                                               cancelButtonTitle:nil
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
+    alertView.isLandscape = YES;
     [alertView show];
 }
 
@@ -1676,7 +1662,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     if ([notification.name isEqualToString:TR_NO_CM04])
     {
         CM04 *data = [[notification userInfo] objectForKey:CMDataObject];
-        NSLog(@"Received data trNo: %@, result: %@", data.trNo, data.result);
+        DDLogDebug(@"Received data trNo: %@, result: %@", data.trNo, data.result);
         
         NSInteger result = [data.result integerValue];
         if (result == 0)
@@ -1697,7 +1683,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     if ([notification.name isEqualToString:TR_NO_CM041])
     {
         CM041 *data = [[notification userInfo] objectForKey:CMDataObject];
-        NSLog(@"Received data trNo: %@(1), result: %@", data.trNo, data.result);
+        DDLogDebug(@"Received data trNo: %@(1), result: %@", data.trNo, data.result);
         
         NSInteger result = [data.result integerValue];
         if (result == 0)
@@ -1723,7 +1709,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     if ([notification.name isEqualToString:TR_NO_CM05])
     {
         CM05 *data = [[notification userInfo] objectForKey:CMDataObject];
-        NSLog(@"Received data trNo: %@, result: %@", data.trNo, data.result);
+        DDLogDebug(@"Received data trNo: %@, result: %@", data.trNo, data.result);
         
         // 소켓 종료.
         [SocketManager closeSocket];
@@ -1733,7 +1719,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     if ([notification.name isEqualToString:TR_NO_CM06])
     {
         CM06 *data = [[notification userInfo] objectForKey:CMDataObject];
-        NSLog(@"Received data trNo: %@, result: %@", data.trNo, data.result);
+        DDLogDebug(@"Received data trNo: %@, result: %@", data.trNo, data.result);
         
         // 에러가 5번 연속 발생하면 미러TV 서비스를 종료한다.
         NSInteger result = [data.result integerValue];

@@ -72,21 +72,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskPortrait;
-//}
-
-//- (BOOL)shouldAutorotate
-//{
-//    return YES;
-//}
-
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-//{
-//    return UIInterfaceOrientationPortrait;
-//}
-
 #pragma mark - 프라이빗 메서드
 
 - (void)recognizeTapGesture:(UITapGestureRecognizer *)recognizer
@@ -365,8 +350,8 @@
 //        self.modalPresentationStyle = UIModalPresentationCurrentContext;
 //        [self presentViewController:viewController animated:YES completion:nil];
         
-//        CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
-//        [self presentViewController:viewController animated:YES completion:nil];
+        CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
+        [self presentViewController:viewController animated:YES completion:nil];
         // 테스트 용 -----------------------------------.
     };
 }
@@ -472,20 +457,16 @@
                     ci.programTitle = data.title;
                     
                     // 미러TV 진입.
-//                    CMMirrorTVViewController *viewController = [[CMMirrorTVViewController alloc] initWithNibName:@"CMMirrorTVViewController" bundle:nil];
+//                    CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
 //                    viewController.blockChannelInfo = self.blockChannelInfo;
 //                    viewController.channelInfo = ci;
-//                    
-//                    self.modalPresentationStyle = UIModalPresentationCurrentContext;
 //                    [self presentViewController:viewController animated:YES completion:nil];
-                    
-                    CMPlayerViewController *viewController = [[CMPlayerViewController alloc] initWithNibName:@"CMPlayerViewController" bundle:nil];
-                    viewController.blockChannelInfo = self.blockChannelInfo;
-                    viewController.channelInfo = ci;
-                    [self presentViewController:viewController animated:YES completion:nil];
                     
                     // 미러TV에 진입하면 CM06에 대한 옵저버를 삭제한다.
                     [[NSNotificationCenter defaultCenter] removeObserver:self];
+                    
+                    // 소켓 종료.
+                    [SocketManager closeSocket];
                 }
             }
                 break;
