@@ -50,7 +50,7 @@ extern NSString * const KxMovieParameterDisableDeinterlacing;   // BOOL
 - (void)playWithContentPath:(NSString *)path parameters:(NSDictionary *)parameters;
 - (void)play;
 - (void)pause;
-- (void)stop;
+- (void)removePlayer;
 
 // 채널정보 페이지로 이동.
 - (IBAction)goChannelAction:(id)sender;
