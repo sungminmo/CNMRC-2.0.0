@@ -298,7 +298,7 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
         case 3: // 채널 업.
             return KEYCODE_CHANNEL_UP;
             
-        case 4: // OK.
+        case 4: // 채널 다운.
             return KEYCODE_CHANNEL_DOWN;
             
         case 5: // 음소거 토글.
