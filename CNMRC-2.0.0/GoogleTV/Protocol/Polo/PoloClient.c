@@ -372,8 +372,7 @@ void PoloConnectionSetRole(PoloConnectionRef connection,
   connection->role = role;
 }
 
-void
-PoloConnectionSetCertificatesStorage(PoloConnectionRef connection,
+void PoloConnectionSetCertificatesStorage(PoloConnectionRef connection,
                                      PoloCertificatesStorageRef storage) {
   PoloRelease(connection->certificatesStorage);
   connection->certificatesStorage = PoloRetain(storage);
@@ -566,7 +565,7 @@ int select_and_wait(BIO *bio, int timeout) {
   fd_set writefds;
   struct timeval tv;
 
-  fd = BIO_get_fd(bio, NULL);
+  fd = (int)BIO_get_fd(bio, NULL);
   if (fd == -1) {
     return -1;
   }
@@ -950,7 +949,7 @@ int PoloConnectionWrite(PoloConnectionRef connection,
   if (!bio)
     return POLO_ERR_NOT_CONNECTED;
 
-  err = BIO_write(PoloConnectionGetBIO(connection), buf,len);
+  err = BIO_write(PoloConnectionGetBIO(connection), buf, (int)len);
   if (err <= 0) {
     return POLO_ERR_CONNECTION_GENERIC;
   } else {
@@ -961,7 +960,7 @@ int PoloConnectionWrite(PoloConnectionRef connection,
 int PoloConnectionRead(PoloConnectionRef connection,
                        void *buf,
                        size_t len) {
-  if (BIO_read(PoloConnectionGetBIO(connection), buf, len) <= 0)
+  if (BIO_read(PoloConnectionGetBIO(connection), buf, (int)len) <= 0)
     return POLO_ERR_CONNECTION_GENERIC;
   else
     return POLO_ERR_OK;

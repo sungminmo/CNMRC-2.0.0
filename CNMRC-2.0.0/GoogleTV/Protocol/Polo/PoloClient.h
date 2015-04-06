@@ -65,10 +65,10 @@ struct polo_client {
   struct PoloBase base;
   X509 *certificate;
   EVP_PKEY *privateKey;
-//  __strong const char *serviceName;
-//  __strong const char *clientName;
-    const char *serviceName;
-    const char *clientName;
+  __strong const char *serviceName;
+  __strong const char *clientName;
+//    const char *serviceName;
+//    const char *clientName;
   uint32_t flags;
 };
 typedef struct polo_client *PoloClientRef;
@@ -200,20 +200,20 @@ struct PoloConnectionCallbacks {
 struct polo_connection {
   // All fields are private
   struct PoloBase base;
-  PoloClientRef client;
-  //__strong PoloClientRef client;
+  //PoloClientRef client;
+  __strong PoloClientRef client;
   PoloConnectionEncodingsSet inputEncodings;
   PoloConnectionEncodingsSet outputEncodings;
   PoloConnectionEncoding encoding;
   PoloConnectionRole preferredRole;
   PoloConnectionRole role;
-  //__strong PoloCertificatesStorageRef certificatesStorage;
-  PoloCertificatesStorageRef certificatesStorage;
+  __strong PoloCertificatesStorageRef certificatesStorage;
+  //PoloCertificatesStorageRef certificatesStorage;
   SSL_CTX *sslContext;
   BIO *bio;
   struct PoloConnectionCallbacks callbacks;
-  //__strong const char *host;
-  const char *host;
+  __strong const char *host;
+  //const char *host;
   int port;
   int pairingPort;
   pthread_mutex_t peerNameMutex;

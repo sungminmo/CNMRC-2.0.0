@@ -159,6 +159,7 @@ extern const char *PoloBase64StringFromString(const char *str);
             forKey:(id)kSecMatchLimit];
   [query setObject:name // Name is the name of our subject
             forKey:(id)kSecMatchSubjectContains];
+    
 #if TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR
   if (accessGroup)
     [query setObject:accessGroup
@@ -178,6 +179,7 @@ extern const char *PoloBase64StringFromString(const char *str);
             forKey:(id)kSecAttrApplicationTag];
   [query setObject:(id)kSecAttrKeyClassPrivate
             forKey:(id)kSecAttrKeyClass];
+    
 #if TARGET_OS_IPHONE && !TARGET_IPHONE_SIMULATOR
   if (accessGroup)
     [query setObject:accessGroup
@@ -207,6 +209,7 @@ extern const char *PoloBase64StringFromString(const char *str);
                  forKey:(id)kSecClass];
   [attributes setObject:(id)data
                  forKey:(id)kSecValueData];
+    
 #if TARGET_OS_IPHONE
   NSString *versionString = [[UIDevice currentDevice] systemVersion];
   if ([[versionString substringToIndex:1] intValue] >= 4)
@@ -264,6 +267,7 @@ extern const char *PoloBase64StringFromString(const char *str);
                  forKey:(id)kSecAttrApplicationTag];
   [attributes setObject:(id)kSecAttrKeyClassPrivate
                  forKey:(id)kSecAttrKeyClass];
+    
 #if TARGET_OS_IPHONE
   NSString *versionString = [[UIDevice currentDevice] systemVersion];
   if ([[versionString substringToIndex:1] intValue] >= 4)
@@ -324,7 +328,10 @@ extern const char *PoloBase64StringFromString(const char *str);
   [query setObject:(id)kCFBooleanTrue
             forKey:(id)kSecReturnData];
 
-  if (SecItemCopyMatching((CFDictionaryRef)query,
+    NSLog(@"SecItemCopyMatching result: %@", @(SecItemCopyMatching((CFDictionaryRef)query, (CFTypeRef *)&returnedData)));
+    NSLog(@">>>>>>>>>>>>>>>>>%@", query);
+    
+  if ((OSStatus)SecItemCopyMatching((CFDictionaryRef)query,
                           (CFTypeRef *)&returnedData) == errSecSuccess) {
     RSA *rsa = RSA_new();
     const unsigned char *bytes = (const unsigned char *)[returnedData bytes];
@@ -468,8 +475,8 @@ static id sharedConnectionPlaceholder = nil;
 typedef struct {
   id delegate;
   NSLock *pendingInvocationsLock;
-//  __strong NSMutableArray *pendingInvocations;
-  NSMutableArray *pendingInvocations;
+  __strong NSMutableArray *pendingInvocations;
+  //NSMutableArray *pendingInvocations;
   CFRunLoopSourceRef runloopSource;
 } PoloConnectionObjCBridgeInfo;
 
