@@ -49,6 +49,15 @@
 	[self.settingsTable reloadData];
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    // 테이블 높이 설정.
+    if ([LPPhoneVersion deviceSize] == iPhone4inch) {
+        self.settingsTable.frame = CGRectMake(self.settingsTable.frame.origin.x, self.settingsTable.frame.origin.y, self.settingsTable.frame.size.width, self.settingsTable.frame.size.height - 50);
+    }
+}
+
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
@@ -259,6 +268,7 @@
 	NSString *subTitle = [[[[self.settings objectAtIndex:indexPath.section] objectForKey:@"subTitles"] objectAtIndex:indexPath.row] objectForKey:@"subTitle"];
     cell.textLabel.backgroundColor = [UIColor clearColor];
 	cell.textLabel.textColor = [UIColor grayColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
 	cell.textLabel.text = subTitle;
     
 	return cell;
