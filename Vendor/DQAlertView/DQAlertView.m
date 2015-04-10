@@ -264,9 +264,23 @@
     
     // 얼럿 가로 모드.
     if (self.isLandscape) {
-        CGAffineTransform rotationTransform = CGAffineTransformIdentity;
-        rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
-        self.transform = rotationTransform;
+        UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+        
+        if (orientation == UIDeviceOrientationLandscapeLeft)
+        {
+            // 뷰 로테이션(90도).
+            CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+            rotationTransform = CGAffineTransformRotate(rotationTransform, M_PI/2);
+            self.transform = rotationTransform;
+        }
+        
+        if (orientation == UIDeviceOrientationLandscapeRight)
+        {
+            // 뷰 로테이션(-90도).
+            CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+            rotationTransform = CGAffineTransformRotate(rotationTransform, -M_PI/2);
+            self.transform = rotationTransform;
+        }
     }
 }
 
