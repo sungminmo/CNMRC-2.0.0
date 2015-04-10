@@ -736,8 +736,14 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 {
     // 채널번호.
     UIButton *button = (UIButton *)sender;
-    self.channelNoIndicatorLabel.hidden = NO;
     
+    // 확인 버튼 예외 처리.
+    if (button.tag == 11 && AppInfo.isSecondTV)
+    {
+        return;
+    }
+    
+    self.channelNoIndicatorLabel.hidden = NO;
     [[RemoteManager sender] sendClickForKey:[self keycodeForNumberButton:button] error:NULL];
     
     // 컨트롤이 감춰지기 전까지는 번호를 합친다.
