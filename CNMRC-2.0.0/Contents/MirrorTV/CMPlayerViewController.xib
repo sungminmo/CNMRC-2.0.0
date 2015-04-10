@@ -473,7 +473,7 @@
                             <constraints>
                                 <constraint firstItem="gaz-Gy-m5W" firstAttribute="leading" secondItem="tDe-LI-Yrs" secondAttribute="leading" id="5UC-q2-Xus"/>
                                 <constraint firstAttribute="height" constant="44" id="Q2E-Bw-uDl"/>
-                                <constraint firstAttribute="width" constant="400" id="T68-S9-ziq"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="T68-S9-ziq"/>
                                 <constraint firstAttribute="bottom" secondItem="gaz-Gy-m5W" secondAttribute="bottom" id="hKp-kt-sSH"/>
                                 <constraint firstItem="gaz-Gy-m5W" firstAttribute="top" secondItem="tDe-LI-Yrs" secondAttribute="top" id="kHo-mH-EjP"/>
                                 <constraint firstAttribute="centerY" secondItem="gaz-Gy-m5W" secondAttribute="centerY" id="kcm-Rj-u3t"/>
