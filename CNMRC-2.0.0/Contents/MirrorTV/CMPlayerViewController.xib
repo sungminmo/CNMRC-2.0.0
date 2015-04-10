@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CMPlayerViewController">
@@ -226,15 +226,15 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4l-Ds-knd">
                             <rect key="frame" x="0.0" y="364" width="736" height="50"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-tr-Fb0">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-tr-Fb0">
                                     <rect key="frame" x="82" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="55U-hb-vnw"/>
                                         <constraint firstAttribute="height" constant="50" id="VtL-Kr-0OF"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_0_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_0_H"/>
+                                    <state key="normal" backgroundImage="M_No_1_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_1_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="Yas-gg-u3V"/>
                                     </connections>
@@ -252,119 +252,119 @@
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="fuR-Hm-mTE"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NM-tI-Qab">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NM-tI-Qab">
                                     <rect key="frame" x="140" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="Vli-JP-4ro"/>
                                         <constraint firstAttribute="height" constant="50" id="vNu-C1-etn"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_1_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_1_H"/>
+                                    <state key="normal" backgroundImage="M_No_2_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_2_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="5qc-SI-nYh"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcG-sX-8S9">
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcG-sX-8S9">
                                     <rect key="frame" x="198" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="LZ3-ef-OPj"/>
                                         <constraint firstAttribute="height" constant="50" id="LmA-6Y-ksk"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_2_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_2_H"/>
+                                    <state key="normal" backgroundImage="M_No_3_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_3_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="0tX-av-1nv"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jq-C0-FvH">
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jq-C0-FvH">
                                     <rect key="frame" x="256" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="9vH-NX-Due"/>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="jSQ-cP-PtP"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_3_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_3_H"/>
+                                    <state key="normal" backgroundImage="M_No_4_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_4_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="6ig-9Z-eCQ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txA-dr-A73">
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txA-dr-A73">
                                     <rect key="frame" x="314" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="1iq-9x-UPQ"/>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="Orb-Z1-9fn"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_4_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_4_H"/>
+                                    <state key="normal" backgroundImage="M_No_5_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_5_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="voU-AJ-Rvz"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvR-gc-ssd">
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvR-gc-ssd">
                                     <rect key="frame" x="372" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="C7R-Kq-kDz"/>
                                         <constraint firstAttribute="height" constant="50" id="exE-2J-kLa"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_5_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_5_H"/>
+                                    <state key="normal" backgroundImage="M_No_6_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_6_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="E3g-cR-FbE"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnC-8t-2gv">
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnC-8t-2gv">
                                     <rect key="frame" x="430" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="2lv-Gy-Xgh"/>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="e2c-P1-Vld"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_6_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_6_H"/>
+                                    <state key="normal" backgroundImage="M_No_7_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_7_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="hqu-tb-fwb"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-8u-819">
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-8u-819">
                                     <rect key="frame" x="488" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="XQx-NG-cvL"/>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="h2a-I5-5GW"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_7_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_7_H"/>
+                                    <state key="normal" backgroundImage="M_No_8_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_8_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="ffk-kt-C5B"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDi-gK-fBF">
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDi-gK-fBF">
                                     <rect key="frame" x="546" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="Qch-v8-WnD"/>
                                         <constraint firstAttribute="height" constant="50" id="hLY-Jz-GhO"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_8_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_8_H"/>
+                                    <state key="normal" backgroundImage="M_No_9_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_9_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="uW4-Zr-g1h"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-Xn-4ON">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-Xn-4ON">
                                     <rect key="frame" x="604" y="0.0" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="FwG-Ey-lIK"/>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="SXv-fg-db7"/>
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <state key="normal" backgroundImage="M_No_9_D"/>
-                                    <state key="highlighted" backgroundImage="M_No_9_H"/>
+                                    <state key="normal" backgroundImage="M_No_0_D"/>
+                                    <state key="highlighted" backgroundImage="M_No_0_H"/>
                                     <connections>
                                         <action selector="numberAction:" destination="-1" eventType="touchUpInside" id="KJ1-IS-zwT"/>
                                     </connections>
@@ -458,7 +458,7 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDe-LI-Yrs">
+                        <view clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDe-LI-Yrs">
                             <rect key="frame" x="168" y="103" width="400" height="44"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="M_MuteOff_H" translatesAutoresizingMaskIntoConstraints="NO" id="gaz-Gy-m5W">
