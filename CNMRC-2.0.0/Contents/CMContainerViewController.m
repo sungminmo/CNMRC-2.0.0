@@ -38,14 +38,11 @@
 {
     [super viewDidLoad];
     
-    [self showHelp];
+    // !!!: 임시 제거.
+    //[self showHelp];
     
     // 블럭 채널 정보.
     [self blockChannel];
-    
-    // 전문 수신용 옵저버 등록: CM06.
-    //    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    //    [nc addObserver:self selector:@selector(receiveSocketData:) name:TR_NO_CM06 object:nil];
 }
 
 - (void)viewDidUnload
