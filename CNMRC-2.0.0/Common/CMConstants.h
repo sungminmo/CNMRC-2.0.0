@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, CMMenuType) {
 #define MIRRORTV_ERROR_MSG_OTHERS MIRRORTV_ERROR_MSG_VOD
 #define MIRRORTV_ERROR_MSG_BLOCKING_CHANNEL @"셋탑박스에서 성인인증 또는 구매 완료 후\n 다시 이용해 주세요."
 #define MIRRORTV_ERROR_MSG_STANBY @"셋톱박스 전원이 꺼져있습니다.\n 전뤈을 켜신 수 이용하실 수 있습니다."
-#define MIRRORTV_ERROR_MSG_UHD @"UHD 채널 시청 중에는 미러TV를 지원하지 않습니다."
+#define MIRRORTV_ERROR_MSG_UHD @"UHD 채널 시청 중에는 \n미러TV를 지원하지 않습니다."
 #define MIRRORTV_ERROR @"미러TV 영상이 지연되고 있습니다.\n잠시 후 다시 이용해 주십시오."
 
 // ----------------------------------------------------------------------------------
