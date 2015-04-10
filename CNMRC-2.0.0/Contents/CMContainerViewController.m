@@ -486,6 +486,13 @@
             }
                 break;
                 
+            case 5:
+            {
+                // UHD 채널.
+                [self showAlertWithMessage:MIRRORTV_ERROR_MSG_UHD];
+            }
+                break;
+                
             default:
             {
                 [self showAlertWithMessage:MIRRORTV_ERROR_MSG_VOD];

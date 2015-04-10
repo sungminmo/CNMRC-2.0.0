@@ -441,7 +441,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
 
 - (void)removePlayer
 {
-    [self pause];
+    //[self pause];
     [self freeBufferedFrames];
     [_decoder closeFile];
     
@@ -1816,6 +1816,9 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                     
                     // HLS URL 생성을 위해 AssetID 요청.
                     [self requestAssetID];
+                    
+                    // 플레이어 중지.
+                    [self pause];
                 }
             }
                 break;
@@ -1870,6 +1873,23 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
                 
                 // Standby.
                 [self showNotice:MIRRORTV_ERROR_MSG_STANBY];
+                
+                // 플레이어 중지.
+                [self pause];
+            }
+                break;
+                
+            case 5:
+            {
+                // 채널 정보 변경.
+                [self changeChannelInfo:data];
+                [self setupChannelInfo];
+                
+                // UHD 채널.
+                [self showNotice:MIRRORTV_ERROR_MSG_UHD];
+                
+                // 플레이어 중지.
+                [self pause];
             }
                 break;
                 
