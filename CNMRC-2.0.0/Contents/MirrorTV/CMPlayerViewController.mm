@@ -1372,7 +1372,22 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     self.view.transform = rotationTransform;
     
     // 볼륨뷰.
-    CGRect volumeViewFrame = CGRectMake(52, 13, 320, 44);
+    CGFloat volumeViewWidth = 0;
+    switch ([LPPhoneVersion deviceSize]) {
+        case iPhone55inch:
+            volumeViewWidth = 320.0;
+            break;
+            
+        case iPhone47inch:
+            volumeViewWidth = 290.0;
+            break;
+            
+        default:
+            volumeViewWidth = 160.0;
+            break;
+    }
+
+    CGRect volumeViewFrame = CGRectMake(52, 13, volumeViewWidth, 44);
     self.volumeView = [[MPVolumeView alloc] initWithFrame:volumeViewFrame];
     self.volumeView.showsRouteButton = NO;
     self.volumeView.showsVolumeSlider = YES;
