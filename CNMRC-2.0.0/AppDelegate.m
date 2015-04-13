@@ -16,6 +16,7 @@
 #import "LPAppStats.h"
 #import "CMRCViewController.h"
 #import "FCFileManager.h"
+#import "SSKeychain.h"
 
 @interface AppDelegate ()
 
@@ -41,6 +42,9 @@
     DDLogDebug(@"\n------------------------------------------------------------------\
           \nNow is the %dth execution!\
           \n------------------------------------------------------------------", [LPAppStats numAppOpens]);
+    
+    
+    NSLog(@">>>>>>>>>>>>%@", [SSKeychain allAccounts]);
     
     // 알림을 통한 진입인지 확인
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
