@@ -1379,7 +1379,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
             break;
             
         case iPhone47inch:
-            volumeViewWidth = 290.0;
+            volumeViewWidth = 260.0;
             break;
             
         default:

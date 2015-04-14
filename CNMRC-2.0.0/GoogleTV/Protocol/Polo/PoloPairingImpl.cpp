@@ -176,7 +176,7 @@ static void PoloConnectionPairingThreadCleanup(void *connectionPtr) {
     PoloConnectionCloseInternal(connection);
 }
 
-// !!!: READ_NEXT_MSG 매크로 대체 함수.
+// !!!: READ_NEXT_ MSG 매크로 대체 함수.
 static void ReadNextMsg()
 {
     
