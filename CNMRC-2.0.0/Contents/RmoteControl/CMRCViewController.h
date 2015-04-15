@@ -41,6 +41,8 @@ typedef NS_ENUM(NSInteger, CMMRemoteControlType) {
 @property (strong, nonatomic) CMControlPad *controlPad;
 @property (strong, nonatomic) CMTapTracker *tapTracker;
 
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *barList;
+
 - (IBAction)onOffAction:(id)sender;
 - (IBAction)homeAction:(id)sender;
 - (IBAction)vodAction:(id)sender;

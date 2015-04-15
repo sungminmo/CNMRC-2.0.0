@@ -13,6 +13,10 @@
                 <outlet property="roundBox" destination="Adw-bB-C8D" id="mdu-Hs-KdG"/>
                 <outlet property="touchPad" destination="CnZ-5X-sLg" id="mQX-8A-9Ey"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xmb-te-PZ3"/>
+                <outletCollection property="barList" destination="ErJ-WO-iVD" id="uA0-iB-0bK"/>
+                <outletCollection property="barList" destination="qsd-ss-P8B" id="y4V-3y-Pg3"/>
+                <outletCollection property="barList" destination="XYI-ZA-c1L" id="7ya-P5-Ris"/>
+                <outletCollection property="barList" destination="pgq-FD-YpG" id="Gs0-MS-nka"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

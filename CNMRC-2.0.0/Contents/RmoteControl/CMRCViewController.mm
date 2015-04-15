@@ -157,6 +157,12 @@ static const CGFloat kMaxScaleToZoomOut = (1.0 / 1.8);
     self.cvPad.rightBackground.layer.borderColor = [UIColor grayColor].CGColor;
     self.cvPad.rightRoundBackground.layer.cornerRadius = 9.9;
     
+    if ([LPPhoneVersion deviceSize] == iPhone35inch) {
+        for (UIImageView *iv in self.barList) {
+            iv.hidden = YES;
+        }
+    }
+    
     // 숫자키패드.
     NSString *numberKeyXIB = nil;
     switch ([LPPhoneVersion deviceSize]) {
