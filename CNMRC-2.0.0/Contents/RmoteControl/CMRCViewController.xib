@@ -132,9 +132,9 @@
                                             <rect key="frame" x="351" y="131" width="67" height="67"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="8Ux-KC-rwp"/>
-                                                <constraint firstAttribute="height" constant="67" id="9nS-Mf-Rx7"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="67" id="9nS-Mf-Rx7"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="Pnx-Iq-ktK"/>
-                                                <constraint firstAttribute="width" constant="67" id="aNL-gv-OfH"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="67" id="aNL-gv-OfH"/>
                                             </constraints>
                                             <state key="normal" image="ArrowRight_D">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,8 +153,8 @@
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpu-Tk-naq">
                                             <rect key="frame" x="153" y="131" width="67" height="67"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="67" id="9hE-OS-hoV"/>
-                                                <constraint firstAttribute="height" constant="67" id="MMI-ad-UT3"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="67" id="9hE-OS-hoV"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="67" id="MMI-ad-UT3"/>
                                             </constraints>
                                             <state key="normal" image="ArrowLeft_D">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -263,7 +263,7 @@
                                         <constraint firstItem="cmC-ex-wjb" firstAttribute="top" secondItem="dCL-In-8Yu" secondAttribute="bottom" constant="32" id="1Bh-KZ-I53"/>
                                         <constraint firstItem="dCL-In-8Yu" firstAttribute="top" secondItem="uzR-jD-p7j" secondAttribute="bottom" id="4Rj-O0-QF8"/>
                                         <constraint firstItem="dCL-In-8Yu" firstAttribute="leading" secondItem="Bz1-2k-9HU" secondAttribute="trailing" id="5TI-dQ-6pi"/>
-                                        <constraint firstItem="4KO-VB-oWa" firstAttribute="top" secondItem="cmC-ex-wjb" secondAttribute="bottom" id="5YQ-Qe-c8e"/>
+                                        <constraint firstItem="4KO-VB-oWa" firstAttribute="top" secondItem="cmC-ex-wjb" secondAttribute="bottom" priority="750" id="5YQ-Qe-c8e"/>
                                         <constraint firstAttribute="height" constant="329" id="7YD-Qi-MVu"/>
                                         <constraint firstAttribute="centerX" secondItem="4KO-VB-oWa" secondAttribute="centerX" id="9kQ-z1-KhY"/>
                                         <constraint firstAttribute="centerX" secondItem="cmC-ex-wjb" secondAttribute="centerX" id="AFu-Eb-nBl"/>
@@ -288,7 +288,7 @@
                                         <constraint firstItem="Qss-X6-aNJ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dCL-In-8Yu" secondAttribute="trailing" priority="750" constant="73" id="pB8-0g-6G0"/>
                                         <constraint firstAttribute="width" constant="570" id="pIe-4b-WGU"/>
                                         <constraint firstAttribute="centerX" secondItem="kA4-gw-eCg" secondAttribute="centerX" id="q3w-Pn-77o"/>
-                                        <constraint firstItem="rjf-bM-dcG" firstAttribute="top" secondItem="kA4-gw-eCg" secondAttribute="bottom" id="qDc-y4-tN2"/>
+                                        <constraint firstItem="rjf-bM-dcG" firstAttribute="top" secondItem="kA4-gw-eCg" secondAttribute="bottom" priority="750" id="qDc-y4-tN2"/>
                                         <constraint firstItem="mNC-EM-fj0" firstAttribute="leading" secondItem="Qss-X6-aNJ" secondAttribute="trailing" id="rHu-4e-1ny"/>
                                         <constraint firstAttribute="trailing" secondItem="mNC-EM-fj0" secondAttribute="trailing" id="rUD-Yf-B0U"/>
                                         <constraint firstAttribute="centerX" secondItem="uzR-jD-p7j" secondAttribute="centerX" id="rab-bo-cfN"/>
