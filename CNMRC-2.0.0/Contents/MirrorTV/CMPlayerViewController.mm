@@ -231,7 +231,7 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     self.heartbeatTimer = [NSTimer scheduledTimerWithTimeInterval:HEARTBEAT_TIME target:self selector:@selector(requestHeartbeat) userInfo:nil repeats:YES];
     
     // HLS URL 생성을 위해 AssetID 요청.
-    [self requestAssetID];
+    //[self requestAssetID];
     
     // 화면 설정.
     [self setupLayout];
@@ -273,14 +273,24 @@ typedef NS_ENUM(NSInteger, CMMirrorTVStatus) {
     _interrupted = YES;
 }
 
-- (void)applicationWillResignActive:(NSNotification *)notification
-{
-    [self pause];
-}
-
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationLandscapeLeft;
 }
 
 - (void)orientationChanged:(NSNotification *)notification
