@@ -53,7 +53,10 @@
     [super viewDidLayoutSubviews];
 
     // 테이블 높이 설정.
-    if ([LPPhoneVersion deviceSize] == iPhone4inch) {
+    if ([LPPhoneVersion deviceSize] == iPhone35inch ||
+        [LPPhoneVersion deviceSize] == iPhone4inch ||
+        [LPPhoneVersion deviceSize] == iPhone47inch)
+    {
         self.settingsTable.frame = CGRectMake(self.settingsTable.frame.origin.x, self.settingsTable.frame.origin.y, self.settingsTable.frame.size.width, self.settingsTable.frame.size.height - 50);
     }
 }
