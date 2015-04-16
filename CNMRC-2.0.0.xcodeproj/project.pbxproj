@@ -65,7 +65,6 @@
 		1DA28B111A3C7B18007D7F4E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B101A3C7B18007D7F4E /* libz.dylib */; };
 		1DA28B131A3C7B25007D7F4E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B121A3C7B25007D7F4E /* libiconv.dylib */; };
 		1DA28B151A3C7B66007D7F4E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA28B141A3C7B66007D7F4E /* libsqlite3.dylib */; };
-		1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1DA28B181A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf */; };
 		1DA28B1D1A3C84A5007D7F4E /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B1C1A3C84A5007D7F4E /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DA28B211A3C859C007D7F4E /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B201A3C859C007D7F4E /* AsyncImageView.m */; };
 		1DA28B321A3C85AD007D7F4E /* HTProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA28B251A3C85AD007D7F4E /* HTProgressHUD.m */; };
@@ -331,7 +330,6 @@
 		1DA28B101A3C7B18007D7F4E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1DA28B121A3C7B25007D7F4E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		1DA28B141A3C7B66007D7F4E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		1DA28B181A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 417_whats_new_in_llvm.pdf; sourceTree = "<group>"; };
 		1DA28B1B1A3C84A5007D7F4E /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		1DA28B1C1A3C84A5007D7F4E /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		1DA28B1F1A3C859C007D7F4E /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
@@ -870,7 +868,6 @@
 		1D4A49B41A20859C0088FA93 = {
 			isa = PBXGroup;
 			children = (
-				1DA28B171A3C826E007D7F4E /* Doc */,
 				1DA28B161A3C7C2E007D7F4E /* Frameworks */,
 				1DBA76781A20AE0D003AB966 /* Vendor */,
 				1D4A49BF1A20859C0088FA93 /* CNMRC-2.0.0 */,
@@ -1024,14 +1021,6 @@
 				1DA28AE61A3C79D0007D7F4E /* CoreData.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1DA28B171A3C826E007D7F4E /* Doc */ = {
-			isa = PBXGroup;
-			children = (
-				1DA28B181A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf */,
-			);
-			path = Doc;
 			sourceTree = "<group>";
 		};
 		1DA28B1A1A3C84A5007D7F4E /* CocoaAsyncSocket */ = {
@@ -1959,7 +1948,6 @@
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
 				1D42AE711AC028CD002F70E8 /* CMPressView.xib in Resources */,
 				1DD6BABA1ACA3F67001A529B /* CMPlayerViewController.xib in Resources */,
-				1DA28B191A3C8278007D7F4E /* 417_whats_new_in_llvm.pdf in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
 				1D708E1A1AC11286005B5CBE /* CMPressView_6.xib in Resources */,
 				1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */,
