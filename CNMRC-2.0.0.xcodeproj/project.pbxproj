@@ -197,7 +197,6 @@
 		1DB9BA581A6165D200E89E27 /* CMVODViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9BA521A6165D200E89E27 /* CMVODViewController.m */; };
 		1DB9BA591A6165D200E89E27 /* CMVODViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9BA531A6165D200E89E27 /* CMVODViewController.xib */; };
 		1DB9BF521A7FD01C00FD58D1 /* DQAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9BF511A7FD01C00FD58D1 /* DQAlertView.m */; };
-		1DBA76C61A20B4C8003AB966 /* protoc in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA767B1A20B4C8003AB966 /* protoc */; };
 		1DBA76C71A20B4C8003AB966 /* plugin.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA768A1A20B4C8003AB966 /* plugin.proto */; };
 		1DBA76C81A20B4C8003AB966 /* descriptor.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1DBA768F1A20B4C8003AB966 /* descriptor.proto */; };
 		1DBA76C91A20B4C8003AB966 /* libprotobuf-lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBA76BD1A20B4C8003AB966 /* libprotobuf-lite.a */; };
@@ -579,7 +578,6 @@
 		1DB9BA531A6165D200E89E27 /* CMVODViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMVODViewController.xib; sourceTree = "<group>"; };
 		1DB9BF501A7FD01C00FD58D1 /* DQAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQAlertView.h; sourceTree = "<group>"; };
 		1DB9BF511A7FD01C00FD58D1 /* DQAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQAlertView.m; sourceTree = "<group>"; };
-		1DBA767B1A20B4C8003AB966 /* protoc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = protoc; sourceTree = "<group>"; };
 		1DBA76801A20B4C8003AB966 /* code_generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = code_generator.h; sourceTree = "<group>"; };
 		1DBA76811A20B4C8003AB966 /* command_line_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = command_line_interface.h; sourceTree = "<group>"; };
 		1DBA76831A20B4C8003AB966 /* cpp_generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpp_generator.h; sourceTree = "<group>"; };
@@ -1555,19 +1553,10 @@
 		1DBA76791A20B4C8003AB966 /* protobuf-2.6.0 */ = {
 			isa = PBXGroup;
 			children = (
-				1DBA767A1A20B4C8003AB966 /* bin */,
 				1DBA767C1A20B4C8003AB966 /* include */,
 				1DBA76BC1A20B4C8003AB966 /* lib */,
 			);
 			path = "protobuf-2.6.0";
-			sourceTree = "<group>";
-		};
-		1DBA767A1A20B4C8003AB966 /* bin */ = {
-			isa = PBXGroup;
-			children = (
-				1DBA767B1A20B4C8003AB966 /* protoc */,
-			);
-			path = bin;
 			sourceTree = "<group>";
 		};
 		1DBA767C1A20B4C8003AB966 /* include */ = {
@@ -1966,7 +1955,6 @@
 				1DBA76CC1A20B4C8003AB966 /* libprotobuf.la in Resources */,
 				1DB9BA571A6165D200E89E27 /* CMVODListViewController.xib in Resources */,
 				1D14AA7E1A6169D700FECF55 /* CMChannelViewController.xib in Resources */,
-				1DBA76C61A20B4C8003AB966 /* protoc in Resources */,
 				1DB9BA271A615A9200E89E27 /* CMSetProductViewController.xib in Resources */,
 				1D14AA7C1A6169D700FECF55 /* CMChannelListViewController.xib in Resources */,
 				1D42AE711AC028CD002F70E8 /* CMPressView.xib in Resources */,
@@ -2297,7 +2285,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: C&M (CR4R5HGD9P)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/SSKeychain",
@@ -2321,7 +2309,7 @@
 					"$(PROJECT_DIR)/Vendor/KxMovie",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "74851c14-e61d-49e5-a70d-0da257862efd";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				USER_HEADER_SEARCH_PATHS = /Users/lambert/Projects/_Lib/FFmpeg;
 			};
