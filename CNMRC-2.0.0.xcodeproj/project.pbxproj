@@ -29,6 +29,7 @@
 		1D4A49CE1A20859C0088FA93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A49CD1A20859C0088FA93 /* Images.xcassets */; };
 		1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D4A49CF1A20859C0088FA93 /* LaunchScreen.xib */; };
 		1D4A49DD1A20859C0088FA93 /* CNMRC_2_0_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4A49DC1A20859C0088FA93 /* CNMRC_2_0_0Tests.m */; };
+		1D5798411ADFAF6D002F3361 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D5798401ADFAF6D002F3361 /* Default-568h@2x.png */; };
 		1D5FA7451A46B2A500D51182 /* LPCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7401A46B2A500D51182 /* LPCoreDataManager.m */; };
 		1D5FA7461A46B2A500D51182 /* NSArray+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7421A46B2A500D51182 /* NSArray+Accessors.m */; };
 		1D5FA7471A46B2A500D51182 /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FA7441A46B2A500D51182 /* NSManagedObject+ActiveRecord.m */; };
@@ -281,6 +282,7 @@
 		1D4A49D61A20859C0088FA93 /* CNMRCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNMRCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4A49DB1A20859C0088FA93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D4A49DC1A20859C0088FA93 /* CNMRC_2_0_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNMRC_2_0_0Tests.m; sourceTree = "<group>"; };
+		1D5798401ADFAF6D002F3361 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1D5FA73E1A46B2A500D51182 /* LPActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPActiveRecord.h; sourceTree = "<group>"; };
 		1D5FA73F1A46B2A500D51182 /* LPCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPCoreDataManager.h; sourceTree = "<group>"; };
 		1D5FA7401A46B2A500D51182 /* LPCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPCoreDataManager.m; sourceTree = "<group>"; };
@@ -907,6 +909,7 @@
 		1D4A49C01A20859C0088FA93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D5798401ADFAF6D002F3361 /* Default-568h@2x.png */,
 				1D4A49C11A20859C0088FA93 /* Info.plist */,
 				1D4A49C21A20859C0088FA93 /* main.m */,
 				1DB9B93B1A61416400E89E27 /* PrefixHeader.pch */,
@@ -1949,6 +1952,7 @@
 				1D42AE711AC028CD002F70E8 /* CMPressView.xib in Resources */,
 				1DD6BABA1ACA3F67001A529B /* CMPlayerViewController.xib in Resources */,
 				1DA6A0081AB1232D004AB586 /* CMNumberKey_6P.xib in Resources */,
+				1D5798411ADFAF6D002F3361 /* Default-568h@2x.png in Resources */,
 				1D708E1A1AC11286005B5CBE /* CMPressView_6.xib in Resources */,
 				1D0EE5C41AB291C00055A92A /* tap-muted.aif in Resources */,
 				1D4A49D11A20859C0088FA93 /* LaunchScreen.xib in Resources */,
