@@ -34,21 +34,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>성인인증</string>
-		<key>subTitles</key>
-		<array>
-			<dict>
-				<key>subTitle</key>
-				<string>성인인증</string>
-			</dict>
-			<dict>
-				<key>subTitle</key>
-				<string>자동성인인증</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>지역 설정</string>
 		<key>subTitles</key>
 		<array>

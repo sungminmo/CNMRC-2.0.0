@@ -84,7 +84,8 @@
 
 // 설정 정보 로드.
 - (NSMutableArray *)loadSettings {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"plist"];
+    // !!!: 성인인증 설정 임시 제거.
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Settings_temp" ofType:@"plist"];
 	return [[NSMutableArray alloc] initWithContentsOfFile:path];
 }
 
@@ -231,41 +232,64 @@
 			cell.settingsSwitch.on  = [self.setting.isWatchReservationAlarm boolValue];
 		}
 	}
-	else if (indexPath.section == 2) {
-		if (indexPath.row == 0) {
-			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             
-			cell.cellType = CMSettingsCellTypeLabel;
-			cell.settingsLabel.text = AppInfo.isAdult ? @"인증 상태입니다." : @"미인증 상태입니다.";
-		}
-		else if (indexPath.row == 1) {
-			cell.cellType = CMSettingsCellTypeSwitch;
-			[cell.settingsSwitch addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
-			cell.settingsSwitch.tag = 20 + indexPath.row;
-			cell.settingsSwitch.on  = [self.setting.isAutoAuthAdult boolValue];
-		}
-	}
-	else if (indexPath.section == 3) {
-		if (indexPath.row == 0) {
-			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            
-			// !!!: 기본값은 송파/디지털기본형이다.
-			cell.cellType = CMSettingsCellTypeLabel;
-			cell.settingsLabel.text = [NSString stringWithFormat:@"%@/%@", self.setting.areaName, self.setting.productName];
-		}
-		else if (indexPath.row == 1) {
-			cell.buttonTitle = @"초기화";
-			cell.cellType = CMSettingsCellTypeButton;
-			[cell.settingsButton addTarget:self action:@selector(initButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-			cell.settingsButton.tag = 30 + indexPath.row;
-		}
-		else if (indexPath.row == 2) {
-			cell.buttonTitle = @"연결";
-			cell.cellType = CMSettingsCellTypeButton;
-			[cell.settingsButton addTarget:self action:@selector(paringAction:) forControlEvents:UIControlEventTouchUpInside];
-			cell.settingsButton.tag = 30 + indexPath.row;
-		}
-	}
+            // !!!: 기본값은 송파/디지털기본형이다.
+            cell.cellType = CMSettingsCellTypeLabel;
+            cell.settingsLabel.text = [NSString stringWithFormat:@"%@/%@", self.setting.areaName, self.setting.productName];
+        }
+        else if (indexPath.row == 1) {
+            cell.buttonTitle = @"초기화";
+            cell.cellType = CMSettingsCellTypeButton;
+            [cell.settingsButton addTarget:self action:@selector(initButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+            cell.settingsButton.tag = 30 + indexPath.row;
+        }
+        else if (indexPath.row == 2) {
+            cell.buttonTitle = @"연결";
+            cell.cellType = CMSettingsCellTypeButton;
+            [cell.settingsButton addTarget:self action:@selector(paringAction:) forControlEvents:UIControlEventTouchUpInside];
+            cell.settingsButton.tag = 30 + indexPath.row;
+        }
+    }
+    
+    // !!!: 성인인증 설정 임시 제거.
+//	else if (indexPath.section == 2) {
+//		if (indexPath.row == 0) {
+//			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//            
+//			cell.cellType = CMSettingsCellTypeLabel;
+//			cell.settingsLabel.text = AppInfo.isAdult ? @"인증 상태입니다." : @"미인증 상태입니다.";
+//		}
+//		else if (indexPath.row == 1) {
+//			cell.cellType = CMSettingsCellTypeSwitch;
+//			[cell.settingsSwitch addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
+//			cell.settingsSwitch.tag = 20 + indexPath.row;
+//			cell.settingsSwitch.on  = [self.setting.isAutoAuthAdult boolValue];
+//		}
+//	}
+//	else if (indexPath.section == 3) {
+//		if (indexPath.row == 0) {
+//			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//            
+//			// !!!: 기본값은 송파/디지털기본형이다.
+//			cell.cellType = CMSettingsCellTypeLabel;
+//			cell.settingsLabel.text = [NSString stringWithFormat:@"%@/%@", self.setting.areaName, self.setting.productName];
+//		}
+//		else if (indexPath.row == 1) {
+//			cell.buttonTitle = @"초기화";
+//			cell.cellType = CMSettingsCellTypeButton;
+//			[cell.settingsButton addTarget:self action:@selector(initButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//			cell.settingsButton.tag = 30 + indexPath.row;
+//		}
+//		else if (indexPath.row == 2) {
+//			cell.buttonTitle = @"연결";
+//			cell.cellType = CMSettingsCellTypeButton;
+//			[cell.settingsButton addTarget:self action:@selector(paringAction:) forControlEvents:UIControlEventTouchUpInside];
+//			cell.settingsButton.tag = 30 + indexPath.row;
+//		}
+//	}
     
 	// Configure the cell...
 	NSString *subTitle = [[[[self.settings objectAtIndex:indexPath.section] objectForKey:@"subTitles"] objectAtIndex:indexPath.row] objectForKey:@"subTitle"];
@@ -295,19 +319,20 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-	if (section == 2 && !AppInfo.isAutoAuthAdult) {
-		UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 40)];
-		footerView.backgroundColor = [UIColor clearColor];
-		UILabel *footerLabel = [[UILabel alloc] initWithFrame:footerView.frame];
-		footerLabel.backgroundColor = [UIColor clearColor];
-		footerLabel.textAlignment = NSTextAlignmentCenter;
-		footerLabel.textColor = UIColorFromRGB(0x7961aa);
-		footerLabel.numberOfLines = 2;
-		footerLabel.font = [UIFont boldSystemFontOfSize:14];
-		footerLabel.text = @"자동성인인증으로 설정하시면\n인증절차없이 컨텐츠를 감상하실 수 있습니다.";
-		[footerView addSubview:footerLabel];
-		return footerView;
-	}
+    // !!!: 성인인증 설정 임시 제거.
+//	if (section == 2 && !AppInfo.isAutoAuthAdult) {
+//		UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 40)];
+//		footerView.backgroundColor = [UIColor clearColor];
+//		UILabel *footerLabel = [[UILabel alloc] initWithFrame:footerView.frame];
+//		footerLabel.backgroundColor = [UIColor clearColor];
+//		footerLabel.textAlignment = NSTextAlignmentCenter;
+//		footerLabel.textColor = UIColorFromRGB(0x7961aa);
+//		footerLabel.numberOfLines = 2;
+//		footerLabel.font = [UIFont boldSystemFontOfSize:14];
+//		footerLabel.text = @"자동성인인증으로 설정하시면\n인증절차없이 컨텐츠를 감상하실 수 있습니다.";
+//		[footerView addSubview:footerLabel];
+//		return footerView;
+//	}
     
 	return nil;
 }
@@ -329,34 +354,49 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == 2) {
-		if (indexPath.row == 0) {
-			// 선택 컬러.
-			CMSettingsCell *cell = (CMSettingsCell *)[tableView cellForRowAtIndexPath:indexPath];
-			cell.backgroundColor = UIColorFromRGB(0xd7cfe1);
-			cell.textLabel.textColor = [UIColor whiteColor];
-			cell.settingsLabel.textColor = [UIColor whiteColor];
+    if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            // 선택 컬러.
+            CMSettingsCell *cell = (CMSettingsCell *)[tableView cellForRowAtIndexPath:indexPath];
+            cell.backgroundColor = UIColorFromRGB(0xd7cfe1);
+            cell.textLabel.textColor = [UIColor whiteColor];
+            cell.settingsLabel.textColor = [UIColor whiteColor];
             
-			// 성인인증.
-			CMAuthAdultViewController *viewControlelr = [[CMAuthAdultViewController alloc] initWithNibName:@"CMAuthAdultViewController" bundle:nil];
-			viewControlelr.menuType = CMMenuTypeAuthAdult;
-			viewControlelr.authAdultViewType = CMAuthAdultViewTypeSettings;
-			[self.navigationController pushViewController:viewControlelr animated:YES];
-		}
-	}
-	else if (indexPath.section == 3) {
-		if (indexPath.row == 0) {
-			// 선택 컬러.
-			CMSettingsCell *cell = (CMSettingsCell *)[tableView cellForRowAtIndexPath:indexPath];
-			cell.backgroundColor = UIColorFromRGB(0xd7cfe1);
-			cell.textLabel.textColor = [UIColor whiteColor];
-			cell.settingsLabel.textColor = [UIColor whiteColor];
-            
-			// 지역설정.
-			CMSetAreaViewController *viewControlelr = [[CMSetAreaViewController alloc] initWithNibName:@"CMSetAreaViewController" bundle:nil];
-			[self.navigationController pushViewController:viewControlelr animated:YES];
-		}
-	}
+            // 지역설정.
+            CMSetAreaViewController *viewControlelr = [[CMSetAreaViewController alloc] initWithNibName:@"CMSetAreaViewController" bundle:nil];
+            [self.navigationController pushViewController:viewControlelr animated:YES];
+        }
+    }
+    
+    // !!!: 성인인증 설정 임시 제거.
+//	if (indexPath.section == 2) {
+//		if (indexPath.row == 0) {
+//			// 선택 컬러.
+//			CMSettingsCell *cell = (CMSettingsCell *)[tableView cellForRowAtIndexPath:indexPath];
+//			cell.backgroundColor = UIColorFromRGB(0xd7cfe1);
+//			cell.textLabel.textColor = [UIColor whiteColor];
+//			cell.settingsLabel.textColor = [UIColor whiteColor];
+//            
+//			// 성인인증.
+//			CMAuthAdultViewController *viewControlelr = [[CMAuthAdultViewController alloc] initWithNibName:@"CMAuthAdultViewController" bundle:nil];
+//			viewControlelr.menuType = CMMenuTypeAuthAdult;
+//			viewControlelr.authAdultViewType = CMAuthAdultViewTypeSettings;
+//			[self.navigationController pushViewController:viewControlelr animated:YES];
+//		}
+//	}
+//	else if (indexPath.section == 3) {
+//		if (indexPath.row == 0) {
+//			// 선택 컬러.
+//			CMSettingsCell *cell = (CMSettingsCell *)[tableView cellForRowAtIndexPath:indexPath];
+//			cell.backgroundColor = UIColorFromRGB(0xd7cfe1);
+//			cell.textLabel.textColor = [UIColor whiteColor];
+//			cell.settingsLabel.textColor = [UIColor whiteColor];
+//            
+//			// 지역설정.
+//			CMSetAreaViewController *viewControlelr = [[CMSetAreaViewController alloc] initWithNibName:@"CMSetAreaViewController" bundle:nil];
+//			[self.navigationController pushViewController:viewControlelr animated:YES];
+//		}
+//	}
 }
 
 @end
