@@ -187,7 +187,7 @@ const NSInteger kDefualtPairingPort = 9551;
         // 원래 코드.
         //cell.textLabel.text = box.name;
         // 수정 요청 사항.
-        cell.textLabel.text = @"씨앤앰 스마트TV Ⅱ";
+        cell.textLabel.text = @"딜라이브 스마트TV Ⅱ";
         
         // !!!: 공인IP가 잡히는 경우에 대한 예외 처리!
         // 사설IP(192로 시작...)  여부.

@@ -319,8 +319,8 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
 // 페어링 여부 확인.
 - (void)checkPairing
 {
-    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"씨앤앰 TV 연결"
-                                                        message:@"씨앤앰 셋톱박스를 \n연결하시겠습니까?"
+    DQAlertView *alertView = [[DQAlertView alloc] initWithTitle:@"딜라이브 TV 연결"
+                                                        message:@"딜라이브 셋톱박스를 \n연결하시겠습니까?"
                                               cancelButtonTitle:@"취소"
                                                otherButtonTitle:@"확인"];
     alertView.shouldDismissOnActionButtonClicked = YES;
@@ -428,7 +428,7 @@ static NSString * const kLastBoxKey = @"kLastBoxKey";
     else if (_appState == kAppStateConnecting && code == POLO_ERR_CONNECTION_FAILURE)
     {
         [self changeState:kAppStateIdle];
-        [RToast showToast:NSLocalizedString(@"씨앤앰 셋톱박스에 연결할 수 없습니다.", @"") forDuration:2];
+        [RToast showToast:NSLocalizedString(@"딜라이브 셋톱박스에 연결할 수 없습니다.", @"") forDuration:2];
         [self showDeviceFinder];
     }
     else if (_appState == kAppStateDeviceFinder)
